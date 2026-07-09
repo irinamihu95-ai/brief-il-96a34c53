@@ -120,93 +120,120 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-07-08T15:10:00+03:00",
-  "runType": "Scan după-amiază",
-  "nextRun": "2026-07-08T20:00:00+03:00",
+  "generatedAt": "2026-07-09T11:30:00+03:00",
+  "runType": "Briefing matinal (rulare manuală)",
+  "nextRun": "2026-07-10T07:30:00+03:00",
   "nivel2": [
     {
-      "title": "VERIFICARE 8 iulie, 15:10 — Iranul a ripostat asupra Bahrainului și Kuwaitului după loviturile SUA",
-      "body": "Iranul anunță că a țintit „85 de instalații militare americane” în Bahrain și Kuwait, în represalii pentru loviturile americane peste noapte asupra provinciei Hormozgan și a portului Mahshahr; sirene antiaeriene au sunat în ambele state din Golf. IRGC avertizează cu represalii „mai dure în zilele următoare”. Cifra „85” este revendicată de partea iraniană (o singură sursă/parte); bilanțul și confirmarea independentă a impactelor rămân neconfirmate. Eveniment distinct de episoadele anterioare Iran→Bahrain/Kuwait (28 iunie, 28 februarie).",
+      "title": "9 iulie — Al doilea val de lovituri SUA asupra Iranului; riposta iraniană se extinde la trei state din Golf (Qatar adăugat)",
+      "body": "În noaptea de miercuri spre joi, SUA au executat un nou val de lovituri (CENTCOM: „~90 de ținte” pe coasta iraniană — apărare aeriană, supraveghere de coastă, depozite de rachete și drone, capacități navale), al doilea în tot atâtea nopți. Iranul a ripostat lovind ținte americane în Bahrain, Kuwait și — element nou față de 8 iulie — Qatar (sit de avertizare timpurie). Bahrain și Kuwait anunță interceptări; Qatar declară nivel de amenințare ridicat. Amploarea reală a impactelor revendicate de Iran rămâne neconfirmată independent.",
       "sources": [
         {
+          "name": "NBC News",
+          "url": "https://www.nbcnews.com/world/iran/us-iran-new-attacks-trump-ceasefire-over-gulf-hormuz-rcna353615"
+        },
+        {
           "name": "NPR",
-          "url": "https://www.npr.org/2026/07/08/g-s1-132460/us-iran-attacks"
+          "url": "https://www.npr.org/2026/07/09/g-s1-132670/us-iran-strikes"
         },
         {
-          "name": "Al Jazeera (liveblog 8 iul)",
-          "url": "https://www.aljazeera.com/news/liveblog/2026/7/8/iran-war-live-us-bombs-sirik-qeshm-bandar-abbas-over-hormuz-attacks"
+          "name": "Al Jazeera (arabă, 9 iul)",
+          "url": "https://www.aljazeera.net/news/2026/7/9/"
         },
         {
-          "name": "CBC",
-          "url": "https://www.cbc.ca/news/world/iran-targets-bahrain-kuwait-9.7262342"
+          "name": "Al Arabiya (9 iul)",
+          "url": "https://www.alarabiya.net/arab-and-world/gulf/2026/07/09/"
         }
       ]
     }
   ],
   "sections": [
     {
-      "id": "iran-hormuz",
-      "title": "Iran — SUA — Strâmtoarea Hormuz",
+      "id": "iran-sua-golf",
+      "title": "Iran — SUA — Golf",
       "items": [
         {
-          "title": "Trump declară armistițiul „încheiat”; SUA revocă waiverul pe petrolul iranian (snapback 17 iulie)",
-          "date": "8 iulie",
-          "body": "La marginea summitului NATO de la Ankara, președintele Trump a declarat că armistițiul cu Iranul „s-a încheiat” și că negocierile sunt „o pierdere de timp”, deși „pot continua”. În paralel, Trezoreria SUA a revocat waiverul care permitea Iranului să vândă petrol; sancțiunile pe export revin integral pe 17 iulie. Este o reversare a evaluării de dimineață, care încadra incidentul naval drept hărțuire punctuală, nu reluare generalizată.",
+          "title": "Nou schimb cinetic SUA–Iran; Iranul adaugă Qatar la ținte",
+          "date": "9 iulie",
+          "body": "CENTCOM a anunțat al doilea val de lovituri americane peste noapte („~90 de ținte”). Potrivit presei arabe, riposta iraniană a vizat sisteme Patriot americane în Kuwait, un sit de avertizare timpurie în Qatar și rezervoare de combustibil ale armatei americane în Bahrain, prin drone și rachete; Gărzile Revoluționare revendică lovituri pe bazele Arifjan și Ali al-Salem (Kuwait) și Jufair și Sheikh Isa (Bahrain). Statele-țintă confirmă interceptări.",
           "sources": [
             {
-              "name": "CBS News",
-              "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-says-ceasefire-over/"
+              "name": "Al Jazeera (arabă)",
+              "url": "https://www.aljazeera.net/news/2026/7/9/"
             },
             {
-              "name": "CNBC",
-              "url": "https://www.cnbc.com/2026/07/08/oil-prices-brent-wti-iran-us-hormuz.html"
+              "name": "Al Arabiya",
+              "url": "https://www.alarabiya.net/iran/2026/07/09/"
+            },
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/07/09/g-s1-132670/us-iran-strikes"
             }
           ]
         },
         {
-          "title": "SUA au lovit peste noapte Sirik, Qeshm și Bandar Abbas — „80+ ținte”, 60+ ambarcațiuni IRGC",
-          "date": "8 iulie (noaptea)",
-          "body": "CENTCOM a anunțat lovituri de precizie asupra a peste 80 de ținte — apărare antiaeriană, rețele de comandă-control, radare de coastă, capabilități de rachete antinavă — și distrugerea a peste 60 de ambarcațiuni rapide ale IRGC, ca răspuns la atacarea a trei nave comerciale în Strâmtoare (identificate: M/T Al Rekayyat, M/T Wedyan, M/T Cyprus Prosperity). IRIB susține că majoritatea loviturilor au vizat zone civile; câțiva răniți raportați la Sirik. Iranul nu a confirmat, dar nici nu a negat atacurile asupra navelor.",
+          "title": "Primul bilanț iranian cumulat: 14 morți, 78 răniți în două zile",
+          "date": "9 iulie",
+          "body": "Ministerul iranian al sănătății a comunicat joi primul bilanț cumulat al celor două zile de lovituri americane: cel puțin 14 morți și 78 de răniți. Cifra provine dintr-o singură sursă, primară iraniană. Fără bilanț independent al pierderilor din statele Golfului la ora publicării.",
           "sources": [
             {
-              "name": "Al Jazeera (liveblog 8 iul)",
-              "url": "https://www.aljazeera.com/news/liveblog/2026/7/8/iran-war-live-us-bombs-sirik-qeshm-bandar-abbas-over-hormuz-attacks"
-            },
-            {
-              "name": "Euronews",
-              "url": "https://www.euronews.com/2026/07/08/us-launches-fresh-strikes-on-iran-after-ships-attacked-in-strait-of-hormuz"
+              "name": "NBC News",
+              "url": "https://www.nbcnews.com/world/iran/us-iran-new-attacks-trump-ceasefire-over-gulf-hormuz-rcna353615"
             }
           ]
         },
         {
-          "title": "Pezeshkian a părăsit devreme Najaf; înhumarea la Mashhad rămâne pe 9 iulie",
-          "date": "8 iulie",
-          "body": "Președintele Pezeshkian a plecat din Najaf spre Teheran după loviturile americane, întrerupând agenda funerară din Irak (Najaf→Karbala). Sicriul lui Khamenei urmează să fie dus la Mashhad pentru înhumare pe 9 iulie, conform programului.",
+          "title": "Trump: armistițiul „s-a încheiat”, negocierile „pierdere de timp” — dar lasă ușa întredeschisă",
+          "date": "8–9 iulie",
+          "body": "La marginea summitului NATO de la Ankara, președintele Trump a declarat armistițiul „over” și negocierile „o pierdere de timp”, dar a dat undă verde echipei sale să continue discuțiile dacă dorește și a spus că nu anticipează o acțiune militară „pe termen lung”.",
           "sources": [
             {
-              "name": "Al Jazeera (liveblog 8 iul)",
-              "url": "https://www.aljazeera.com/news/liveblog/2026/7/8/iran-war-live-us-bombs-sirik-qeshm-bandar-abbas-over-hormuz-attacks"
+              "name": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-08/trump-says-us-ceasefire-with-iran-is-over-after-strikes"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/world/2026/07/08/trump-declares-ceasefire-with-iran-has-ended/"
+            },
+            {
+              "name": "Axios",
+              "url": "https://www.axios.com/2026/07/08/trump-iran-ceasefire-over-rhetoric-attacks"
             }
           ]
         }
       ]
     },
     {
-      "id": "ue",
-      "title": "Reacții UE și state cheie (ziua curentă)",
+      "id": "reactii",
+      "title": "Reacții oficiale",
       "items": [
         {
-          "title": "Kallas: atacurile Iranului asupra Bahrainului și Kuwaitului sunt „inacceptabile”; reuniune UE–Golf luni",
+          "title": "UE / Kaja Kallas: atacurile iraniene sunt „inacceptabile”; reuniune UE–Golf luni",
           "date": "8 iulie",
-          "body": "Înaltul Reprezentant Kaja Kallas a calificat atacurile iraniene asupra Bahrainului și Kuwaitului drept „inacceptabile” și a afirmat că atacurile asupra navelor din apropierea Strâmtorii încalcă memorandumul și amenință reluarea aprovizionării cu energie. Kallas a anunțat că lunea viitoare miniștrii de externe ai UE și ai statelor din Golf se vor reuni pentru a susține implementarea acordului și libertatea de navigație în Strâmtoare și în Marea Roșie.",
+          "body": "Înalta Reprezentantă Kaja Kallas a calificat atacurile iraniene asupra Bahrainului și Kuwaitului drept „inacceptabile” și a avertizat că escaladarea „complică suplimentar” eforturile de a încheia războiul. Miniștrii de externe ai UE se întâlnesc luni, 13 iulie, cu omologii din Golf pentru libertatea de navigație prin Strâmtoarea Hormuz și Marea Roșie.",
           "sources": [
             {
-              "name": "Kaja Kallas (X)",
-              "url": "https://x.com/kajakallas/status/2074765944950333810"
+              "name": "EEAS",
+              "url": "https://www.eeas.europa.eu/eeas/iran-statement-spokesperson-latest-attacks-against-neighbouring-countries_en"
             },
             {
-              "name": "Gulf News",
-              "url": "https://gulfnews.com/world/mena/us-hits-iran-with-new-strikes-sanctions-over-commercial-shipping-attacks-1.500600494"
+              "name": "The Tribune",
+              "url": "https://www.tribuneindia.com/news/world/us-iran-military-strikes-further-complicate-talks-to-end-war-says-eus-kaja-kallas/"
+            }
+          ]
+        },
+        {
+          "title": "CCG, Qatar și EAU condamnă „agresiunea iraniană repetată”",
+          "date": "9 iulie",
+          "body": "Consiliul de Cooperare al Golfului, Qatar și Emiratele Arabe Unite au condamnat ferm atacurile iraniene repetate asupra Bahrainului și Kuwaitului.",
+          "sources": [
+            {
+              "name": "Al Arabiya",
+              "url": "https://www.alarabiya.net/arab-and-world/gulf/2026/07/09/"
+            },
+            {
+              "name": "Al-Khaleej",
+              "url": "https://www.alkhaleej.ae/2026-07-09/"
             }
           ]
         }
@@ -214,20 +241,49 @@ const DATA = {
     },
     {
       "id": "economic",
-      "title": "Economic — energie",
+      "title": "Mișcări economice și financiare",
       "items": [
         {
-          "title": "Țiței +6%, futures pe acțiuni în scădere după declarația Trump",
-          "date": "8 iulie",
-          "body": "Țițeiul american a urcat cu peste 6,5% spre ~75 USD/baril, iar Brent cu ~6,2% spre ~79 USD, cea mai amplă mișcare de la începutul lunii iunie; futures pe Dow Jones scădeau cu ~527 de puncte. Revenirea sancțiunilor pe exportul iranian lasă milioane de barili fără destinație clară — reversare bruscă față de nivelul Brent sub 71 USD consemnat anterior.",
+          "title": "Brent +~5% pe riscul Hormuz; șekelul se depreciază; bursa Tel Aviv în scădere",
+          "date": "8–9 iulie",
+          "body": "Brent a urcat cu ~5% la ~77,7 USD/baril pe temerea de perturbare a aprovizionării prin Strâmtoarea Hormuz; SUA au revocat waiverul pe exportul de petrol iranian (snapback pe 17 iulie). USD/ILS a urcat la ~3,04 (de la ~2,98 pe 4 iulie), șekelul cedând pe prima de risc de război. Bursa Tel Aviv în scădere: TA-125 −1%, TA-35 −0,7%, TA-90 −2%. Banca Israelului a cumpărat dolari în iunie.",
           "sources": [
-            {
-              "name": "NBC News",
-              "url": "https://www.nbcnews.com/business/business-news/oil-prices-surge-stocks-tumble-trump-iran-ceasefire-over-hormuz-rcna353446"
-            },
             {
               "name": "CNBC",
               "url": "https://www.cnbc.com/2026/07/08/oil-prices-brent-wti-iran-us-hormuz.html"
+            },
+            {
+              "name": "Investing.com (USD/ILS)",
+              "url": "https://il.investing.com/currencies/usd-ils"
+            },
+            {
+              "name": "TheMarker",
+              "url": "https://www.themarker.com/markets/2026-07-08/ty-article-live/0000019f-401f-d6c0-a9df-dd9f188f0000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "militar",
+      "title": "Mișcări militare strategice",
+      "items": [
+        {
+          "title": "Două valuri consecutive de lovituri SUA; Ben Gurion operațional",
+          "date": "9 iulie",
+          "body": "CENTCOM a executat două valuri consecutive de lovituri pe coasta iraniană (apărare aeriană, radare, depozite de rachete și drone, capacități navale). Israelul nu a fost lovit direct în acest schimb — Iranul a vizat baze americane din Golf, nu teritoriul israelian. Aeroportul Ben Gurion și spațiul aerian israelian rămân operaționale, fără instrucțiuni neobișnuite. Mandatul UNIFIL este confirmat prelungit până la 31 decembrie 2026, cu retragere eșalonată în 2027.",
+          "sources": [
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/07/09/g-s1-132670/us-iran-strikes"
+            },
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/ben-gurion-airport-set-to-reopen-as-israel-eases-flight-restrictions-after-ceasefire/"
+            },
+            {
+              "name": "UNIFIL",
+              "url": "https://unifil.unmissions.org/en/unifil-troop-contributing-countries"
             }
           ]
         }
@@ -235,66 +291,91 @@ const DATA = {
     },
     {
       "id": "gaza",
-      "title": "Gaza",
+      "title": "Gaza — Cisiordania",
       "items": [
         {
-          "title": "Cel puțin șapte palestinieni uciși în Gaza, între care un copil",
-          "date": "8 iulie",
-          "body": "Forțele israeliene au ucis cel puțin șapte palestinieni, între care un copil, și au rănit alte 20 de persoane, potrivit relatărilor din teren — incidente sub pragul de escaladare a armistițiului, pe fondul crizei regionale Iran–SUA.",
+          "title": "Hamas dizolvă organul de guvernare civilă din Gaza",
+          "date": "8–9 iulie",
+          "body": "Hamas a anunțat dizolvarea structurii sale de administrație civilă din Gaza, după circa 20 de ani, cedând către comitetul tehnocratic prevăzut de planul de pace. Anunțul este confirmat; execuția pe teren rămâne neconfirmată.",
           "sources": [
             {
-              "name": "Al Jazeera (liveblog 8 iul)",
-              "url": "https://www.aljazeera.com/news/liveblog/2026/7/8/iran-war-live-us-bombs-sirik-qeshm-bandar-abbas-over-hormuz-attacks"
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/latest/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "politica-interna",
+      "title": "Politică internă Israel",
+      "items": [
+        {
+          "title": "Noul șef Shin Bet; ciocniri haredi; calendarul dizolvării Knessetului",
+          "date": "8–9 iulie",
+          "body": "Noul șef al Shin Bet, David Zini, și-a explicat acceptarea funcției. Au avut loc ciocniri între protestatari haredi și militari lângă închisoarea Neve Tzedek. Consiliera juridică a Knessetului recomandă dizolvarea pe 17 iulie, cu alegeri pe 27 octombrie; presa israeliană discută o posibilă devansare la 20 octombrie (de verificat).",
+          "sources": [
+            {
+              "name": "Times of Israel (liveblog)",
+              "url": "https://www.timesofisrael.com/liveblog-july-8-2026/"
+            },
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/knesset-expected-to-dissolve-july-17-paving-way-for-october-27-election/"
             }
           ]
         }
       ]
     }
   ],
-  "vector": "Escaladare cinetică bilaterală pe axa Iran–SUA: lovituri americane peste noapte pe „80+ ținte” în sudul Iranului, urmate de represalii iraniene revendicate asupra Bahrainului și Kuwaitului, plus declarația Trump că armistițiul „s-a încheiat” și revocarea waiverului pe petrol (snapback 17 iulie). Armistițiul din 28–29 iunie se află sub cel mai mare stres de la semnare; reluarea negocierilor din 11 iulie devine incertă. Piețele au reacționat imediat (țiței +6%). Celelalte axe — Liban, Gaza, politica internă israeliană — rămân la stadiul consemnat dimineață.",
+  "vector": "Pe axa Iran–SUA–Golf: escaladare cinetică susținută — al doilea val de lovituri americane în două nopți, extinderea țintelor iraniene la Qatar și retorica „over” a președintelui Trump. Pe Gaza și Liban: dezescaladare tehnică marginală (dizolvarea guvernului Hamas, semnal privind o posibilă retragere IDF din Liban), sub umbra crizei din Golf. Israelul nu a fost lovit direct în schimbul de azi.",
   "delta": [
-    "Iran–SUA: reversare majoră față de dimineață — de la „hărțuire punctuală” la escaladare cinetică bilaterală; Trump declară armistițiul „încheiat”, negocierile „pierdere de timp”.",
-    "Iran a ripostat asupra Bahrainului și Kuwaitului („85 de instalații”, revendicat de Iran), cu sirene antiaeriene în ambele state; IRGC anunță represalii „mai dure în zilele următoare”.",
-    "SUA au revocat waiverul pe exportul de petrol iranian — snapback sancțiuni pe 17 iulie, aceeași zi cu dizolvarea Knessetului.",
-    "Piețe: țiței SUA +6,5% ~75 USD, Brent +6,2% ~79 USD, Dow futures −527 — față de Brent sub 71 USD consemnat anterior.",
-    "UE: Kallas califică atacurile iraniene drept „inacceptabile”; reuniune miniștri UE–Golf lunea viitoare pe libertatea de navigație în Strâmtoare și Marea Roșie."
+    "Iran–SUA: de la un val de lovituri (8 iul) la al doilea val consecutiv (9 iul), plus extinderea țintelor iraniene la Qatar.",
+    "A apărut primul bilanț iranian cumulat: 14 morți, 78 răniți (anterior neconfirmat).",
+    "UE (Kallas) a comunicat explicit („inacceptabil”) și a fixat reuniunea UE–Golf de luni, 13 iulie.",
+    "USD/ILS a urcat la ~3,04 (de la 2,98) — șekelul cedează pe riscul de război.",
+    "Israel–Liban: semnal privind o posibilă retragere IDF — deplasare retorică, nu operațională."
   ],
   "calendar": [
     {
-      "date": "8 iulie (seara/noaptea)",
-      "event": "Posibile noi represalii iraniene — IRGC a promis un răspuns „mai dur în zilele următoare”"
-    },
-    {
       "date": "9 iulie",
-      "event": "Înhumarea lui Khamenei la Mashhad (program funerar — BBC/AFP)"
+      "event": "Înhumarea lui Khamenei la Mashhad (program pre-anunțat)"
     },
     {
-      "date": "~11 iulie",
-      "event": "Reluarea negocierilor SUA–Iran — incertă după declarația Trump „over” (era o singură sursă)"
+      "date": "11 iulie",
+      "event": "Reluarea negocierilor SUA–Iran — incertă/probabil caducă după declarația „over”"
     },
     {
-      "date": "13 iulie (luni)",
-      "event": "Reuniune miniștri de externe UE–Golf pe libertatea de navigație (anunț Kallas)"
+      "date": "13 iulie",
+      "event": "Reuniune miniștri de externe UE cu omologi din Golf (Hormuz / Marea Roșie)"
     },
     {
       "date": "14–16 iulie",
-      "event": "Runda a 6-a de negocieri Israel–Liban, Roma (dată în discrepanță)"
+      "event": "Runda a 6-a de negocieri Israel–Liban, la Roma"
+    },
+    {
+      "date": "16–17 iulie",
+      "event": "Ultima zi de plen Knesset / dizolvare recomandată"
     },
     {
       "date": "17 iulie",
-      "event": "Snapback sancțiuni SUA pe petrolul iranian + dizolvarea programată a Knessetului"
+      "event": "Snapback al sancțiunilor SUA pe petrolul iranian"
     },
     {
       "date": "4 august",
-      "event": "Alegeri interne (primaries) Likud"
+      "event": "Primaries Likud"
+    },
+    {
+      "date": "31 decembrie 2026",
+      "event": "Expirarea mandatului UNIFIL (drawdown în 2027)"
     },
     {
       "date": "27 octombrie",
-      "event": "Alegeri legislative Israel — Knesset 26 (confirmat oficial)"
+      "event": "Alegeri legislative Israel (posibilă devansare la 20 octombrie — de verificat)"
     }
   ],
   "demnitari": "Nicio schimbare de demnitar confirmată în statele monitorizate în ultimele 24h. Funcția de Ghid Suprem al Iranului rămâne în tranziție după moartea lui Khamenei (28 februarie 2026).",
-  "sourceCount": 9
+  "sourceCount": 21
 };
 /* BRIEFING_DATA_END */
 render(DATA);

@@ -120,21 +120,18 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-07-16T15:05:00+03:00",
-  "runType": "Scan după-amiază",
-  "nextRun": "2026-07-16T20:00:00+03:00",
+  "generatedAt": "2026-07-16T20:10:00+03:00",
+  "runType": "Scan de seară",
+  "nextRun": "2026-07-17T07:30:00+03:00",
   "nivel2": [
     {
-      "title": "SUA extind campania: lovituri în zona Teheranului pentru prima dată în acest val + primul tanker dezactivat sub blocadă lângă Kharg",
-      "date": "16 iulie (peste noapte, ora IL)",
-      "flag": "verificat multi-sursă",
-      "body": "Statele Unite au intensificat campania împotriva Iranului: lovituri au atins pentru prima dată în acest val zona din jurul capitalei Teheran, iar CENTCOM a dezactivat primul tanker sub blocada navală reinstaurată — supertancherul sancționat „Belma”, gol, lovit cu rachete Hellfire după ce a ignorat repetat avertismentele că încalcă blocada, în timp ce se îndrepta spre insula Kharg (principalul terminal petrolier de export al Iranului), adânc în Golf, departe de strâmtoarea Hormuz — semnal de posibilă lărgire a scopului blocadei. Iranul a ripostat cu rachete și drone asupra unor baze din Iordania, Kuwait și Bahrain (interceptări majoritare; Kuwait raportează un muncitor rănit și „daune materiale”). Escaladare în cadrul campaniei în curs, nu eveniment programat; fereastra scanului este lărgită (ultima rulare consemnată: 13 iulie).",
+      "title": "Fără trigger nou de Nivel 2 în fereastra de seară (15:05–20:10)",
+      "date": "16 iulie, seara",
+      "flag": "verificat",
+      "body": "Niciun eveniment calificant nou în ultimele 6 ore. Triggerul zilei — extinderea loviturilor SUA în zona Teheranului (prima dată în acest val) și primul tanker dezactivat sub blocadă lângă insula Kharg — a fost raportat la scanul de la 15:05 și rămâne valabil. În a doua parte a zilei, confruntarea a rămas în plan declarativ: Iranul a avertizat că strâmtoarea Hormuz este o „linie roșie de netrecut”, fără val cinetic nou consemnat până la ora scanului.",
       "sources": [
-        { "name": "The Washington Post", "url": "https://www.washingtonpost.com/world/2026/07/15/iran-us-hormuz-strait-war-july-16-2026/d29665c2-80c8-11f1-8a16-393bd03340b0_story.html" },
-        { "name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-07-16/us-strikes-iranian-linked-oil-tanker-deep-within-persian-gulf" },
-        { "name": "NPR", "url": "https://www.npr.org/2026/07/15/nx-s1-5894582/us-iran-updates" },
-        { "name": "Euronews", "url": "https://www.euronews.com/2026/07/16/us-strikes-around-tehran-for-first-time-in-most-recent-wave-of-attacks-says-iranian-state-" },
-        { "name": "Al Jazeera (16 iul)", "url": "https://www.aljazeera.com/news/2026/7/16/us-strikes-iran-tanker-as-tehran-hits-kuwait-jordan-whats-the-latest" }
+        { "name": "CNN (liveblog 16 iul)", "url": "https://www.cnn.com/2026/07/16/world/live-news/iran-war-trump" },
+        { "name": "CNBC", "url": "https://www.cnbc.com/2026/07/16/iran-warns-of-hormuz-red-line-retaliation-to-trumps-strike-threats.html" }
       ]
     }
   ],
@@ -144,64 +141,33 @@ const DATA = {
       "title": "Iran — SUA — Hormuz — Golf",
       "items": [
         {
-          "title": "Blocada navală a intrat efectiv în vigoare (14 iul); primul tanker dezactivat lângă Kharg",
+          "title": "Iran: Hormuz — „linie roșie de netrecut”; amenințare cu lovirea întregii infrastructuri din Golf dacă SUA atacă infrastructura iraniană",
+          "date": "16 iulie",
+          "flag": "nou",
+          "body": "Iranul a declarat joi că strâmtoarea Hormuz este o „linie roșie inviolabilă”: „sub nicio formă nu vom permite Americii, ca țară extra-regională, să intervină în strâmtoarea Hormuz”. Purtătorul de cuvânt al armatei, gen. Mohammad Akraminia, a avertizat că, dacă Trump își pune în aplicare amenințarea de a lovi infrastructura iraniană, forțele armate vor lovi „toată infrastructura rămasă” din regiune, cu un răspuns „mai sever, mai larg și mai distructiv”. Presa citează și solicitarea Teheranului către houthi de a sta pregătiți să închidă ruta petrolieră din Marea Roșie în acel scenariu. Escaladarea de seară rămâne declarativă; Israelul rămâne neatins direct.",
+          "sources": [
+            { "name": "CNBC", "url": "https://www.cnbc.com/2026/07/16/iran-warns-of-hormuz-red-line-retaliation-to-trumps-strike-threats.html" },
+            { "name": "Al-Monitor", "url": "https://www.al-monitor.com/originals/2026/07/iran-warns-strait-hormuz-red-line-and-will-resist-until-end" }
+          ]
+        },
+        {
+          "title": "Iranul a eliberat o cetățeană americană — „gest de bunăvoință” anunțat de Trump; semnal de posibilă dezescaladare",
+          "date": "15–16 iulie (nesemnalat la scanul de la 15:05)",
+          "flag": "actualizare",
+          "body": "Iranul a permis plecarea din țară a Denei Karari, cetățeană irano-americană de 53 de ani din California, reținută administrativ (pașaport confiscat) din decembrie 2024. Trump a anunțat eliberarea pe Truth Social drept gest de bunăvoință; avocatul Jared Genser a confirmat identitatea și întoarcerea ei spre SUA. Analiștii citesc gestul, în paralel cu escaladarea militară, ca un posibil canal de dezescaladare ținut deschis de Teheran.",
+          "sources": [
+            { "name": "Axios", "url": "https://www.axios.com/2026/07/15/iran-releases-american-detainee-trump" },
+            { "name": "The Washington Post", "url": "https://www.washingtonpost.com/world/2026/07/16/iran-releases-us-citizen-goodwill-gesture-trump-says/" }
+          ]
+        },
+        {
+          "title": "Blocada navală în vigoare; primul tanker dezactivat lângă Kharg; lovituri în zona Teheranului",
           "date": "14–16 iulie",
-          "flag": "nou",
-          "body": "Blocada navală anunțată de Trump pe 13 iulie a intrat efectiv în vigoare marți 14 iulie (CENTCOM, 20:00 GMT), reinstaurând blocada porturilor iraniene. Pe 16 iulie a fost dezactivat primul tanker sub noul regim — supertancherul sancționat „Belma”, gol, îndreptat spre insula Kharg, lovit cu rachete Hellfire — operațiune adâncă în Golf care sugerează lărgirea scopului dincolo de strâmtoarea Hormuz. Iranul avertizează că strâmtoarea este „o linie roșie de netrecut”.",
+          "flag": "consemnat la 15:05",
+          "body": "Starea axei rămâne cea raportată la scanul de după-amiază: blocada navală SUA efectivă din 14 iulie, supertancherul „Belma” dezactivat lângă insula Kharg, lovituri pentru prima dată în zona Teheranului în acest val; riposta iraniană pe baze din Iordania, Kuwait și Bahrain, interceptată majoritar.",
           "sources": [
-            { "name": "OilPrice", "url": "https://oilprice.com/Latest-Energy-News/World-News/US-Strikes-Iran-Linked-Tanker-Near-Kharg-Island.html" },
-            { "name": "CNN (liveblog 16 iul)", "url": "https://www.cnn.com/2026/07/16/world/live-news/iran-war-trump" }
-          ]
-        },
-        {
-          "title": "Ripostă iraniană pe baze din Golf; Trump amenință cu extinderea la centrale electrice",
-          "date": "15–16 iulie",
-          "flag": "continuare",
-          "body": "Iranul a lansat zeci de rachete și drone asupra unor baze din Iordania, Kuwait și Bahrain, revendicând vizarea de sisteme antiaeriene, depozite de combustibil și radare; majoritatea au fost interceptate. Kuwaitul confirmă avarierea a trei centre de frontieră și a unei platforme petroliere offshore, cu un muncitor rănit. Amiralul Brad Cooper (CENTCOM) a confirmat lansările iraniene. Președintele Trump a declarat că înclină spre extinderea ofensivei, avertizând că Iranul „ar face bine să se comporte” și amenințând cu lovituri pe centrale electrice. Israelul rămâne neatins direct.",
-          "sources": [
-            { "name": "Euronews", "url": "https://www.euronews.com/2026/07/15/iran-launches-strikes-on-neighbours-as-us-resumes-blockade-and-trump-threatens-to-hit-powe" },
-            { "name": "Al Jazeera (15 iul)", "url": "https://www.aljazeera.com/news/2026/7/15/us-attacks-iran-as-irgc-claims-strikes-on-us-military-sites-in-gulf" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "israel-liban",
-      "title": "Israel — Liban (Roma)",
-      "items": [
-        {
-          "title": "Runda a 6-a de la Roma s-a încheiat cu acord pe structura retragerii din zonele-pilot, fără calendar exact",
-          "date": "15 iulie",
-          "flag": "nou",
-          "body": "Delegațiile israeliană și libaneză au încheiat miercuri, la ambasada SUA din Roma, a șasea rundă de negocieri mediate de SUA (prima de la acordul-cadru de la Washington din luna trecută), cu o înțelegere asupra structurii și liniilor directoare pentru retragerea forțelor israeliene din două zone-pilot din sudul Libanului. Un oficial american a descris sesiunea drept „productivă și pozitivă”. Nu a fost fixat un calendar exact al retragerii. Trecerea de la angajamentul general de „continuare a discuțiilor” (prima zi) la o structură concretă de retragere este cel mai clar semn că acordul-cadru se transformă într-un plan aplicabil. Obstacole nerezolvate: respingerea acordului de către Hezbollah și condiționarea de către Israel a retragerii complete de dezarmare.",
-          "sources": [
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/lebanon-talks-in-rome-wrap-up-without-specific-timeline-for-pledged-idf-withdrawals/" },
-            { "name": "US News", "url": "https://www.usnews.com/news/world/articles/2026-07-15/lebanon-israel-conclude-us-brokered-talks-on-pilot-zones-in-rome" },
-            { "name": "Al Jazeera", "url": "https://www.aljazeera.com/news/2026/7/15/lebanon-and-israel-end-sixth-round-of-us-brokered" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reactii",
-      "title": "Reacții oficiale și state cheie",
-      "items": [
-        {
-          "title": "Europa, răspuns dezbinat: Merz (DE) — Iran „amenințare majoră”; FR/UK cer reținere; UE — Hormuz trebuie redeschis",
-          "date": "15–16 iulie",
-          "body": "Răspunsul european rămâne dezbinat: majoritatea statelor au condamnat riposta iraniană, mulți au cerut pacea fără a lua partea, iar câțiva au condamnat SUA și Israelul. Cancelarul german Friedrich Merz descrie Iranul drept o amenințare majoră de securitate și subliniază interesul comun occidental de a împiedica Teheranul să obțină arma nucleară, alăturându-se însă apelurilor Franței și Marii Britanii la reținere. Poziția-cadru a UE (Kallas): strâmtoarea Hormuz trebuie redeschisă, libertatea de navigație respectată, fără taxe de tranzit — dar „nu este războiul Europei”, fără apetit de extindere a misiunii navale. Nu a fost izolat un comunicat primar nou datat 16 iulie la ora scanului.",
-          "sources": [
-            { "name": "Council on Foreign Relations", "url": "https://www.cfr.org/articles/europes-disjointed-response-to-the-u-s-israeli-war-with-iran" },
-            { "name": "Euronews", "url": "https://www.euronews.com/2026/07/15/iran-launches-strikes-on-neighbours-as-us-resumes-blockade-and-trump-threatens-to-hit-powe" }
-          ]
-        },
-        {
-          "title": "India interzice marinarilor săi tranzitul Hormuz; prețuri LNG spot Asia la maxim din martie",
-          "date": "15–16 iulie",
-          "body": "India a ordonat armatorilor să nu mai trimită marinari indieni în voiaje prin strâmtoarea Hormuz, după seria de atacuri asupra navelor comerciale — o măsură care evidențiază riscul pentru personalul care susține comerțul global. Prețurile spot ale gazului natural lichefiat (LNG) în Asia au urcat la cel mai înalt nivel din martie, pe fondul temerilor de o disrupție prelungită a unuia dintre cele mai aglomerate coridoare energetice.",
-          "sources": [
-            { "name": "Bloomberg", "url": "https://www.bloomberg.com/news/newsletters/2026-07-16/us-widens-iran-campaign-as-hormuz-fallout-grows" },
-            { "name": "The Washington Post", "url": "https://www.washingtonpost.com/world/2026/07/15/iran-us-hormuz-strait-war-july-16-2026/d29665c2-80c8-11f1-8a16-393bd03340b0_story.html" }
+            { "name": "Al Jazeera (16 iul)", "url": "https://www.aljazeera.com/news/2026/7/16/us-strikes-iran-tanker-as-tehran-hits-kuwait-jordan-whats-the-latest" },
+            { "name": "NPR", "url": "https://www.npr.org/2026/07/15/nx-s1-5894582/us-iran-updates" }
           ]
         }
       ]
@@ -211,63 +177,66 @@ const DATA = {
       "title": "Politică internă Israel",
       "items": [
         {
-          "title": "Likud: primaries amânate la 17 august; comisia a acordat 8 locuri rezervate lui Netanyahu, aprobarea comitetului central pending",
-          "date": "13–16 iulie",
-          "flag": "actualizare",
-          "body": "Comisia de constituție a Likud a aprobat modificările sistemului de primaries care acordă premierului Netanyahu autoritatea de a stabili 8 locuri rezervate pe lista de partid (3 în primele 10, 6 în primele 20), amânând totodată primaries până pe 17 august. Decizia urmează să primească aprobarea finală a comitetului central al partidului, raportată încă „pending” la 16 iulie — modificare de fond pentru Likud, care organiza tradițional primaries cu participarea celor peste 100.000 de membri înscriși.",
+          "title": "Likud: tribunalul din Lod a blocat prin ordonanță votul comitetului central pe locurile rezervate lui Netanyahu — vot amânat, dată nouă „în curând”",
+          "date": "16 iulie",
+          "flag": "nou (sursă locală)",
+          "body": "Cu câteva minute înainte de începerea votului comitetului central Likud pe compromisul celor 8 locuri rezervate lui Netanyahu, Tribunalul Districtual din Lod a emis o ordonanță de suspendare, în urma mai multor petiții (inclusiv Forumul Social Likud) care susțin că votul trebuie deschis tuturor membrilor partidului, nu doar celor ~4.500 de membri ai comitetului central. Netanyahu a instruit administrația partidului să nu țină votul azi și să fixeze o dată nouă pentru un vot repetat. Aprobarea finală a compromisului rămâne astfel suspendată; primaries rămân programate pentru 17 august.",
           "sources": [
-            { "name": "The Jerusalem Post", "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-902354" },
-            { "name": "i24NEWS", "url": "https://www.i24news.tv/en/news/israel-election-s-2026/artc-israeli-elections-likud-finalizes-primaries-rules-with-netanyahu-s-reserved-slots" }
+            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/court-orders-likud-to-postpone-vote-on-expanding-netanyahus-control-over-party-slate/" },
+            { "name": "N12/Mako", "url": "https://www.mako.co.il/news-politics/2026_q3/Article-4b65e3ca52a6f91026.htm" },
+            { "name": "Walla", "url": "https://news.walla.co.il/item/3853964" }
           ]
         },
         {
-          "title": "Knesset: ultima zi a mandatului; dezbatere pe reforma media; dizolvare recomandată pe 17 iulie",
+          "title": "Blitz legislativ final: legea media (53–48), legea de slăbire a procurorului general (61–51) și înghețarea arestărilor pentru refuzul încorporării (58–54) — adoptate în ultima zi a mandatului",
           "date": "16 iulie",
-          "body": "Knessetul a început să dezbată reforma audiovizualului într-un ultim efort legislativ înainte de dizolvare, în ceea ce este ultima zi a mandatului curent înainte de vacanța pre-electorală. Consilierul juridic al Knessetului, Sagit Afik, recomandă dizolvarea pe 17 iulie (101 zile înainte de alegeri, care trebuie ținute până cel târziu pe 27 octombrie).",
+          "flag": "nou (sursă locală)",
+          "body": "În ultima zi înainte de vacanța pre-electorală, coaliția a adoptat pachetul final: (1) reforma media a ministrului Karhi (53–48) — extinde controlul guvernamental asupra audiovizualului, elimină mecanisme de supraveghere, standarde jurnalistice minime și restricții de proprietate încrucișată; consiliera juridică a Knessetului semnalase „viciu” la aprobarea unor amendamente nedezbătute; (2) legea care slăbește autoritatea procurorului general (61–51) — opiniile AG devin recomandări pe care guvernul le poate respinge; (3) legea care îngheață arestările refuznicilor haredim la încorporare (58–54) — imunitate până la finalul lui ianuarie 2027; Netanyahu a intrat în plen, a ieșit după strigăte de „rușine” și a lipsit de la voturile finale; (4) adoptată și Legea fundamentală privind studiul Torei (o singură sursă izolată). Knessetul se dizolvă vineri.",
           "sources": [
-            { "name": "Times of Israel (liveblog 16 iul)", "url": "https://www.timesofisrael.com/liveblog-july-16-2026/" },
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/knesset-expected-to-dissolve-july-17-paving-way-for-october-27-election/" }
+            { "name": "Times of Israel (media)", "url": "https://www.timesofisrael.com/liveblog-july-16-2026/" },
+            { "name": "Times of Israel (AG)", "url": "https://www.timesofisrael.com/coalition-passes-law-gutting-attorney-generals-powers-removing-key-check-on-government/" },
+            { "name": "Ynet (refuznici)", "url": "https://www.ynet.co.il/news/article/rjb5nvqngx" },
+            { "name": "The Jerusalem Post", "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-902492" }
           ]
         }
       ]
     },
     {
-      "id": "gaza",
-      "title": "Gaza",
+      "id": "israel-liban",
+      "title": "Israel — Liban (Roma)",
       "items": [
         {
-          "title": "Cinci palestinieni uciși în lovituri israeliene; IDF a lovit patru depozite de armament Hamas",
-          "date": "16 iulie",
-          "flag": "sursă locală",
-          "body": "Lovituri israeliene au ucis cinci persoane în Fâșia Gaza, potrivit surselor medicale locale. IDF anunță că a lovit peste noapte patru depozite de armament ale Hamas, despre care afirmă că ar fi conținut puști Kalashnikov, RPG-uri, grenade, dispozitive explozive și alt echipament militar.",
+          "title": "Fără element nou de seară; starea rămâne acordul de la Roma pe structura retragerii (15 iul), fără calendar exact",
+          "date": "15–16 iulie",
+          "flag": "consemnat la 15:05",
+          "body": "Runda a 6-a de la Roma s-a încheiat miercuri cu înțelegere pe structura și liniile directoare ale retragerii IDF din cele două zone-pilot, fără calendar exact. Hezbollah continuă să respingă acordul; Israelul condiționează retragerea completă de dezarmare. Fără evoluții noi izolabile în fereastra de seară.",
           "sources": [
-            { "name": "Haaretz (liveblog 16 iul)", "url": "https://www.haaretz.com/israel-news/israel-security/2026-07-16/ty-article-live/0000019f-68b1-df91-a7df-ebb140aa0000" },
-            { "name": "Times of Israel (liveblog 16 iul)", "url": "https://www.timesofisrael.com/liveblog-july-16-2026/" }
+            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/lebanon-talks-in-rome-wrap-up-without-specific-timeline-for-pledged-idf-withdrawals/" }
           ]
         }
       ]
     }
   ],
-  "vector": "Fereastra scanului acoperă un interval lărgit (ultima rulare consemnată: 13 iulie), pe fondul unei escaladări susținute: blocada navală SUA a intrat efectiv în vigoare pe 14 iulie, iar pe 16 iulie campania s-a extins — lovituri în zona Teheranului pentru prima dată în acest val și primul tanker dezactivat adânc în Golf, lângă insula Kharg. Iranul a ripostat pe baze din Iordania, Kuwait și Bahrain, iar Trump amenință cu extinderea la centrale electrice. Pe canalul diplomatic, runda a 6-a Israel–Liban de la Roma s-a încheiat cu un acord pe structura retragerii din zonele-pilot, dar fără calendar. Pe plan intern, Likud a amânat primaries la 17 august (8 locuri rezervate lui Netanyahu), iar Knessetul se îndreaptă spre dizolvare pe 17 iulie. Israelul rămâne neatins direct.",
+  "vector": "Zi cu dublu registru. Militar: escaladarea de dimineață (lovituri în zona Teheranului, primul tanker dezactivat sub blocadă) nu a fost urmată de un val cinetic nou în a doua parte a zilei — confruntarea s-a mutat în plan declarativ (Hormuz „linie roșie de netrecut”, amenințarea lovirii întregii infrastructuri din Golf), iar eliberarea cetățenei americane Dena Karari este primul semnal de bunăvoință al Teheranului din acest episod. Politic intern: Knessetul și-a încheiat mandatul cu un blitz legislativ (legea media, slăbirea procurorului general, înghețarea arestărilor refuznicilor), iar votul comitetului central Likud pe locurile rezervate lui Netanyahu a fost blocat în extremis de tribunalul din Lod. Israelul rămâne neatins direct; dizolvarea Knessetului și snapback-ul petrolier american coincid vineri, 17 iulie.",
   "delta": [
-    "Iran–SUA: blocada navală a intrat EFECTIV în vigoare pe 14 iulie (CENTCOM); pe 16 iulie, primul tanker („Belma”) dezactivat lângă insula Kharg + lovituri în zona Teheranului pentru prima dată în acest val.",
-    "Israel–Liban (Roma): runda a 6-a s-a încheiat pe 15 iulie cu acord pe structura retragerii din cele două zone-pilot, calificat „productiv”, dar fără calendar exact — deblocare parțială a axei.",
-    "Likud: primaries AMÂNATE la 17 august (supersedează 28 iulie / 4 august); comisia a acordat 8 locuri rezervate lui Netanyahu, aprobarea comitetului central rămâne pending.",
-    "Economic: India a interzis marinarilor săi tranzitul Hormuz; prețuri LNG spot în Asia la maxim din martie.",
-    "Gaza (sursă locală): cinci morți în lovituri israeliene pe 16 iulie; IDF a lovit patru depozite de armament Hamas.",
-    "Reacții: Merz (DE) — Iran „amenințare majoră”; FR/UK cer reținere; poziția-cadru UE (Kallas) — Hormuz trebuie redeschis, fără comunicat primar nou datat 16 iulie."
+    "Likud: votul comitetului central pe compromisul celor 8 locuri rezervate BLOCAT prin ordonanță a Tribunalului Districtual Lod cu minute înainte de start; Netanyahu a dispus amânarea și fixarea unei date noi — închide întrebarea deschisă privind ziua votului (era programat azi).",
+    "Knesset: adoptate în ultima zi a mandatului legea media (53–48), legea de slăbire a procurorului general (61–51) și înghețarea arestărilor refuznicilor haredim (58–54, imunitate până în ianuarie 2027).",
+    "Iran–SUA: fără val cinetic nou în fereastra de seară; Iranul declară Hormuz „linie roșie de netrecut” și amenință cu lovirea infrastructurii regionale; houthii solicitați să stea pregătiți pe Marea Roșie.",
+    "Iran–SUA (dezescaladare): eliberarea cetățenei americane Dena Karari, anunțată de Trump ca „gest de bunăvoință” — nesemnalată la scanul de la 15:05.",
+    "Israel–Liban: fără element nou de seară față de acordul de la Roma."
   ],
   "calendar": [
-    { "date": "16 iulie", "event": "Ultima zi a mandatului Knesset; dezbatere pe reforma media; posibil vot comitet central Likud (de confirmat)" },
-    { "date": "17 iulie", "event": "Dizolvarea Knessetului recomandată + snapback sancțiuni SUA pe petrolul iranian (coincid)" },
+    { "date": "17 iulie", "event": "Dizolvarea Knessetului (așteptată; 101 zile înainte de alegeri) + snapback: expiră fereastra de lichidare OFAC pe petrolul iranian (General License X1, 12:01 EDT)" },
+    { "date": "17 iulie", "event": "Rugăciunea de vineri la Al-Aqsa — ultima zi a interdicției de 7 zile impuse marelui muftiu (sensibilitate de urmărit)" },
     { "date": "18 iulie", "event": "Consultări pe dosarul Iran în Oman, fără prezență fizică SUA (de confirmat)" },
+    { "date": "dată nouă, neanunțată", "event": "Vot repetat al comitetului central Likud pe locurile rezervate (după ordonanța din Lod)" },
     { "date": "28 iulie", "event": "Expirarea stării speciale a frontului intern israelian" },
     { "date": "17 august", "event": "Primaries Likud (amânate; supersedează datele anterioare)" },
     { "date": "~16 august", "event": "Expirarea ferestrei de 60 de zile a MOU SUA–Iran (de verificat data exactă)" },
     { "date": "27 octombrie", "event": "Alegeri legislative Israel, Knesset 26" }
   ],
   "demnitari": "Nicio schimbare confirmată de demnitar în funcție în statele monitorizate în fereastra scanului.",
-  "sourceCount": 18
+  "sourceCount": 15
 };
 /* BRIEFING_DATA_END */
 render(DATA);

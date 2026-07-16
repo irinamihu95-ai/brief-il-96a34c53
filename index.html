@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Briefing Israel — Monitorizare din surse deschise</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
   :root{
     --bg:#0f1420; --card:#171e2e; --card2:#1c2438; --text:#e8ecf4; --muted:#8fa0bd;
@@ -52,6 +53,11 @@
   .cal-date{min-width:105px; color:var(--gold); font-weight:650; font-size:.84rem}
   footer{margin-top:28px; padding-top:16px; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted)}
   #err{display:none; background:var(--card); border:1px solid var(--red); border-radius:10px; padding:14px; margin:20px 0}
+  #map{height:440px; border-radius:8px; border:1px solid var(--border)}
+  .map-legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:10px; font-size:.8rem; color:var(--muted)}
+  .map-legend span::before{content:"●"; margin-right:5px}
+  .lg-sua::before{color:#4f8cff} .lg-iran::before{color:#e05252} .lg-disp::before{color:#d4a94e}
+  .map-note{margin-top:6px; font-size:.75rem; color:var(--muted)}
 </style>
 </head>
 <body>
@@ -69,6 +75,17 @@
   <div id="err">Datele briefingului nu au putut fi încărcate. Reîncearcă mai târziu.</div>
   <div id="n2"></div>
   <div id="sections"></div>
+
+  <div class="block">
+    <h3>Harta evenimentelor cinetice — cumulativ (episodul din iulie)</h3>
+    <div id="map"></div>
+    <div class="map-legend">
+      <span class="lg-sua">Lovituri SUA / coaliție</span>
+      <span class="lg-iran">Lovituri / riposte Iran</span>
+      <span class="lg-disp">Atribuire disputată / neconfirmat independent</span>
+    </div>
+    <div class="map-note">Punctele mai vechi apar estompate; cele din ultimele 48h, pline. Pozițiile sunt aproximative (nivel de localitate/instalație), compilate exclusiv din presă publică. Click pe punct pentru dată, descriere și statut de verificare.</div>
+  </div>
 
   <div class="block"><h3>Vector tendință</h3><p id="vector" style="font-size:.93rem"></p></div>
   <div class="block"><h3>Elemente de variație — față de rularea anterioară</h3><ul class="delta" id="delta"></ul></div>
@@ -240,6 +257,67 @@ const DATA = {
 };
 /* BRIEFING_DATA_END */
 render(DATA);
+</script>
+
+<script>
+/* GEO_EVENTS_START — jurnal CUMULATIV de evenimente cinetice.
+   Rulările automate ADAUGĂ intrări noi la FINALUL listei (înainte de marcajul END);
+   NU rescriu și NU șterg intrările existente. Schema unei intrări:
+   { date:"AAAA-LL-ZZ", actor:"SUA"|"Iran"|"disputat", place:"Nume loc",
+     lat:0.0, lon:0.0, desc:"o frază factuală", status:"confirmat"|"revendicat, neconfirmat"|"disputat" } */
+const GEO_EVENTS = [
+  { "date": "2026-07-09", "actor": "SUA", "place": "Bushehr (perimetru)", "lat": 28.97, "lon": 50.84, "desc": "Al treilea val de lovituri SUA; explozii raportate lângă perimetrul centralei nucleare — risc neconfirmat de surse independente.", "status": "confirmat (proximitatea centralei: neconfirmat)" },
+  { "date": "2026-07-09", "actor": "SUA", "place": "Chabahar", "lat": 25.29, "lon": 60.64, "desc": "Al treilea val de lovituri SUA — port la Marea Arabiei.", "status": "confirmat" },
+  { "date": "2026-07-09", "actor": "SUA", "place": "Bandar Abbas", "lat": 27.18, "lon": 56.27, "desc": "Al treilea val de lovituri SUA — port principal și comandă navală iraniană.", "status": "confirmat" },
+  { "date": "2026-07-10", "actor": "Iran", "place": "Baza Azraq (Muwaffaq Salti), Iordania", "lat": 31.84, "lon": 36.78, "desc": "~10 rachete pe baza aeriană cu active SUA; extinderea teatrului spre Iordania.", "status": "confirmat (interceptări)" },
+  { "date": "2026-07-12", "actor": "Iran", "place": "Strâmtoarea Hormuz", "lat": 26.60, "lon": 56.50, "desc": "Navă-container lovită pe rută „neaprobată”; Iranul declară strâmtoarea închisă.", "status": "confirmat" },
+  { "date": "2026-07-12", "actor": "Iran", "place": "Al Udeid, Qatar", "lat": 25.12, "lon": 51.32, "desc": "Atac cu rachete/drone pe cea mai mare bază aeriană SUA din Golf; 3 răniți din resturi de interceptare.", "status": "confirmat" },
+  { "date": "2026-07-12", "actor": "Iran", "place": "Musandam, Oman", "lat": 26.18, "lon": 56.25, "desc": "Ținte în enclava Musandam în primul val coordonat pe 5 state din Golf + Iordania.", "status": "confirmat" },
+  { "date": "2026-07-12", "actor": "Iran", "place": "Duqm, Oman", "lat": 19.65, "lon": 57.70, "desc": "Ținte în zona portului Duqm, în același val coordonat.", "status": "confirmat" },
+  { "date": "2026-07-12", "actor": "SUA", "place": "Iran (multiple, ~140 ținte)", "lat": 30.50, "lon": 53.50, "desc": "Ripostă SUA cu ~140 de ținte pe teritoriul iranian (punct generic — localizări multiple, nereprezentate individual).", "status": "confirmat (localizare generică)" },
+  { "date": "2026-07-13", "actor": "SUA", "place": "Qeshm", "lat": 26.95, "lon": 56.27, "desc": "Al patrulea val SUA (noaptea 12→13): explozii pe insula de la gura strâmtorii Hormuz.", "status": "confirmat" },
+  { "date": "2026-07-13", "actor": "SUA", "place": "Jask", "lat": 25.64, "lon": 57.77, "desc": "Al patrulea val SUA; ofițer iranian de apărare antiaeriană navală ucis.", "status": "confirmat" },
+  { "date": "2026-07-13", "actor": "SUA", "place": "Sirik", "lat": 26.51, "lon": 57.10, "desc": "Al patrulea val SUA — localitate costieră Hormozgan.", "status": "confirmat" },
+  { "date": "2026-07-13", "actor": "Iran", "place": "Baza Prince Hassan, Iordania", "lat": 32.16, "lon": 37.15, "desc": "IRGC revendică lovituri cu rachete balistice pe baza cu active SUA.", "status": "revendicat, neconfirmat" },
+  { "date": "2026-07-13", "actor": "Iran", "place": "Baza Sheikh Isa, Bahrain", "lat": 25.92, "lon": 50.59, "desc": "IRGC revendică lovituri pe radar/comunicații.", "status": "revendicat, neconfirmat" },
+  { "date": "2026-07-13", "actor": "disputat", "place": "Aeroportul Sanaa, Yemen", "lat": 15.48, "lon": 44.22, "desc": "Lovituri pe pistă; guvernul yemenit recunoscut revendică (bloca o aeronavă iraniană), houthii acuză Arabia Saudită.", "status": "disputat" },
+  { "date": "2026-07-16", "actor": "SUA", "place": "Zona Teheran / Pakdasht / Parchin", "lat": 35.60, "lon": 51.55, "desc": "Prima extindere a loviturilor în zona capitalei în acest val (noaptea 15→16); apărarea antiaeriană activată.", "status": "confirmat" },
+  { "date": "2026-07-16", "actor": "SUA", "place": "Insula Kharg", "lat": 29.23, "lon": 50.32, "desc": "Primul tanker dezactivat sub blocadă: supertancherul sancționat „Belma”, gol, lovit cu rachete Hellfire lângă terminalul petrolier principal.", "status": "confirmat" },
+  { "date": "2026-07-16", "actor": "Iran", "place": "Kuwait (frontieră + platformă offshore)", "lat": 28.95, "lon": 48.60, "desc": "Ripostă cu rachete/drone: 1 muncitor rănit, daune la 3 centre de frontieră și o platformă offshore (poziție aproximativă).", "status": "confirmat" },
+  { "date": "2026-07-16", "actor": "Iran", "place": "Bahrain", "lat": 26.03, "lon": 50.55, "desc": "Ripostă cu rachete/drone; interceptări majoritare (poziție generică).", "status": "confirmat (interceptări)" },
+  { "date": "2026-07-16", "actor": "Iran", "place": "Iordania", "lat": 31.95, "lon": 36.60, "desc": "Baraj major pe bază aeriană recent extinsă; interceptări (poziție aproximativă).", "status": "confirmat (interceptări)" }
+];
+/* GEO_EVENTS_END */
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const map = L.map('map', {scrollWheelZoom:false});
+  L.tileLayer(dark
+    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    {attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:12}).addTo(map);
+  const colors = {SUA:'#4f8cff', Iran:'#e05252', disputat:'#d4a94e'};
+  const now = new Date(DATA.generatedAt || Date.now());
+  const pts = [];
+  GEO_EVENTS.forEach(e => {
+    const ageDays = (now - new Date(e.date)) / 86400000;
+    const recent = ageDays <= 2;
+    const m = L.circleMarker([e.lat, e.lon], {
+      radius: recent ? 9 : 6,
+      color: colors[e.actor] || '#8fa0bd',
+      fillColor: colors[e.actor] || '#8fa0bd',
+      fillOpacity: recent ? 0.85 : 0.35,
+      opacity: recent ? 1 : 0.5,
+      weight: recent ? 2 : 1
+    }).addTo(map);
+    m.bindPopup(`<b>${e.place}</b><br><small>${e.date} — ${e.actor === 'disputat' ? 'atribuire disputată' : e.actor}</small><br>${e.desc}<br><i>Statut: ${e.status}</i>`);
+    pts.push([e.lat, e.lon]);
+  });
+  if (pts.length) map.fitBounds(pts, {padding:[30,30]});
+})();
 </script>
 </body>
 </html>

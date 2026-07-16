@@ -137,8 +137,8 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-07-16T20:10:00+03:00",
-  "runType": "Scan de seară",
+  "generatedAt": "2026-07-16T21:05:00+03:00",
+  "runType": "Scan de seară (+actualizare 21:05)",
   "nextRun": "2026-07-17T07:30:00+03:00",
   "nivel2": [
     {
@@ -157,6 +157,16 @@ const DATA = {
       "id": "iran-sua-hormuz",
       "title": "Iran — SUA — Hormuz — Golf",
       "items": [
+        {
+          "title": "Spital din Ahvaz evacuat (211 pacienți) după ce ar fi fost lovit; autoritățile iraniene raportează 35 de morți și peste 300 de răniți cumulat",
+          "date": "16 iulie",
+          "flag": "nou (bilanț: filieră iraniană unică)",
+          "body": "Un spital din Ahvaz (Khuzestan, sud-vestul Iranului) a fost forțat să evacueze 211 pacienți după ce ar fi fost lovit în loviturile americane, potrivit relatărilor citate de Al Jazeera. Autoritățile iraniene raportează cumulat 35 de morți (între care două femei și un adolescent) și peste 300 de răniți în loviturile recente — cifre dintr-o singură filieră (iraniană), neconfirmate independent. Armata iraniană a revendicat joi lovituri pe baza Ali Al Salem (Kuwait — radar, Patriot, depozite de combustibil) și pe baza al-Azraq (Iordania — comunicații, depozite).",
+          "sources": [
+            { "name": "Al Jazeera (16 iul)", "url": "https://www.aljazeera.com/news/2026/7/16/us-launches-new-attacks-on-iran-as-tehran-targets-gulf-sites" },
+            { "name": "Al Jazeera (liveblog 16 iul)", "url": "https://www.aljazeera.com/news/liveblog/2026/7/16/iran-war-live-sirens-in-bahrain-kuwait-us-disables-iranian-oil-tanker" }
+          ]
+        },
         {
           "title": "Iran: Hormuz — „linie roșie de netrecut”; amenințare cu lovirea întregii infrastructuri din Golf dacă SUA atacă infrastructura iraniană",
           "date": "16 iulie",
@@ -236,6 +246,7 @@ const DATA = {
   ],
   "vector": "Zi cu dublu registru. Militar: escaladarea de dimineață (lovituri în zona Teheranului, primul tanker dezactivat sub blocadă) nu a fost urmată de un val cinetic nou în a doua parte a zilei — confruntarea s-a mutat în plan declarativ (Hormuz „linie roșie de netrecut”, amenințarea lovirii întregii infrastructuri din Golf), iar eliberarea cetățenei americane Dena Karari este primul semnal de bunăvoință al Teheranului din acest episod. Politic intern: Knessetul și-a încheiat mandatul cu un blitz legislativ (legea media, slăbirea procurorului general, înghețarea arestărilor refuznicilor), iar votul comitetului central Likud pe locurile rezervate lui Netanyahu a fost blocat în extremis de tribunalul din Lod. Israelul rămâne neatins direct; dizolvarea Knessetului și snapback-ul petrolier american coincid vineri, 17 iulie.",
   "delta": [
+    "Iran (21:05): spital din Ahvaz evacuat (211 pacienți) după ce ar fi fost lovit; bilanț iranian cumulat 35 morți/300+ răniți — filieră unică, neconfirmat independent; Iranul revendică lovituri pe Ali Al Salem (Kuwait) și al-Azraq (Iordania).",
     "Likud: votul comitetului central pe compromisul celor 8 locuri rezervate BLOCAT prin ordonanță a Tribunalului Districtual Lod cu minute înainte de start; Netanyahu a dispus amânarea și fixarea unei date noi — închide întrebarea deschisă privind ziua votului (era programat azi).",
     "Knesset: adoptate în ultima zi a mandatului legea media (53–48), legea de slăbire a procurorului general (61–51) și înghețarea arestărilor refuznicilor haredim (58–54, imunitate până în ianuarie 2027).",
     "Iran–SUA: fără val cinetic nou în fereastra de seară; Iranul declară Hormuz „linie roșie de netrecut” și amenință cu lovirea infrastructurii regionale; houthii solicitați să stea pregătiți pe Marea Roșie.",
@@ -285,7 +296,8 @@ const GEO_EVENTS = [
   { "date": "2026-07-16", "actor": "SUA", "place": "Insula Kharg", "lat": 29.23, "lon": 50.32, "desc": "Primul tanker dezactivat sub blocadă: supertancherul sancționat „Belma”, gol, lovit cu rachete Hellfire lângă terminalul petrolier principal.", "status": "confirmat" },
   { "date": "2026-07-16", "actor": "Iran", "place": "Kuwait (frontieră + platformă offshore)", "lat": 28.95, "lon": 48.60, "desc": "Ripostă cu rachete/drone: 1 muncitor rănit, daune la 3 centre de frontieră și o platformă offshore (poziție aproximativă).", "status": "confirmat" },
   { "date": "2026-07-16", "actor": "Iran", "place": "Bahrain", "lat": 26.03, "lon": 50.55, "desc": "Ripostă cu rachete/drone; interceptări majoritare (poziție generică).", "status": "confirmat (interceptări)" },
-  { "date": "2026-07-16", "actor": "Iran", "place": "Iordania", "lat": 31.95, "lon": 36.60, "desc": "Baraj major pe bază aeriană recent extinsă; interceptări (poziție aproximativă).", "status": "confirmat (interceptări)" }
+  { "date": "2026-07-16", "actor": "Iran", "place": "Iordania", "lat": 31.95, "lon": 36.60, "desc": "Baraj major pe bază aeriană recent extinsă; interceptări (poziție aproximativă).", "status": "confirmat (interceptări)" },
+  { "date": "2026-07-16", "actor": "SUA", "place": "Ahvaz (spital evacuat)", "lat": 31.32, "lon": 48.67, "desc": "Spital forțat să evacueze 211 pacienți după ce ar fi fost lovit; primul punct raportat în Khuzestan în acest episod.", "status": "raportat de filieră iraniană, neconfirmat independent" }
 ];
 /* GEO_EVENTS_END */
 </script>

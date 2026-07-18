@@ -58,6 +58,15 @@
   .map-legend span::before{content:"●"; margin-right:5px}
   .lg-sua::before{color:#4f8cff} .lg-iran::before{color:#e05252} .lg-disp::before{color:#d4a94e}
   .map-note{margin-top:6px; font-size:.75rem; color:var(--muted)}
+  .map-ctrl{display:flex; align-items:center; gap:12px; margin-top:12px; flex-wrap:wrap}
+  .map-ctrl input[type=range]{flex:1; min-width:180px; accent-color:var(--accent)}
+  .map-ctrl button{background:var(--card2); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:4px 14px; cursor:pointer; font-size:.85rem}
+  .map-ctrl button:hover{border-color:var(--accent)}
+  #tl-label{font-size:.82rem; color:var(--gold); font-weight:600; min-width:150px}
+  .map-toggle{display:flex; align-items:center; gap:6px; font-size:.82rem; color:var(--muted); cursor:pointer; user-select:none}
+  .map-toggle input{accent-color:var(--green)}
+  .lg-en::before{color:#4ec98a; content:"◆"; margin-right:5px}
+  .en-ico{color:#4ec98a; font-size:15px; line-height:16px; text-align:center; text-shadow:0 0 3px rgba(0,0,0,.5)}
 </style>
 </head>
 <body>
@@ -79,12 +88,18 @@
   <div class="block">
     <h3>Harta evenimentelor cinetice — cumulativ (episodul din iulie)</h3>
     <div id="map"></div>
+    <div class="map-ctrl">
+      <button id="tl-play" title="Redă cronologia zi cu zi">▶ Redă</button>
+      <input type="range" id="tl-slider" min="0" max="0" value="0" step="1">
+      <span id="tl-label">…</span>
+    </div>
     <div class="map-legend">
       <span class="lg-sua">Lovituri SUA / coaliție</span>
       <span class="lg-iran">Lovituri / riposte Iran</span>
       <span class="lg-disp">Atribuire disputată / neconfirmat independent</span>
+      <label class="map-toggle"><input type="checkbox" id="en-toggle"><span class="lg-en"></span>Infrastructură energetică (strat de context)</label>
     </div>
-    <div class="map-note">Punctele mai vechi apar estompate; cele din ultimele 48h, pline. Pozițiile sunt aproximative (nivel de localitate/instalație), compilate exclusiv din presă publică. Click pe punct pentru dată, descriere și statut de verificare.</div>
+    <div class="map-note">Sliderul derulează episodul zi cu zi (cumulativ până la data selectată; evenimentele din fereastra de 48h apar pline, restul estompate). Pozițiile sunt aproximative (nivel de localitate/instalație), compilate exclusiv din presă publică. Click pe punct pentru dată, descriere și statut de verificare. Stratul energetic marchează instalații-cheie publice din teatrul Golf/Mediterana de Est — context static, nu evenimente.</div>
   </div>
 
   <div class="block"><h3>Vector tendință</h3><p id="vector" style="font-size:.93rem"></p></div>
@@ -273,6 +288,23 @@ const GEO_EVENTS = [
 /* GEO_EVENTS_END */
 </script>
 
+<script>
+/* ENERGY_SITES_START — strat STATIC de context: instalații energetice publice-notorii.
+   NU se actualizează la rulările automate; se editează doar la cererea utilizatoarei. */
+const ENERGY_SITES = [
+  { "name": "Insula Kharg", "lat": 29.23, "lon": 50.32, "desc": "Principalul terminal de export petrolier al Iranului (~90% din exporturile de țiței)." },
+  { "name": "Terminalul Jask", "lat": 25.66, "lon": 57.77, "desc": "Capătul conductei Goreh–Jask — ruta iraniană de export care ocolește strâmtoarea Hormuz." },
+  { "name": "Bandar Abbas", "lat": 27.15, "lon": 56.21, "desc": "Port comercial major + rafinărie; principala comandă navală iraniană la Hormuz." },
+  { "name": "Assaluyeh / South Pars", "lat": 27.47, "lon": 52.61, "desc": "Principalul hub gazier iranian — câmpul South Pars, împărțit cu Qatarul (North Field)." },
+  { "name": "Strâmtoarea Hormuz", "lat": 26.57, "lon": 56.25, "desc": "Punct de sufocare global: în mod obișnuit ~20% din petrolul și gazul mondial tranzitează pe aici." },
+  { "name": "Ras Tanura", "lat": 26.64, "lon": 50.16, "desc": "Cel mai mare terminal de export petrolier saudit (Saudi Aramco)." },
+  { "name": "Ras Laffan", "lat": 25.90, "lon": 51.53, "desc": "Hub-ul LNG al Qatarului (North Field) — printre cele mai mari exporturi de gaz lichefiat din lume." },
+  { "name": "Fujairah", "lat": 25.17, "lon": 56.35, "desc": "Hub de bunkeraj și export al EAU, în afara strâmtorii — capătul conductei Habshan–Fujairah." },
+  { "name": "Duqm", "lat": 19.67, "lon": 57.71, "desc": "Port și rafinărie în Oman, pe Marea Arabiei — alternativă logistică în afara Golfului." },
+  { "name": "Platforma Leviathan (aprox.)", "lat": 32.61, "lon": 34.82, "desc": "Principala platformă gazieră a Israelului (export spre Egipt și Iordania); poziție aproximativă." }
+];
+/* ENERGY_SITES_END */
+</script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function(){
@@ -283,23 +315,64 @@ const GEO_EVENTS = [
     : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
     {attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:12}).addTo(map);
   const colors = {SUA:'#4f8cff', Iran:'#e05252', disputat:'#d4a94e'};
-  const now = new Date(DATA.generatedAt || Date.now());
-  const pts = [];
-  GEO_EVENTS.forEach(e => {
-    const ageDays = (now - new Date(e.date)) / 86400000;
-    const recent = ageDays <= 2;
-    const m = L.circleMarker([e.lat, e.lon], {
-      radius: recent ? 9 : 6,
-      color: colors[e.actor] || '#8fa0bd',
-      fillColor: colors[e.actor] || '#8fa0bd',
-      fillOpacity: recent ? 0.85 : 0.35,
-      opacity: recent ? 1 : 0.5,
-      weight: recent ? 2 : 1
-    }).addTo(map);
-    m.bindPopup(`<b>${e.place}</b><br><small>${e.date} — ${e.actor === 'disputat' ? 'atribuire disputată' : e.actor}</small><br>${e.desc}<br><i>Statut: ${e.status}</i>`);
-    pts.push([e.lat, e.lon]);
+
+  /* --- Strat energetic (context static, comutabil) --- */
+  const energyLayer = L.layerGroup();
+  ENERGY_SITES.forEach(s => {
+    L.marker([s.lat, s.lon], {icon: L.divIcon({className:'', html:'<div class="en-ico">◆</div>', iconSize:[16,16], iconAnchor:[8,8]})})
+      .bindPopup(`<b>◆ ${s.name}</b><br><small>Infrastructură energetică — context</small><br>${s.desc}`)
+      .addTo(energyLayer);
   });
+  document.getElementById('en-toggle').addEventListener('change', ev => {
+    ev.target.checked ? energyLayer.addTo(map) : map.removeLayer(energyLayer);
+  });
+
+  /* --- Evenimente cinetice + cronologie --- */
+  const markers = GEO_EVENTS.map(e => {
+    const m = L.circleMarker([e.lat, e.lon], {radius:6, color:colors[e.actor]||'#8fa0bd', fillColor:colors[e.actor]||'#8fa0bd'});
+    m.bindPopup(`<b>${e.place}</b><br><small>${e.date} — ${e.actor === 'disputat' ? 'atribuire disputată' : e.actor}</small><br>${e.desc}<br><i>Statut: ${e.status}</i>`);
+    return {e, m, day: Math.round(new Date(e.date).getTime()/86400000)};
+  });
+  const pts = GEO_EVENTS.map(e=>[e.lat,e.lon]);
   if (pts.length) map.fitBounds(pts, {padding:[30,30]});
+
+  const day0 = Math.min(...markers.map(x=>x.day));
+  const dayN = Math.max(...markers.map(x=>x.day));
+  const slider = document.getElementById('tl-slider');
+  const label  = document.getElementById('tl-label');
+  const play   = document.getElementById('tl-play');
+  slider.max = dayN - day0;
+  slider.value = slider.max;
+  const fmtD = t => new Intl.DateTimeFormat('ro-RO',{day:'numeric',month:'long'}).format(new Date(t*86400000));
+
+  function update(){
+    const cur = day0 + Number(slider.value);
+    let shown = 0;
+    markers.forEach(({e, m, day}) => {
+      if (day > cur) { if (map.hasLayer(m)) map.removeLayer(m); return; }
+      shown++;
+      const recent = (cur - day) <= 2;
+      m.setStyle({radius: recent?9:6, fillOpacity: recent?0.85:0.35, opacity: recent?1:0.5, weight: recent?2:1});
+      if (!map.hasLayer(m)) m.addTo(map);
+    });
+    const atEnd = Number(slider.value) === Number(slider.max);
+    label.textContent = `${fmtD(day0)} → ${fmtD(cur)} · ${shown} evenimente` + (atEnd ? ' (tot episodul)' : '');
+  }
+  slider.addEventListener('input', update);
+
+  let timer = null;
+  play.addEventListener('click', () => {
+    if (timer) { clearInterval(timer); timer = null; play.textContent = '▶ Redă'; return; }
+    if (Number(slider.value) === Number(slider.max)) slider.value = 0;
+    play.textContent = '⏸ Pauză';
+    update();
+    timer = setInterval(() => {
+      if (Number(slider.value) >= Number(slider.max)) { clearInterval(timer); timer = null; play.textContent = '▶ Redă'; return; }
+      slider.value = Number(slider.value) + 1;
+      update();
+    }, 800);
+  });
+  update();
 })();
 </script>
 </body>

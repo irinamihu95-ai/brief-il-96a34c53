@@ -53,7 +53,22 @@
   .cal-date{min-width:105px; color:var(--gold); font-weight:650; font-size:.84rem}
   footer{margin-top:28px; padding-top:16px; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted)}
   #err{display:none; background:var(--card); border:1px solid var(--red); border-radius:10px; padding:14px; margin:20px 0}
-  #map{height:440px; border-radius:8px; border:1px solid var(--border)}
+  #map{height:500px; border-radius:10px; border:1px solid var(--border); background:var(--bg)}
+  .leaflet-container{font-family:inherit; background:var(--bg)}
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip{background:var(--card2); color:var(--text); border:1px solid var(--border); box-shadow:0 6px 22px rgba(0,0,0,.45)}
+  .leaflet-popup-content{margin:12px 14px; font-size:.84rem; line-height:1.55}
+  .leaflet-popup-content a{color:var(--accent)}
+  .leaflet-popup-close-button{color:var(--muted) !important}
+  .leaflet-tooltip{background:var(--card2); color:var(--text); border:1px solid var(--border); box-shadow:none; font-size:.75rem; padding:2px 8px; border-radius:6px}
+  .leaflet-tooltip-top:before{border-top-color:var(--border)}
+  .leaflet-bar a{background:var(--card2); color:var(--text); border-color:var(--border)}
+  .leaflet-control-scale-line{background:rgba(23,30,46,.7); color:var(--text); border-color:var(--muted)}
+  .map-chip{background:var(--card); border:1px solid var(--border); border-radius:8px; padding:6px 10px; font-size:.7rem; line-height:1.45; color:var(--muted); box-shadow:0 2px 10px rgba(0,0,0,.3)}
+  .map-chip b{color:var(--text); font-size:.72rem; letter-spacing:.5px}
+  .map-chip .lrow{display:flex; align-items:center; gap:6px; margin-top:2px}
+  .map-chip .dot{width:9px; height:9px; border-radius:50%; border:1.5px solid #fff; flex:none}
+  .map-chip .ring{width:11px; height:11px; border-radius:50%; border:1.5px dashed var(--muted); flex:none}
+  .ev-glow{filter:drop-shadow(0 0 5px rgba(232,236,244,.55))}
   .map-legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:10px; font-size:.8rem; color:var(--muted)}
   .map-legend span::before{content:"●"; margin-right:5px}
   .lg-sua::before{color:#4f8cff} .lg-iran::before{color:#e05252} .lg-disp::before{color:#d4a94e}
@@ -72,10 +87,12 @@
   .map-filters label:has(input:not(:checked)){opacity:.45}
   .map-filters input{accent-color:var(--accent)}
   .cat-chip{display:inline-block; background:var(--card2); border:1px solid var(--border); border-radius:4px; padding:0 6px; font-size:.7rem; margin-right:4px; color:var(--muted)}
-  #intensity{display:flex; align-items:flex-end; gap:3px; height:52px; margin-top:12px; padding:0 2px}
-  #intensity .ibar{flex:1; background:var(--accent); border-radius:2px 2px 0 0; min-height:2px; cursor:pointer; opacity:.85; position:relative}
+  #intensity{display:flex; align-items:flex-end; gap:3px; height:56px; margin-top:12px; padding:0 2px}
+  #intensity .ibar{flex:1; display:flex; flex-direction:column-reverse; min-height:2px; cursor:pointer; opacity:.95; position:relative; border-radius:2px 2px 0 0; overflow:visible}
+  #intensity .ibar .iseg{width:100%; flex:none}
+  #intensity .ibar .iseg:last-child{border-radius:2px 2px 0 0}
   #intensity .ibar.future{opacity:.18}
-  #intensity .ibar.today{outline:2px solid var(--gold)}
+  #intensity .ibar.today{outline:2px solid var(--gold); outline-offset:1px}
   #intensity .ibar:hover::after{content:attr(data-tip); position:absolute; bottom:calc(100% + 4px); left:50%; transform:translateX(-50%); background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:2px 8px; font-size:.7rem; white-space:nowrap; z-index:1000; color:var(--text)}
   .ind-row{display:flex; gap:14px; padding:6px 0; border-bottom:1px dashed var(--border); font-size:.88rem; align-items:baseline}
   .ind-row:last-child{border-bottom:none}
@@ -363,11 +380,34 @@ const INDICATORS = [
 <script>
 (function(){
   const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const map = L.map('map', {scrollWheelZoom:false});
-  L.tileLayer(dark
-    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+  const map = L.map('map', {scrollWheelZoom:false, zoomControl:true});
+  /* fundal fără etichete + strat separat de denumiri, sub marcatori — aspect cartografic curat */
+  const lblPane = map.createPane('labels');
+  lblPane.style.zIndex = 350; lblPane.style.pointerEvents = 'none';
+  L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark?'dark_nolabels':'light_nolabels'}/{z}/{x}/{y}{r}.png`,
     {attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:12}).addTo(map);
+  L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark?'dark_only_labels':'light_only_labels'}/{z}/{x}/{y}{r}.png`,
+    {pane:'labels', maxZoom:12}).addTo(map);
+  L.control.scale({imperial:false, position:'bottomright'}).addTo(map);
+  /* timbru de generare + mini-legendă, pe hartă */
+  const stamp = L.control({position:'topright'});
+  stamp.onAdd = () => {
+    const d = L.DomUtil.create('div','map-chip');
+    const t = new Intl.DateTimeFormat('ro-RO',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Jerusalem'}).format(new Date(DATA.generatedAt));
+    d.innerHTML = `<b>MONITORIZARE OSINT</b><br>Generat: ${t} (IL)`;
+    return d;
+  };
+  stamp.addTo(map);
+  const mapLegend = L.control({position:'bottomleft'});
+  mapLegend.onAdd = () => {
+    const d = L.DomUtil.create('div','map-chip');
+    d.innerHTML = `<div class="lrow"><span class="dot" style="background:#4f8cff"></span>SUA / coaliție</div>
+      <div class="lrow"><span class="dot" style="background:#e05252"></span>Iran</div>
+      <div class="lrow"><span class="dot" style="background:#d4a94e"></span>disputat</div>
+      <div class="lrow"><span class="ring"></span>localizare generică</div>`;
+    return d;
+  };
+  mapLegend.addTo(map);
   const colors = {SUA:'#4f8cff', Iran:'#e05252', disputat:'#d4a94e'};
 
   /* --- Strat energetic (context static, comutabil) --- */
@@ -383,16 +423,25 @@ const INDICATORS = [
 
   /* --- Evenimente cinetice + cronologie + filtre de categorie --- */
   const catNames = {militar:'bază/instalație militară', energie:'infrastructură energetică/nucleară', maritim:'nave/navigație', civil:'zone civile/infrastructură civilă'};
+  const seen = {};   /* offset radial mic pentru puncte cu coordonate identice (ex. Sheikh Isa 13 + 17 iul) */
   const markers = GEO_EVENTS.map(e => {
     const cats = e.cats && e.cats.length ? e.cats : ['militar'];
-    const m = L.circleMarker([e.lat, e.lon], {radius:6, color:colors[e.actor]||'#8fa0bd', fillColor:colors[e.actor]||'#8fa0bd'});
-    const chips = cats.map(c=>`<span class="cat-chip">${catNames[c]||c}</span>`).join('');
+    const generic = /punct generic|localizare generică|poziție generică/i.test((e.desc||'') + ' ' + (e.status||''));
+    const k = e.lat.toFixed(2) + ',' + e.lon.toFixed(2);
+    const n = seen[k] = (seen[k] || 0) + 1;
+    const lat = n > 1 ? e.lat + 0.05*Math.cos(n*2.4) : e.lat;
+    const lon = n > 1 ? e.lon + 0.05*Math.sin(n*2.4) : e.lon;
+    const c = colors[e.actor] || '#8fa0bd';
+    const m = generic
+      ? L.circleMarker([lat, lon], {radius:14, color:c, fillColor:c, dashArray:'4 4', weight:1.5, fillOpacity:0.10})
+      : L.circleMarker([lat, lon], {radius:6, color:'#ffffff', fillColor:c, weight:1.5});
+    const chips = cats.map(cc=>`<span class="cat-chip">${catNames[cc]||cc}</span>`).join('');
     const srcs = (e.src||[]).map(s => s.url
       ? `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`
       : `<span style="opacity:.75">${s.name}</span>`).join(' · ');
-    m.bindPopup(`<b>${e.place}</b><br><small>${e.date} — ${e.actor === 'disputat' ? 'atribuire disputată' : e.actor}</small><br>${chips}<br>${e.desc}<br><i>Statut: ${e.status}</i>${srcs?`<br><small>Sursă: ${srcs}</small>`:''}`);
+    m.bindPopup(`<b>${e.place}</b><br><small>${e.date} — ${e.actor === 'disputat' ? 'atribuire disputată' : e.actor}${generic?' · localizare generică':''}</small><br>${chips}<br>${e.desc}<br><i>Statut: ${e.status}</i>${srcs?`<br><small>Sursă: ${srcs}</small>`:''}`);
     m.bindTooltip(`${e.place} · ${e.date.slice(8)}.${e.date.slice(5,7)}`, {direction:'top', offset:[0,-6]});
-    return {e, m, cats, day: Math.round(new Date(e.date).getTime()/86400000)};
+    return {e, m, cats, generic, day: Math.round(new Date(e.date).getTime()/86400000)};
   });
   const pts = GEO_EVENTS.map(e=>[e.lat,e.lon]);
   if (pts.length) map.fitBounds(pts, {padding:[30,30]});
@@ -409,17 +458,24 @@ const INDICATORS = [
   slider.value = slider.max;
   const fmtD = t => new Intl.DateTimeFormat('ro-RO',{day:'numeric',month:'long'}).format(new Date(t*86400000));
 
-  /* Grafic de intensitate: evenimente/zi (după filtrele active), click pe bară = salt la zi */
+  /* Grafic de intensitate stratificat pe actori (după filtrele active), click pe bară = salt la zi */
   const intEl = document.getElementById('intensity');
   function drawIntensity(cur, act){
-    const counts = [];
-    for (let d = day0; d <= dayN; d++)
-      counts.push(markers.filter(x => x.day === d && x.cats.some(c => act.has(c))).length);
-    const mx = Math.max(1, ...counts);
-    intEl.innerHTML = counts.map((n, i) => {
-      const d = day0 + i;
-      const cls = ['ibar', d > cur ? 'future' : '', d === cur ? 'today' : ''].filter(Boolean).join(' ');
-      return `<div class="${cls}" data-day="${i}" data-tip="${fmtD(d)}: ${n} evenimente" style="height:${Math.round(n/mx*100)}%"></div>`;
+    const days = [];
+    for (let d = day0; d <= dayN; d++){
+      const evs = markers.filter(x => x.day === d && x.cats.some(c => act.has(c)));
+      days.push({d, SUA: evs.filter(x=>x.e.actor==='SUA').length,
+                    Iran: evs.filter(x=>x.e.actor==='Iran').length,
+                    disputat: evs.filter(x=>x.e.actor==='disputat').length});
+    }
+    const mx = Math.max(1, ...days.map(x => x.SUA + x.Iran + x.disputat));
+    intEl.innerHTML = days.map((x, i) => {
+      const tot = x.SUA + x.Iran + x.disputat;
+      const cls = ['ibar', x.d > cur ? 'future' : '', x.d === cur ? 'today' : ''].filter(Boolean).join(' ');
+      const segs = ['SUA','Iran','disputat'].filter(a=>x[a])
+        .map(a => `<span class="iseg" style="height:${Math.round(x[a]/mx*100)}%;background:${colors[a]}"></span>`).join('');
+      const tip = `${fmtD(x.d)}: ${tot} ev.` + (tot?` (SUA ${x.SUA} · Iran ${x.Iran}${x.disputat?` · disp. ${x.disputat}`:''})`:'');
+      return `<div class="${cls}" data-day="${i}" data-tip="${tip}">${segs}</div>`;
     }).join('');
   }
   intEl.addEventListener('click', ev => {
@@ -431,13 +487,18 @@ const INDICATORS = [
     const cur = day0 + Number(slider.value);
     const act = activeCats();
     let shown = 0;
-    markers.forEach(({e, m, cats, day}) => {
+    markers.forEach(({e, m, cats, generic, day}) => {
       const catOk = cats.some(c => act.has(c));
       if (day > cur || !catOk) { if (map.hasLayer(m)) map.removeLayer(m); return; }
       shown++;
       const recent = (cur - day) <= 2;
-      m.setStyle({radius: recent?9:6, fillOpacity: recent?0.85:0.35, opacity: recent?1:0.5, weight: recent?2:1});
+      if (generic)
+        m.setStyle({radius: recent?16:13, fillOpacity: recent?0.16:0.06, opacity: recent?0.9:0.4, weight: recent?2:1.2});
+      else
+        m.setStyle({radius: recent?8:5.5, fillOpacity: recent?0.95:0.4, opacity: recent?1:0.5, weight: recent?2:1.2});
       if (!map.hasLayer(m)) m.addTo(map);
+      const el = m.getElement && m.getElement();
+      if (el) el.classList.toggle('ev-glow', recent && !generic);
     });
     const atEnd = Number(slider.value) === Number(slider.max);
     const filtered = act.size < catBoxes.length;

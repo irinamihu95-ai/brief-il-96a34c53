@@ -67,6 +67,11 @@
   .map-toggle input{accent-color:var(--green)}
   .lg-en::before{color:#4ec98a; content:"◆"; margin-right:5px}
   .en-ico{color:#4ec98a; font-size:15px; line-height:16px; text-align:center; text-shadow:0 0 3px rgba(0,0,0,.5)}
+  .map-filters{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+  .map-filters label{display:flex; align-items:center; gap:5px; font-size:.8rem; color:var(--text); background:var(--card2); border:1px solid var(--border); border-radius:16px; padding:3px 12px; cursor:pointer; user-select:none}
+  .map-filters label:has(input:not(:checked)){opacity:.45}
+  .map-filters input{accent-color:var(--accent)}
+  .cat-chip{display:inline-block; background:var(--card2); border:1px solid var(--border); border-radius:4px; padding:0 6px; font-size:.7rem; margin-right:4px; color:var(--muted)}
 </style>
 </head>
 <body>
@@ -93,13 +98,19 @@
       <input type="range" id="tl-slider" min="0" max="0" value="0" step="1">
       <span id="tl-label">…</span>
     </div>
+    <div class="map-filters" id="cat-filters">
+      <label><input type="checkbox" data-cat="militar" checked>Baze / instalații militare</label>
+      <label><input type="checkbox" data-cat="energie" checked>Infrastructură energetică / nucleară</label>
+      <label><input type="checkbox" data-cat="maritim" checked>Nave / navigație</label>
+      <label><input type="checkbox" data-cat="civil" checked>Zone civile / infrastructură civilă</label>
+    </div>
     <div class="map-legend">
       <span class="lg-sua">Lovituri SUA / coaliție</span>
       <span class="lg-iran">Lovituri / riposte Iran</span>
       <span class="lg-disp">Atribuire disputată / neconfirmat independent</span>
       <label class="map-toggle"><input type="checkbox" id="en-toggle"><span class="lg-en"></span>Infrastructură energetică (strat de context)</label>
     </div>
-    <div class="map-note">Sliderul derulează episodul zi cu zi (cumulativ până la data selectată; evenimentele din fereastra de 48h apar pline, restul estompate). Pozițiile sunt aproximative (nivel de localitate/instalație), compilate exclusiv din presă publică. Click pe punct pentru dată, descriere și statut de verificare. Stratul energetic marchează instalații-cheie publice din teatrul Golf/Mediterana de Est — context static, nu evenimente.</div>
+    <div class="map-note">Sliderul derulează episodul zi cu zi (cumulativ până la data selectată; evenimentele din fereastra de 48h apar pline, restul estompate). Filtrele de categorie se combină cu sliderul — de ex. doar „infrastructură energetică" + redare arată cronologia loviturilor energetice. Un eveniment poate avea mai multe categorii (tancherul de la Kharg e și naval, și energetic). Pozițiile sunt aproximative (nivel de localitate/instalație), compilate exclusiv din presă publică; hover pentru identificare rapidă, click pentru dată, categorii, descriere și statut de verificare. Stratul energetic (◆) marchează instalații-cheie publice din teatrul Golf/Mediterana de Est — context static, nu evenimente.</div>
   </div>
 
   <div class="block"><h3>Vector tendință</h3><p id="vector" style="font-size:.93rem"></p></div>
@@ -256,34 +267,36 @@ render(DATA);
    Rulările automate ADAUGĂ intrări noi la FINALUL listei (înainte de marcajul END);
    NU rescriu și NU șterg intrările existente. Schema unei intrări:
    { date:"AAAA-LL-ZZ", actor:"SUA"|"Iran"|"disputat", place:"Nume loc",
-     lat:0.0, lon:0.0, desc:"o frază factuală", status:"confirmat"|"revendicat, neconfirmat"|"disputat" } */
+     lat:0.0, lon:0.0, desc:"o frază factuală", status:"confirmat"|"revendicat, neconfirmat"|"disputat",
+     cats:["militar"|"energie"|"maritim"|"civil", ...] — minimum una; energie = și nuclear;
+     civil = zone/infrastructură civilă sau victime civile } */
 const GEO_EVENTS = [
-  { "date": "2026-07-09", "actor": "SUA", "place": "Bushehr (perimetru)", "lat": 28.97, "lon": 50.84, "desc": "Al treilea val de lovituri SUA; explozii raportate lângă perimetrul centralei nucleare — risc neconfirmat de surse independente.", "status": "confirmat (proximitatea centralei: neconfirmat)" },
-  { "date": "2026-07-09", "actor": "SUA", "place": "Chabahar", "lat": 25.29, "lon": 60.64, "desc": "Al treilea val de lovituri SUA — port la Marea Arabiei.", "status": "confirmat" },
-  { "date": "2026-07-09", "actor": "SUA", "place": "Bandar Abbas", "lat": 27.18, "lon": 56.27, "desc": "Al treilea val de lovituri SUA — port principal și comandă navală iraniană.", "status": "confirmat" },
-  { "date": "2026-07-10", "actor": "Iran", "place": "Baza Azraq (Muwaffaq Salti), Iordania", "lat": 31.84, "lon": 36.78, "desc": "~10 rachete pe baza aeriană cu active SUA; extinderea teatrului spre Iordania.", "status": "confirmat (interceptări)" },
-  { "date": "2026-07-12", "actor": "Iran", "place": "Strâmtoarea Hormuz", "lat": 26.60, "lon": 56.50, "desc": "Navă-container lovită pe rută „neaprobată”; Iranul declară strâmtoarea închisă.", "status": "confirmat" },
-  { "date": "2026-07-12", "actor": "Iran", "place": "Al Udeid, Qatar", "lat": 25.12, "lon": 51.32, "desc": "Atac cu rachete/drone pe cea mai mare bază aeriană SUA din Golf; 3 răniți din resturi de interceptare.", "status": "confirmat" },
-  { "date": "2026-07-12", "actor": "Iran", "place": "Musandam, Oman", "lat": 26.18, "lon": 56.25, "desc": "Ținte în enclava Musandam în primul val coordonat pe 5 state din Golf + Iordania.", "status": "confirmat" },
-  { "date": "2026-07-12", "actor": "Iran", "place": "Duqm, Oman", "lat": 19.65, "lon": 57.70, "desc": "Ținte în zona portului Duqm, în același val coordonat.", "status": "confirmat" },
-  { "date": "2026-07-12", "actor": "SUA", "place": "Iran (multiple, ~140 ținte)", "lat": 30.50, "lon": 53.50, "desc": "Ripostă SUA cu ~140 de ținte pe teritoriul iranian (punct generic — localizări multiple, nereprezentate individual).", "status": "confirmat (localizare generică)" },
-  { "date": "2026-07-13", "actor": "SUA", "place": "Qeshm", "lat": 26.95, "lon": 56.27, "desc": "Al patrulea val SUA (noaptea 12→13): explozii pe insula de la gura strâmtorii Hormuz.", "status": "confirmat" },
-  { "date": "2026-07-13", "actor": "SUA", "place": "Jask", "lat": 25.64, "lon": 57.77, "desc": "Al patrulea val SUA; ofițer iranian de apărare antiaeriană navală ucis.", "status": "confirmat" },
-  { "date": "2026-07-13", "actor": "SUA", "place": "Sirik", "lat": 26.51, "lon": 57.10, "desc": "Al patrulea val SUA — localitate costieră Hormozgan.", "status": "confirmat" },
-  { "date": "2026-07-13", "actor": "Iran", "place": "Baza Prince Hassan, Iordania", "lat": 32.16, "lon": 37.15, "desc": "IRGC revendică lovituri cu rachete balistice pe baza cu active SUA.", "status": "revendicat, neconfirmat" },
-  { "date": "2026-07-13", "actor": "Iran", "place": "Baza Sheikh Isa, Bahrain", "lat": 25.92, "lon": 50.59, "desc": "IRGC revendică lovituri pe radar/comunicații.", "status": "revendicat, neconfirmat" },
-  { "date": "2026-07-13", "actor": "disputat", "place": "Aeroportul Sanaa, Yemen", "lat": 15.48, "lon": 44.22, "desc": "Lovituri pe pistă; guvernul yemenit recunoscut revendică (bloca o aeronavă iraniană), houthii acuză Arabia Saudită.", "status": "disputat" },
-  { "date": "2026-07-16", "actor": "SUA", "place": "Zona Teheran / Pakdasht / Parchin", "lat": 35.60, "lon": 51.55, "desc": "Prima extindere a loviturilor în zona capitalei în acest val (noaptea 15→16); apărarea antiaeriană activată.", "status": "confirmat" },
-  { "date": "2026-07-16", "actor": "SUA", "place": "Insula Kharg", "lat": 29.23, "lon": 50.32, "desc": "Primul tanker dezactivat sub blocadă: supertancherul sancționat „Belma”, gol, lovit cu rachete Hellfire lângă terminalul petrolier principal.", "status": "confirmat" },
-  { "date": "2026-07-16", "actor": "Iran", "place": "Kuwait (frontieră + platformă offshore)", "lat": 28.95, "lon": 48.60, "desc": "Ripostă cu rachete/drone: 1 muncitor rănit, daune la 3 centre de frontieră și o platformă offshore (poziție aproximativă).", "status": "confirmat" },
-  { "date": "2026-07-16", "actor": "Iran", "place": "Bahrain", "lat": 26.03, "lon": 50.55, "desc": "Ripostă cu rachete/drone; interceptări majoritare (poziție generică).", "status": "confirmat (interceptări)" },
-  { "date": "2026-07-16", "actor": "Iran", "place": "Iordania", "lat": 31.95, "lon": 36.60, "desc": "Baraj major pe bază aeriană recent extinsă; interceptări (poziție aproximativă).", "status": "confirmat (interceptări)" },
-  { "date": "2026-07-16", "actor": "SUA", "place": "Ahvaz (spital evacuat)", "lat": 31.32, "lon": 48.67, "desc": "Spital forțat să evacueze 211 pacienți după ce ar fi fost lovit; primul punct raportat în Khuzestan în acest episod.", "status": "raportat de filieră iraniană, neconfirmat independent" },
-  { "date": "2026-07-17", "actor": "SUA", "place": "Hormozgan (poduri + infrastructură, ~6 poduri)", "lat": 27.20, "lon": 56.00, "desc": "Faza de lovire a infrastructurii: șase poduri și infrastructură energetică lovite în provincia Hormozgan; un turn prăbușit la un port-cheie (punct generic — localizări multiple).", "status": "confirmat (lista podurilor: filieră iraniană)" },
-  { "date": "2026-07-17", "actor": "Iran", "place": "Kuwait (centrală electrică + desalinizare)", "lat": 29.00, "lon": 48.15, "desc": "Ripostă iraniană: avariată o centrală electrică și de desalinizare a apei (poziție aproximativă).", "status": "confirmat" },
-  { "date": "2026-07-17", "actor": "Iran", "place": "Baza Sheikh Isa, Bahrain", "lat": 25.92, "lon": 50.59, "desc": "Drone de atac pe adăposturi de aeronave, parcări și rezervoare de combustibil ale SUA; și poduri de legătură vizate în Bahrain.", "status": "revendicat, parțial confirmat" },
-  { "date": "2026-07-17", "actor": "Iran", "place": "Iordania (interceptări)", "lat": 31.90, "lon": 36.60, "desc": "10 rachete iraniene doborâte de armata iordaniană; fără victime sau pagube (poziție generică).", "status": "confirmat (interceptări)" },
-  { "date": "2026-07-18", "actor": "SUA", "place": "Iran (a 7-a noapte, multiple)", "lat": 30.00, "lon": 54.00, "desc": "A șaptea noapte consecutivă de lovituri: situri de supraveghere, logistică militară, depozite subterane de armament, capacități maritime (punct generic — localizări multiple).", "status": "confirmat (localizare generică)" }
+  { "date": "2026-07-09", "actor": "SUA", "place": "Bushehr (perimetru)", "lat": 28.97, "lon": 50.84, "desc": "Al treilea val de lovituri SUA; explozii raportate lângă perimetrul centralei nucleare — risc neconfirmat de surse independente.", "status": "confirmat (proximitatea centralei: neconfirmat)", "cats": ["militar","energie"] },
+  { "date": "2026-07-09", "actor": "SUA", "place": "Chabahar", "lat": 25.29, "lon": 60.64, "desc": "Al treilea val de lovituri SUA — port la Marea Arabiei.", "status": "confirmat", "cats": ["militar","maritim"] },
+  { "date": "2026-07-09", "actor": "SUA", "place": "Bandar Abbas", "lat": 27.18, "lon": 56.27, "desc": "Al treilea val de lovituri SUA — port principal și comandă navală iraniană.", "status": "confirmat", "cats": ["militar","maritim"] },
+  { "date": "2026-07-10", "actor": "Iran", "place": "Baza Azraq (Muwaffaq Salti), Iordania", "lat": 31.84, "lon": 36.78, "desc": "~10 rachete pe baza aeriană cu active SUA; extinderea teatrului spre Iordania.", "status": "confirmat (interceptări)", "cats": ["militar"] },
+  { "date": "2026-07-12", "actor": "Iran", "place": "Strâmtoarea Hormuz", "lat": 26.60, "lon": 56.50, "desc": "Navă-container lovită pe rută „neaprobată”; Iranul declară strâmtoarea închisă.", "status": "confirmat", "cats": ["maritim"] },
+  { "date": "2026-07-12", "actor": "Iran", "place": "Al Udeid, Qatar", "lat": 25.12, "lon": 51.32, "desc": "Atac cu rachete/drone pe cea mai mare bază aeriană SUA din Golf; 3 răniți (incl. un copil) din resturi de interceptare.", "status": "confirmat", "cats": ["militar","civil"] },
+  { "date": "2026-07-12", "actor": "Iran", "place": "Musandam, Oman", "lat": 26.18, "lon": 56.25, "desc": "Ținte în enclava Musandam în primul val coordonat pe 5 state din Golf + Iordania.", "status": "confirmat", "cats": ["militar"] },
+  { "date": "2026-07-12", "actor": "Iran", "place": "Duqm, Oman", "lat": 19.65, "lon": 57.70, "desc": "Ținte în zona portului Duqm, în același val coordonat.", "status": "confirmat", "cats": ["militar","maritim"] },
+  { "date": "2026-07-12", "actor": "SUA", "place": "Iran (multiple, ~140 ținte)", "lat": 30.50, "lon": 53.50, "desc": "Ripostă SUA cu ~140 de ținte pe teritoriul iranian (punct generic — localizări multiple, nereprezentate individual).", "status": "confirmat (localizare generică)", "cats": ["militar"] },
+  { "date": "2026-07-13", "actor": "SUA", "place": "Qeshm", "lat": 26.95, "lon": 56.27, "desc": "Al patrulea val SUA (noaptea 12→13): explozii pe insula de la gura strâmtorii Hormuz.", "status": "confirmat", "cats": ["militar"] },
+  { "date": "2026-07-13", "actor": "SUA", "place": "Jask", "lat": 25.64, "lon": 57.77, "desc": "Al patrulea val SUA; ofițer iranian de apărare antiaeriană navală ucis.", "status": "confirmat", "cats": ["militar"] },
+  { "date": "2026-07-13", "actor": "SUA", "place": "Sirik", "lat": 26.51, "lon": 57.10, "desc": "Al patrulea val SUA — localitate costieră Hormozgan.", "status": "confirmat", "cats": ["militar"] },
+  { "date": "2026-07-13", "actor": "Iran", "place": "Baza Prince Hassan, Iordania", "lat": 32.16, "lon": 37.15, "desc": "IRGC revendică lovituri cu rachete balistice pe baza cu active SUA.", "status": "revendicat, neconfirmat", "cats": ["militar"] },
+  { "date": "2026-07-13", "actor": "Iran", "place": "Baza Sheikh Isa, Bahrain", "lat": 25.92, "lon": 50.59, "desc": "IRGC revendică lovituri pe radar/comunicații.", "status": "revendicat, neconfirmat", "cats": ["militar"] },
+  { "date": "2026-07-13", "actor": "disputat", "place": "Aeroportul Sanaa, Yemen", "lat": 15.48, "lon": 44.22, "desc": "Lovituri pe pistă; guvernul yemenit recunoscut revendică (bloca o aeronavă iraniană), houthii acuză Arabia Saudită.", "status": "disputat", "cats": ["civil"] },
+  { "date": "2026-07-16", "actor": "SUA", "place": "Zona Teheran / Pakdasht / Parchin", "lat": 35.60, "lon": 51.55, "desc": "Prima extindere a loviturilor în zona capitalei în acest val (noaptea 15→16); apărarea antiaeriană activată.", "status": "confirmat", "cats": ["militar"] },
+  { "date": "2026-07-16", "actor": "SUA", "place": "Insula Kharg", "lat": 29.23, "lon": 50.32, "desc": "Primul tanker dezactivat sub blocadă: supertancherul sancționat „Belma”, gol, lovit cu rachete Hellfire lângă terminalul petrolier principal.", "status": "confirmat", "cats": ["maritim","energie"] },
+  { "date": "2026-07-16", "actor": "Iran", "place": "Kuwait (frontieră + platformă offshore)", "lat": 28.95, "lon": 48.60, "desc": "Ripostă cu rachete/drone: 1 muncitor rănit, daune la 3 centre de frontieră și o platformă offshore (poziție aproximativă).", "status": "confirmat", "cats": ["civil","energie"] },
+  { "date": "2026-07-16", "actor": "Iran", "place": "Bahrain", "lat": 26.03, "lon": 50.55, "desc": "Ripostă cu rachete/drone; interceptări majoritare (poziție generică).", "status": "confirmat (interceptări)", "cats": ["militar"] },
+  { "date": "2026-07-16", "actor": "Iran", "place": "Iordania", "lat": 31.95, "lon": 36.60, "desc": "Baraj major pe bază aeriană recent extinsă; interceptări (poziție aproximativă).", "status": "confirmat (interceptări)", "cats": ["militar"] },
+  { "date": "2026-07-16", "actor": "SUA", "place": "Ahvaz (spital evacuat)", "lat": 31.32, "lon": 48.67, "desc": "Spital forțat să evacueze 211 pacienți după ce ar fi fost lovit; primul punct raportat în Khuzestan în acest episod.", "status": "raportat de filieră iraniană, neconfirmat independent", "cats": ["civil"] },
+  { "date": "2026-07-17", "actor": "SUA", "place": "Hormozgan (poduri + infrastructură, ~6 poduri)", "lat": 27.20, "lon": 56.00, "desc": "Faza de lovire a infrastructurii: șase poduri și infrastructură energetică lovite în provincia Hormozgan; un turn prăbușit la un port-cheie (punct generic — localizări multiple).", "status": "confirmat (lista podurilor: filieră iraniană)", "cats": ["civil","energie"] },
+  { "date": "2026-07-17", "actor": "Iran", "place": "Kuwait (centrală electrică + desalinizare)", "lat": 29.00, "lon": 48.15, "desc": "Ripostă iraniană: avariată o centrală electrică și de desalinizare a apei (poziție aproximativă).", "status": "confirmat", "cats": ["civil","energie"] },
+  { "date": "2026-07-17", "actor": "Iran", "place": "Baza Sheikh Isa, Bahrain", "lat": 25.92, "lon": 50.59, "desc": "Drone de atac pe adăposturi de aeronave, parcări și rezervoare de combustibil ale SUA; și poduri de legătură vizate în Bahrain.", "status": "revendicat, parțial confirmat", "cats": ["militar","civil"] },
+  { "date": "2026-07-17", "actor": "Iran", "place": "Iordania (interceptări)", "lat": 31.90, "lon": 36.60, "desc": "10 rachete iraniene doborâte de armata iordaniană; fără victime sau pagube (poziție generică).", "status": "confirmat (interceptări)", "cats": ["militar"] },
+  { "date": "2026-07-18", "actor": "SUA", "place": "Iran (a 7-a noapte, multiple)", "lat": 30.00, "lon": 54.00, "desc": "A șaptea noapte consecutivă de lovituri: situri de supraveghere, logistică militară, depozite subterane de armament, capacități maritime (punct generic — localizări multiple).", "status": "confirmat (localizare generică)", "cats": ["militar","maritim"] }
 ];
 /* GEO_EVENTS_END */
 </script>
@@ -327,14 +340,21 @@ const ENERGY_SITES = [
     ev.target.checked ? energyLayer.addTo(map) : map.removeLayer(energyLayer);
   });
 
-  /* --- Evenimente cinetice + cronologie --- */
+  /* --- Evenimente cinetice + cronologie + filtre de categorie --- */
+  const catNames = {militar:'bază/instalație militară', energie:'infrastructură energetică/nucleară', maritim:'nave/navigație', civil:'zone civile/infrastructură civilă'};
   const markers = GEO_EVENTS.map(e => {
+    const cats = e.cats && e.cats.length ? e.cats : ['militar'];
     const m = L.circleMarker([e.lat, e.lon], {radius:6, color:colors[e.actor]||'#8fa0bd', fillColor:colors[e.actor]||'#8fa0bd'});
-    m.bindPopup(`<b>${e.place}</b><br><small>${e.date} — ${e.actor === 'disputat' ? 'atribuire disputată' : e.actor}</small><br>${e.desc}<br><i>Statut: ${e.status}</i>`);
-    return {e, m, day: Math.round(new Date(e.date).getTime()/86400000)};
+    const chips = cats.map(c=>`<span class="cat-chip">${catNames[c]||c}</span>`).join('');
+    m.bindPopup(`<b>${e.place}</b><br><small>${e.date} — ${e.actor === 'disputat' ? 'atribuire disputată' : e.actor}</small><br>${chips}<br>${e.desc}<br><i>Statut: ${e.status}</i>`);
+    m.bindTooltip(`${e.place} · ${e.date.slice(8)}.${e.date.slice(5,7)}`, {direction:'top', offset:[0,-6]});
+    return {e, m, cats, day: Math.round(new Date(e.date).getTime()/86400000)};
   });
   const pts = GEO_EVENTS.map(e=>[e.lat,e.lon]);
   if (pts.length) map.fitBounds(pts, {padding:[30,30]});
+
+  const catBoxes = Array.from(document.querySelectorAll('#cat-filters input'));
+  const activeCats = () => new Set(catBoxes.filter(b=>b.checked).map(b=>b.dataset.cat));
 
   const day0 = Math.min(...markers.map(x=>x.day));
   const dayN = Math.max(...markers.map(x=>x.day));
@@ -347,18 +367,22 @@ const ENERGY_SITES = [
 
   function update(){
     const cur = day0 + Number(slider.value);
+    const act = activeCats();
     let shown = 0;
-    markers.forEach(({e, m, day}) => {
-      if (day > cur) { if (map.hasLayer(m)) map.removeLayer(m); return; }
+    markers.forEach(({e, m, cats, day}) => {
+      const catOk = cats.some(c => act.has(c));
+      if (day > cur || !catOk) { if (map.hasLayer(m)) map.removeLayer(m); return; }
       shown++;
       const recent = (cur - day) <= 2;
       m.setStyle({radius: recent?9:6, fillOpacity: recent?0.85:0.35, opacity: recent?1:0.5, weight: recent?2:1});
       if (!map.hasLayer(m)) m.addTo(map);
     });
     const atEnd = Number(slider.value) === Number(slider.max);
-    label.textContent = `${fmtD(day0)} → ${fmtD(cur)} · ${shown} evenimente` + (atEnd ? ' (tot episodul)' : '');
+    const filtered = act.size < catBoxes.length;
+    label.textContent = `${fmtD(day0)} → ${fmtD(cur)} · ${shown} evenimente` + (atEnd ? ' (tot episodul)' : '') + (filtered ? ' · filtrat' : '');
   }
   slider.addEventListener('input', update);
+  catBoxes.forEach(b => b.addEventListener('change', update));
 
   let timer = null;
   play.addEventListener('click', () => {

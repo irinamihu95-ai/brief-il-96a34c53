@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Briefing Israel — Monitorizare din surse deschise</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  :root{
+    --bg:#0f1420; --card:#171e2e; --card2:#1c2438; --text:#e8ecf4; --muted:#8fa0bd;
+    --accent:#4f8cff; --gold:#d4a94e; --red:#e05252; --green:#4ec98a; --border:#26314a;
+    --flag-bg:#3a2f1a; --flag-tx:#e3c37a;
+  }
+  @media (prefers-color-scheme: light){
+    :root{--bg:#f4f6fa; --card:#ffffff; --card2:#eef2f8; --text:#1a2233; --muted:#5c6b85;
+    --border:#dde4ef; --flag-bg:#fdf3dc; --flag-tx:#8a6d1f;}
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:var(--bg); color:var(--text); font-family:-apple-system,'Segoe UI',Roboto,sans-serif; line-height:1.55; padding-bottom:60px}
+  .wrap{max-width:860px; margin:0 auto; padding:0 18px}
+  header{padding:34px 0 18px; border-bottom:1px solid var(--border); margin-bottom:22px}
+  header h1{font-size:1.45rem; font-weight:700; letter-spacing:.2px}
+  header h1 span{color:var(--gold)}
+  .meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; font-size:.85rem; color:var(--muted)}
+  .badge{background:var(--card2); border:1px solid var(--border); border-radius:20px; padding:3px 12px}
+  .badge.run{color:var(--accent); border-color:var(--accent)}
+  #n2{margin-bottom:20px}
+  .n2-ok{background:var(--card); border:1px solid var(--green); border-left:4px solid var(--green); border-radius:10px; padding:12px 16px; font-size:.92rem}
+  .n2-alert{background:var(--card); border:1px solid var(--red); border-left:4px solid var(--red); border-radius:10px; padding:14px 16px; margin-bottom:10px}
+  .n2-alert h3{color:var(--red); font-size:1rem; margin-bottom:6px}
+  details{background:var(--card); border:1px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden}
+  summary{cursor:pointer; padding:15px 18px; font-weight:650; font-size:1.02rem; list-style:none; display:flex; justify-content:space-between; align-items:center; user-select:none}
+  summary::-webkit-details-marker{display:none}
+  summary .count{font-size:.78rem; color:var(--muted); background:var(--card2); border-radius:14px; padding:2px 10px}
+  summary::after{content:"▾"; color:var(--muted); margin-left:10px; transition:transform .2s}
+  details[open] summary::after{transform:rotate(180deg)}
+  .item{padding:14px 18px; border-top:1px solid var(--border)}
+  .item h4{font-size:.98rem; margin-bottom:5px}
+  .item .date{color:var(--gold); font-size:.8rem; font-weight:600; text-transform:uppercase; letter-spacing:.4px}
+  .flag{display:inline-block; background:var(--flag-bg); color:var(--flag-tx); font-size:.74rem; border-radius:5px; padding:1px 8px; margin-left:8px; vertical-align:middle}
+  .item p{font-size:.92rem; color:var(--text); opacity:.92; margin-top:6px}
+  .srcs{margin-top:8px; font-size:.82rem}
+  .srcs a{color:var(--accent); text-decoration:none; margin-right:12px}
+  .srcs a:hover{text-decoration:underline}
+  .block{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px 18px; margin-bottom:12px}
+  .block h3{font-size:.85rem; text-transform:uppercase; letter-spacing:.8px; color:var(--muted); margin-bottom:10px}
+  .delta li{margin:0 0 8px 18px; font-size:.92rem}
+  .delta li::marker{color:var(--accent)}
+  .cal{display:grid; gap:0}
+  .cal-row{display:flex; gap:14px; padding:8px 0; border-bottom:1px dashed var(--border); font-size:.9rem}
+  .cal-row:last-child{border-bottom:none}
+  .cal-date{min-width:105px; color:var(--gold); font-weight:650; font-size:.84rem}
+  footer{margin-top:28px; padding-top:16px; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted)}
+  #err{display:none; background:var(--card); border:1px solid var(--red); border-radius:10px; padding:14px; margin:20px 0}
+  #map{height:500px; border-radius:10px; border:1px solid var(--border); background:var(--bg)}
+  .leaflet-container{font-family:inherit; background:var(--bg)}
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip{background:var(--card2); color:var(--text); border:1px solid var(--border); box-shadow:0 6px 22px rgba(0,0,0,.45)}
+  .leaflet-popup-content{margin:12px 14px; font-size:.84rem; line-height:1.55}
+  .leaflet-popup-content a{color:var(--accent)}
+  .leaflet-popup-close-button{color:var(--muted) !important}
+  .leaflet-tooltip{background:var(--card2); color:var(--text); border:1px solid var(--border); box-shadow:none; font-size:.75rem; padding:2px 8px; border-radius:6px}
+  .leaflet-tooltip-top:before{border-top-color:var(--border)}
+  .leaflet-bar a{background:var(--card2); color:var(--text); border-color:var(--border)}
+  .leaflet-control-scale-line{background:rgba(23,30,46,.7); color:var(--text); border-color:var(--muted)}
+  .map-chip{background:var(--card); border:1px solid var(--border); border-radius:8px; padding:6px 10px; font-size:.7rem; line-height:1.45; color:var(--muted); box-shadow:0 2px 10px rgba(0,0,0,.3)}
+  .map-chip b{color:var(--text); font-size:.72rem; letter-spacing:.5px}
+  .map-chip .lrow{display:flex; align-items:center; gap:6px; margin-top:2px}
+  .map-chip .dot{width:9px; height:9px; border-radius:50%; border:1.5px solid #fff; flex:none}
+  .map-chip .ring{width:11px; height:11px; border-radius:50%; border:1.5px dashed var(--muted); flex:none}
+  .ev-glow{filter:drop-shadow(0 0 5px rgba(232,236,244,.55))}
+  .map-legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:10px; font-size:.8rem; color:var(--muted)}
+  .map-legend span::before{content:"●"; margin-right:5px}
+  .lg-sua::before{color:#4f8cff} .lg-iran::before{color:#e05252} .lg-disp::before{color:#d4a94e}
+  .map-note{margin-top:6px; font-size:.75rem; color:var(--muted)}
+  .map-ctrl{display:flex; align-items:center; gap:12px; margin-top:12px; flex-wrap:wrap}
+  .map-ctrl input[type=range]{flex:1; min-width:180px; accent-color:var(--accent)}
+  .map-ctrl button{background:var(--card2); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:4px 14px; cursor:pointer; font-size:.85rem}
+  .map-ctrl button:hover{border-color:var(--accent)}
+  #tl-label{font-size:.82rem; color:var(--gold); font-weight:600; min-width:150px}
+  .map-toggle{display:flex; align-items:center; gap:6px; font-size:.82rem; color:var(--muted); cursor:pointer; user-select:none}
+  .map-toggle input{accent-color:var(--green)}
+  .lg-en::before{color:#4ec98a; content:"◆"; margin-right:5px}
+  .en-ico{color:#4ec98a; font-size:15px; line-height:16px; text-align:center; text-shadow:0 0 3px rgba(0,0,0,.5)}
+  .map-filters{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+  .map-filters label{display:flex; align-items:center; gap:5px; font-size:.8rem; color:var(--text); background:var(--card2); border:1px solid var(--border); border-radius:16px; padding:3px 12px; cursor:pointer; user-select:none}
+  .map-filters label:has(input:not(:checked)){opacity:.45}
+  .map-filters input{accent-color:var(--accent)}
+  .cat-chip{display:inline-block; background:var(--card2); border:1px solid var(--border); border-radius:4px; padding:0 6px; font-size:.7rem; margin-right:4px; color:var(--muted)}
+  #intensity{display:flex; align-items:flex-end; gap:3px; height:56px; margin-top:12px; padding:0 2px}
+  #intensity .ibar{flex:1; display:flex; flex-direction:column-reverse; min-height:2px; cursor:pointer; opacity:.95; position:relative; border-radius:2px 2px 0 0; overflow:visible}
+  #intensity .ibar .iseg{width:100%; flex:none}
+  #intensity .ibar .iseg:last-child{border-radius:2px 2px 0 0}
+  #intensity .ibar.future{opacity:.18}
+  #intensity .ibar.today{outline:2px solid var(--gold); outline-offset:1px}
+  #intensity .ibar:hover::after{content:attr(data-tip); position:absolute; bottom:calc(100% + 4px); left:50%; transform:translateX(-50%); background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:2px 8px; font-size:.7rem; white-space:nowrap; z-index:1000; color:var(--text)}
+  .ind-row{display:flex; gap:14px; padding:6px 0; border-bottom:1px dashed var(--border); font-size:.88rem; align-items:baseline}
+  .ind-row:last-child{border-bottom:none}
+  .ind-name{min-width:150px; color:var(--muted); font-size:.82rem}
+  .ind-val{font-weight:650; color:var(--gold)}
+  .ind-delta{font-size:.78rem; color:var(--muted)}
+  .spark{margin-left:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Briefing <span>Israel</span> — monitorizare din surse deschise</h1>
+    <div class="meta">
+      <span class="badge run" id="m-run">…</span>
+      <span class="badge" id="m-time">…</span>
+      <span class="badge" id="m-src">…</span>
+      <span class="badge" id="m-next">…</span>
+    </div>
+  </header>
+
+  <div style="background:var(--card2);border:1px solid var(--gold);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.85rem">📁 Snapshot de arhivă — starea paginii la 2026-07-19T12:15:00+03:00. <a href="../" style="color:var(--accent)">Versiunea curentă</a> · <a href="./" style="color:var(--accent)">Toată arhiva</a></div>
+  <div id="err">Datele briefingului nu au putut fi încărcate. Reîncearcă mai târziu.</div>
+  <div id="n2"></div>
+  <div id="sections"></div>
+
+  <div class="block">
+    <h3>Harta evenimentelor cinetice — cumulativ (episodul din iulie)</h3>
+    <div id="map"></div>
+    <div id="intensity" title="Evenimente pe zi (după filtrele active) — click pe o bară sare la ziua respectivă"></div>
+    <div class="map-ctrl">
+      <button id="tl-play" title="Redă cronologia zi cu zi">▶ Redă</button>
+      <input type="range" id="tl-slider" min="0" max="0" value="0" step="1">
+      <span id="tl-label">…</span>
+    </div>
+    <div class="map-filters" id="cat-filters">
+      <label><input type="checkbox" data-cat="militar" checked>Baze / instalații militare</label>
+      <label><input type="checkbox" data-cat="energie" checked>Infrastructură energetică / nucleară</label>
+      <label><input type="checkbox" data-cat="maritim" checked>Nave / navigație</label>
+      <label><input type="checkbox" data-cat="civil" checked>Zone civile / infrastructură civilă</label>
+    </div>
+    <div class="map-legend">
+      <span class="lg-sua">Lovituri SUA / coaliție</span>
+      <span class="lg-iran">Lovituri / riposte Iran</span>
+      <span class="lg-disp">Atribuire disputată / neconfirmat independent</span>
+      <label class="map-toggle"><input type="checkbox" id="en-toggle"><span class="lg-en"></span>Infrastructură energetică (strat de context)</label>
+    </div>
+    <div class="map-note">Sliderul derulează episodul zi cu zi (cumulativ până la data selectată; evenimentele din fereastra de 48h apar pline, restul estompate). Filtrele de categorie se combină cu sliderul — de ex. doar „infrastructură energetică" + redare arată cronologia loviturilor energetice. Un eveniment poate avea mai multe categorii (tancherul de la Kharg e și naval, și energetic). Pozițiile sunt aproximative (nivel de localitate/instalație), compilate exclusiv din presă publică; hover pentru identificare rapidă, click pentru dată, categorii, descriere și statut de verificare. Stratul energetic (◆) marchează instalații-cheie publice din teatrul Golf/Mediterana de Est — context static, nu evenimente.</div>
+  </div>
+
+  <div class="block">
+    <h3>Indicatori — serie zilnică</h3>
+    <div id="indicators"></div>
+    <div class="map-note">Valorile se consemnează la rulările zilnice, cu sursa; zilele fără consemnare apar ca goluri, nu se interpolează. Weekend/Shabbat: piețe închise sau puțin lichide.</div>
+  </div>
+
+  <div class="block"><h3>Vector tendință</h3><p id="vector" style="font-size:.93rem"></p></div>
+  <div class="block"><h3>Elemente de variație — față de rularea anterioară</h3><ul class="delta" id="delta"></ul></div>
+  <div class="block"><h3>Calendar — următoarele termene</h3><div class="cal" id="calendar"></div></div>
+  <div class="block"><h3>Alertă demnitari</h3><p id="demnitari" style="font-size:.92rem"></p></div>
+
+  <div class="block">
+    <h3>Metodologie și limite</h3>
+    <div style="font-size:.85rem; color:var(--muted); line-height:1.6">
+      <p style="margin-bottom:8px"><b style="color:var(--text)">Ce este.</b> Monitorizare compilată exclusiv din surse deschise: presă internațională și israeliană (inclusiv în ebraică), comunicate oficiale, date publice de piață. Nu conține informații nepublice și nu reprezintă poziția vreunei instituții.</p>
+      <p style="margin-bottom:8px"><b style="color:var(--text)">Cum se verifică.</b> Fiecare item poartă sursa cu link. Cifrele majore cer două surse independente sau marcajul „(o singură sursă)". Datare dublă: data evenimentului și data publicării — recapitulările de evenimente vechi servite ca noi sunt cel mai frecvent mod de eroare în acest conflict și sunt filtrate activ. Marcajele „revendicat, neconfirmat" / „disputat" / „filieră unică" indică exact nivelul de încredere; absența lor înseamnă confirmare multi-sursă.</p>
+      <p style="margin-bottom:8px"><b style="color:var(--text)">Ritm și continuitate.</b> Trei actualizări pe zi (7:30 / 15:00 / 20:00, ora Israelului). Antetul arată momentul generării — dacă e mai vechi de o zi, pagina nu reflectă starea curentă. Arhiva păstrează un snapshot pe zi.</p>
+      <p><b style="color:var(--text)">Limite.</b> Pozițiile pe hartă sunt aproximative (nivel de localitate/instalație). Categoriile de ținte reflectă relatările presei, nu evaluări independente — distincția militar/civil e ea însăși obiect de dispută informațională. Compilația e generată automat și supusă erorii; pentru decizii, consultați sursele primare din linkuri.</p>
+    </div>
+  </div>
+
+  <footer>
+    Compilat exclusiv din surse publice (presă, comunicate oficiale). Nu reprezintă o poziție oficială a vreunei instituții.
+    Marcajele „o singură sursă" și „neconfirmat" indică nivelul de verificare. Actualizat de trei ori pe zi (7:30 / 15:00 / 20:00, ora Israelului).
+    · <a href="arhiva/" style="color:var(--accent); text-decoration:none">Arhivă zilnică</a>
+  </footer>
+</div>
+
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function render(d){
+  const fmt = new Intl.DateTimeFormat('ro-RO',{dateStyle:'long',timeStyle:'short',timeZone:'Asia/Jerusalem'});
+  document.getElementById('m-run').textContent = d.runType || 'Briefing';
+  document.getElementById('m-time').textContent = 'Generat: ' + fmt.format(new Date(d.generatedAt));
+  document.getElementById('m-src').textContent = 'Surse: ' + (d.sourceCount ?? '—');
+  document.getElementById('m-next').textContent = d.nextRun ? 'Următoarea actualizare: ' + fmt.format(new Date(d.nextRun)) : '';
+
+  const n2 = document.getElementById('n2');
+  if (d.nivel2 && d.nivel2.length){
+    n2.innerHTML = d.nivel2.map(a =>
+      `<div class="n2-alert"><h3>⚠️ NIVEL 2 — ${esc(a.title)}</h3><p style="font-size:.9rem">${esc(a.body)}</p>
+       <div class="srcs">${(a.sources||[]).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join('')}</div></div>`).join('');
+  } else {
+    n2.innerHTML = `<div class="n2-ok">✓ Niciun trigger de Nivel 2 (breaking news) la ultima verificare.</div>`;
+  }
+
+  document.getElementById('sections').innerHTML = (d.sections||[]).map((sec,i) =>
+    `<details ${i<2?'open':''}><summary>${esc(sec.title)}<span class="count">${sec.items.length}</span></summary>
+     ${sec.items.map(it => `
+       <div class="item">
+         <span class="date">${esc(it.date)}</span>${it.flag?`<span class="flag">${esc(it.flag)}</span>`:''}
+         <h4>${esc(it.title)}</h4>
+         <p>${esc(it.body)}</p>
+         <div class="srcs">${(it.sources||[]).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join('')}</div>
+       </div>`).join('')}
+    </details>`).join('');
+
+  document.getElementById('vector').textContent = d.vector || '—';
+  document.getElementById('delta').innerHTML = (d.delta||[]).map(x=>`<li>${esc(x)}</li>`).join('') || '<li>Fără deplasări semnificative.</li>';
+  document.getElementById('calendar').innerHTML = (d.calendar||[]).map(c=>
+    `<div class="cal-row"><span class="cal-date">${esc(c.date)}</span><span>${esc(c.event)}</span></div>`).join('');
+  document.getElementById('demnitari').textContent = d.demnitari || '—';
+}
+
+/* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
+const DATA = {
+  "generatedAt": "2026-07-19T12:15:00+03:00",
+  "runType": "Briefing de dimineață",
+  "nextRun": "2026-07-19T15:00:00+03:00",
+  "nivel2": [
+    {
+      "title": "Niciun trigger nou de Nivel 2 în ultimele 12 ore",
+      "date": "19 iulie, ~12:15",
+      "flag": "verificat",
+      "body": "Al 8-lea val consecutiv de lovituri SUA (peste noapte 18→19 iulie) este o continuare a campaniei cinetice în curs, nu un trigger nou. Uciderea a doi militari americani în Iordania (atac IRGC pe baza Al-Azraq) — cel mai grav eveniment al ferestrei — s-a produs vineri 17 iulie și a fost anunțată sâmbătă 18 iulie; ambele momente cad în afara ferestrei stricte de 12 ore și nu califică drept trigger proaspăt. Itemul este tratat ca eveniment principal de Nivel 1. Israelul rămâne neatins direct.",
+      "sources": [
+        { "name": "Al Jazeera (18 iul)", "url": "https://www.aljazeera.com/news/2026/7/18/us-military-says-two-service-members-killed-in-jordan" },
+        { "name": "CBS News (liveblog)", "url": "https://www.cbsnews.com/live-updates/iran-war-trump-strait-of-hormuz-attacks-persian-gulf/" }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "iran-sua-hormuz",
+      "title": "Iran — SUA — Hormuz",
+      "items": [
+        {
+          "title": "Doi militari americani uciși și unul dispărut într-un atac iranian în Iordania",
+          "date": "eveniment 17 iul / anunțat de CENTCOM 18 iul",
+          "flag": "nou",
+          "body": "Comandamentul Central american (CENTCOM) a anunțat sâmbătă că doi militari americani au fost uciși și unul este dat dispărut în timp ce apărau baza de la Al-Azraq (Iordania) împotriva unui atac iranian cu rachete balistice și drone. Gardienii Revoluției (IRGC) au revendicat lovitura, pretinzând distrugerea mai multor aeronave. Sunt primele victime umane americane provocate de focul iranian de la luna martie. Bilanțul total al militarilor SUA morți în cele aproape cinci luni de conflict este raportat divergent — 16 potrivit CNN, 13 potrivit unei evidențe publice; interval de verificat.",
+          "sources": [
+            { "name": "CNN (18 iul)", "url": "https://www.cnn.com/2026/07/18/politics/iran-war-us-service-members-killed-jordan" },
+            { "name": "Al Jazeera (18 iul)", "url": "https://www.aljazeera.com/news/2026/7/18/us-military-says-two-service-members-killed-in-jordan" },
+            { "name": "Fox News (18 iul)", "url": "https://www.foxnews.com/politics/two-us-service-members-killed-iranian-strikes-jordan-centcom-says" },
+            { "name": "NPR (18 iul)", "url": "https://www.npr.org/2026/07/18/nx-s1-5899039/us-troops-killed-missing-iran-jordan" }
+          ]
+        },
+        {
+          "title": "Al 8-lea val consecutiv de lovituri SUA, prezentat ca ripostă „de pedepsire imediată”",
+          "date": "eveniment peste noapte 18→19 iul",
+          "flag": "nou",
+          "body": "La ordinul președintelui Trump, SUA au lansat sâmbătă seara un nou val de lovituri, explicit ca ripostă la atacul din Iordania, vizând instalații de supraveghere costieră și apărare aeriană, capabilități maritime și depozite de rachete și drone, pe durata a aproximativ șapte ore. Explozii au fost raportate duminică dimineața la Bandar Abbas, insula Qeshm și Sirik. Kuwaitul și-a activat din nou apărarea aeriană. CENTCOM afirmă că peste 20 de nave de război americane și sute de aeronave militare operează în Orientul Mijlociu.",
+          "sources": [
+            { "name": "CNN Arabic (19 iul)", "url": "https://arabic.cnn.com/amphtml/middle-east/article/2026/07/19/us-launches-new-airstrikes-to-swiftly-punish-iran-after-service-members-killed" },
+            { "name": "Haaretz (liveblog)", "url": "https://www.haaretz.com/israel-news/israel-security/2026-07-18/ty-article-live/for-seventh-night-in-a-row-u-s-launches-strikes-on-iranian-infrastructure/0000019f-72d8-de8e-afff-f3fad06d0000" },
+            { "name": "Jerusalem Post (liveblog 19 iul)", "url": "https://www.jpost.com/middle-east/iran-news/2026-07-19/live-updates-902897" },
+            { "name": "N12 / Mako", "url": "https://www.mako.co.il/news-world/2026_q3/liveblog-b54767a8d626f91027.htm" }
+          ]
+        },
+        {
+          "title": "MOU suspendat bilateral; niciun canal diplomatic activ",
+          "date": "18 iul, menținut 19 iul",
+          "flag": "context",
+          "body": "Adjunctul ministrului iranian de externe a reafirmat că, dacă SUA cred că loviturile și blocada îi vor forța pe iranieni să ceară negocieri, „se înșală”. Președintele Trump a declarat că „nu-i pasă deloc” de faptul că Iranul nu mai respectă memorandumul de înțelegere și că SUA nu vor permite Iranului să obțină arma nucleară. Consultările vehiculate pentru 18 iulie în Oman rămân nematerializate; niciun canal diplomatic activ confirmat.",
+          "sources": [
+            { "name": "NewsNation (18 iul)", "url": "https://www.newsnationnow.com/us-news/military/2-us-service-members-killed-in-action-in-jordan/" },
+            { "name": "N12 / Mako", "url": "https://www.mako.co.il/news-world/2026_q3/liveblog-b54767a8d626f91027.htm" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gaza-cisiordania",
+      "title": "Gaza — Cisiordania",
+      "items": [
+        {
+          "title": "Cisiordania: incendieri de coloniști — moschee la a-Tuwani și teren agricol la Sinjil",
+          "date": "eveniment peste noapte, 19 iul",
+          "flag": "nou (o singură filieră — de verificat)",
+          "body": "Potrivit relatărilor palestiniene, coloniști israelieni au incendiat teren agricol la Sinjil și o moschee la a-Tuwani, în sudul Cisiordaniei. Separat, o încercare de a bloca o cisternă cu apă spre comunitatea al-Tawil, cu furtul furtunului și un activist stropit cu spray iritant. Relatările provin dintr-o singură filieră și nu au fost confirmate oficial la ora rulării.",
+          "sources": [
+            { "name": "Haaretz (live 19 iul)", "url": "https://www.haaretz.com/israel-news/israel-security/2026-07-19/ty-article-live/settlers-set-fire-to-west-bank-mosque-agricultural-land-in-overnight-attacks/0000019f-785f-d4cc-abbf-7affc4610004" }
+          ]
+        },
+        {
+          "title": "Gaza: lovituri IDF — un lunetist al Jihadului Islamic și un comandant Hamas uciși",
+          "date": "eveniment 17 iul / raportat 18–19 iul",
+          "flag": "context",
+          "body": "IDF anunță că o lovitură în centrul Fâșiei Gaza a ucis un lunetist al Jihadului Islamic Palestinian, iar o altă lovitură, în nordul enclavei, a ucis un comandant din cartierul general operativ al Hamas.",
+          "sources": [
+            { "name": "Haaretz (live 19 iul)", "url": "https://www.haaretz.com/israel-news/israel-security/2026-07-19/ty-article-live/settlers-set-fire-to-west-bank-mosque-agricultural-land-in-overnight-attacks/0000019f-785f-d4cc-abbf-7affc4610004" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "israel-liban",
+      "title": "Israel — Liban",
+      "items": [
+        {
+          "title": "Militar libanez ucis — IDF atribuie explozia cel mai probabil Hezbollah",
+          "date": "eveniment 18 iul",
+          "flag": "context (atribuire disputată)",
+          "body": "O analiză a IDF a stabilit că explozia care a ucis un soldat libanez nu a fost provocată de un dispozitiv al armatei israeliene și că dispozitivul care a explodat fusese „cel mai probabil” plasat de Hezbollah. Atribuirea provine dintr-o singură sursă (poziția IDF).",
+          "sources": [
+            { "name": "Haaretz (live 19 iul)", "url": "https://www.haaretz.com/israel-news/israel-security/2026-07-19/ty-article-live/settlers-set-fire-to-west-bank-mosque-agricultural-land-in-overnight-attacks/0000019f-785f-d4cc-abbf-7affc4610004" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "politica-interna",
+      "title": "Politică internă Israel",
+      "items": [
+        {
+          "title": "Guvern interimar; proteste la Habima contra legii privind refuznicii haredim",
+          "date": "eveniment 18 iul / context",
+          "flag": "nou",
+          "body": "Peste 1.000 de protestatari s-au adunat în Piața Habima din Tel Aviv împotriva legii recent adoptate care îngheață arestările refuznicilor ultraortodocși, alături de proteste anti-guvernamentale mai mici în toată țara. Guvernul Netanyahu rămâne interimar după dizolvarea Knessetului (17 iulie); alegerile sunt confirmate pentru 27 octombrie. Un sondaj Maariv din 17 iulie plasează blocul anti-Netanyahu la 72 de mandate și coaliția la 48.",
+          "sources": [
+            { "name": "Times of Israel (liveblog 18 iul)", "url": "https://www.timesofisrael.com/liveblog-july-18-2026/" },
+            { "name": "Haaretz (sondaj Maariv, 17 iul)", "url": "https://www.haaretz.co.il/news/elections/2026-07-17/ty-article/.premium/0000019f-6ef7-d34a-a99f-7ff7ccda0000" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reactii",
+      "title": "Reacții oficiale",
+      "items": [
+        {
+          "title": "SUA, Iran, UE și ONU",
+          "date": "18–19 iul",
+          "flag": "context",
+          "body": "SUA (Trump): decesele — „un lucru foarte trist”; ripostă militară dispusă direct; „nu-i pasă deloc” de suspendarea MOU de către Iran. Iran (Mojtaba Khamenei): promite „lecții de neuitat”; consilierul militar Rezaei amenință cu „ofensivă la scară completă” dacă loviturile continuă 2–3 zile. UE (Kaja Kallas): poziție-cadru menținută — atacurile iraniene pe Bahrain/Kuwait „inacceptabile”, libertatea de navigație trebuie să fie neîngrădită; se explorează extinderea misiunilor navale Aspides/Atalanta ori un cadru pe Hormuz. ONU: condamnare a „ciclului de escaladare”; agenția maritimă IMO a condamnat atacurile asupra navigației.",
+          "sources": [
+            { "name": "NewsNation (Trump, 18 iul)", "url": "https://www.newsnationnow.com/us-news/military/2-us-service-members-killed-in-action-in-jordan/" },
+            { "name": "Iran International (liveblog)", "url": "https://www.iranintl.com/en/liveblog/202607186178" },
+            { "name": "UN News", "url": "https://news.un.org/en/story/2026/07/1167936" }
+          ]
+        }
+      ]
+    }
+  ],
+  "vector": "Axa Iran–SUA intră în escaladare accentuată: conflictul trece de la lovituri pe infrastructură la primele victime umane americane pe sol aliat de la martie (baza Al-Azraq, Iordania), iar riposta SUA (al 8-lea val consecutiv) este explicit „punitivă”. Cadrul de dezescaladare a dispărut (MOU suspendat bilateral), niciun canal diplomatic activ; consultările Oman vehiculate pentru 18 iulie — nematerializate. Este activă fereastra ultimatumului iranian de 2–3 zile (gen. Rezaei), în ziua 2–3. Energie: Brent rămâne peste pragul de 85 USD (fără cotații noi — weekend), trafic Hormuz redus cu peste 50% săptămână/săptămână. Gaza și Cisiordania: tensiune sub pragul escaladării, cu incidente de coloniști. Liban: incident cu atribuire disputată. Politică internă: guvern interimar, proteste contra legii haredim. Israelul rămâne neatins direct.",
+  "delta": [
+    "Iran–SUA: prag calitativ trecut — 2 militari SUA uciși și 1 dispărut la baza Al-Azraq (Iordania), primele victime din focul iranian de la martie; itemul nu figura în raportul de seară din 18 iulie.",
+    "Iran–SUA: al 8-lea val consecutiv de lovituri SUA s-a materializat, prezentat explicit ca ripostă „de pedepsire imediată”.",
+    "Diplomatic: consultările Oman (18 iulie) — confirmate nematerializate; niciun canal diplomatic activ.",
+    "Politică internă: front intern nou — protest de amploare (peste 1.000) la Habima contra legii haredim; sondaj Maariv 48 vs. 72.",
+    "Cisiordania reintră ca punct de tensiune (incendieri de coloniști — moschee la a-Tuwani).",
+    "Energie: Brent staționar peste pragul de 85 USD; fără cotații noi (weekend)."
+  ],
+  "calendar": [
+    { "date": "19–21 iulie", "event": "Fereastra ultimatumului iranian de 2–3 zile (gen. Rezaei) pentru „ofensiva la scară completă” — zilele 2–3" },
+    { "date": "20 iulie (luni)", "event": "Reacții UE/state cheie așteptate pe victimele americane; CSONU — agendă dominată de Haiti (fără sesiune Iran/Hormuz programată)" },
+    { "date": "dată nouă, neanunțată", "event": "Vot repetat al comitetului central Likud pe locurile rezervate (după ordonanța din Lod)" },
+    { "date": "28 iulie", "event": "Expirarea stării speciale a frontului intern israelian" },
+    { "date": "17 august", "event": "Primaries Likud (amânate; supersedează datele anterioare)" },
+    { "date": "~16 august", "event": "Expirarea ferestrei de 60 de zile a MOU SUA–Iran — probabil caducă după suspendarea oficială din 18 iulie" },
+    { "date": "27 octombrie", "event": "Alegeri legislative Israel, Knesset 26" }
+  ],
+  "demnitari": "Nicio schimbare confirmată de demnitar în funcție în statele monitorizate în ultimele 24 de ore. Context: guvernul Netanyahu rămâne interimar până la alegerile din 27 octombrie.",
+  "sourceCount": 13
+};
+/* BRIEFING_DATA_END */
+render(DATA);
+</script>
+
+<script>
+/* GEO_EVENTS_START — jurnal CUMULATIV de evenimente cinetice.
+   Rulările automate ADAUGĂ intrări noi la FINALUL listei (înainte de marcajul END);
+   NU rescriu și NU șterg intrările existente. Schema unei intrări:
+   { date:"AAAA-LL-ZZ", actor:"SUA"|"Iran"|"disputat", place:"Nume loc",
+     lat:0.0, lon:0.0, desc:"o frază factuală", status:"confirmat"|"revendicat, neconfirmat"|"disputat",
+     cats:["militar"|"energie"|"maritim"|"civil", ...] — minimum una; energie = și nuclear;
+     civil = zone/infrastructură civilă sau victime civile;
+     time:"..." (OPȚIONAL) — ora aproximativă IL, DOAR dacă sursa o dă (ex. "raportat 05:37–07:38 IL",
+     "confirmare CENTCOM 00:27 IL", "peste noapte (17→18 iul)"); fără oră în sursă → omite câmpul, NU estima;
+     src:[{name, url?}] — OBLIGATORIU la intrări noi; url doar dacă e verificat în pagină
+     (nu inventa URL-uri); fără url → numele sursei + „consemnat la raportarea din [data]"; arhiva paginii există DOAR de la 18 iul } */
+const GEO_EVENTS = [
+  { "date": "2026-07-09", "actor": "SUA", "place": "Bushehr (perimetru)", "lat": 28.97, "lon": 50.84, "desc": "Al treilea val de lovituri SUA; explozii raportate lângă perimetrul centralei nucleare — risc neconfirmat de surse independente.", "status": "confirmat (proximitatea centralei: neconfirmat)", "cats": ["militar","energie"], "src": [{ "name": "ToI/surse iraniene locale, 9–10 iul — consemnat la raportarea din 10 iul; fără URL de articol dedicat" }] },
+  { "date": "2026-07-09", "actor": "SUA", "place": "Chabahar", "lat": 25.29, "lon": 60.64, "desc": "Al treilea val de lovituri SUA — port la Marea Arabiei.", "status": "confirmat", "cats": ["militar","maritim"], "src": [{ "name": "ToI, 9–10 iul — consemnat la raportarea din 10 iul; fără URL de articol dedicat" }] },
+  { "date": "2026-07-09", "actor": "SUA", "place": "Bandar Abbas", "lat": 27.18, "lon": 56.27, "desc": "Al treilea val de lovituri SUA — port principal și comandă navală iraniană.", "status": "confirmat", "cats": ["militar","maritim"], "src": [{ "name": "ToI, 9–10 iul — consemnat la raportarea din 10 iul; fără URL de articol dedicat" }] },
+  { "date": "2026-07-10", "actor": "Iran", "place": "Baza Azraq (Muwaffaq Salti), Iordania", "lat": 31.84, "lon": 36.78, "desc": "~10 rachete pe baza aeriană cu active SUA; extinderea teatrului spre Iordania.", "status": "confirmat (interceptări)", "cats": ["militar"], "src": [{ "name": "ToI, 10 iul — consemnat la raportarea din 10 iul; fără URL de articol dedicat" }] },
+  { "date": "2026-07-12", "time": "raportat 05:37–07:38 IL", "actor": "Iran", "place": "Strâmtoarea Hormuz", "lat": 26.60, "lon": 56.50, "desc": "Navă-container lovită pe rută „neaprobată”; Iranul declară strâmtoarea închisă.", "status": "confirmat", "cats": ["maritim"], "src": [{ "name": "CNN (liveblog 11–12 iul)", "url": "https://www.cnn.com/2026/07/11/world/live-news/iran-war-trump" }, { "name": "NPR", "url": "https://www.npr.org/2026/07/13/nx-s1-5891746/us-iran-strait-of-hormuz-updates" }] },
+  { "date": "2026-07-12", "time": "raportat 05:37–07:38 IL", "actor": "Iran", "place": "Al Udeid, Qatar", "lat": 25.12, "lon": 51.32, "desc": "Atac cu rachete/drone pe cea mai mare bază aeriană SUA din Golf; 3 răniți (incl. un copil) din resturi de interceptare.", "status": "confirmat", "cats": ["militar","civil"], "src": [{ "name": "NPR", "url": "https://www.npr.org/2026/07/13/nx-s1-5891746/us-iran-strait-of-hormuz-updates" }] },
+  { "date": "2026-07-12", "time": "raportat 05:37–07:38 IL", "actor": "Iran", "place": "Musandam, Oman", "lat": 26.18, "lon": 56.25, "desc": "Ținte în enclava Musandam în primul val coordonat pe 5 state din Golf + Iordania.", "status": "confirmat", "cats": ["militar"], "src": [{ "name": "NPR", "url": "https://www.npr.org/2026/07/13/nx-s1-5891746/us-iran-strait-of-hormuz-updates" }] },
+  { "date": "2026-07-12", "time": "raportat 05:37–07:38 IL", "actor": "Iran", "place": "Duqm, Oman", "lat": 19.65, "lon": 57.70, "desc": "Ținte în zona portului Duqm, în același val coordonat.", "status": "confirmat", "cats": ["militar","maritim"], "src": [{ "name": "NPR", "url": "https://www.npr.org/2026/07/13/nx-s1-5891746/us-iran-strait-of-hormuz-updates" }] },
+  { "date": "2026-07-12", "time": "peste noapte (11→12 iul)", "actor": "SUA", "place": "Iran (multiple, ~140 ținte)", "lat": 30.50, "lon": 53.50, "desc": "Ripostă SUA cu ~140 de ținte pe teritoriul iranian (punct generic — localizări multiple, nereprezentate individual).", "status": "confirmat (localizare generică)", "cats": ["militar"], "src": [{ "name": "NPR", "url": "https://www.npr.org/2026/07/13/nx-s1-5891746/us-iran-strait-of-hormuz-updates" }] },
+  { "date": "2026-07-13", "time": "peste noapte (12→13); confirmare CENTCOM 00:27 IL", "actor": "SUA", "place": "Qeshm", "lat": 26.95, "lon": 56.27, "desc": "Al patrulea val SUA (noaptea 12→13): explozii pe insula de la gura strâmtorii Hormuz.", "status": "confirmat", "cats": ["militar"], "src": [{ "name": "CNN (liveblog 13 iul)", "url": "https://www.cnn.com/2026/07/13/world/live-news/iran-war-trump" }] },
+  { "date": "2026-07-13", "time": "peste noapte (12→13); confirmare CENTCOM 00:27 IL", "actor": "SUA", "place": "Jask", "lat": 25.64, "lon": 57.77, "desc": "Al patrulea val SUA; ofițer iranian de apărare antiaeriană navală ucis.", "status": "confirmat", "cats": ["militar"], "src": [{ "name": "CNN (liveblog 13 iul)", "url": "https://www.cnn.com/2026/07/13/world/live-news/iran-war-trump" }] },
+  { "date": "2026-07-13", "time": "peste noapte (12→13); confirmare CENTCOM 00:27 IL", "actor": "SUA", "place": "Sirik", "lat": 26.51, "lon": 57.10, "desc": "Al patrulea val SUA — localitate costieră Hormozgan.", "status": "confirmat", "cats": ["militar"], "src": [{ "name": "CNN (liveblog 13 iul)", "url": "https://www.cnn.com/2026/07/13/world/live-news/iran-war-trump" }] },
+  { "date": "2026-07-13", "actor": "Iran", "place": "Baza Prince Hassan, Iordania", "lat": 32.16, "lon": 37.15, "desc": "IRGC revendică lovituri cu rachete balistice pe baza cu active SUA.", "status": "revendicat, neconfirmat", "cats": ["militar"], "src": [{ "name": "CNN (liveblog 13 iul)", "url": "https://www.cnn.com/2026/07/13/world/live-news/iran-war-trump" }] },
+  { "date": "2026-07-13", "actor": "Iran", "place": "Baza Sheikh Isa, Bahrain", "lat": 25.92, "lon": 50.59, "desc": "IRGC revendică lovituri pe radar/comunicații.", "status": "revendicat, neconfirmat", "cats": ["militar"], "src": [{ "name": "CNN (liveblog 13 iul)", "url": "https://www.cnn.com/2026/07/13/world/live-news/iran-war-trump" }] },
+  { "date": "2026-07-13", "actor": "disputat", "place": "Aeroportul Sanaa, Yemen", "lat": 15.48, "lon": 44.22, "desc": "Lovituri pe pistă; guvernul yemenit recunoscut revendică (bloca o aeronavă iraniană), houthii acuză Arabia Saudită.", "status": "disputat", "cats": ["civil"], "src": [{ "name": "The National / WaPo / JPost / Al Jazeera, 13 iul — consemnat la raportarea din 13 iul; fără URL de articol dedicat" }] },
+  { "date": "2026-07-16", "actor": "SUA", "place": "Zona Teheran / Pakdasht / Parchin", "lat": 35.60, "lon": 51.55, "desc": "Prima extindere a loviturilor în zona capitalei în acest val (noaptea 15→16); apărarea antiaeriană activată.", "status": "confirmat", "cats": ["militar"], "src": [{ "name": "Al Jazeera (16 iul)", "url": "https://www.aljazeera.com/news/2026/7/16/us-strikes-iran-tanker-as-tehran-hits-kuwait-jordan-whats-the-latest" }] },
+  { "date": "2026-07-16", "actor": "SUA", "place": "Insula Kharg", "lat": 29.23, "lon": 50.32, "desc": "Primul tanker dezactivat sub blocadă: supertancherul sancționat „Belma”, gol, lovit cu rachete Hellfire lângă terminalul petrolier principal.", "status": "confirmat", "cats": ["maritim","energie"], "src": [{ "name": "NPR (15 iul)", "url": "https://www.npr.org/2026/07/15/nx-s1-5894582/us-iran-updates" }, { "name": "Al Jazeera (16 iul)", "url": "https://www.aljazeera.com/news/2026/7/16/us-strikes-iran-tanker-as-tehran-hits-kuwait-jordan-whats-the-latest" }] },
+  { "date": "2026-07-16", "actor": "Iran", "place": "Kuwait (frontieră + platformă offshore)", "lat": 28.95, "lon": 48.60, "desc": "Ripostă cu rachete/drone: 1 muncitor rănit, daune la 3 centre de frontieră și o platformă offshore (poziție aproximativă).", "status": "confirmat", "cats": ["civil","energie"], "src": [{ "name": "Al Jazeera (liveblog 16 iul)", "url": "https://www.aljazeera.com/news/liveblog/2026/7/16/iran-war-live-sirens-in-bahrain-kuwait-us-disables-iranian-oil-tanker" }] },
+  { "date": "2026-07-16", "actor": "Iran", "place": "Bahrain", "lat": 26.03, "lon": 50.55, "desc": "Ripostă cu rachete/drone; interceptări majoritare (poziție generică).", "status": "confirmat (interceptări)", "cats": ["militar"], "src": [{ "name": "Al Jazeera (liveblog 16 iul)", "url": "https://www.aljazeera.com/news/liveblog/2026/7/16/iran-war-live-sirens-in-bahrain-kuwait-us-disables-iranian-oil-tanker" }] },
+  { "date": "2026-07-16", "actor": "Iran", "place": "Iordania", "lat": 31.95, "lon": 36.60, "desc": "Baraj major pe bază aeriană recent extinsă; interceptări (poziție aproximativă).", "status": "confirmat (interceptări)", "cats": ["militar"], "src": [{ "name": "Al Jazeera (liveblog 16 iul)", "url": "https://www.aljazeera.com/news/liveblog/2026/7/16/iran-war-live-sirens-in-bahrain-kuwait-us-disables-iranian-oil-tanker" }] },
+  { "date": "2026-07-16", "actor": "SUA", "place": "Ahvaz (spital evacuat)", "lat": 31.32, "lon": 48.67, "desc": "Spital forțat să evacueze 211 pacienți după ce ar fi fost lovit; primul punct raportat în Khuzestan în acest episod.", "status": "raportat de filieră iraniană, neconfirmat independent", "cats": ["civil"], "src": [{ "name": "Al Jazeera (16 iul)", "url": "https://www.aljazeera.com/news/2026/7/16/us-launches-new-attacks-on-iran-as-tehran-targets-gulf-sites" }] },
+  { "date": "2026-07-17", "actor": "SUA", "place": "Hormozgan (poduri + infrastructură, ~6 poduri)", "lat": 27.20, "lon": 56.00, "desc": "Faza de lovire a infrastructurii: șase poduri și infrastructură energetică lovite în provincia Hormozgan; un turn prăbușit la un port-cheie (punct generic — localizări multiple).", "status": "confirmat (lista podurilor: filieră iraniană)", "cats": ["civil","energie"], "src": [{ "name": "NPR (17 iul)", "url": "https://www.npr.org/2026/07/17/g-s1-134158/us-iran-war-updates" }, { "name": "Washington Times", "url": "https://www.washingtontimes.com/news/2026/jul/17/us-hits-bridges-collapses-tower-key-port-iran-campaign-expands/" }] },
+  { "date": "2026-07-17", "actor": "Iran", "place": "Kuwait (centrală electrică + desalinizare)", "lat": 29.00, "lon": 48.15, "desc": "Ripostă iraniană: avariată o centrală electrică și de desalinizare a apei (poziție aproximativă).", "status": "confirmat", "cats": ["civil","energie"], "src": [{ "name": "NPR (17 iul)", "url": "https://www.npr.org/2026/07/17/g-s1-134158/us-iran-war-updates" }, { "name": "The Hill", "url": "https://thehill.com/policy/defense/5974227-iran-us-strikes/" }] },
+  { "date": "2026-07-17", "actor": "Iran", "place": "Baza Sheikh Isa, Bahrain", "lat": 25.92, "lon": 50.59, "desc": "Drone de atac pe adăposturi de aeronave, parcări și rezervoare de combustibil ale SUA; și poduri de legătură vizate în Bahrain.", "status": "revendicat, parțial confirmat", "cats": ["militar","civil"], "src": [{ "name": "Al Jazeera (17 iul)", "url": "https://www.aljazeera.com/news/2026/7/17/us-launches-seventh-straight-night-of-strikes-on-iran" }, { "name": "ToI (liveblog 18 iul)", "url": "https://www.timesofisrael.com/liveblog-july-18-2026/" }] },
+  { "date": "2026-07-17", "actor": "Iran", "place": "Iordania (interceptări)", "lat": 31.90, "lon": 36.60, "desc": "10 rachete iraniene doborâte de armata iordaniană; fără victime sau pagube (poziție generică).", "status": "confirmat (interceptări)", "cats": ["militar"], "src": [{ "name": "Al Jazeera (17 iul)", "url": "https://www.aljazeera.com/news/2026/7/17/us-launches-seventh-straight-night-of-strikes-on-iran" }] },
+  { "date": "2026-07-18", "time": "noaptea 17→18, încheiată ~04:30 IL (21:30 ET)", "actor": "SUA", "place": "Iran (a 7-a noapte, multiple)", "lat": 30.00, "lon": 54.00, "desc": "A șaptea noapte consecutivă de lovituri: situri de supraveghere, logistică militară, depozite subterane de armament, capacități maritime (punct generic — localizări multiple).", "status": "confirmat (localizare generică)", "cats": ["militar","maritim"], "src": [{ "name": "ToI (liveblog 18 iul)", "url": "https://www.timesofisrael.com/liveblog-july-18-2026/" }, { "name": "Al Jazeera", "url": "https://www.aljazeera.com/news/2026/7/17/us-launches-seventh-straight-night-of-strikes-on-iran" }] },
+  { "date": "2026-07-18", "time": "noaptea 17→18 (a 7-a noapte)", "actor": "SUA", "place": "Bonji (Hormozgan, coastă)", "lat": 26.80, "lon": 55.60, "desc": "Rachete pe instalații electrice și pompe de desalinizare; ~10.000 de oameni din 20 de sate rămași fără apă potabilă (poziție aproximativă).", "status": "raportat de filieră iraniană, neconfirmat independent", "cats": ["civil","energie"], "src": [{ "name": "Middle East Monitor (18 iul)", "url": "https://www.middleeastmonitor.com/20260718-us-strike-on-water-desalination-plant-left-about-10000-without-water-iranian-official/" }, { "name": "CNN (liveblog 18 iul)", "url": "https://www.cnn.com/2026/07/18/world/live-news/iran-war-trump" }] },
+  { "date": "2026-07-18", "time": "noaptea 17→18 (a 7-a noapte)", "actor": "SUA", "place": "Yazd (centrul Iranului)", "lat": 31.90, "lon": 54.37, "desc": "Cinci explozii raportate în zona Yazd, în afara limitelor orașului, fără victime — extindere geografică spre interiorul Iranului.", "status": "confirmat", "cats": ["militar"], "src": [{ "name": "WION", "url": "https://www.wionews.com/videos/us-iran-war-state-media-five-blasts-heard-in-yazd-in-central-iran-1784356951894" }, { "name": "NPR (18 iul)", "url": "https://www.npr.org/2026/07/18/nx-s1-5898916/us-iran-escalate-strikes" }] },
+  { "date": "2026-07-18", "actor": "Iran", "place": "Kuwait (desalinizare)", "lat": 29.30, "lon": 47.95, "desc": "A doua zi consecutiv în care Iranul lovește o instalație de desalinizare din Kuwait (poziție aproximativă).", "status": "confirmat", "cats": ["civil","energie"], "src": [{ "name": "Fox News (liveblog)", "url": "https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-17-2026" }, { "name": "Middle East Monitor (18 iul)", "url": "https://www.middleeastmonitor.com/20260718-us-strike-on-water-desalination-plant-left-about-10000-without-water-iranian-official/" }] },
+  { "date": "2026-07-17", "actor": "Iran", "place": "Baza Al-Azraq, Iordania", "lat": 31.84, "lon": 36.78, "desc": "Atac IRGC cu rachete balistice și drone; doi militari SUA uciși și unul dispărut — primele victime umane americane din focul iranian de la martie.", "status": "confirmat", "cats": ["militar"], "src": [{ "name": "CNN (18 iul)", "url": "https://www.cnn.com/2026/07/18/politics/iran-war-us-service-members-killed-jordan" }, { "name": "Al Jazeera (18 iul)", "url": "https://www.aljazeera.com/news/2026/7/18/us-military-says-two-service-members-killed-in-jordan" }] },
+  { "date": "2026-07-19", "time": "peste noapte (18→19 iul), ~7 ore", "actor": "SUA", "place": "Iran (a 8-a noapte, multiple)", "lat": 27.50, "lon": 55.50, "desc": "Al 8-lea val consecutiv, prezentat ca ripostă „punitivă” la decesele din Iordania: supraveghere costieră, apărare aeriană, capabilități maritime, depozite rachete/drone; explozii la Bandar Abbas, Qeshm și Sirik (punct generic — localizări multiple).", "status": "confirmat (localizare generică)", "cats": ["militar","maritim"], "src": [{ "name": "CNN Arabic (19 iul)", "url": "https://arabic.cnn.com/amphtml/middle-east/article/2026/07/19/us-launches-new-airstrikes-to-swiftly-punish-iran-after-service-members-killed" }, { "name": "Jerusalem Post (liveblog 19 iul)", "url": "https://www.jpost.com/middle-east/iran-news/2026-07-19/live-updates-902897" }] }
+];
+/* GEO_EVENTS_END */
+</script>
+
+<script>
+/* ENERGY_SITES_START — strat STATIC de context: instalații energetice publice-notorii.
+   NU se actualizează la rulările automate; se editează doar la cererea utilizatoarei. */
+const ENERGY_SITES = [
+  { "name": "Insula Kharg", "lat": 29.23, "lon": 50.32, "desc": "Principalul terminal de export petrolier al Iranului (~90% din exporturile de țiței)." },
+  { "name": "Terminalul Jask", "lat": 25.66, "lon": 57.77, "desc": "Capătul conductei Goreh–Jask — ruta iraniană de export care ocolește strâmtoarea Hormuz." },
+  { "name": "Bandar Abbas", "lat": 27.15, "lon": 56.21, "desc": "Port comercial major + rafinărie; principala comandă navală iraniană la Hormuz." },
+  { "name": "Assaluyeh / South Pars", "lat": 27.47, "lon": 52.61, "desc": "Principalul hub gazier iranian — câmpul South Pars, împărțit cu Qatarul (North Field)." },
+  { "name": "Strâmtoarea Hormuz", "lat": 26.57, "lon": 56.25, "desc": "Punct de sufocare global: în mod obișnuit ~20% din petrolul și gazul mondial tranzitează pe aici." },
+  { "name": "Ras Tanura", "lat": 26.64, "lon": 50.16, "desc": "Cel mai mare terminal de export petrolier saudit (Saudi Aramco)." },
+  { "name": "Ras Laffan", "lat": 25.90, "lon": 51.53, "desc": "Hub-ul LNG al Qatarului (North Field) — printre cele mai mari exporturi de gaz lichefiat din lume." },
+  { "name": "Fujairah", "lat": 25.17, "lon": 56.35, "desc": "Hub de bunkeraj și export al EAU, în afara strâmtorii — capătul conductei Habshan–Fujairah." },
+  { "name": "Duqm", "lat": 19.67, "lon": 57.71, "desc": "Port și rafinărie în Oman, pe Marea Arabiei — alternativă logistică în afara Golfului." },
+  { "name": "Platforma Leviathan (aprox.)", "lat": 32.61, "lon": 34.82, "desc": "Principala platformă gazieră a Israelului (export spre Egipt și Iordania); poziție aproximativă." }
+];
+/* ENERGY_SITES_END */
+
+/* INDICATORS_START — jurnal ADITIV de indicatori zilnici. Rulările automate ADAUGĂ
+   o intrare pe zi (doar valori verificate cu sursă; null = neconsemnat, NU se estimează).
+   Schema: { date:"AAAA-LL-ZZ", brent: număr|null (USD/baril), usdils: număr|null, src:"sursă scurtă" } */
+const INDICATORS = [
+  { "date": "2026-07-10", "brent": 76.0, "usdils": 3.04, "src": "Fortune/Trading Economics; Investing.com (~, vineri)" },
+  { "date": "2026-07-13", "brent": 78.86, "usdils": 3.0038, "src": "ToI/AFP; Investing.com" },
+  { "date": "2026-07-17", "brent": 85.95, "usdils": null, "src": "Trading Economics" },
+  { "date": "2026-07-18", "brent": 85.92, "usdils": null, "src": "Al Jazeera/Reuters (Brent sept., 08:00 GMT)" }
+];
+/* INDICATORS_END */
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const map = L.map('map', {scrollWheelZoom:false, zoomControl:true});
+  /* fundal fără etichete + strat separat de denumiri, sub marcatori — aspect cartografic curat */
+  const lblPane = map.createPane('labels');
+  lblPane.style.zIndex = 350; lblPane.style.pointerEvents = 'none';
+  L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark?'dark_nolabels':'light_nolabels'}/{z}/{x}/{y}{r}.png`,
+    {attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:12}).addTo(map);
+  L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark?'dark_only_labels':'light_only_labels'}/{z}/{x}/{y}{r}.png`,
+    {pane:'labels', maxZoom:12}).addTo(map);
+  L.control.scale({imperial:false, position:'bottomright'}).addTo(map);
+  /* timbru de generare + mini-legendă, pe hartă */
+  const stamp = L.control({position:'topright'});
+  stamp.onAdd = () => {
+    const d = L.DomUtil.create('div','map-chip');
+    const t = new Intl.DateTimeFormat('ro-RO',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Jerusalem'}).format(new Date(DATA.generatedAt));
+    d.innerHTML = `<b>MONITORIZARE OSINT</b><br>Generat: ${t} (IL)`;
+    return d;
+  };
+  stamp.addTo(map);
+  const mapLegend = L.control({position:'bottomleft'});
+  mapLegend.onAdd = () => {
+    const d = L.DomUtil.create('div','map-chip');
+    d.innerHTML = `<div class="lrow"><span class="dot" style="background:#4f8cff"></span>SUA / coaliție</div>
+      <div class="lrow"><span class="dot" style="background:#e05252"></span>Iran</div>
+      <div class="lrow"><span class="dot" style="background:#d4a94e"></span>disputat</div>
+      <div class="lrow"><span class="ring"></span>localizare generică</div>`;
+    return d;
+  };
+  mapLegend.addTo(map);
+  const colors = {SUA:'#4f8cff', Iran:'#e05252', disputat:'#d4a94e'};
+
+  /* --- Strat energetic (context static, comutabil) --- */
+  const energyLayer = L.layerGroup();
+  ENERGY_SITES.forEach(s => {
+    L.marker([s.lat, s.lon], {icon: L.divIcon({className:'', html:'<div class="en-ico">◆</div>', iconSize:[16,16], iconAnchor:[8,8]})})
+      .bindPopup(`<b>◆ ${s.name}</b><br><small>Infrastructură energetică — context</small><br>${s.desc}`)
+      .addTo(energyLayer);
+  });
+  document.getElementById('en-toggle').addEventListener('change', ev => {
+    ev.target.checked ? energyLayer.addTo(map) : map.removeLayer(energyLayer);
+  });
+
+  /* --- Evenimente cinetice + cronologie + filtre de categorie --- */
+  const catNames = {militar:'bază/instalație militară', energie:'infrastructură energetică/nucleară', maritim:'nave/navigație', civil:'zone civile/infrastructură civilă'};
+  const seen = {};   /* offset radial mic pentru puncte cu coordonate identice (ex. Sheikh Isa 13 + 17 iul) */
+  const markers = GEO_EVENTS.map(e => {
+    const cats = e.cats && e.cats.length ? e.cats : ['militar'];
+    const generic = /punct generic|localizare generică|poziție generică/i.test((e.desc||'') + ' ' + (e.status||''));
+    const k = e.lat.toFixed(2) + ',' + e.lon.toFixed(2);
+    const n = seen[k] = (seen[k] || 0) + 1;
+    const lat = n > 1 ? e.lat + 0.05*Math.cos(n*2.4) : e.lat;
+    const lon = n > 1 ? e.lon + 0.05*Math.sin(n*2.4) : e.lon;
+    const c = colors[e.actor] || '#8fa0bd';
+    const m = generic
+      ? L.circleMarker([lat, lon], {radius:14, color:c, fillColor:c, dashArray:'4 4', weight:1.5, fillOpacity:0.10})
+      : L.circleMarker([lat, lon], {radius:6, color:'#ffffff', fillColor:c, weight:1.5});
+    const chips = cats.map(cc=>`<span class="cat-chip">${catNames[cc]||cc}</span>`).join('');
+    const srcs = (e.src||[]).map(s => s.url
+      ? `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`
+      : `<span style="opacity:.75">${s.name}</span>`).join(' · ');
+    m.bindPopup(`<b>${e.place}</b><br><small>${e.date}${e.time?` · ${e.time}`:''} — ${e.actor === 'disputat' ? 'atribuire disputată' : e.actor}${generic?' · localizare generică':''}</small><br>${chips}<br>${e.desc}<br><i>Statut: ${e.status}</i>${srcs?`<br><small>Sursă: ${srcs}</small>`:''}`);
+    m.bindTooltip(`${e.place} · ${e.date.slice(8)}.${e.date.slice(5,7)}`, {direction:'top', offset:[0,-6]});
+    return {e, m, cats, generic, day: Math.round(new Date(e.date).getTime()/86400000)};
+  });
+  const pts = GEO_EVENTS.map(e=>[e.lat,e.lon]);
+  if (pts.length) map.fitBounds(pts, {padding:[30,30]});
+
+  const catBoxes = Array.from(document.querySelectorAll('#cat-filters input'));
+  const activeCats = () => new Set(catBoxes.filter(b=>b.checked).map(b=>b.dataset.cat));
+
+  const day0 = Math.min(...markers.map(x=>x.day));
+  const dayN = Math.max(...markers.map(x=>x.day));
+  const slider = document.getElementById('tl-slider');
+  const label  = document.getElementById('tl-label');
+  const play   = document.getElementById('tl-play');
+  slider.max = dayN - day0;
+  slider.value = slider.max;
+  const fmtD = t => new Intl.DateTimeFormat('ro-RO',{day:'numeric',month:'long'}).format(new Date(t*86400000));
+
+  /* Grafic de intensitate stratificat pe actori (după filtrele active), click pe bară = salt la zi */
+  const intEl = document.getElementById('intensity');
+  function drawIntensity(cur, act){
+    const days = [];
+    for (let d = day0; d <= dayN; d++){
+      const evs = markers.filter(x => x.day === d && x.cats.some(c => act.has(c)));
+      days.push({d, SUA: evs.filter(x=>x.e.actor==='SUA').length,
+                    Iran: evs.filter(x=>x.e.actor==='Iran').length,
+                    disputat: evs.filter(x=>x.e.actor==='disputat').length});
+    }
+    const mx = Math.max(1, ...days.map(x => x.SUA + x.Iran + x.disputat));
+    intEl.innerHTML = days.map((x, i) => {
+      const tot = x.SUA + x.Iran + x.disputat;
+      const cls = ['ibar', x.d > cur ? 'future' : '', x.d === cur ? 'today' : ''].filter(Boolean).join(' ');
+      const segs = ['SUA','Iran','disputat'].filter(a=>x[a])
+        .map(a => `<span class="iseg" style="height:${Math.round(x[a]/mx*100)}%;background:${colors[a]}"></span>`).join('');
+      const tip = `${fmtD(x.d)}: ${tot} ev.` + (tot?` (SUA ${x.SUA} · Iran ${x.Iran}${x.disputat?` · disp. ${x.disputat}`:''})`:'');
+      return `<div class="${cls}" data-day="${i}" data-tip="${tip}">${segs}</div>`;
+    }).join('');
+  }
+  intEl.addEventListener('click', ev => {
+    const b = ev.target.closest('.ibar');
+    if (b) { slider.value = b.dataset.day; update(); }
+  });
+
+  function update(){
+    const cur = day0 + Number(slider.value);
+    const act = activeCats();
+    let shown = 0;
+    markers.forEach(({e, m, cats, generic, day}) => {
+      const catOk = cats.some(c => act.has(c));
+      if (day > cur || !catOk) { if (map.hasLayer(m)) map.removeLayer(m); return; }
+      shown++;
+      const recent = (cur - day) <= 2;
+      if (generic)
+        m.setStyle({radius: recent?16:13, fillOpacity: recent?0.16:0.06, opacity: recent?0.9:0.4, weight: recent?2:1.2});
+      else
+        m.setStyle({radius: recent?8:5.5, fillOpacity: recent?0.95:0.4, opacity: recent?1:0.5, weight: recent?2:1.2});
+      if (!map.hasLayer(m)) m.addTo(map);
+      const el = m.getElement && m.getElement();
+      if (el) el.classList.toggle('ev-glow', recent && !generic);
+    });
+    const atEnd = Number(slider.value) === Number(slider.max);
+    const filtered = act.size < catBoxes.length;
+    label.textContent = `${fmtD(day0)} → ${fmtD(cur)} · ${shown} evenimente` + (atEnd ? ' (tot episodul)' : '') + (filtered ? ' · filtrat' : '');
+    drawIntensity(cur, act);
+  }
+  slider.addEventListener('input', update);
+  catBoxes.forEach(b => b.addEventListener('change', update));
+
+  /* --- Indicatori: ultima valoare + variație + sparkline (fără interpolare) --- */
+  (function(){
+    const el = document.getElementById('indicators');
+    if (!el || !INDICATORS.length) return;
+    const defs = [
+      {key:'brent',  name:'Brent (USD/baril)',  dec:2},
+      {key:'usdils', name:'USD/ILS',            dec:4}
+    ];
+    const iday = s => Math.round(new Date(s).getTime()/86400000);
+    const i0 = iday(INDICATORS[0].date), i1 = iday(INDICATORS[INDICATORS.length-1].date);
+    el.innerHTML = defs.map(def => {
+      const pts = INDICATORS.filter(r => r[def.key] != null);
+      if (!pts.length) return '';
+      const last = pts[pts.length-1], prev = pts.length > 1 ? pts[pts.length-2] : null;
+      const delta = prev ? (last[def.key]-prev[def.key]) : null;
+      const dTxt = delta==null ? '' : `${delta>=0?'▲':'▼'} ${Math.abs(delta).toFixed(def.dec)} față de ${fmtD(iday(prev.date))}`;
+      const vals = pts.map(r=>r[def.key]);
+      const lo = Math.min(...vals), hi = Math.max(...vals), span = (hi-lo)||1;
+      const W=140, H=34;
+      const xy = pts.map(r => `${(i1===i0?0.5:(iday(r.date)-i0)/(i1-i0))*W},${H-4-((r[def.key]-lo)/span)*(H-8)}`);
+      const dots = pts.map((r,j) => `<circle cx="${xy[j].split(',')[0]}" cy="${xy[j].split(',')[1]}" r="2.5" fill="var(--gold)"><title>${r.date}: ${r[def.key]} (${r.src})</title></circle>`).join('');
+      return `<div class="ind-row"><span class="ind-name">${def.name}</span>
+        <span class="ind-val">${last[def.key].toFixed(def.dec)}</span>
+        <span class="ind-delta">${fmtD(iday(last.date))}${dTxt?' · '+dTxt:''}</span>
+        <svg class="spark" width="${W}" height="${H}" aria-hidden="true"><polyline points="${xy.join(' ')}" fill="none" stroke="var(--accent)" stroke-width="1.5"/>${dots}</svg></div>`;
+    }).join('');
+  })();
+
+  let timer = null;
+  play.addEventListener('click', () => {
+    if (timer) { clearInterval(timer); timer = null; play.textContent = '▶ Redă'; return; }
+    if (Number(slider.value) === Number(slider.max)) slider.value = 0;
+    play.textContent = '⏸ Pauză';
+    update();
+    timer = setInterval(() => {
+      if (Number(slider.value) >= Number(slider.max)) { clearInterval(timer); timer = null; play.textContent = '▶ Redă'; return; }
+      slider.value = Number(slider.value) + 1;
+      update();
+    }, 800);
+  });
+  update();
+})();
+</script>
+</body>
+</html>

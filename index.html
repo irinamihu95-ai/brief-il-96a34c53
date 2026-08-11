@@ -209,23 +209,33 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-08-07T15:03:00+03:00",
+  "generatedAt": "2026-08-11T22:13:00+03:00",
   "runType": "Scan după-amiază",
-  "nextRun": "2026-08-08T07:30:00+03:00",
+  "nextRun": "2026-08-12T07:30:00+03:00",
   "nivel2": [],
   "sections": [
     {
-      "id": "golf-yemen",
-      "title": "Golf — Yemen",
+      "id": "gaza-sua",
+      "title": "Gaza — ruptură SUA–Israel",
       "items": [
         {
-          "title": "Escaladarea din Yemen continuă: noi atacuri houthi în Marib și Hadramout",
-          "date": "7 aug",
+          "title": "Netanyahu respinge oficial planul în 15 puncte al Board of Peace pentru Gaza",
+          "date": "9 aug",
           "flag": "nou",
-          "body": "Armata yemenită anunță cel puțin 17 soldați și un ofițer uciși în atacuri houthi asupra provinciilor Marib și Hadramout în cursul dimineții de 7 august. Forțele guvernamentale au doborât mai multe drone deasupra orașului Marib, ținta unor rachete și drone; un bilanț preliminar al unui atac cu dronă asupra zonei Harib (sudul Maribului) indică trei morți și patru răniți. Este continuarea directă a valului de 6 august, când houthii au ucis cel puțin 58 de militari guvernamentali — una dintre cele mai grele zile din războiul civil yemenit în peste trei ani.",
+          "body": "În ședința de cabinet de duminică, 9 august, premierul Netanyahu a respins oficial planul în 15 puncte propus de Board of Peace (prezentat la 30 iulie și acceptat de Hamas), care condiționa retragerea IDF de dezarmarea completă a Hamas și tranziția guvernării către un comitet palestinian independent. Netanyahu: „IDF nu va efectua nicio retragere până când Hamas nu este dezarmat cu adevărat” și a reiterat refuzul unui stat palestinian („nici Fatahstan, nici Hamastan”). Este prima ruptură publică vizibilă cu administrația Trump pe dosarul Gaza. (Eveniment de 9 august, la peste 24h de ora scanului — încadrat ca deplasarea principală a ferestrei.)",
           "sources": [
-            { "name": "Middle East Eye (liveblog 7 aug)", "url": "https://www.middleeasteye.net/live-blog/live-blog-update/least-17-soldiers-officer-killed-houthi-attack-yemen" },
-            { "name": "TRT World (7 aug)", "url": "https://www.trtworld.com/article/f814508973eb" }
+            { "name": "Al Jazeera (9 aug)", "url": "https://www.aljazeera.com/news/2026/8/9/israel-rejects-trumps-15-point-plan-for-gaza" },
+            { "name": "Washington Post (9 aug)", "url": "https://www.washingtonpost.com/world/2026/08/09/netanyahu-rejects-trump-backed-plan-hamas-disarm-israel-leave-gaza/" },
+            { "name": "CNN (9 aug)", "url": "https://www.cnn.com/2026/08/09/middleeast/israel-gaza-trump-netanyahu-plan-intl" }
+          ]
+        },
+        {
+          "title": "Trump: SUA vor cere reparații de la Iran, inclusiv pentru pagubele din Liban și Gaza",
+          "date": "10 aug",
+          "flag": "context",
+          "body": "La 10 august, președintele Trump a afirmat că SUA vor solicita reparații de la Iran, inclusiv pentru pagubele produse în Liban și Gaza. Poziția înăsprește linia americană față de Teheran și complică suplimentar track-ul de negociere pe strâmtoarea Hormuz. (Item de 10 august, tratat ca element de context sub regula datării duble.)",
+          "sources": [
+            { "name": "The Times of Israel (liveblog 10 aug)", "url": "https://www.timesofisrael.com/liveblog-august-10-2026/" }
           ]
         }
       ]
@@ -235,22 +245,62 @@ const DATA = {
       "title": "Iran — Hormuz",
       "items": [
         {
-          "title": "Mojtaba Khamenei: strâmtoarea Hormuz trebuie să rămână închisă — semnal care complică acordul Iran–Oman",
-          "date": "6 aug",
-          "flag": "de urmărit",
-          "body": "În prima sa declarație publică de la numirea ca Lider Suprem al Iranului (2 august), Mojtaba Khamenei afirmă că strâmtoarea Hormuz trebuie să rămână închisă și că „pârghia blocării strâmtorii trebuie cu siguranță să continue să fie folosită”. Poziția tensionează aprobarea declarației comune Iran–Oman — al cărei draft tehnic a fost finalizat și așteaptă tocmai avizul său — și consolidează citirea potrivit căreia anunțul acordului tinde spre amânare, nu spre confirmare rapidă. (Declarație de joi, 6 august, reținută pe larg abia azi; filieră unică.)",
+          "title": "Acordul Iran–Oman nematerializat; traficul prin Hormuz s-a prăbușit, petrolul urcă",
+          "date": "11 aug",
+          "flag": "nou",
+          "body": "Speranțele unui acord SUA–Iran pe strâmtoarea Hormuz se sting: traficul a scăzut la șase nave pe zi, față de o medie de circa 11 pe 10 zile, potrivit datelor de transport maritim. Pe acest fond și pe prăbușirea exporturilor iraniene, Brent a urcat de la ~82–83 USD/baril la finalul săptămânii trecute spre ~87–88 USD pe 11 august, cu risc de nou avânt spre 100 USD dacă blocajul persistă. Teheranul menține condiționările privind respectarea de către Washington a memorandumului din iunie înainte de orice redeschidere.",
           "sources": [
-            { "name": "AOL / AP (6 aug)", "url": "https://www.aol.com/articles/iran-leader-issues-first-statement-144647820.html" }
+            { "name": "CNBC — Hormuz deadlock (11 aug)", "url": "https://www.cnbc.com/2026/08/11/hormuz-oil-prices-us-iran.html" },
+            { "name": "CNBC — oil rises above $82 (10 aug)", "url": "https://www.cnbc.com/2026/08/10/oil-prices-today-brent-wti-hormuz-trump-iran.html" },
+            { "name": "ToI — șase nave prin Hormuz (11 aug)", "url": "https://www.timesofisrael.com/liveblog_entry/only-six-vessels-traveled-through-hormuz-yesterday-shipping-data-shows/" }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "israel-liban",
+      "title": "Israel — Liban",
+      "items": [
         {
-          "title": "Petrolul staționar pe fricțiunea Hormuz; propunerea Iran–Oman ar interzice navele SUA și israeliene",
-          "date": "7 aug",
-          "flag": "context",
-          "body": "Brent a coborât la ~82,15 USD/baril (−0,4%) pe 7 august, în timp ce futures-urile Brent câștigau 99 de cenți (+1,2%), la ~83,48 USD, pe fondul tensiunilor privind restricțiile de tranzit prin strâmtoare — nivel practic staționar față de ~82,8 USD consemnat ieri. Potrivit propunerii de acord, Teheranul urmărește să interzică tranzitul navelor SUA și israeliene și să impună penalizări egale cu 20% din valoarea încărcăturii pentru încălcări.",
+          "title": "Lovitură IDF cu dronă lângă Nabatieh; următoarea rundă de discuții amânată la septembrie",
+          "date": "11 aug",
+          "flag": "nou",
+          "body": "În dimineața de 11 august, o dronă israeliană a lovit un vehicul la marginea orașului Nabatieh (sudul Libanului); potrivit presei libaneze și Ministerului Sănătății, o a doua lovitură a vizat o echipă de ambulanță a serviciului medical legat de Hezbollah venită să evacueze răniții, soldată cu doi civili răniți și pagube la ambulanțe. IDF nu a comentat la ora scanului. Separat, un oficial a indicat că următoarea rundă de discuții Israel–Liban se va desfășura la începutul lunii septembrie — amânare față de runda de la Roma. Lovitura se înscrie în tiparul de operațiuni IDF cvasi-zilnice în sud, nu constituie un declanșator nou.",
           "sources": [
-            { "name": "Sunday Guardian (7 aug)", "url": "https://sundayguardianlive.com/business/brent-crude-oil-price-today-august-7-brent-climbs-above-83-wti-nears-79-as-strait-of-hormuz-tensions-deepen-check-latest-brent-crude-wti-oil-rates-today-255609/" },
-            { "name": "TradingEconomics — Brent", "url": "https://tradingeconomics.com/commodity/brent-crude-oil" }
+            { "name": "ToI — lovitură dronă Nabatieh (11 aug)", "url": "https://www.timesofisrael.com/liveblog_entry/israeli-drone-strike-reportedly-hits-vehicle-near-lebanons-nabatieh/" },
+            { "name": "Haaretz — liveblog 11 aug (he, sursă locală)", "url": "https://www.haaretz.co.il/news/dailynews/2026-08-11/ty-article-live/0000019f-ed8f-d101-a5bf-ef9f44780000?liveBlogItemId=857685793" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "politic-il",
+      "title": "Politică internă Israel",
+      "items": [
+        {
+          "title": "Likud rezervă 11 din primele 29 locuri pentru candidați aleși; Illouz demisionează din Knesset",
+          "date": "11 aug",
+          "flag": "nou",
+          "body": "Înaintea primariilor Likud din 17 august, partidul a anunțat marți dimineață că Israel Katz, Gideon Sa'ar și Haim Katz primesc locuri garantate pe listă, separat de cele opt locuri deja rezervate candidaților aleși de Netanyahu — în total 11 din primele 29 de poziții revin unor candidați desemnați, nu aleși de cei ~140.000 de membri. Deputata Tally Gotliv a criticat „o mișcare rușinoasă”. În paralel, deputatul Dan Illouz și-a depus demisia din Knesset la o lună după plecarea din Likud spre Yisrael Beytenu, declarând că Netanyahu „trebuie să plece acasă”; îl înlocuiește Shabtai Katash. Armata a declarat operațional primul batalion de rezervă al Brigăzii haredi Hasmonean.",
+          "sources": [
+            { "name": "ToI — locuri rezervate Katz/Gotliv (11 aug)", "url": "https://www.timesofisrael.com/liveblog_entry/mk-gotliv-pans-likud-for-disgraceful-move-granting-katz-reserved-spot-on-slate/" },
+            { "name": "ToI — demisie Illouz (11 aug)", "url": "https://www.timesofisrael.com/liveblog_entry/likud-mk-illouz-resigns-from-knesset-month-after-ditching-ruling-party/" },
+            { "name": "ToI — batalion Hasmonean operațional (11 aug)", "url": "https://www.timesofisrael.com/liveblog_entry/first-battalion-in-idfs-haredi-hasmonean-brigade-declared-operational/" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "golf-yemen",
+      "title": "Golf — Yemen",
+      "items": [
+        {
+          "title": "Spirala de violență saudito-houthi continuă; atac houthi asupra portului Mokha",
+          "date": "10 aug",
+          "flag": "context",
+          "body": "Escaladarea din 6–7 august pe frontul Yemen se prelungește: houthii au atacat portul Mokha (deținut de guvernul recunoscut internațional) pe 10 august, iar o analiză leagă ultima spirală de violență dintre Arabia Saudită și houthi de blocarea unui zbor iranian. Frontul Golf/Marea Roșie rămâne activ, cu risc semnalat de ONU de reintrare într-un conflict pe scară largă.",
+          "sources": [
+            { "name": "ToI — analiză Saudi–Houthi (10 aug)", "url": "https://www.timesofisrael.com/a-blocked-iranian-flight-behind-latest-spiral-of-violence-between-saudis-and-houthis/" }
           ]
         }
       ]
@@ -260,10 +310,10 @@ const DATA = {
       "title": "Reacții oficiale",
       "items": [
         {
-          "title": "Fără poziție UE proaspătă la ora scanului; MAE România menține alerta maximă",
-          "date": "7 aug",
+          "title": "Fără poziție UE proaspătă izolabilă la 11 august; MAE România menține alerta maximă",
+          "date": "11 aug",
           "flag": "verificat",
-          "body": "Nicio poziție proaspătă datată 7 august de la Consiliu, Comisie sau Înalta Reprezentantă Kaja Kallas nu a putut fi izolată la ora scanului — absența unei reacții a Bruxelles-ului pe evoluțiile de zi (Hormuz, sudul Libanului) se prelungește. Capcană de datare reconfirmată: articolul Anadolu în care Kallas califică riposta israeliană drept „heavy-handed”, servit de motoarele de căutare ca actual, este din 9 martie 2026 și nu constituie item curent. Alerta de călătorie a MAE pentru Israel, Palestina, Liban și Iran rămâne la nivelul maxim (8/9), neschimbată.",
+          "body": "Nicio poziție proaspătă datată 11 august de la Consiliu, Comisie sau Înalta Reprezentantă Kaja Kallas nu a putut fi izolată la ora scanului. Axa diplomatică vie a intervalului este ruptura SUA–Israel pe planul Gaza, acoperită de presa europeană (France24, Euronews) în 9 august, fără o poziție instituțională UE nouă izolabilă. Alerta de călătorie a MAE pentru Israel, Palestina, Liban și Iran rămâne la nivelul maxim (8/9), neschimbată.",
           "sources": [
             { "name": "Consilium — poziția UE Orientul Mijlociu", "url": "https://www.consilium.europa.eu/en/policies/eu-position-situation-middle-east/" },
             { "name": "MAE România — alerte de călătorie", "url": "https://www.mae.ro/travel-alerts/2938" }
@@ -272,23 +322,24 @@ const DATA = {
       ]
     }
   ],
-  "vector": "Scan după-amiază, 7 august (fereastră 08:00→15:03). Fără trigger nou de Nivel 2. Pe axa Golf/Yemen, escaladarea de ieri continuă: noi atacuri houthi în Marib și Hadramout, cu cel puțin 17 militari guvernamentali uciși. Pe axa Hormuz, prima declarație publică a noului Lider Suprem Mojtaba Khamenei — strâmtoarea trebuie să rămână închisă — complică aprobarea acordului tehnic Iran–Oman și întărește citirea de amânare a anunțului; petrolul rămâne staționar (~82 USD). Fără deplasare nouă izolabilă pe axa Israel–Liban față de dimineață. Uniunea Europeană continuă să nu emită o poziție proaspătă; MAE România menține alerta maximă.",
+  "vector": "Scan după-amiază, 11 august (fereastră largă 7 aug 15:03 → 11 aug 22:13, ~4 zile; ultima rulare consemnată era 7 august). Fără trigger nou de Nivel 2. Deplasarea majoră a intervalului: pe 9 august Netanyahu a respins oficial planul în 15 puncte al Board of Peace pentru Gaza (acceptat de Hamas), deschizând prima ruptură vizibilă cu administrația Trump, care pe 10 august a cerut reparații de la Iran. Pe axa Hormuz, acordul Iran–Oman rămâne nematerializat, traficul s-a prăbușit la șase nave pe zi, iar Brent a urcat spre ~87–88 USD. Pe axa Israel–Liban, lovitură IDF cu dronă lângă Nabatieh (doi civili răniți) și amânarea următoarei runde de discuții la septembrie. Politic, Likud a rezervat 11 din primele 29 de locuri pentru candidați desemnați înaintea primariilor din 17 august, iar deputatul Dan Illouz a demisionat din Knesset. Uniunea Europeană nu a emis o poziție proaspătă izolabilă; MAE România menține alerta maximă.",
   "delta": [
-    "Yemen: escaladarea de 6 aug (≥58 morți) continuă pe 7 aug — noi atacuri în Marib/Hadramout, ≥17 militari guvernamentali uciși; axa Golf/Marea Roșie rămâne activă.",
-    "Hormuz: prima declarație a Liderului Suprem Mojtaba Khamenei (strâmtoarea rămâne închisă) tensionează aprobarea declarației comune Iran–Oman — pragul spre amânare se consolidează.",
-    "Energie: Brent staționar (~82,15 USD, −0,4%), fără mișcare semnificativă față de ieri.",
-    "Israel–Liban: fără deplasare nouă izolabilă față de dimineață (Libanul încă fără răspuns israelian pe angajamentul la armistițiu).",
-    "Reacții UE: absența unei poziții proaspete se prelungește; capcană de datare „heavy-handed” (martie 2026) reconfirmată și evitată."
+    "Gaza: Netanyahu respinge oficial planul în 15 puncte al Board of Peace (9 aug); reiterează refuzul unui stat palestinian — ruptură vizibilă cu Trump.",
+    "Iran/SUA: Trump cere reparații de la Iran, inclusiv pentru Liban și Gaza (10 aug) — înăsprire a liniei americane.",
+    "Hormuz/energie: acordul Iran–Oman nematerializat; trafic prăbușit la 6 nave/zi; Brent în urcare de la ~82–83 spre ~87–88 USD.",
+    "Israel–Liban: lovitură IDF cu dronă lângă Nabatieh (2 civili răniți); următoarea rundă de discuții amânată la începutul lui septembrie.",
+    "Politică IL: Likud rezervă 11 din primele 29 locuri pentru candidați desemnați (primaries 17 aug); dep. Dan Illouz demisionează din Knesset.",
+    "Reacții UE: fără poziție proaspătă izolabilă datată 11 aug; MAE România menține alerta maximă (8/9)."
   ],
   "calendar": [
-    { "date": "7 august (diseară/noaptea)", "event": "De urmărit un eventual anunț al declarației comune Iran–Oman pe Hormuz — condiționat de avizul lui Mojtaba Khamenei" },
-    { "date": "11 august (marți)", "event": "Reuniunea liderilor coaliției pe formatul ultimelor săptămâni de mandat (relatări din presa israeliană)" },
+    { "date": "11 august (diseară/noaptea)", "event": "De urmărit disputa pe locurile rezervate din lista Likud și eventuale reacții la ruptura SUA–Israel pe Gaza" },
     { "date": "17 august", "event": "Primaries Likud" },
+    { "date": "început de septembrie", "event": "Următoarea rundă de discuții Israel–Liban" },
     { "date": "27 octombrie", "event": "Alegeri legislative Israel, Knesset 26" },
     { "date": "31 decembrie", "event": "Expirarea mandatului UNIFIL" }
   ],
   "demnitari": "Nicio schimbare confirmată de demnitar în funcție în statele monitorizate în intervalul scanului. Guvernul Netanyahu rămâne interimar până la alegerile din 27 octombrie.",
-  "sourceCount": 7
+  "sourceCount": 12
 };
 /* BRIEFING_DATA_END */
 render(DATA);

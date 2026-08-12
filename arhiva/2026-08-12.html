@@ -114,7 +114,7 @@
     </div>
   </header>
 
-  <div style="background:var(--card2);border:1px solid var(--gold);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.85rem">📁 Snapshot de arhivă — starea paginii la 2026-08-12T08:00:00+03:00. <a href="../" style="color:var(--accent)">Versiunea curentă</a> · <a href="./" style="color:var(--accent)">Toată arhiva</a></div>
+  <div style="background:var(--card2);border:1px solid var(--gold);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.85rem">📁 Snapshot de arhivă — starea paginii la 2026-08-12T15:03:00+03:00. <a href="../" style="color:var(--accent)">Versiunea curentă</a> · <a href="./" style="color:var(--accent)">Toată arhiva</a></div>
   <div id="err">Datele briefingului nu au putut fi încărcate. Reîncearcă mai târziu.</div>
   <div id="n2"></div>
   <div id="sections"></div>
@@ -210,65 +210,35 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-08-12T08:00:00+03:00",
-  "runType": "Briefing matinal",
-  "nextRun": "2026-08-12T15:00:00+03:00",
+  "generatedAt": "2026-08-12T15:03:00+03:00",
+  "runType": "Scan după-amiază",
+  "nextRun": "2026-08-13T07:30:00+03:00",
   "nivel2": [],
   "sections": [
     {
-      "id": "iran-sua-turcia",
-      "title": "Iran — SUA — Turcia",
+      "id": "hormuz-maritim",
+      "title": "Hormuz — front maritim și energie",
       "items": [
         {
-          "title": "Revelație: complot iranian de doborâre a avionului lui Trump la Ankara (8 iul); Turcia acuză Israelul de fabricare a informației",
-          "date": "11–12 aug (eveniment 8 iul)",
+          "title": "Brent urcă spre 90 USD; traficul prin Hormuz la minim (10 nave luni vs ~130 înainte de război)",
+          "date": "12 aug",
           "flag": "nou",
-          "body": "Presa a relatat pe 11–12 august că, în timpul summitului NATO de la Ankara (7–8 iulie), un serviciu de informații — indicat drept israelian — a avertizat SUA că o unitate iraniană de operațiuni acoperite ar fi plănuit să doboare avionul prezidențial cu rachete portabile (MANPADS) de la mai puțin de un kilometru de aeroport; în consecință, Secret Service l-ar fi transferat pe președintele Trump de pe Air Force One într-un avion militar, printr-o mașină de catering, la ~14:00 pe 8 iulie. Oficiali turci pun acum la îndoială avertismentul, sugerând că Israelul l-ar fi construit pentru a se prezenta drept protector al lui Trump și pentru a deraia negocierile SUA–Iran și apropierea Trump–Erdogan. Fapt verificat: transferul lui Trump și existența raportului (NBC, ToI, JPost, multi-sursă); disputat: originea și autenticitatea informației (poziția turcă — MEE).",
+          "body": "Brent pentru livrare în octombrie a urcat cu peste 2% peste noapte, spre ~89,6 USD/baril la 03:00 GMT pe 12 august (cu circa 24% peste nivelul de dinainte de război), pe fondul atacurilor asupra navigației care erodează speranțele unui acord de redeschidere a strâmtorii Hormuz. Doar 10 nave au traversat strâmtoarea luni, față de ~130 zilnic înainte de război (firma de intelligence maritim Windward). Qatarul a descris marți discuțiile Oman–Iran drept aflate „într-un stadiu avansat”; Teheranul insistă că le tratează separat de redeschiderea strâmtorii, condiționată de ridicarea sancțiunilor și de reparații de război. EIA estimează un Brent mediu de 87 USD în 2026 și revenirea producției din regiune la nivel pre-conflict abia la începutul lui 2027.",
           "sources": [
-            { "name": "The Times of Israel (12 aug)", "url": "https://www.timesofisrael.com/israeli-intel-on-iranian-plot-said-to-have-spurred-decision-to-sneak-trump-off-air-force-one/" },
-            { "name": "NBC News (12 aug)", "url": "https://www.nbcnews.com/politics/donald-trump/warnings-possible-shoulder-fired-missile-led-trumps-secret-plane-swap-rcna591919" },
-            { "name": "Middle East Eye — poziția turcă (12 aug)", "url": "https://www.middleeasteye.net/news/turkey-suspects-israel-fabricated-trump-air-force-one-assassination-plot-derail-us-iran-deal" },
-            { "name": "The Jerusalem Post (12 aug)", "url": "https://www.jpost.com/international/article-905245" }
-          ]
-        },
-        {
-          "title": "Iran îl numește pe Mohsen Rezaei — vizat de mandat Interpol pentru atentatul AMIA — secretar al Consiliului Suprem de Securitate Națională",
-          "date": "9 aug (reacții 11 aug)",
-          "flag": "nou",
-          "body": "Pe 9 august, Iranul l-a numit pe Mohsen Rezaei, 71 de ani, fost comandant al Gărzilor Revoluționare, secretar al Consiliului Suprem de Securitate Națională. Rezaei figurează pe o notificare roșie Interpol din 2007 pentru rolul în atentatul din 1994 asupra centrului comunitar evreiesc AMIA din Buenos Aires (85 de morți) — unul dintre cele mai grave atacuri antisemite ale ultimelor decenii. Este a doua numire în acest an a unui suspect AMIA într-o poziție de vârf de securitate, după Ahmad Vahidi la comanda IRGC. Ministerul israelian de externe a condamnat numirea. Numirea consolidează linia dură sub noul Lider Suprem Mojtaba Khamenei.",
-          "sources": [
-            { "name": "The Times of Israel", "url": "https://www.timesofisrael.com/iran-names-new-security-chief-whos-wanted-by-interpol-in-connection-with-deadly-amia-bombing/" },
-            { "name": "JTA (11 aug)", "url": "https://www.jta.org/2026/08/11/global/iran-appoints-amia-bombing-suspect-to-national-security-council" },
-            { "name": "The Jerusalem Post (11 aug)", "url": "https://www.jpost.com/middle-east/iran-news/article-905240" },
-            { "name": "Iran International (10 aug)", "url": "https://www.iranintl.com/en/202608106603" }
-          ]
-        },
-        {
-          "title": "Hormuz: pozițiile se înăspresc, acordul nematerializat, Brent volatil în jur de 88 USD",
-          "date": "10–11 aug",
-          "flag": "context",
-          "body": "Un acord SUA–Iran pe strâmtoarea Hormuz întârzie: purtătorul de cuvânt al MAE iranian, Esmail Baghaei, a repetat pe 11 august că Washingtonul trebuie să ridice blocada înainte ca Teheranul să redeschidă complet strâmtoarea, iar Gărzile Revoluționare condiționează redeschiderea de o listă de cerințe. Qatar, Pakistan și Oman mediază schimbul de proiecte. Brent a oscilat în jurul a 88 USD/baril pe 11 august (valori raportate între ~87,8 și ~89,2, cu vârfuri intraday mai ridicate la o sursă), pe semnale mixte din Orientul Mijlociu.",
-          "sources": [
-            { "name": "Euronews (10 aug)", "url": "https://www.euronews.com/business/2026/08/10/oil-prices-rise-as-traders-assess-us-iran-talks-on-strait-of-hormuz-deal" },
+            { "name": "Al Jazeera (12 aug)", "url": "https://www.aljazeera.com/economy/2026/8/12/oil-prices-rise-as-attacks-dent-hopes-for-strait-of-hormuz-reopening" },
             { "name": "CNBC (10 aug)", "url": "https://www.cnbc.com/2026/08/10/oil-prices-today-brent-wti-hormuz-trump-iran.html" },
-            { "name": "Fortune — preț petrol (11 aug)", "url": "https://fortune.com/article/price-of-oil-08-11-2026/" }
+            { "name": "EIA — Short-Term Energy Outlook", "url": "https://www.eia.gov/outlooks/steo/report/global_oil.php" }
           ]
-        }
-      ]
-    },
-    {
-      "id": "israel-venezuela",
-      "title": "Israel — Venezuela",
-      "items": [
+        },
         {
-          "title": "Israel și Venezuela restabilesc relațiile consulare după 17 ani",
-          "date": "11 aug",
+          "title": "Atac houthi în Bab al-Mandeb: cel puțin 6 morți pe un cargou yemenit — primele decese din navigație atribuite houthilor de la începutul războiului",
+          "date": "eveniment 11 aug, publicat 12 aug",
           "flag": "nou",
-          "body": "Israel și Venezuela au anunțat marți, 11 august, restabilirea relațiilor oficiale după 17 ani de ruptură (Venezuela rupsese legăturile în 2009, sub Hugo Chávez). Ministrul israelian de externe Gideon Sa'ar a declarat că cele două state au convenit „un mecanism de coordonare care va permite furnizarea de servicii consulare cetățenilor ambelor țări”. Apropierea survine sub președinta interimară Delcy Rodríguez, care a reorientat Venezuela spre SUA, și după trimiterea în iunie a unei delegații israeliene de asistență în urma cutremurelor devastatoare, precum și o solicitare a comunității evreiești locale.",
+          "body": "Houthii au lansat marți trei rachete balistice asupra cargoului yemenit Tihamah (deținut de interese egiptene) în strâmtoarea Bab al-Mandeb; guvernul recunoscut internațional al Yemenului anunță cel puțin șase morți — patru membri de echipaj și doi din forțele de securitate —, o a doua rachetă lovind echipa de salvare. Sunt primele decese din navigație atribuite houthilor de la declanșarea războiului SUA–Israel–Iran (28 februarie). Ulterior, CENTCOM a anunțat că a dezactivat un cargou sub pavilion Panama care încerca să spargă blocada americană a porturilor iraniene.",
           "sources": [
-            { "name": "Haaretz (11 aug)", "url": "https://www.haaretz.com/world-news/americas/2026-08-11/ty-article/.premium/israel-and-venezuela-agree-to-renew-consular-ties-after-17-year-diplomatic-break/0000019f-f21e-d28e-a3df-f25e03fc0000" },
-            { "name": "Al Jazeera (11 aug)", "url": "https://www.aljazeera.com/news/2026/8/11/venezuela-and-israel-restore-consular-ties-as-relations-warm" },
-            { "name": "Arab News (11 aug)", "url": "https://www.arabnews.com/node/2654281/world" }
+            { "name": "Al Jazeera (12 aug)", "url": "https://www.aljazeera.com/news/2026/8/12/six-killed-in-houthi-attack-on-bab-al-mandeb-ship-yemens-government-says" },
+            { "name": "The Washington Post (11 aug)", "url": "https://www.washingtonpost.com/national/2026/08/11/iran-us-strait-hormuz-august-11-2026/f8a12ad6-9563-11f1-9ef9-1be722184483_story.html" },
+            { "name": "U.S. News (11 aug)", "url": "https://www.usnews.com/news/world/articles/2026-08-11/iranian-backed-houthi-rebels-renew-attacks-on-key-port-city-and-other-developments-in-the-mideast" }
           ]
         }
       ]
@@ -278,29 +248,39 @@ const DATA = {
       "title": "Israel — Liban",
       "items": [
         {
-          "title": "IDF anunță că a tras din greșeală un interceptor spre propriile trupe în sudul Libanului, fără victime",
+          "title": "IDF detonează clădiri civile în Zawtar al-Sharqiyah (școală, grădiniță, dispensar, primărie); lovituri pe dealurile Ali Taher",
           "date": "12 aug",
           "flag": "nou",
-          "body": "Pe 12 august, IDF a comunicat că a lansat din greșeală un interceptor spre forțe israeliene care operau în sudul Libanului, după ce focul acestora a fost interpretat greșit ca amenințare; nu au fost raportate victime, iar incidentul este anchetat. Episodul se înscrie în tiparul de operațiuni și prezență IDF cvasi-zilnice în sud, pe fondul amânării următoarei runde de discuții Israel–Liban la începutul lunii septembrie.",
+          "body": "În dimineața zilei de 12 august, forțele israeliene au detonat mai multe clădiri în Zawtar al-Sharqiyah, în sudul Libanului — școala publică Sheikh Naim Mahdi (patru etaje), o grădiniță, un dispensar și clădirea primăriei — și au vizat un sit folosit pentru comemorarea Ashura, cu răniți raportați, în pofida negocierilor de armistițiu. Presa locală libaneză semnalează explozii și pe valea Touline / drumul Wadi al-Saluki, precum și lovituri cu fosfor alb pe dealurile Ali Taher. Este o continuare a campaniei IDF cvasi-zilnice; următoarea rundă de discuții Israel–Liban rămâne programată pentru începutul lui septembrie.",
           "sources": [
-            { "name": "The Times of Israel (12 aug)", "url": "https://www.timesofisrael.com/liveblog_entry/idf-says-it-mistakenly-fired-interceptor-toward-troops-in-south-lebanon-no-injuries/" }
+            { "name": "Middle East Monitor (12 aug)", "url": "https://www.middleeastmonitor.com/20260812-israel-blows-up-school-strikes-religious-commemoration-site-in-southern-lebanon-despite-truce/" },
+            { "name": "L'Orient Today (12 aug)", "url": "https://today.lorientlejour.com/article/1544274/israel-targets-ali-taher-hills-with-white-phosphorus-traffic-in-strait-of-hormuz-at-lowest-for-a-week-live.html" }
           ]
         }
       ]
     },
     {
-      "id": "politic-il",
-      "title": "Politică internă Israel",
+      "id": "iran-sua-turcia",
+      "title": "Iran — SUA — Turcia",
       "items": [
         {
-          "title": "Primariile Likud (17 aug) se apropie: Netanyahu folosește lista pentru a-și consolida loialiștii; 36 de candidați pentru ~16 locuri realiste",
-          "date": "11–12 aug",
+          "title": "Trump comentează public episodul Air Force One de la Ankara, confirmând că a fost mutat din avion din cauza amenințării iraniene",
+          "date": "12 aug (eveniment 8 iul)",
           "flag": "nou",
-          "body": "Cu cinci zile înainte de primariile Likud din 17 august, presa israeliană descrie o cursă neobișnuit de dură: circa 36 de deputați și miniștri în funcție concurează pentru aproximativ 16 locuri realiste, în timp ce lista rezervă 11 din primele 29 de poziții unor candidați desemnați (Israel Katz, Gideon Sa'ar, Haim Katz + opt locuri la alegerea lui Netanyahu). Netanyahu tratează primariile ca ocazie de a-și promova loialiștii — rezervarea unui loc antreprenorului din tech Oren Dobronsky ar fi menită parțial să-l slăbească pe ministrul Nir Barkat. Media recentă a sondajelor dă Likudului ~23 de mandate la alegerile din 27 octombrie.",
+          "body": "Pe 12 august, președintele Trump a comentat public relatările privind „operațiunea de decepție” de la summitul NATO din Ankara (8 iulie), confirmând că apropiații săi au vrut să-l scoată de pe Air Force One din cauza unei amenințări iraniene cu rachete portabile. Relatările inițiale (Washington Post și NBC pe 10 august, Al Jazeera pe 11 august) descriseseră transferul discret al președintelui pe un avion militar. Oficiali turci au contestat autenticitatea avertismentului israelian — element care menține tensiunea Israel–Turcia și Israel–SUA pe planul serviciilor.",
           "sources": [
-            { "name": "Ynet — 36 candidați / ~16 locuri (11 aug)", "url": "https://www.ynet.co.il/news/article/skgluk1ife" },
-            { "name": "Ynet — mecanismul șarjărilor (11 aug)", "url": "https://www.ynet.co.il/news/article/syadun0mfg" },
-            { "name": "The Times of Israel (12 aug)", "url": "https://www.timesofisrael.com/liveblog-august-12-2026/" }
+            { "name": "Haaretz — live (12 aug)", "url": "https://www.haaretz.com/israel-news/israel-security/2026-08-12/ty-article-live/trump-says-advisers-wanted-him-off-air-force-one-in-turkey-due-to-iranian-threat/0000019f-f3bf-d569-a5ff-f3fff0e20000" },
+            { "name": "The Washington Post (10 aug)", "url": "https://www.washingtonpost.com/national-security/2026/08/10/trump-flew-secrecy-amid-iran-threat-air-force-one-became-decoy/" },
+            { "name": "NBC News (10 aug)", "url": "https://www.nbcnews.com/politics/donald-trump/trump-secret-flight-turkey-iran-rcna591860" }
+          ]
+        },
+        {
+          "title": "Context: Iran l-a numit pe Mohsen Rezaei — suspect AMIA, notificare roșie Interpol — secretar al Consiliului Suprem de Securitate Națională",
+          "date": "9 aug (context)",
+          "flag": "context",
+          "body": "Numirea din 9 august a lui Mohsen Rezaei, vizat de o notificare roșie Interpol pentru atentatul din 1994 asupra centrului comunitar evreiesc AMIA din Buenos Aires (85 de morți), rămâne o deplasare structurală consemnată la rularea de dimineață — a doua numire a unui suspect AMIA într-o poziție de vârf de securitate în acest an. Fără elemente noi izolabile la ora scanului.",
+          "sources": [
+            { "name": "The Times of Israel", "url": "https://www.timesofisrael.com/iran-names-new-security-chief-whos-wanted-by-interpol-in-connection-with-deadly-amia-bombing/" }
           ]
         }
       ]
@@ -310,37 +290,36 @@ const DATA = {
       "title": "Reacții oficiale",
       "items": [
         {
-          "title": "Sa'ar (Israel) pe Venezuela și pe numirea Rezaei; Turcia pune la îndoială avertismentul israelian; UE fără poziție proaspătă; MAE România menține alerta maximă",
-          "date": "11–12 aug",
+          "title": "UE fără poziție proaspătă la ora scanului; Pakistan condamnă atacul houthi; Trump revendică „control total” pe Hormuz; MAE România menține alerta maximă",
+          "date": "12 aug",
           "flag": "verificat",
-          "body": "Ministrul israelian de externe Gideon Sa'ar a anunțat mecanismul de coordonare consulară cu Venezuela; Ministerul israelian de externe a condamnat numirea lui Mohsen Rezaei (suspect AMIA) în fruntea Consiliului de securitate iranian. Oficiali turci contestă public autenticitatea avertismentului israelian privind complotul de la Ankara. Nicio poziție instituțională proaspătă izolabilă a UE (Consiliu / Comisie / Înalta Reprezentantă Kaja Kallas) nu a putut fi identificată la ora rulării. Alerta de călătorie a MAE România pentru Israel, Palestina, Liban și Iran rămâne la nivelul maxim (8/9), neschimbată din 28 februarie.",
+          "body": "Nicio poziție instituțională proaspătă izolabilă a UE (Consiliu / Comisie / Înalta Reprezentantă Kaja Kallas) datată 12 august nu a putut fi identificată până la ora scanului; cadrul rămâne concluziile Consiliului European din 18–19 iunie, care salutau memorandumul SUA–Iran. Pakistanul a condamnat atacul houthi din Bab al-Mandeb, în care ar fi murit și cetățeni pakistanezi. Președintele Trump a afirmat marți că SUA dețin „control total” asupra strâmtorii Hormuz, deși traficul rămâne la o fracțiune din nivelul de dinainte de război. Alerta de călătorie a MAE România pentru Israel, Palestina, Liban și Iran rămâne la nivelul maxim (8/9), neschimbată.",
           "sources": [
-            { "name": "Al Arabiya — Sa'ar / Venezuela (11 aug)", "url": "https://english.alarabiya.net/News/world/2026/08/11/israel-venezuela-renew-consular-ties-after-years-of-no-diplomacy" },
             { "name": "Consilium — poziția UE Orientul Mijlociu", "url": "https://www.consilium.europa.eu/en/policies/eu-position-situation-middle-east/" },
+            { "name": "L'Orient Today — condamnare Pakistan (12 aug)", "url": "https://today.lorientlejour.com/article/1544274/israel-targets-ali-taher-hills-with-white-phosphorus-traffic-in-strait-of-hormuz-at-lowest-for-a-week-live.html" },
             { "name": "MAE România — alerte de călătorie", "url": "https://www.mae.ro/travel-alerts/2938" }
           ]
         }
       ]
     }
   ],
-  "vector": "Briefing matinal, 12 august (fereastră ~24h de la scanul de seară din 11 august, 22:13). Fără trigger nou de Nivel 2 în ultimele 12h. Deplasarea principală: revelația unui complot iranian de a doborî avionul lui Trump la Ankara pe 8 iulie, avertizat de Israel — cu Turcia contestând acum autenticitatea informației (nou factor de tensiune Israel–Turcia și Israel–SUA pe planul serviciilor). Iranul a numit un suspect al atentatului AMIA (Mohsen Rezaei, notificare roșie Interpol) secretar al Consiliului Suprem de Securitate Națională, consolidând linia dură. Israel și Venezuela au restabilit relațiile consulare după 17 ani. Pe axa Hormuz, acordul întârzie, pozițiile se înăspresc, Brent volatil în jur de 88 USD. Pe axa Liban, IDF a tras din greșeală un interceptor spre propriile trupe (fără victime); discuțiile rămân amânate la septembrie. Politic, primariile Likud din 17 august se apropie, cu 36 de candidați pentru ~16 locuri. UE fără poziție proaspătă izolabilă; MAE România menține alerta maximă.",
+  "vector": "Scan după-amiază, 12 august (fereastră de la briefingul matinal de la 08:00). Niciun trigger nou de Nivel 2 în ultimele 8 ore. Deplasarea principală a intervalului este pe frontul maritim și energetic: Brent a urcat cu peste 2% spre ~90 USD/baril, pe fondul unui atac houthi în Bab al-Mandeb soldat cu cel puțin șase morți (primele decese din navigație atribuite houthilor de la începutul războiului) și al blocajului persistent din Hormuz (10 nave luni vs ~130 înainte de război). În sudul Libanului, IDF a detonat clădiri civile în Zawtar al-Sharqiyah, în continuarea campaniei cvasi-zilnice, cu discuțiile amânate la septembrie. Pe axa Iran–SUA–Turcia, Trump a confirmat public episodul Air Force One de la Ankara. UE fără poziție proaspătă izolabilă la ora scanului; Pakistanul a condamnat atacul houthi; MAE România menține alerta maximă.",
   "delta": [
-    "Iran/SUA/Turcia: revelație (11–12 aug) a complotului iranian de doborâre a avionului lui Trump la Ankara (8 iul), avertizat de Israel; Turcia contestă autenticitatea informației — factor nou de tensiune Israel–Turcia.",
-    "Iran: Mohsen Rezaei (suspect AMIA, notificare roșie Interpol) numit secretar al Consiliului Suprem de Securitate Națională (9 aug); MAE israelian condamnă (11 aug).",
-    "Israel–Venezuela: relații consulare restabilite după 17 ani (11 aug) — realiniere bilaterală nouă pe fondul pivotului Venezuelei spre SUA.",
-    "Israel–Liban: IDF a tras din greșeală un interceptor spre propriile trupe (12 aug, fără victime); discuțiile rămân amânate la începutul lui septembrie.",
-    "Hormuz/energie: pozițiile se înăspresc (Baghaei: SUA să ridice blocada întâi); Brent volatil în jur de 88 USD — aproximativ staționar față de ~87–88 USD pe 11 aug.",
-    "Politică IL: primariile Likud (17 aug) se apropie — 36 de candidați pentru ~16 locuri; Netanyahu folosește lista pentru consolidarea loialiștilor."
+    "Hormuz/energie: Brent a urcat cu peste 2% spre ~90 USD/baril (octombrie ~89,6 USD la 03:00 GMT) — în creștere față de ~87–88 USD consemnat pe 11 aug; traficul prin strâmtoare la minim (10 nave luni vs ~130 pre-război).",
+    "Bab al-Mandeb: atac houthi cu trei rachete balistice pe cargoul yemenit Tihamah (eveniment 11 aug) — cel puțin 6 morți, primele decese din navigație atribuite houthilor de la 28 feb; CENTCOM a dezactivat un cargou sub pavilion Panama.",
+    "Israel–Liban: IDF a detonat clădiri civile (școală, grădiniță, dispensar, primărie) în Zawtar al-Sharqiyah (12 aug, sursă locală) — continuarea campaniei cvasi-zilnice, discuții amânate la septembrie.",
+    "Iran/SUA/Turcia: Trump a comentat public episodul Air Force One de la Ankara (12 aug), confirmând amenințarea iraniană; Turcia contestă în continuare autenticitatea avertismentului israelian.",
+    "Reacții: fără poziție proaspătă izolabilă UE/Kallas la ora scanului (cadrul rămâne Consiliul European 18–19 iun); Pakistan condamnă atacul din Bab al-Mandeb; Trump revendică „control total” pe Hormuz."
   ],
   "calendar": [
-    { "date": "12 august", "event": "Ședință / activitate curentă înaintea primariilor Likud; de urmărit reacții la revelația complotului Ankara" },
+    { "date": "12 august, seara/noaptea", "event": "De urmărit noi lovituri pe frontul maritim (Bab al-Mandeb / Hormuz) și eventuale cotații noi Brent la închiderea piețelor" },
     { "date": "17 august", "event": "Primariile Likud" },
     { "date": "început de septembrie", "event": "Următoarea rundă de discuții Israel–Liban" },
     { "date": "27 octombrie", "event": "Alegeri legislative Israel, Knesset 26" },
     { "date": "31 decembrie", "event": "Expirarea mandatului UNIFIL" }
   ],
-  "demnitari": "Iran: Mohsen Rezaei numit secretar al Consiliului Suprem de Securitate Națională (9 august) — schimbare confirmată într-un stat monitorizat. Guvernul Netanyahu rămâne interimar până la alegerile din 27 octombrie.",
-  "sourceCount": 16
+  "demnitari": "Iran: Mohsen Rezaei — secretar al Consiliului Suprem de Securitate Națională (numit 9 august), consemnat anterior. Fără schimbări noi de demnitari în statele monitorizate la ora scanului. Guvernul Netanyahu rămâne interimar până la alegerile din 27 octombrie.",
+  "sourceCount": 13
 };
 /* BRIEFING_DATA_END */
 render(DATA);

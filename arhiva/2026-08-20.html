@@ -114,7 +114,7 @@
     </div>
   </header>
 
-  <div style="background:var(--card2);border:1px solid var(--gold);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.85rem">📁 Snapshot de arhivă — starea paginii la 2026-08-20T07:36:00+03:00. <a href="../" style="color:var(--accent)">Versiunea curentă</a> · <a href="./" style="color:var(--accent)">Toată arhiva</a></div>
+  <div style="background:var(--card2);border:1px solid var(--gold);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.85rem">📁 Snapshot de arhivă — starea paginii la 2026-08-20T15:03:00+03:00. <a href="../" style="color:var(--accent)">Versiunea curentă</a> · <a href="./" style="color:var(--accent)">Toată arhiva</a></div>
   <div id="err">Datele briefingului nu au putut fi încărcate. Reîncearcă mai târziu.</div>
   <div id="n2"></div>
   <div id="sections"></div>
@@ -210,57 +210,70 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-08-20T07:36:00+03:00",
-  "runType": "Briefing matinal",
-  "nextRun": "2026-08-20T15:00:00+03:00",
+  "generatedAt": "2026-08-20T15:03:00+03:00",
+  "runType": "Scan după-amiază",
+  "nextRun": "2026-08-21T07:30:00+03:00",
   "nivel2": [],
   "sections": [
     {
-      "id": "israel-siria-turcia",
-      "title": "Israel — Siria — Turcia",
+      "id": "iran-sua-hormuz",
+      "title": "Iran — SUA — Hormuz",
       "items": [
         {
-          "title": "Israel a lovit baza aeriană Abu al-Duhur (Idlib) pentru a bloca desfășurarea de trupe turce",
-          "date": "18–19 aug",
-          "flag": "axă nouă",
-          "body": "IDF a executat opt lovituri asupra pistelor și sistemelor de apărare aeriană de la baza Abu al-Duhur, în provincia Idlib (nord-vestul Siriei), fără victime raportate. Cabinetul Netanyahu susține că Damascul era „pe punctul de a încălca" status quo-ul de securitate convenit, permițând Turciei să desfășoare forțe pe bază, și că Siria a ignorat avertismente repetate; o delegație militară turcă vizitase baza cu o zi înainte pentru a discuta reabilitarea pistei. Turcia neagă orice prezență militară pe bază și acuză Israelul că „inventează pretexte". Trimisul special american Tom Barrack a calificat lovitura drept „escaladare inutilă" și a anunțat lucrul la un mecanism de deconflictare între Israel, Siria și Turcia.",
+          "title": "Trump anunță „război economic fără precedent" contra Iranului și amenință statele-terțe care îl sprijină",
+          "date": "19 aug seara / rulare 20 aug",
+          "flag": "context — eveniment înainte de fereastra scanului",
+          "body": "Printr-o postare pe Truth Social (miercuri seara), președintele Trump a anunțat „cea mai zdrobitoare operațiune economică luată vreodată împotriva vreunei țări" — „război economic și izolare la scară fără precedent" contra Iranului. Orice stat care permite instituțiilor financiare, firmelor, aeroporturilor, registrelor navale sau entităților guvernamentale proprii să ofere Iranului „orice colac de salvare" ar urma să suporte „consecințe economice extraordinare". Măsura vizează rutele de contrabandă cu petrol, transferurile financiare, casele de schimb și firmele-paravan. Anunțul urmează eșecului MOU de 60 de zile și suspendării de către EAU a comerțului cu Iranul, după două rachete balistice iraniene asupra emiratului. Ministrul de externe iranian Araghchi a calificat gestul drept diversiune de la problemele economice interne americane.",
           "sources": [
-            { "name": "Times of Israel — Israel confirmă lovitura, invocă desfășurarea turcă", "url": "https://www.timesofisrael.com/israel-confirms-striking-syrian-air-base-saying-turkey-was-planning-to-deploy-forces/" },
-            { "name": "NPR — Israel lovește o bază în Siria pentru a bloca trupele turce", "url": "https://www.npr.org/2026/08/19/nx-s1-5937400/israel-strikes-syria" },
-            { "name": "Al Jazeera — opt lovituri pe baza din Idlib; SUA și Turcia critică „escaladarea"", "url": "https://www.aljazeera.com/news/2026/8/18/eight-air-strikes-hit-airbase-in-syrias-idlib" }
+            { "name": "Al Jazeera — „cea mai zdrobitoare operațiune economică vreodată"", "url": "https://www.aljazeera.com/news/2026/8/19/trump-announces-most-crushing-economic-operation-ever-against-iran" },
+            { "name": "CNBC — Trump declară „război economic" Iranului", "url": "https://www.cnbc.com/2026/08/19/us-iran-war-trump-hormuz-economic-warfare.html" },
+            { "name": "Haaretz (live 20 aug) — avertisment de consecințe pentru statele care sprijină Iranul", "url": "https://www.haaretz.com/israel-news/israel-security/2026-08-20/ty-article-live/trump-warns-of-tremendous-economic-consequences-for-countries-supporting-iran/000001a0-1cee-da03-abe9-3ffe6ad50000" }
+          ]
+        },
+        {
+          "title": "Brent în creștere spre 93 USD/baril",
+          "date": "20 aug",
+          "body": "Brent a urcat la circa 93,01 USD/baril pe 20 august (+1,52%), în creștere de la circa 91,86 USD (19 aug), pe fondul presiunii economice maxime americane asupra Iranului și al tensiunilor regionale. (o singură sursă la ora scanului).",
+          "sources": [
+            { "name": "Trading Economics — Brent crude", "url": "https://tradingeconomics.com/commodity/brent-crude-oil" }
           ]
         }
       ]
     },
     {
-      "id": "iran-europa",
-      "title": "Iran — SUA — Hormuz — Europa",
+      "id": "gaza",
+      "title": "Gaza — Forța de stabilizare",
       "items": [
         {
-          "title": "Raport FT: Iran ar cântări lovituri asupra țintelor SUA din Europa de sud-est, inclusiv baza Bezmer (Bulgaria)",
-          "date": "19 aug",
-          "body": "Potrivit unui raport Financial Times care citează doi responsabili ai Gărzilor Revoluționare, Teheranul a evaluat opțiuni de lovire a activelor americane din Europa de sud-est (Bulgaria, Cipru), baza aeriană Bezmer din Bulgaria — recent avizată pentru avioanele de realimentare americane — figurând între ținte; separat, Iranul ar fi examinat atacarea cablurilor submarine de fibră optică din Strâmtoarea Hormuz. Este vorba de planuri de contingență, condiționate de eventuale lovituri americane pe infrastructura iraniană, nu de o amenințare iminentă. NATO a declarat că este pregătit „să răspundă oricărei amenințări".",
+          "title": "SUA alocă 206 mil. USD pentru forța de stabilizare; Israel spune că nu a aprobat intrarea ei",
+          "date": "20 aug",
+          "body": "Departamentul de Stat american a anunțat 206 milioane USD pentru Forța Internațională de Stabilizare (ISF) din Gaza — echipament, vehicule și infrastructură — deși momentul desfășurării rămâne neclar. În paralel, cabinetul premierului Netanyahu a subliniat că Israel nu a aprobat intrarea forței internaționale în Gaza și că „nu va exista reconstrucție înainte ca Hamas să fie dezarmat complet". Ambasadorul Israelului în SUA, Yechiel Leiter, a afirmat că Hamas a comis 229 de încălcări ale armistițiului de la 3 august.",
           "sources": [
-            { "name": "Al Arabiya — Iran cântărește ținte SUA în Europa", "url": "https://english.alarabiya.net/News/middle-east/2026/08/19/iran-considers-attacking-us-military-targets-in-europe-if-trump-escalates-report-" },
-            { "name": "Haaretz — raport: Iran ar putea viza forțe SUA în Europa", "url": "https://www.haaretz.com/middle-east-news/iran/2026-08-19/ty-article/report-iran-may-target-u-s-military-in-europe-should-trump-escalate-war/000001a0-1888-d77e-abb5-ddacf2930000" },
-            { "name": "Benzinga — NATO „pregătit să răspundă oricărei amenințări"", "url": "https://www.benzinga.com/news/politics/26/08/61297829/iran-reportedly-plans-strikes-on-us-targets-in-europe-nato-says-prepared-to-address-any-threat" }
+            { "name": "Times of Israel (live 20 aug) — 206 mil. USD ISF; Israel nu a aprobat intrarea forței", "url": "https://www.timesofisrael.com/liveblog-august-20-2026/" }
           ]
         },
         {
-          "title": "Trump a oprit indefinit negocierile cu Iranul; Teheranul avertizează vecinii din Golf",
-          "date": "18–19 aug",
-          "body": "Președintele Trump a ordonat întreruperea „discuțiilor pozitive" cu Iranul, trecând de la abordarea presiunii militare imediate la una de presiune economică susținută în timp, potrivit CNN. Șeful de stat major al forțelor armate iraniene a avertizat statele riverane Golfului că orice asistență acordată armatei americane „echivalează cu participarea la operațiunea militară" a SUA.",
+          "title": "~10 palestinieni uciși de focul IDF în 24h",
+          "date": "20 aug",
+          "body": "Aproximativ zece palestinieni au fost uciși de focul israelian în ultimele 24 de ore, între care într-o lovitură asupra unui post de poliție din Gaza City și în tabăra Nuseirat — continuare a loviturilor țintite.",
           "sources": [
-            { "name": "Times of Israel (live 19 aug) — Trump oprește negocierile; avertisment iranian", "url": "https://www.timesofisrael.com/liveblog-august-19-2026/" }
+            { "name": "Haaretz (live 20 aug) — bilanț 24h Gaza", "url": "https://www.haaretz.com/israel-news/israel-security/2026-08-20/ty-article-live/trump-warns-of-tremendous-economic-consequences-for-countries-supporting-iran/000001a0-1cee-da03-abe9-3ffe6ad50000" }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "israel-siria-turcia",
+      "title": "Israel — Siria — Turcia",
+      "items": [
         {
-          "title": "Brent peste 92 USD; șekelul sub 3,00",
-          "date": "19 aug",
-          "body": "Brent a urcat la circa 91,86 USD/baril pe 19 august (+0,92%), depășind 92 USD intraday, pe tensiunile regionale. Cursul USD/ILS a coborât la circa 2,9771 (−0,50%), confirmând un șekel puternic, sub pragul de 3,00.",
+          "title": "Siria admite vizita unor ofițeri turci la baza lovită, dar neagă desfășurarea; „ușa spre negocieri cu Israel rămâne deschisă"",
+          "date": "19–20 aug",
+          "flag": "sursă locală",
+          "body": "Ministrul sirian a confirmat că ofițeri turci au vizitat baza Abu al-Duhur, dar „exclusiv pentru reabilitarea pistei avariate în război", negând orice intenție de a stabili o bază turcă și afirmând că „ușa pentru negocieri cu Israel rămâne deschisă". Turcia menține că „nicio delegație militară turcă nu era prezentă înainte sau în timpul loviturilor israeliene". Trimisul special american lucrează la un mecanism de deconflictare între Israel, Siria și Turcia. Semnal de temperare pe o axă deschisă în cinetic acum trei zile.",
           "sources": [
-            { "name": "Trading Economics — Brent crude", "url": "https://tradingeconomics.com/commodity/brent-crude-oil" },
-            { "name": "Investing.com — USD/ILS", "url": "https://www.investing.com/currencies/usd-ils" }
+            { "name": "Israel Hayom (he) — Siria: nu am intenționat o bază turcă, ușa spre negocieri rămâne deschisă", "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/21238045" },
+            { "name": "Maariv (he) — Siria admite: ofițeri turci au ajuns la bază", "url": "https://www.maariv.co.il/news/world/article-1357795" }
           ]
         }
       ]
@@ -270,64 +283,33 @@ const DATA = {
       "title": "Israel — Liban — Hezbollah",
       "items": [
         {
-          "title": "Ali Taher: Hezbollah a respins propunerea SUA de predare a sitului către armata libaneză; IDF menține presiunea",
-          "date": "16–19 aug",
-          "flag": "sursă locală",
-          "body": "Presa israeliană relatează că Hezbollah a respins o propunere americană de transferare a sitului strategic de pe creasta Ali Taher către armata libaneză. IDF a confirmat lovituri în sudul Libanului „ca răspuns la o acțiune împotriva forței care operează pe creasta Ali Taher"; N12 relatează pregătiri pentru „câteva zile de luptă". Fără o ripostă majoră Hezbollah pe nordul Israelului în fereastra raportată.",
+          "title": "Ali Taher: fără deplasare semnificativă față de rularea de dimineață",
+          "date": "20 aug",
+          "body": "IDF menține presiunea și asediul asupra complexului subteran de pe creasta Ali Taher; fără o ripostă majoră Hezbollah pe nordul Israelului și fără o deplasare izolabilă nouă în fereastra scanului față de starea consemnată dimineață (Hezbollah respinsese propunerea SUA de transfer al sitului către armata libaneză).",
           "sources": [
-            { "name": "Israel Hayom (he) — Hezbollah respinge propunerea americană", "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/21230436" },
-            { "name": "Ynet (he) — IDF: am lovit ca răspuns la acțiunea împotriva forței de la Ali Taher", "url": "https://www.ynet.co.il/news/article/b1eyu56lme" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "gaza",
-      "title": "Gaza",
-      "items": [
-        {
-          "title": "Sondaj PCPSR: sprijinul pentru Hamas în scădere",
-          "date": "19 aug",
-          "body": "Un sondaj al Centrului Palestinian pentru Cercetare Politică (coordonat de Khalil Shikaki, teren 5–8 august) arată satisfacția față de Hamas în scădere la 45% în Cisiordania (de la 66% cu zece luni în urmă) și 38% în Gaza; doar 20% dintre respondenți mai consideră că Hamas a „învins". Board of Peace a păstrat tăcerea față de loviturile IDF, la câteva zile după ce Kushner ceruse vizarea exclusivă a amenințărilor iminente.",
-          "sources": [
-            { "name": "Times of Israel (live 19 aug) — sondajul PCPSR", "url": "https://www.timesofisrael.com/liveblog-august-19-2026/" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "politic-intern",
-      "title": "Politică internă Israel",
-      "items": [
-        {
-          "title": "Fostul general Ofer Winter ar lansa un partid nou săptămâna viitoare",
-          "date": "19 aug",
-          "body": "Fostul general Ofer Winter ar urma să lanseze un partid nou săptămâna viitoare; sondajele sugerează că formațiunea neafiliată riscă să nu treacă pragul electoral și, dacă nu fuzionează, ar putea dăuna blocului Netanyahu. Context: primariile Likud (17 august) s-au încheiat cu Eli Cohen pe primul loc; alegerile legislative sunt confirmate pentru 27 octombrie.",
-          "sources": [
-            { "name": "Times of Israel (live 19 aug) — noul partid Ofer Winter", "url": "https://www.timesofisrael.com/liveblog-august-19-2026/" }
+            { "name": "Ynet (he) — IDF strânge asediul asupra „centrului nervos" subteran", "url": "https://www.ynetnews.com/article/syiznpdlzx" }
           ]
         }
       ]
     }
   ],
-  "vector": "Escaladare pe două axe noi sau reactivate: Israel a deschis un front cinetic în Siria (lovitura pe Abu al-Duhur), cu tensiune directă față de Turcia și SUA în rol de mediator; iar amenințarea iraniană se mută explicit spre Europa de sud-est (Bezmer/Bulgaria, Cipru), la nivel de planificare. Iran–SUA: negocieri oprite indefinit. Liban: status quo tensionat pe Ali Taher, Hezbollah a respins soluția americană. Gaza: presiune militară susținută, fără cadru diplomatic activ. Brent peste 92 USD, șekelul sub 3,00.",
+  "vector": "Ziua e dominată de mutarea presiunii SUA–Iran pe registru economic maxim (Trump: „război economic fără precedent", amenințări la adresa statelor-terțe), cu Brent spre 93 USD. Pe Gaza, tensiune de secvențiere SUA–Israel: Washingtonul finanțează forța de stabilizare (206 mil. USD), Israel spune că nu i-a aprobat intrarea. Pe axa siriano-turcă apare un semnal de temperare — Damascul admite vizita unor ofițeri turci, dar neagă desfășurarea și ține deschisă ușa spre Israel. Liban: status quo tensionat pe Ali Taher, fără deplasare nouă.",
   "delta": [
-    "Israel a deschis un front cinetic în Siria (opt lovituri pe baza Abu al-Duhur din Idlib), cu tensiune directă Israel–Turcia și mediere americană — axă nouă.",
-    "Amenințarea iraniană se mută explicit spre Europa de sud-est: raport FT despre ținte SUA potențiale în Bulgaria (baza Bezmer) și Cipru, plus cabluri submarine în Hormuz.",
-    "Iran–SUA: Trump a ordonat oprirea indefinită a negocierilor; Iran avertizează vecinii din Golf să nu asiste armata americană.",
-    "Ali Taher: Hezbollah a respins propunerea SUA de predare a sitului către armata libaneză; IDF pregătește „câteva zile de luptă".",
-    "UE (Kallas, Lahbib) a emis o declarație privind protecția personalului umanitar și a spitalelor (Rusia și Israel), după o absență prelungită — pe axa umanitară Gaza.",
-    "Economic: Brent ~91,86 USD (19 aug, peste 92 intraday); USD/ILS ~2,9771 (șekel sub 3,00)."
+    "Iran–SUA (context, eveniment 19 aug seara): Trump anunță „război economic fără precedent" contra Iranului și amenință statele-terțe care îl sprijină; val de acoperire și reacții pe 20 aug.",
+    "Gaza: SUA alocă 206 mil. USD pentru Forța Internațională de Stabilizare, dar Israel afirmă că nu a aprobat intrarea ei — „fără reconstrucție înainte de dezarmarea Hamas".",
+    "Siria–Turcia: Damascul admite că ofițeri turci au vizitat baza Abu al-Duhur (reabilitarea pistei), neagă desfășurarea și declară ușa spre negocieri cu Israel deschisă — semnal de temperare; discrepanța „Turcia neagă prezența" se închide parțial.",
+    "Economic: Brent ~93,01 USD/baril (20 aug, +1,52%), în creștere de la ~91,86 (19 aug).",
+    "Fără poziție UE/SEAE izolabilă datată 20 aug la ora scanului; SUA activă (Dep. de Stat pe ISF Gaza; Trump pe economia Iranului)."
   ],
   "calendar": [
+    { "date": "20–21 aug", "event": "Posibile măsuri concrete de aplicare a „războiului economic" SUA–Iran și reacții ale statelor terțe" },
+    { "date": "24–72h", "event": "Concretizarea mecanismului de deconflictare Israel–Siria–Turcia (trimisul SUA Tom Barrack)" },
     { "date": "24–30 aug", "event": "Lansarea partidului nou al lui Ofer Winter" },
-    { "date": "24–72h", "event": "Mecanism de deconflictare Israel–Siria–Turcia anunțat de trimisul SUA Tom Barrack" },
     { "date": "început septembrie", "event": "Rundă Israel–Liban la Roma (gen. Joseph Clearfield)" },
-    { "date": "27 oct", "event": "Alegeri legislative Israel (Knesset 26)" },
-    { "date": "31 dec 2026", "event": "Expirarea mandatului UNIFIL (Rez. 2790/2025)" }
+    { "date": "27 oct", "event": "Alegeri legislative Israel (Knesset 26)" }
   ],
   "demnitari": "Nicio schimbare confirmată de demnitar în statele monitorizate în ultimele 24h.",
-  "sourceCount": 14
+  "sourceCount": 10
 };
 /* BRIEFING_DATA_END */
 render(DATA);

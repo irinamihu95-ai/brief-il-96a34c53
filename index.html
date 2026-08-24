@@ -209,9 +209,9 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-08-20T15:03:00+03:00",
-  "runType": "Scan după-amiază",
-  "nextRun": "2026-08-21T07:30:00+03:00",
+  "generatedAt": "2026-08-24T17:20:00+03:00",
+  "runType": "Briefing matinal (rulat cu întârziere)",
+  "nextRun": "2026-08-25T07:30:00+03:00",
   "nivel2": [],
   "sections": [
     {
@@ -219,96 +219,281 @@ const DATA = {
       "title": "Iran — SUA — Hormuz",
       "items": [
         {
-          "title": "Trump anunță „război economic fără precedent" contra Iranului și amenință statele-terțe care îl sprijină",
-          "date": "19 aug seara / rulare 20 aug",
-          "flag": "context — eveniment înainte de fereastra scanului",
-          "body": "Printr-o postare pe Truth Social (miercuri seara), președintele Trump a anunțat „cea mai zdrobitoare operațiune economică luată vreodată împotriva vreunei țări" — „război economic și izolare la scară fără precedent" contra Iranului. Orice stat care permite instituțiilor financiare, firmelor, aeroporturilor, registrelor navale sau entităților guvernamentale proprii să ofere Iranului „orice colac de salvare" ar urma să suporte „consecințe economice extraordinare". Măsura vizează rutele de contrabandă cu petrol, transferurile financiare, casele de schimb și firmele-paravan. Anunțul urmează eșecului MOU de 60 de zile și suspendării de către EAU a comerțului cu Iranul, după două rachete balistice iraniene asupra emiratului. Ministrul de externe iranian Araghchi a calificat gestul drept diversiune de la problemele economice interne americane.",
+          "title": "„Ziua Z economică\": Trezoreria americană anunță pachetul de sancțiuni; Teheranul îl califică act de război",
+          "date": "24 august",
+          "body": "Secretarul Trezoreriei, Scott Bessent, a anunțat pentru ziua de luni detaliile unui pachet de sancțiuni descris drept „cea mai amplă ofensivă financiară lansată vreodată împotriva unui adversar\", cu formula „odată cu zorii începe Ziua Z economică\". Măsurile se adaugă regimului existent pe bănci, energie, aviație și criptoactive și vizează statele terțe care mențin legături economice cu Iranul. Secretarul Consiliului Suprem de Securitate Națională al Iranului, Mohsen Rezaei, a avertizat că Teheranul va considera participarea oricărui stat la campania economică americană drept act de război și că, dacă războiul economic continuă, „nicio picătură de petrol nu va mai fi exportată prin strâmtoarea Hormuz\". Rialul iranian a atins un minim istoric de circa 2,02 milioane pentru un dolar.",
           "sources": [
-            { "name": "Al Jazeera — „cea mai zdrobitoare operațiune economică vreodată"", "url": "https://www.aljazeera.com/news/2026/8/19/trump-announces-most-crushing-economic-operation-ever-against-iran" },
-            { "name": "CNBC — Trump declară „război economic" Iranului", "url": "https://www.cnbc.com/2026/08/19/us-iran-war-trump-hormuz-economic-warfare.html" },
-            { "name": "Haaretz (live 20 aug) — avertisment de consecințe pentru statele care sprijină Iranul", "url": "https://www.haaretz.com/israel-news/israel-security/2026-08-20/ty-article-live/trump-warns-of-tremendous-economic-consequences-for-countries-supporting-iran/000001a0-1cee-da03-abe9-3ffe6ad50000" }
+            {
+              "name": "Jerusalem Post (live 24 aug) — Bessent: „endgame\" economic cu Iranul",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-08-24/live-updates-906375"
+            },
+            {
+              "name": "CNN Arabic — Bessent promite „Ziua Z economică\"",
+              "url": "https://arabic.cnn.com/middle-east/article/2026/08/24/bessent-promises-economic-d-day-is-coming-for-iran"
+            },
+            {
+              "name": "NPR — Bessent prezintă noile sancțiuni economice",
+              "url": "https://www.npr.org/2026/08/24/g-s1-139743/treasury-secretary-scott-bessent-to-unveil-new-economic-sanctions-on-iran"
+            },
+            {
+              "name": "BNN Bloomberg — rialul la minim istoric",
+              "url": "https://www.bnnbloomberg.ca/markets/currencies/2026/08/24/irans-rial-currency-hits-new-record-low-as-us-prepares-to-announce-more-sanctions/"
+            },
+            {
+              "name": "Al Arabiya — Iranul amenință statele participante la „războiul economic\"",
+              "url": "https://www.alarabiya.net/amp/arab-and-world/2026/08/23/%D8%A7%D9%8A%D8%B1%D8%A7%D9%86-%D8%AA%D8%AA%D9%88%D8%B9%D8%AF-%D8%A7%D9%84%D8%AF%D9%88%D9%84-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%83%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%AD%D8%B1%D8%A8-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D9%85%D9%8A%D8%B1%D9%83%D9%8A%D8%A9-"
+            }
           ]
         },
         {
-          "title": "Brent în creștere spre 93 USD/baril",
-          "date": "20 aug",
-          "body": "Brent a urcat la circa 93,01 USD/baril pe 20 august (+1,52%), în creștere de la circa 91,86 USD (19 aug), pe fondul presiunii economice maxime americane asupra Iranului și al tensiunilor regionale. (o singură sursă la ora scanului).",
+          "title": "Sub 20 de nave au tranzitat Hormuzul în weekend; Iranul amenință cu rețineri și confiscări",
+          "date": "23–24 august",
+          "body": "Datele de trafic citate de Reuters arată sub 20 de nave tranzitate prin strâmtoarea Hormuz în cursul weekendului. Duminică, Teheranul a avertizat că navele care încalcă regulile sale de tranzit pot fi reținute sau confiscate. Comparativ, traficul anterior conflictului depășea o sută de nave pe zi.",
           "sources": [
-            { "name": "Trading Economics — Brent crude", "url": "https://tradingeconomics.com/commodity/brent-crude-oil" }
+            {
+              "name": "Jerusalem Post (live 24 aug) — sub 20 de nave prin Hormuz în weekend (Reuters)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-08-24/live-updates-906375"
+            },
+            {
+              "name": "CNBC — Iranul avertizează cu rețineri de nave înaintea sancțiunilor",
+              "url": "https://www.cnbc.com/2026/08/24/us-iran-war-trump-hormuz-bessent-economic-sanctions-.html"
+            }
+          ]
+        },
+        {
+          "title": "Șeful armatei pakistaneze, Asim Munir, a ajuns la Teheran",
+          "date": "24 august",
+          "body": "Field Marshal Asim Munir a sosit luni la Teheran în fruntea unei delegații, fiind primit de ministrul iranian de interne Eskandar Momeni. Potrivit unor surse citate de presa israeliană, președintele Trump ar fi discutat cu Munir înaintea deplasării, cererea americană principală fiind readucerea Iranului la masa negocierilor. Islamabadul prezintă vizita ca parte a eforturilor proprii de mediere regională.",
+          "sources": [
+            {
+              "name": "Times of Israel — Trump a vorbit cu șeful armatei pakistaneze înaintea vizitei la Teheran",
+              "url": "https://www.timesofisrael.com/liveblog_entry/trump-spoke-to-pakistan-army-chief-ahead-of-tehran-trip-sought-resumption-of-talks-sources/"
+            },
+            {
+              "name": "Daily Sabah — Munir, canal-cheie SUA–Iran, la Teheran luni",
+              "url": "https://www.dailysabah.com/world/asia-pacific/key-us-iran-conduit-pakistans-asim-munir-to-visit-tehran-monday"
+            },
+            {
+              "name": "Aaj English — Munir a ajuns la Teheran pentru discuții la nivel înalt",
+              "url": "https://english.aaj.tv/news/330469241/field-marshal-asim-munir-arrives-in-tehran-for-high-level-talks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iran-europa",
+      "title": "Iran — Europa (flancul sud-estic)",
+      "items": [
+        {
+          "title": "Grecia mută o baterie Patriot în Creta; SUA au retras două avioane-cisternă din Bulgaria",
+          "date": "21–24 august",
+          "body": "Grecia a transferat o baterie Patriot din insula Karpathos în Creta, pentru a întări apărarea antiaeriană a bazei navale și aeriene de la Souda, folosită de forțele elene, americane și NATO. Măsura urmează relatărilor privind intenția Iranului de a lovi ținte americane în Europa de Sud-Est în cazul unei escaladări. În paralel, două avioane-cisternă KC-135 ale Forțelor Aeriene americane au părăsit baza Bezmer din Bulgaria vineri, la o lună după desfășurarea din 22 iulie; ministrul bulgar al apărării, Dimitar Stoyanov, a confirmat plecarea sâmbătă. Teheranul calificase desfășurarea drept complicitate la „agresiune și crime de război\", acuzație respinsă de Sofia.",
+          "sources": [
+            {
+              "name": "Euronews — Grecia mută sistemul Patriot în Creta",
+              "url": "https://www.euronews.com/my-europe/2026/08/24/greece-moves-patriot-system-to-crete-over-reported-iran-threats-to-us-bases"
+            },
+            {
+              "name": "Ynetnews — Grecia mută bateria Patriot în Creta",
+              "url": "https://www.ynetnews.com/article/bygfoxtpze"
+            },
+            {
+              "name": "Defense News — două avioane-cisternă americane au părăsit Bulgaria",
+              "url": "https://www.defensenews.com/global/europe/2026/08/24/two-us-tanker-aircraft-leave-bulgaria-a-month-after-deployment-upset-iran/"
+            },
+            {
+              "name": "Asharq Al-Awsat (engleză) — plecarea avioanelor de realimentare din Bulgaria",
+              "url": "https://english.aawsat.com/world/5310107-two-us-refueling-planes-depart-bulgaria-after-iranian-anger"
+            },
+            {
+              "name": "Euronews (27 iul) — avertismentul iranian adresat Bulgariei",
+              "url": "https://www.euronews.com/my-europe/2026/07/27/those-responsible-must-face-the-consequences-iran-again-warns-bulgaria-over-us-aircraft"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "israel-siria",
+      "title": "Israel — Siria",
+      "items": [
+        {
+          "title": "Damascul cere Israelului să valorifice „oportunitatea istorică\"; discuțiile de securitate se reiau sub mediere americană",
+          "date": "22–24 august",
+          "body": "Într-un interviu acordat Reuters la Damasc sâmbătă, ministrul sirian de externe Asaad al-Shaibani a declarat că se așteaptă la reluarea în scurt timp a negocierilor cu Israelul asupra unui acord de securitate care să conducă la retragerea israeliană de pe teritoriul sirian, cerând Israelului să valorifice „oportunitatea istorică\". Negocierile fuseseră înghețate la începutul războiului SUA–Israel cu Iranul, iar o dată de reluare nu era stabilită la momentul interviului. Separat, trimisul american Tom Barrack și-a retractat afirmațiile privind Golanul, reafirmând recunoașterea americană a suveranității israeliene asupra platoului.",
+          "sources": [
+            {
+              "name": "Al Jazeera — Damascul spune că ușa diplomației cu Israelul rămâne deschisă",
+              "url": "https://www.aljazeera.com/news/2026/8/23/syria-foreign-minister-says-door-open-for-diplomacy-with-israel"
+            },
+            {
+              "name": "Haaretz — al-Shaibani vede reluarea discuțiilor de securitate, în lipsa încrederii (Reuters)",
+              "url": "https://www.haaretz.com/israel-news/israel-security/2026-08-23/ty-article/syrias-foreign-minister-sees-israel-security-talks-resuming-despite-no-trust/000001a0-2da8-d293-a1e7-3db8a5c90000"
+            },
+            {
+              "name": "Jerusalem Post — Siria și Israel reiau discuțiile după lovitura israeliană, cu mediere americană",
+              "url": "https://www.jpost.com/middle-east/article-906379"
+            },
+            {
+              "name": "Jerusalem Post — Barrack revine asupra declarațiilor despre Golan",
+              "url": "https://www.jpost.com/middle-east/article-906366"
+            }
           ]
         }
       ]
     },
     {
       "id": "gaza",
-      "title": "Gaza — Forța de stabilizare",
+      "title": "Gaza — Cisiordania",
       "items": [
         {
-          "title": "SUA alocă 206 mil. USD pentru forța de stabilizare; Israel spune că nu a aprobat intrarea ei",
-          "date": "20 aug",
-          "body": "Departamentul de Stat american a anunțat 206 milioane USD pentru Forța Internațională de Stabilizare (ISF) din Gaza — echipament, vehicule și infrastructură — deși momentul desfășurării rămâne neclar. În paralel, cabinetul premierului Netanyahu a subliniat că Israel nu a aprobat intrarea forței internaționale în Gaza și că „nu va exista reconstrucție înainte ca Hamas să fie dezarmat complet". Ambasadorul Israelului în SUA, Yechiel Leiter, a afirmat că Hamas a comis 229 de încălcări ale armistițiului de la 3 august.",
+          "title": "Israelul avertizează Hamas că va intensifica loviturile dacă lansările de zmeie continuă",
+          "date": "23–24 august",
+          "body": "Premierul Netanyahu a declarat că a instruit sistemul de apărare și armata să facă „totul\" pentru a contracara ceea ce a numit amenințarea „letală\" a dronelor, după lansări de zmeie dinspre Fâșia Gaza în ultimele zile. Potrivit unei surse de securitate citate de presa israeliană, armata „nu subestimează amenințarea\", dar așteaptă să vadă dacă fenomenul devine tendință; evaluarea militară este că Hamas folosește adolescenți palestinieni pentru lansări. În noaptea spre luni, armata israeliană a anunțat că a lovit doi membri Hamas la Deir al-Balah, unul dintre ei prezentat drept membru al forței Nukhba participant la atacul din 7 octombrie 2023.",
           "sources": [
-            { "name": "Times of Israel (live 20 aug) — 206 mil. USD ISF; Israel nu a aprobat intrarea forței", "url": "https://www.timesofisrael.com/liveblog-august-20-2026/" }
+            {
+              "name": "Jerusalem Post — Israel către Hamas: dacă lansările de zmeie nu încetează, loviturile se intensifică",
+              "url": "https://www.jpost.com/israel-news/defense-news/article-906295"
+            },
+            {
+              "name": "Haaretz (live 24 aug) — armata anunță lovirea a doi membri Hamas la Deir al-Balah",
+              "url": "https://www.haaretz.com/israel-news/israel-security/2026-08-24/ty-article-live/police-arrest-two-on-suspicion-of-assaulting-elderly-w-bank-palestinian-amputee/000001a0-3188-dc1a-abac-f3fa2dfc0000"
+            }
           ]
         },
         {
-          "title": "~10 palestinieni uciși de focul IDF în 24h",
-          "date": "20 aug",
-          "body": "Aproximativ zece palestinieni au fost uciși de focul israelian în ultimele 24 de ore, între care într-o lovitură asupra unui post de poliție din Gaza City și în tabăra Nuseirat — continuare a loviturilor țintite.",
+          "title": "Smotrich și Strock cer blocarea forței internaționale de stabilizare până la dezarmarea Hamas",
+          "date": "24 august",
+          "body": "Ministrul de finanțe Bezalel Smotrich și ministra Orit Strock i-au cerut premierului Netanyahu să nu permită operarea Forței Internaționale de Stabilizare (ISF) în Gaza înaintea dezarmării Hamas. Vinerea trecută, Strock vizitase tabăra-tampon de dislocare a forței și pregătirile în curs pentru desfășurare. Poziția vine după alocarea americană de 206 milioane USD pentru ISF, consemnată săptămâna trecută.",
           "sources": [
-            { "name": "Haaretz (live 20 aug) — bilanț 24h Gaza", "url": "https://www.haaretz.com/israel-news/israel-security/2026-08-20/ty-article-live/trump-warns-of-tremendous-economic-consequences-for-countries-supporting-iran/000001a0-1cee-da03-abe9-3ffe6ad50000" }
+            {
+              "name": "Jerusalem Post — Smotrich și Strock cer blocarea ISF",
+              "url": "https://www.jpost.com/israel-news/article-906361"
+            }
           ]
         }
       ]
     },
     {
-      "id": "israel-siria-turcia",
-      "title": "Israel — Siria — Turcia",
+      "id": "israel-ue",
+      "title": "Israel — Uniunea Europeană",
       "items": [
         {
-          "title": "Siria admite vizita unor ofițeri turci la baza lovită, dar neagă desfășurarea; „ușa spre negocieri cu Israel rămâne deschisă"",
-          "date": "19–20 aug",
-          "flag": "sursă locală",
-          "body": "Ministrul sirian a confirmat că ofițeri turci au vizitat baza Abu al-Duhur, dar „exclusiv pentru reabilitarea pistei avariate în război", negând orice intenție de a stabili o bază turcă și afirmând că „ușa pentru negocieri cu Israel rămâne deschisă". Turcia menține că „nicio delegație militară turcă nu era prezentă înainte sau în timpul loviturilor israeliene". Trimisul special american lucrează la un mecanism de deconflictare între Israel, Siria și Turcia. Semnal de temperare pe o axă deschisă în cinetic acum trei zile.",
+          "title": "Israelul a interzis intrarea a doi europarlamentari suedezi",
+          "date": "23–24 august",
+          "body": "Autoritatea pentru Populație și Imigrație a refuzat intrarea în Israel a europarlamentarilor suedezi Jonas Sjöstedt și Hanna Gedin, ambii din Partidul de Stânga, în temeiul Legii intrării în Israel și la solicitarea ministrului de externe Gideon Sa'ar. Cei doi urmau să intre duminică seara, în cadrul unei vizite planificate la Autoritatea Palestiniană. Potrivit MAE israelian, ei „au acționat în mod constant împotriva Israelului în ultimii ani, inclusiv prin solicitarea de proceduri juridice internaționale împotriva unor israelieni\".",
           "sources": [
-            { "name": "Israel Hayom (he) — Siria: nu am intenționat o bază turcă, ușa spre negocieri rămâne deschisă", "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/21238045" },
-            { "name": "Maariv (he) — Siria admite: ofițeri turci au ajuns la bază", "url": "https://www.maariv.co.il/news/world/article-1357795" }
+            {
+              "name": "Times of Israel — Israelul interzice intrarea a doi europarlamentari suedezi",
+              "url": "https://www.timesofisrael.com/liveblog_entry/israel-bars-2-swedish-meps-from-entering-country-over-alleged-anti-israel-activity/"
+            },
+            {
+              "name": "Jerusalem Post — Sa'ar interzice intrarea a doi europarlamentari suedezi",
+              "url": "https://www.jpost.com/israel-news/article-906354"
+            }
           ]
         }
       ]
     },
     {
       "id": "israel-liban",
-      "title": "Israel — Liban — Hezbollah",
+      "title": "Israel — Liban",
       "items": [
         {
-          "title": "Ali Taher: fără deplasare semnificativă față de rularea de dimineață",
-          "date": "20 aug",
-          "body": "IDF menține presiunea și asediul asupra complexului subteran de pe creasta Ali Taher; fără o ripostă majoră Hezbollah pe nordul Israelului și fără o deplasare izolabilă nouă în fereastra scanului față de starea consemnată dimineață (Hezbollah respinsese propunerea SUA de transfer al sitului către armata libaneză).",
+          "title": "Lovituri israeliene în sudul Libanului",
+          "date": "24 august",
+          "body": "Presa israeliană a relatat luni dimineața lovituri israeliene în sudul Libanului. Bilanțul și țintele exacte nu erau confirmate oficial la ora redactării.",
+          "flag": "neconfirmat oficial — de verificat",
           "sources": [
-            { "name": "Ynet (he) — IDF strânge asediul asupra „centrului nervos" subteran", "url": "https://www.ynetnews.com/article/syiznpdlzx" }
+            {
+              "name": "Jerusalem Post (live 24 aug) — lovituri israeliene în sudul Libanului (Walla)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-08-24/live-updates-906375"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "economic",
+      "title": "Economic — energie și piețe",
+      "items": [
+        {
+          "title": "Brent în scădere la circa 93 USD; șekelul stabil sub pragul de 3,00",
+          "date": "24 august",
+          "body": "Brent a pierdut 1,38%, la circa 93,09 USD/baril, investitorii așteptând detaliile pachetului american de sancțiuni. Cursul dolar–șekel se situa la circa 2,9836 (închiderea anterioară 2,9872; interval zilnic 2,9806–2,9942), cu șekelul menținut sub pragul psihologic de 3,00 — relevant pentru veniturile denominate în dolari.",
+          "sources": [
+            {
+              "name": "CNBC — prețul petrolului, 24 august",
+              "url": "https://www.cnbc.com/2026/08/24/oil-price-today-wti-brent-us-sanctions-iran.html"
+            },
+            {
+              "name": "Investing.com — curs USD/ILS",
+              "url": "https://il.investing.com/currencies/usd-ils"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "politica-interna",
+      "title": "Politică internă Israel",
+      "items": [
+        {
+          "title": "Șeful Shin Bet își asumă refuzul de a-i acorda protecție lui Gadi Eisenkot",
+          "date": "23 august",
+          "body": "Șeful Shin Bet, David Zini, a confirmat că decizia de a nu-i acorda dispozitiv de protecție liderului partidului Yashar, Gadi Eisenkot, îi aparține în exclusivitate. Decizia intervine în pofida amenințărilor din mediul online și a avertismentelor din sectorul de apărare, iar echipa lui Eisenkot a acuzat motive politice. Serviciul a oferit în schimb un ofițer de legătură și colectare de informații. Eisenkot conduce în mai multe sondaje drept principalul contracandidat al premierului Netanyahu înaintea alegerilor din 27 octombrie.",
+          "sources": [
+            {
+              "name": "Times of Israel — Zini respinge dispozitivul de protecție pentru Eisenkot",
+              "url": "https://www.timesofisrael.com/shin-bet-chief-rejects-armed-security-detail-for-election-frontrunner-eisenkot-reports/"
+            },
+            {
+              "name": "Jerusalem Post — Zini: decizia îmi aparține în exclusivitate",
+              "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-906352"
+            },
+            {
+              "name": "Haaretz — Eisenkot fără dispozitiv de protecție, în pofida amenințărilor invocate",
+              "url": "https://www.haaretz.com/israel-news/israel-politics/2026-08-23/ty-article/.premium/opposition-mk-eisenkot-not-granted-security-detail-despite-claiming-threats/000001a0-2ed3-d74d-adbd-feff01db0000"
+            }
           ]
         }
       ]
     }
   ],
-  "vector": "Ziua e dominată de mutarea presiunii SUA–Iran pe registru economic maxim (Trump: „război economic fără precedent", amenințări la adresa statelor-terțe), cu Brent spre 93 USD. Pe Gaza, tensiune de secvențiere SUA–Israel: Washingtonul finanțează forța de stabilizare (206 mil. USD), Israel spune că nu i-a aprobat intrarea. Pe axa siriano-turcă apare un semnal de temperare — Damascul admite vizita unor ofițeri turci, dar neagă desfășurarea și ține deschisă ușa spre Israel. Liban: status quo tensionat pe Ali Taher, fără deplasare nouă.",
+  "vector": "Axa Iran–SUA rămâne în escaladare, dar pe registrul economic, nu cinetic: pachetul de sancțiuni anunțat pentru 24 august și răspunsul iranian — amenințarea cu blocarea completă a exporturilor prin Hormuz și calificarea participării statelor terțe drept act de război — mută confruntarea pe terenul presiunii financiare și al traficului maritim. Axa Iran–Europa se deplasează pentru prima dată de la avertismente la măsuri fizice de protecție: retragerea avioanelor-cisternă americane din Bulgaria și repoziționarea bateriei Patriot elene în Creta. Pe axa Israel–Siria apare un semnal de dezescaladare gestionată, cu reluarea anunțată a negocierilor de securitate sub mediere americană.",
   "delta": [
-    "Iran–SUA (context, eveniment 19 aug seara): Trump anunță „război economic fără precedent" contra Iranului și amenință statele-terțe care îl sprijină; val de acoperire și reacții pe 20 aug.",
-    "Gaza: SUA alocă 206 mil. USD pentru Forța Internațională de Stabilizare, dar Israel afirmă că nu a aprobat intrarea ei — „fără reconstrucție înainte de dezarmarea Hamas".",
-    "Siria–Turcia: Damascul admite că ofițeri turci au vizitat baza Abu al-Duhur (reabilitarea pistei), neagă desfășurarea și declară ușa spre negocieri cu Israel deschisă — semnal de temperare; discrepanța „Turcia neagă prezența" se închide parțial.",
-    "Economic: Brent ~93,01 USD/baril (20 aug, +1,52%), în creștere de la ~91,86 (19 aug).",
-    "Fără poziție UE/SEAE izolabilă datată 20 aug la ora scanului; SUA activă (Dep. de Stat pe ISF Gaza; Trump pe economia Iranului)."
+    "Iran–SUA: de la anunț declarativ (19–20 august) la pachet de sancțiuni cu dată fixă și detalii prezentate public pe 24 august; Teheranul răspunde cu amenințarea explicită de oprire totală a exporturilor prin Hormuz.",
+    "Iran–Europa: semnalul din raportul de presă privind ținte est-europene, consemnat pe 20 august ca ipoteză, a produs efecte materiale — retragerea a două KC-135 americane din Bezmer (Bulgaria) și mutarea unei baterii Patriot elene la Souda (Creta).",
+    "Israel–Siria: de la lovitura asupra bazei Abu al-Duhur și dispute publice, la anunțul reluării negocierilor de securitate sub mediere americană și retractarea de către trimisul american a declarațiilor privind Golanul.",
+    "Iran intern: rialul a atins un minim istoric de circa 2,02 milioane pentru un dolar — deteriorare macroeconomică nouă față de starea consemnată anterior.",
+    "Gaza: apare un vector operațional nou — lansările de zmeie dinspre Fâșie, cu avertisment israelian de intensificare a loviturilor; în paralel, presiune internă pentru blocarea forței internaționale de stabilizare.",
+    "Piețe: Brent în corecție (circa 93 USD, −1,38%) după creșterea consemnată pe 20 august; șekelul stabil sub 3,00 față de dolar."
   ],
   "calendar": [
-    { "date": "20–21 aug", "event": "Posibile măsuri concrete de aplicare a „războiului economic" SUA–Iran și reacții ale statelor terțe" },
-    { "date": "24–72h", "event": "Concretizarea mecanismului de deconflictare Israel–Siria–Turcia (trimisul SUA Tom Barrack)" },
-    { "date": "24–30 aug", "event": "Lansarea partidului nou al lui Ofer Winter" },
-    { "date": "început septembrie", "event": "Rundă Israel–Liban la Roma (gen. Joseph Clearfield)" },
-    { "date": "27 oct", "event": "Alegeri legislative Israel (Knesset 26)" }
+    {
+      "date": "25 august",
+      "event": "Vizita ministrului omanez de externe Badr al-Busaidi în Iran, pe mecanismul de reglementare a tranzitului prin Hormuz (MAE iranian, via presa arabă)"
+    },
+    {
+      "date": "24–30 august",
+      "event": "Lansarea anunțată a noului partid al fostului general Ofer Winter"
+    },
+    {
+      "date": "început de septembrie",
+      "event": "Rundă Israel–Liban la Roma (gen. Joseph Clearfield); dosarul crestei Ali Taher pe agendă"
+    },
+    {
+      "date": "27 octombrie",
+      "event": "Alegeri legislative în Israel, Knesset 26"
+    },
+    {
+      "date": "31 decembrie 2026",
+      "event": "Expirarea mandatului UNIFIL (Rez. 2790/2025)"
+    }
   ],
-  "demnitari": "Nicio schimbare confirmată de demnitar în statele monitorizate în ultimele 24h.",
-  "sourceCount": 10
+  "demnitari": "Nicio schimbare de demnitar confirmată în statele monitorizate în ultimele 24 de ore.",
+  "sourceCount": 24
 };
 /* BRIEFING_DATA_END */
 render(DATA);

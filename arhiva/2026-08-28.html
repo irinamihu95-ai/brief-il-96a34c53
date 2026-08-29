@@ -114,7 +114,7 @@
     </div>
   </header>
 
-  <div style="background:var(--card2);border:1px solid var(--gold);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.85rem">📁 Snapshot de arhivă — starea paginii la 2026-08-28T15:15:00+03:00. <a href="../" style="color:var(--accent)">Versiunea curentă</a> · <a href="./" style="color:var(--accent)">Toată arhiva</a></div>
+  <div style="background:var(--card2);border:1px solid var(--gold);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.85rem">📁 Snapshot de arhivă — starea paginii la 2026-08-28T20:50:00+03:00. <a href="../" style="color:var(--accent)">Versiunea curentă</a> · <a href="./" style="color:var(--accent)">Toată arhiva</a></div>
   <div id="err">Datele briefingului nu au putut fi încărcate. Reîncearcă mai târziu.</div>
   <div id="n2"></div>
   <div id="sections"></div>
@@ -210,33 +210,65 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-08-28T15:15:00+03:00",
-  "runType": "Scan după-amiază",
+  "generatedAt": "2026-08-28T20:50:00+03:00",
+  "runType": "Scan de seară",
   "nextRun": "2026-08-29T07:30:00+03:00",
   "nivel2": [],
-  "sourceCount": 12,
+  "sourceCount": 14,
   "sections": [
     {
-      "id": "israel-liban",
-      "title": "Israel–Liban",
+      "id": "cisiordania",
+      "title": "Cisiordania",
       "items": [
         {
-          "title": "Israel comunică SUA că programul-pilot de retragere din sudul Libanului a eșuat",
+          "title": "Lovitură aeriană israeliană la Jenin — trei operativi uciși; prima de acest tip din Cisiordania după o lungă pauză",
           "date": "28 aug",
-          "flag": "AXĂ NOUĂ",
-          "body": "Israelul a transmis Statelor Unite că programul-pilot de retragere din sudul Libanului — testat în cadrul trilateral mediat de SUA, după memorandumul dintre Beirut și Ierusalim — a eșuat. Potrivit evaluărilor unor înalți ofițeri IDF, șeful de stat major al Armatei libaneze, Rudolf Haykal, continuă să coopereze cu Hezbollah, evită confruntarea cu comandanții acestuia în sud și este ineficient la percheziții și la depistarea infrastructurii și armamentului. În Zawtar al-Gharbiyeh, prima zonă predată de Israel, măsurile de securitate au revenit la nivelul de dinainte de război: aparatul paralel Hezbollah ajunge primul la incidente și șterge probele înaintea Armatei libaneze sau a monitorilor internaționali.",
+          "flag": "PRAG DE MODALITATE",
+          "body": "În jurul orei 16:20, o dronă a forțelor aeriene israeliene a lovit un grup aflat lângă un autoturism, la intrarea unei clădiri din orașul Jenin. Armata a anunțat inițial o lovitură împotriva „unui număr de teroriști”, iar ulterior a confirmat uciderea a trei operativi. Potrivit unei surse militare și Shin Bet, ținta principală era Qais Bitawi, responsabil al activității Hamas în tabăra de refugiați din Jenin, aflat, în evaluarea israeliană, în faza de pregătire a unor atacuri; ceilalți doi erau însoțitorii săi. Times of Israel notează că, între 7 octombrie 2023 și începutul lui 2025, IDF a executat peste 100 de lovituri aeriene în Cisiordania, iar de atunci acestea au devenit o excepție. Lovitura survine la o zi după ordinul șefului Statului Major, Eyal Zamir, de dublare a dispozitivului IDF în Cisiordania înaintea sărbătorilor de toamnă.",
           "sources": [
             {
-              "name": "Jerusalem Post",
-              "url": "http://www.jpost.com/middle-east/article-906866"
+              "name": "Times of Israel (IDF confirmă trei uciși)",
+              "url": "https://www.timesofisrael.com/liveblog_entry/idf-says-it-killed-3-palestinian-terror-operatives-in-rare-west-bank-airstrike/"
+            },
+            {
+              "name": "Times of Israel (sursă militară — ținta)",
+              "url": "https://www.timesofisrael.com/liveblog_entry/military-source-jenin-drone-strike-targeted-head-of-palestinian-terror-cell-accomplices/"
+            },
+            {
+              "name": "Al Arabiya English",
+              "url": "https://english.alarabiya.net/News/middle-east/2026/08/28/israel-army-says-conducted-airstrike-on-west-bank-s-jenin"
             },
             {
               "name": "Middle East Monitor",
-              "url": "https://www.middleeastmonitor.com/20260828-israeli-media-israel-tells-us-pilot-zone-project-in-southern-lebanon-has-failed/"
-            },
+              "url": "https://www.middleeastmonitor.com/20260828-israel-says-it-carried-out-airstrike-in-west-bank-city-of-jenin/"
+            }
+          ]
+        },
+        {
+          "title": "Qusra: la trei săptămâni de la instituirea zonei militare închise, coloniștii circulă nestingheriți",
+          "date": "28 aug",
+          "body": "Imagini filmate în satul palestinian Qusra arată coloniști israelieni circulând liber prin ceea ce ar trebui să fie o zonă militară închisă, instituită de IDF pentru a ridica asediul impus de extremiști în urmă cu aproape trei săptămâni. Deși armata a demontat mai multe avanposturi ridicate la marginea satului, coloniștii continuă să opereze în zonă fără consecințe. Două familii palestiniene declară că rămân blocate în locuințe, neputând ieși fără coordonare cu militarii și temându-se că plecarea le-ar expune casele unei preluări, ca în satul învecinat Jalud.",
+          "sources": [
             {
-              "name": "FDD",
-              "url": "https://www.fdd.org/analysis/2026/08/24/lebanons-inaction-is-dooming-the-pilot-zones-project/"
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog_entry/nearly-3-weeks-into-qusra-siege-settlers-filmed-freely-roaming-through-closed-military-zone/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gaza",
+      "title": "Gaza",
+      "items": [
+        {
+          "title": "IDF confirmă eliminarea a doi comandanți Hamas și Jihad Islamic, în pofida apelurilor americane de oprire a loviturilor",
+          "date": "28 aug",
+          "body": "Armata israeliană a anunțat că loviturile de joi din orașul Gaza au ucis doi comandanți: Ibrahim Nabil Ibrahim Bass, comandant în aripa militară Hamas, participant la atacul din 7 octombrie 2023 (tabăra Shati), și Hamdi Ahmad Hamid Kahlil, comandant de pluton de observare în Jihadul Islamic Palestinian (cartierul Sabra). IDF justifică loviturile în regim de armistițiu prin faptul că ambii ar fi avansat recent atacuri și ar fi acționat la refacerea capabilităților organizațiilor, „încălcând sistematic încetarea focului”. Statele Unite au cerut încetarea acestui tip de lovituri, pentru a avansa planul de dezarmare al Board of Peace; Israelul menține linia de urmărire a autorilor atacului din 7 octombrie.",
+          "sources": [
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog_entry/idf-says-it-killed-hamas-islamic-jihad-operatives-in-thursday-gaza-strikes/"
             }
           ]
         }
@@ -247,49 +279,24 @@ const DATA = {
       "title": "Iran–SUA / Hormuz",
       "items": [
         {
-          "title": "CENTCOM declară rutele Hormuz „fără mine”; Trump: „That sucker is open”",
+          "title": "SUA adaugă noi sancțiuni pe dosarul iranian, la șase luni de la începutul războiului",
           "date": "28 aug",
-          "body": "Amiralul Brad Cooper (CENTCOM) a anunțat, printr-un comunicat video, că rutele maritime recunoscute internațional din strâmtoarea Hormuz sunt „fără mine iraniene” — o „etapă majoră”. Președintele Trump (Axios): „That sucker is open”, adăugând că „răspunsul iranian este foarte blând”. Traficul prin canalul sudic a urcat la 20–30 de petroliere pe noapte, cu o medie de 9–10 milioane de barili — aproximativ jumătate din volumul dinainte de război. Ministerul iranian de externe susține în continuare că „militar, Hormuz rămâne închisă”.",
+          "body": "Statele Unite au desemnat o entitate cu sediul în Hong Kong și o persoană asociată băncii iraniene Bank Melli, potrivit unei notificări publicate pe site-ul Trezoreriei. Măsura este incrementală și survine după avertismentul secretarului Trezoreriei Scott Bessent, formulat la începutul săptămânii, privind noi acțiuni pe durata războiului.",
           "sources": [
             {
-              "name": "Times of Israel",
-              "url": "https://www.timesofisrael.com/liveblog-august-28-2026/"
-            },
-            {
-              "name": "Axios",
-              "url": "https://www.axios.com/2026/08/28/trump-iran-hormuz-war-oil"
+              "name": "Times of Israel / Reuters",
+              "url": "https://www.timesofisrael.com/liveblog_entry/us-issues-fresh-iran-related-sanctions-as-war-marks-six-months/"
             }
           ]
         },
         {
-          "title": "MAE iranian respinge sancțiunile SUA drept „terorism de stat” și cere neaplicarea lor",
-          "date": "28 aug",
-          "body": "Ministerul de externe al Iranului a declarat că toate statele sunt obligate să se abțină de la aplicarea sancțiunilor americane împotriva Teheranului, calificând noile măsuri economice ale SUA drept ilegale și reprobabile — „terorism de stat” și „crimă împotriva umanității”.",
+          "title": "Context: Washingtonul refuză revenirea la termenii memorandumului din iunie",
+          "date": "28 aug (publicat dimineața)",
+          "body": "Potrivit Wall Street Journal, citat de Jerusalem Post, administrația americană a comunicat mediatorilor și partenerilor regionali că nu este interesată de revenirea la termenii memorandumului convenit cu Iranul în iunie. Purtătoarea de cuvânt a Casei Albe, Anna Kelly: „nu există discuții în desfășurare sau programate cu Republica Islamică Iran”, iar „blocada navală rămâne pe deplin în vigoare”, în paralel cu operațiunea economică în curs. De cealaltă parte, purtătorul de cuvânt al Gardienilor Revoluției, general de brigadă Hossein Mohebbi: strâmtoarea Hormuz se redeschide numai dacă SUA revin la memorandum și încetează blocada. Elementul nuanțează anunțul american de la prânz privind rutele „fără mine”.",
           "sources": [
             {
-              "name": "Haaretz",
-              "url": "https://www.haaretz.com/israel-news/israel-security/2026-08-28/ty-article-live/reports-israeli-forces-enter-villages-in-southern-syria-fire-two-shells/000001a0-4607-d6dd-a1ad-e667f0750000"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "israel-ue",
-      "title": "Israel–UE / UNRWA",
-      "items": [
-        {
-          "title": "MAE israelian ripostează dur celor 15 state și UE pe confiscarea centrului UNRWA",
-          "date": "28 aug",
-          "body": "Ministerul israelian de externe a respins tăios declarația comună a 15 state și a Uniunii Europene — semnatari între care Regatul Unit, Franța, Germania, Canada, Italia, Spania și Japonia — care condamnau drept ilegală intrarea în centrul UNRWA din Kalandia/Kafr Aqab și confiscarea facilității: „Faptele voastre sunt greșite. Susțineți o organizație care este o pepinieră de terorism și preferați să atacați Israelul cu acuzații nefondate în loc să acționați în beneficiul copiilor arabi din Kafr Aqab. E o rușine.” Israelul a invocat un raport al Inspectoratului USAID, citat de Trump, potrivit căruia peste 100 de angajați UNRWA ar fi participat la atacul din 7 octombrie; a respins și critica secretarului general ONU Guterres.",
-          "sources": [
-            {
-              "name": "Jerusalem Post",
-              "url": "http://www.jpost.com/israel-news/article-906859"
-            },
-            {
-              "name": "JNS",
-              "url": "https://www.jns.org/news/israel-news/israel-dismisses-guterress-criticism-regarding-takeover-of-jerusalem-unrwa-compound"
+              "name": "Jerusalem Post / WSJ",
+              "url": "https://www.jpost.com/middle-east/iran-news/article-906879"
             }
           ]
         }
@@ -300,28 +307,63 @@ const DATA = {
       "title": "Politic intern Israel",
       "items": [
         {
-          "title": "Cenzura militară permite publicarea negocierilor directe Ronen Bar–Hamas pe ostatici",
+          "title": "Smotrich negociază un bloc tehnic cu Moshe Feiglin, după eșecul fuziunii cu Ben Gvir",
           "date": "28 aug",
-          "body": "Cenzura militară israeliană a permis publicarea unui raport ținut sub tăcere: fostul șef al Shin Bet, Ronen Bar, a purtat negocieri directe cu lideri Hamas din exil pentru eliberarea ostaticilor, în perioada de după 7 octombrie și până în februarie 2025, când a fost înlăturat din echipa de negociere a Israelului de către premierul Netanyahu. Dezvăluirea survine în urma unui raport potrivit căruia Netanyahu ar fi contactat privat Hamas și în timpul războiului din 2014.",
+          "body": "Ministrul de finanțe Bezalel Smotrich, președintele Sionismului Religios, se află în negocieri avansate cu Moshe Feiglin, liderul partidului Zehut, pentru o candidatură comună la alegerile din octombrie (Canalul 12, Amit Segal). Discuțiile ar fi început înainte de eșecul demersului premierului Netanyahu de a-l determina pe Itamar Ben Gvir să fuzioneze cu partidul lui Smotrich, aflat la limita pragului electoral de 3,25%. Zehut nu a trecut pragul la ultima sa candidatură, în 2019, iar sondajele îi dau sub 1%. Ambii lideri confirmă contactele, fără alte comentarii. Presa israeliană adaugă că premierul a fost informat și susține demersul, iar în Otzma Yehudit au apărut critici la adresa lui Ben Gvir pentru respingerea prea rapidă a unificării.",
           "sources": [
             {
               "name": "Times of Israel",
-              "url": "https://www.timesofisrael.com/liveblog-august-28-2026/"
+              "url": "https://www.timesofisrael.com/liveblog_entry/smotrich-in-talks-with-moshe-feiglin-about-parties-running-together/"
+            },
+            {
+              "name": "Ynet (sursă locală)",
+              "url": "https://www.ynet.co.il/news/elections2026/article/bjjkhgk00mx"
+            },
+            {
+              "name": "Arutz 7 (sursă locală)",
+              "url": "https://www.inn.co.il/news/705050"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comunitate",
+      "title": "Comunitate evreiască / antisemitism",
+      "items": [
+        {
+          "title": "Londra: patru inculpați pledează vinovat pentru incendierea ambulanțelor comunității evreiești",
+          "date": "28 aug",
+          "body": "Patru tineri — cetățenii britanici Hamza Iqbal (20), Rehan Khan (19), Judex Atshatshi (18) și britanicul de origine pakistaneză Saif Ali (18) — au pledat vinovat, într-o audiere din Regatul Unit, pentru distrugerea a patru ambulanțe ale organizației caritabile evreiești Hatzola, incendiate la 23 martie într-un cartier londonez cu populație evreiască semnificativă. Vehiculele erau parcate lângă o sinagogă, iar prejudiciul este evaluat la un milion de lire sterline. Acuzarea a descris atacul drept „premeditat și țintit împotriva comunității evreiești”. Gruparea Harakat Ashab al-Yamin al-Islamiyah (HAYI), asociată Iranului, revendicase anterior mai multe atacuri, inclusiv distrugerea ambulanțelor; guvernul britanic a anunțat intenția de a o interzice ca amenințare la securitatea națională. Apărarea neagă orice legătură a inculpaților cu organizații interzise.",
+          "sources": [
+            {
+              "name": "Times of Israel / AFP",
+              "url": "https://www.timesofisrael.com/liveblog_entry/four-plead-guilty-to-london-arson-attack-on-jewish-community-ambulances/"
             }
           ]
         }
       ]
     }
   ],
-  "vector": "În fereastra de după-amiază (vineri, Shabbat în apropiere → flux redus), două deplasări structurale. Pe axa Israel–Liban se deschide un front nou: Israelul declară eșuat pilotul de retragere din sud, invocând cooperarea Armatei libaneze cu Hezbollah — semnal că retragerile graduale se blochează. Pe axa Iran–SUA, Washingtonul consolidează narativul de câștig în Hormuz (rute „fără mine”, trafic la ~jumătate din volumul pre-război), contestat de Teheran, care respinge sancțiunile drept „terorism de stat”. Pe axa Israel–UE, confruntarea UNRWA escaladează prin riposta MAE israelian la declarația celor 15 state și a UE, dar fără o linie instituțională nouă a Consiliului/Comisiei/SEAE.",
+  "vector": "Seara de vineri confirmă un tipar de intensificare a acțiunii cinetice israeliene în afara Fâșiei, în paralel cu o diplomatică blocată pe dosarul iranian. Elementul de prag al zilei este revenirea loviturilor aeriene în Cisiordania — instrument folosit rar din 2025 —, suprapusă peste dublarea dispozitivului IDF dispusă cu o zi înainte și peste alerta pre-sărbători. În Gaza, IDF își asumă public continuarea loviturilor țintite în pofida cererilor americane, ceea ce menține tensiunea pe secvențierea planului Board of Peace. Pe axa iraniană, anunțul american de la prânz privind rutele libere din Hormuz este nuanțat de informația că Washingtonul refuză revenirea la memorandumul din iunie, în timp ce Teheranul condiționează redeschiderea strâmtorii de exact acest lucru — pozițiile rămân ireconciliabile, iar sancțiunile continuă incremental. Pe plan intern israelian, recompunerea dreptei radicale intră în faza blocurilor tehnice.",
   "delta": [
-    "Axă nouă Israel–Liban: Israelul declară SUA că pilotul de retragere din sud a eșuat, invocând cooperarea Armatei libaneze cu Hezbollah.",
-    "Hormuz: de la anunțul de curățare a minelor (25 aug) la declararea rutelor „fără mine” + date de trafic (20–30 petroliere/noapte, ~jumătate din pre-război); framing american, contestat de Teheran.",
-    "UNRWA: riposta MAE israelian la declarația comună a 15 state + UE, cu referința Trump la raportul USAID; escaladare a confruntării instituționale.",
-    "Iran: MAE cere formal statelor să nu aplice sancțiunile SUA, calificate „terorism de stat”.",
-    "Dezvăluire internă: cenzura ridică vălul pe negocierile directe Ronen Bar–Hamas (oct 2024–feb 2025)."
+    "Cisiordania: primă lovitură aeriană israeliană la Jenin după o lungă pauză — trei uciși, ținta principală responsabilul Hamas din tabăra de refugiați.",
+    "Gaza: IDF confirmă eliminarea a doi comandanți Hamas și Jihad Islamic în loviturile de joi, contrar cererilor americane de oprire.",
+    "Iran: noi desemnări americane (o entitate din Hong Kong, o persoană legată de Bank Melli), la șase luni de război.",
+    "Hormuz: Washingtonul refuză revenirea la memorandumul din iunie; Gardienii Revoluției condiționează redeschiderea strâmtorii de revenirea la acel cadru.",
+    "Politic intern: Smotrich negociază bloc tehnic cu Feiglin după eșecul fuziunii cu Ben Gvir.",
+    "Regatul Unit: pledoarii de vinovăție în dosarul incendierii ambulanțelor Hatzola, atac revendicat anterior de o grupare asociată Iranului.",
+    "Norvegia: regele Harald V a decedat; îi succedă automat regele Haakon VIII."
   ],
   "calendar": [
+    {
+      "date": "29 aug",
+      "event": "Sâmbătă, Shabbat — flux instituțional israelian minim; declarații politice de regulă după ieșirea Shabbatului"
+    },
+    {
+      "date": "30 aug",
+      "event": "Istanbul: reuniune ministerială pe dosarul iranian — E3 (Regatul Unit, Germania, Franța), Egipt, Arabia Saudită, Pakistan, Turcia; agendă: libertatea de navigație în Hormuz și securitatea regională (sursă de agenție, de confirmat)"
+    },
     {
       "date": "~1 sep",
       "event": "Dată vehiculată (COGAT) pentru deschiderea punctului Erez — blocată politic la 27 aug de Netanyahu și Katz"
@@ -331,12 +373,8 @@ const DATA = {
       "event": "Intrarea în vigoare a legii neerlandeze de interzicere a comerțului cu produsele din colonii"
     },
     {
-      "date": "weekend",
-      "event": "Ritmul traficului prin Hormuz după declararea rutelor „fără mine” — de urmărit"
-    },
-    {
       "date": "sep",
-      "event": "Sărbătorile de toamnă — alertă operațională ridicată (dispozitiv IDF întărit în Cisiordania)"
+      "event": "Sărbătorile de toamnă — alertă operațională ridicată, dispozitiv IDF întărit în Cisiordania"
     },
     {
       "date": "27 oct",
@@ -347,7 +385,7 @@ const DATA = {
       "event": "Expirare mandat UNIFIL (Rez. 2790/2025)"
     }
   ],
-  "demnitari": "Nicio schimbare de demnitar confirmată în statele monitorizate în ultimele 24h."
+  "demnitari": "Norvegia: regele Harald V a decedat vineri dimineață, la 89 de ani, la Spitalul Național din Oslo; fiul său i-a succedat automat, sub numele de Haakon VIII (US News/AP, NPR, Al Jazeera, CNN). Fără alte schimbări de demnitar confirmate în statele monitorizate."
 };
 /* BRIEFING_DATA_END */
 render(DATA);

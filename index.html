@@ -209,29 +209,55 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-08-29T20:10:00+03:00",
-  "runType": "Scan de seară",
-  "nextRun": "2026-08-30T07:30:00+03:00",
+  "generatedAt": "2026-08-30T07:36:00+03:00",
+  "runType": "Briefing matinal",
+  "nextRun": "2026-08-30T15:00:00+03:00",
   "nivel2": [],
   "sections": [
+    {
+      "id": "iran-hormuz",
+      "title": "Iran — SUA — Hormuz",
+      "items": [
+        {
+          "title": "Război de narațiuni pe controlul strâmtorii Hormuz la șase luni de conflict; Iranul publică o listă de condiții pentru redeschidere",
+          "date": "declarații 28–29 aug",
+          "body": "Marina Corpului Gardienilor Revoluției (IRGC) a afirmat că exercită un control „complet și decisiv” asupra strâmtorii Hormuz și că nicio navă nu va tranzita fără coordonare prealabilă cu autoritățile iraniene, calificând drept „minciună” afirmațiile oficiale americane că strâmtoarea rămâne deschisă (sursă instituțională iraniană). În paralel, Axios, citând oficiali americani, a relatat că Iranul a pierdut o parte semnificativă din controlul asupra căii navigabile, marina SUA controlând cea mai mare parte a acesteia sub blocada activă; presa egipteană a menționat redirecționarea a 82 de nave. Separat, Mohsen Rezaei (Consiliul Suprem de Securitate Națională iranian) a prezentat o listă de condiții adresate Washingtonului pentru redeschiderea Hormuzului: încetarea războiului în Asia de Vest — în special în Liban —, retragerea Israelului din zonele ocupate, încetarea războiului din Gaza și oprirea loviturilor israeliene asupra Damascului.",
+          "sources": [
+            { "name": "Arab News", "url": "https://www.arabnews.com/node/2656192/middle-east" },
+            { "name": "Al Jazeera (liveblog 29 aug)", "url": "https://www.aljazeera.com/news/liveblog/2026/8/29/iran-war-live-irgc-asserts-strait-control-us-enforces-blockade" },
+            { "name": "CNN Arabic (28 aug)", "url": "https://arabic.cnn.com/world/article/2026/08/28/iran-drafts-demands-for-us-ahead-of-possible-hormuz-reopening" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liban",
+      "title": "Israel — Liban — Hezbollah",
+      "items": [
+        {
+          "title": "Loviturile IDF în sudul Libanului continuă pe tiparul cvasi-zilnic; asediul asupra crestei Ali Taher se menține",
+          "date": "eveniment 28–29 aug",
+          "body": "Armata israeliană a anunțat un val de lovituri asupra infrastructurii Hezbollah în zona Nabatieh, prezentate drept răspuns la lansarea a două drone explozive de către Hezbollah împotriva forțelor IDF care operează în zona crestei Ali Taher; militarii au doborât o dronă, iar contactul cu a doua s-a pierdut, fără victime în rândul IDF. Presa de stat libaneză a raportat o femeie ucisă în localitatea Arab Salim și alți răniți. Asediul terestru al complexului subteran Hezbollah de sub creasta Ali Taher (nord de Litani) se menține; IDF se pregătește pentru o prezență prelungită și stabilizarea liniei de poziții din apropierea graniței.",
+          "sources": [
+            { "name": "JNS", "url": "https://www.jns.org/news/israel-news/idf-launches-strikes-on-hezbollah-targets-in-southern-lebanon" },
+            { "name": "Ynetnews", "url": "https://www.ynetnews.com/article/hjmftq6pfl" },
+            { "name": "Haaretz (27 aug)", "url": "https://www.haaretz.com/middle-east-news/lebanonnews/2026-08-27/ty-article/.premium/idf-strikes-in-lebanon-kill-one-wound-six-including-child-woman/000001a0-43f6-dfdc-afab-eff728230000" }
+          ]
+        }
+      ]
+    },
     {
       "id": "gaza",
       "title": "Gaza",
       "items": [
         {
-          "title": "Lovitură israeliană în perimetrul spitalului Al-Aqsa Martyrs din Deir al-Balah; trei răniți",
-          "date": "eveniment 29 aug (după-amiază) / publicat 29 aug 15:37, actualizat 19:19",
-          "flag": "prag de modalitate",
-          "body": "Armata israeliană a anunțat că a lovit un comandant Hamas care „se ascundea în interiorul perimetrului” spitalului Al-Aqsa Martyrs din Deir al-Balah, precizând că lovitura a vizat o structură adiacentă clădirilor spitalicești și că nu putea confirma imediat decesul țintei. Spitalul a raportat trei răniți într-o lovitură lângă un depozit aflat în apropierea secției de maternitate. Armata a afirmat că a luat măsuri de reducere a riscului pentru civili și că avertizase autoritățile medicale din Gaza cu două zile înainte în privința utilizării unităților medicale în scopuri teroriste. Separat, în Gaza City, apărarea civilă a raportat doi morți într-o lovitură lângă un sens giratoriu din cartierul Tel al-Hawa; armata a confirmat că a vizat un „operativ militar”. Bilanțul cumulat de la intrarea în vigoare a încetării focului, potrivit ministerului sănătății din Gaza, este de 1.313 morți; armata israeliană raportează cinci militari și un contractor civil.",
+          "title": "Lovitură israeliană lângă spitalul Al-Aqsa Martyrs din Deir al-Balah; trei răniți, un comandant Hamas vizat",
+          "date": "eveniment 29 aug",
+          "body": "Armata israeliană a anunțat că a vizat un comandant Hamas care „se ascundea în apropierea” spitalului Al-Aqsa Martyrs din Deir al-Balah, precizând că nu putea confirma imediat decesul țintei și că a luat măsuri de reducere a riscului pentru civili. Directorul spitalului a raportat trei răniți într-o lovitură cu dronă asupra unui cort folosit ca depozit de materiale medicale în interiorul complexului. Separat, oficiali sanitari din Gaza au raportat trei palestinieni uciși în centrul Fâșiei, între care doi într-o lovitură asupra unei motociclete în Gaza City, unde armata a confirmat că a vizat un „operativ militar”. Loviturile se înscriu în seria de incidente sub pragul de escaladare de la intrarea în vigoare a încetării focului (octombrie 2025).",
           "sources": [
-            {
-              "name": "Arab News / AFP",
-              "url": "https://www.arabnews.com/node/2656245/middle-east"
-            },
-            {
-              "name": "Times of Israel (liveblog, 29 aug)",
-              "url": "https://www.timesofisrael.com/liveblog-august-29-2026/"
-            }
+            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/idf-says-strike-on-gaza-hospital-compound-killed-hamas-commander/" },
+            { "name": "Arab News / AFP", "url": "https://www.arabnews.com/node/2656245/middle-east" },
+            { "name": "Al Jazeera", "url": "https://www.aljazeera.com/news/2026/8/29/israeli-attacks-across-gaza-kill-two-people-hit-hospital-supply-warehouse" }
           ]
         }
       ]
@@ -241,127 +267,71 @@ const DATA = {
       "title": "Cisiordania",
       "items": [
         {
-          "title": "Zeci de coloniști atacă satul Qusra și se baricadează într-o locuință palestiniană; forțele israeliene intervin și confiscă vehicule",
-          "date": "eveniment 29 aug / publicat 29 aug 14:22, actualizat 18:17",
-          "body": "Zeci de coloniști israelieni au atacat satul Qusra, la sud de Nablus, după aproape trei săptămâni de tensiune în zonă. Un localnic a relatat pentru AFP că un grup restrâns de coloniști a solicitat întăriri și a revenit în număr mare, înconjurând sătenii aflați într-o casă în construcție și aruncând cu pietre. Armata israeliană a anunțat că militari și polițiști de frontieră au fost trimiși la fața locului după semnalarea unor „revoltați israelieni” și a unor ciocniri violente, că au identificat zeci de persoane baricadate într-o locuință palestiniană în care se aflau rezidenți, că i-au îndepărtat, au separat grupurile și au confiscat vehicule ca probe într-o anchetă a poliției, deschisă în cauză. Comunicatul militar menționează că este la curent cu relatări privind răniți palestinieni și condamnă „toate formele de violență”. Constituie o schimbare de atitudine față de 28 august, când coloniști fuseseră filmați circulând liber în zona militară închisă.",
+          "title": "Coloniști mascați atacă o femeie palestiniană și o echipă NBC News lângă Nablus; Netanyahu condamnă violența",
+          "date": "eveniment 29 aug",
+          "body": "O echipă de patru membri ai NBC News care intervieva o familie palestiniană în localitatea Jalud, lângă Nablus, a fost atacată de coloniști israelieni mascați. Potrivit relatării, un autoturism cu plăcuțe israeliene a urcat în marșarier panta către echipă, iar mai mulți bărbați în haine închise, cu fețele acoperite, au coborât și au lovit cu bâte și au aruncat cu pietre în femeia palestiniană Aida Ahmed Abdullah (51 de ani) și în membrii echipei, avariind echipamente și un vehicul. Femeia a fost spitalizată cu răni care nu îi pun viața în pericol. Prim-ministrul Benjamin Netanyahu a condamnat violența comisă „de un mic grup de instigatori”. Incidentul survine la o zi după ce coloniști fuseseră filmați circulând liber într-o zonă militară închisă din regiune.",
           "sources": [
-            {
-              "name": "Arab News / AFP",
-              "url": "https://www.arabnews.com/node/2656237/middle-east"
-            },
-            {
-              "name": "Times of Israel",
-              "url": "https://www.timesofisrael.com/settlers-attack-west-banks-qusra-take-over-home-with-palestinian-family-inside/"
-            }
+            { "name": "NBC News", "url": "https://www.nbcnews.com/world/middle-east/palestinian-nbc-news-team-attacked-masked-israeli-settlers-rcna595024" },
+            { "name": "Al Jazeera", "url": "https://www.aljazeera.com/video/newsfeed/2026/8/29/israeli-settlers-attack-international-news-team-in-occupied-west-bank" },
+            { "name": "Times of Israel (liveblog 29 aug)", "url": "https://www.timesofisrael.com/liveblog-august-29-2026/" }
           ]
         }
       ]
     },
     {
-      "id": "iran-diplomatie",
-      "title": "Iran — canal diplomatic",
-      "items": [
-        {
-          "title": "Reuniunea ministerială de la Istanbul pe dosarul iranian, anunțată pentru 30 august, a fost amânată",
-          "date": "eveniment/publicat 28 aug (element de calendar corectat la 29 aug)",
-          "body": "Reuniunea de la Istanbul pe dosarul iranian — miniștrii de externe ai Regatului Unit, Germaniei și Franței, alături de omologii din Egipt, Arabia Saudită, Pakistan și Turcia — a fost amânată din cauza unui conflict de agendă al unuia dintre participanți, potrivit agenției germane DPA, care citează surse guvernamentale germane. Nu a fost stabilită o dată nouă. Reuniunea, inițiată de partea germană și cea turcă, urma să abordeze libertatea de navigație prin strâmtoarea Ormuz și situația de securitate regională, cu obiectivul declarat de a transmite Statelor Unite un semnal privind continuarea negocierilor cu Iranul. Informația provine dintr-o singură filieră de agenție (DPA).",
-          "sources": [
-            {
-              "name": "TASS (preluare DPA)",
-              "url": "https://tass.com/world/2178927"
-            },
-            {
-              "name": "Turkish Minute (anunțul inițial)",
-              "url": "https://turkishminute.com/2026/08/28/turkey-germany-to-host-istanbul-talks-aimed-at-reopening-strait-of-hormuz/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "liban",
-      "title": "Liban",
-      "items": [
-        {
-          "title": "Lovitură de dronă raportată la Nabatieh al-Fawqa; fără comentariu al armatei israeliene",
-          "date": "29 aug",
-          "flag": "de verificat — fără sursă izolabilă",
-          "body": "O lovitură israeliană de dronă a fost raportată împotriva localității Nabatieh al-Fawqa, fără comentariu din partea armatei israeliene. Elementul apare deocamdată doar în antetul liveblogului, fără articol dedicat izolabil, și se consemnează ca element de context, în continuarea campaniei cvasi-zilnice din districtul Nabatieh. Necesită verificare la prima rulare de zi lucrătoare.",
-          "sources": [
-            {
-              "name": "Times of Israel (liveblog, 29 aug)",
-              "url": "https://www.timesofisrael.com/liveblog-august-29-2026/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "politic-il",
+      "id": "politica-interna",
       "title": "Politică internă Israel",
       "items": [
         {
-          "title": "Netanyahu convoacă pentru duminică întrevederi cu Ben Gvir și Smotrich; Puterea Evreiască refuză în patru minute",
-          "date": "eveniment/publicat 28 aug 11:49–12:19 (relevant pentru agenda de duminică)",
-          "body": "Premierul Benjamin Netanyahu a anunțat pe rețeaua X, la ora 11:49, că îi invită pe miniștrii Itamar Ben Gvir și Bezalel Smotrich la întrevederi duminică: „Niciun vot nu trebuie irosit, trebuie să ne unim pentru a salva blocul de dreapta”. Partidul Puterea Evreiască a răspuns patru minute mai târziu că cele două formațiuni nu vor candida împreună, că decizia este „finală și absolută” și că nu vor avea loc contacte, întrevederi sau discuții pe acest subiect, nici direct, nici indirect. În paralel, Sionismul Religios poartă negocieri avansate cu Moshe Feiglin (Zehut) pentru un bloc tehnic, cu oferta locului al doilea pe listă; Michael Ben Ari se află de asemenea în contacte. Sursă locală israeliană.",
+          "title": "Ben Gvir respinge categoric apelul lui Netanyahu la unificarea dreptei cu Smotrich",
+          "date": "eveniment 28 aug",
+          "body": "Prim-ministrul Netanyahu i-a invitat pe liderii Puterii Evreiești (Itamar Ben Gvir) și Sionismului Religios (Bezalel Smotrich) la întrevederi, în cadrul discuțiilor privind o listă comună a dreptei înainte de alegerile din 27 octombrie. Ben Gvir a respins public propunerea în circa 18 minute, declarând că decizia de a nu candida împreună cu Smotrich este „finală și absolută” și că nu vor exista contacte sau întâlniri pe acest subiect, nici direct, nici indirect, acuzându-l pe Netanyahu că vrea „să îl diminueze”. Smotrich a pledat pentru „unitate și responsabilitate în tabăra națională”. Schimbul confirmă tensiunea din blocul de dreapta pe distribuția voturilor.",
           "sources": [
-            {
-              "name": "Israel Hayom (ebraică)",
-              "url": "https://www.israelhayom.co.il/news/politics/article/21301179"
-            },
-            {
-              "name": "Ynet (alegeri 2026)",
-              "url": "https://www.ynet.co.il/news/elections2026/article/hjdqtardfg"
-            }
+            { "name": "Ynet (elections2026)", "url": "https://www.ynet.co.il/news/elections2026/article/hjdqtardfg" },
+            { "name": "Israel Hayom (he)", "url": "https://www.israelhayom.co.il/news/politics/article/21299956" },
+            { "name": "N12 / mako", "url": "https://www.mako.co.il/news-politics/2026_q3/Article-dcac3f0719740a1026.htm" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ue-multilateral",
+      "title": "UE — multilateral",
+      "items": [
+        {
+          "title": "Reuniune informală a miniștrilor de externe ai UE (Gymnich), 1–2 septembrie, în Irlanda",
+          "date": "programat 1–2 sep",
+          "body": "Reuniunea informală a miniștrilor de externe ai UE (formatul Gymnich) este programată pentru 1–2 septembrie la Wicklow, Irlanda, sub președinția irlandeză a Consiliului și cu participarea Înaltului Reprezentant Kaja Kallas. Pe agendă figurează, între altele, situația din Orientul Mijlociu și opțiunile privind sancțiunile față de Israel/coloniile din Cisiordania; potrivit relatărilor din iulie, statele membre nu ajunseseră la un acord pe pașii următori, iar dosarul rămâne blocat la nivelul ambasadorilor. Separat, reuniunea ministerială pe dosarul iranian anunțată pentru 30 august la Istanbul (E3 + Egipt, Arabia Saudită, Pakistan, Turcia) a fost amânată, fără o dată nouă (filieră unică de agenție).",
+          "sources": [
+            { "name": "Consilium (președinția irlandeză)", "url": "https://irish-presidency.consilium.europa.eu/en/events/informal-meeting-of-foreign-affairs-ministers-gymnich/" },
+            { "name": "Euronews", "url": "https://www.euronews.com/my-europe/2026/07/23/no-real-sense-of-direction-eu-struggling-to-find-path-to-sanctioning-israeli-settlements" }
           ]
         }
       ]
     }
   ],
-  "vector": "Ziua se închide fără trigger de nivel superior, dar cu două deplasări de modalitate. Pe Gaza, lovitura în perimetrul unui spital, precedată de un avertisment formal adresat autorităților medicale, deplasează campania spre o justificare procedurală explicită a țintirii unor obiective aflate în incinte medicale. Pe Cisiordania, forțele israeliene au intervenit efectiv la Qusra, au îndepărtat coloniștii baricadați și au deschis anchetă — o schimbare față de neaplicarea documentată cu o zi înainte, a cărei consistență rămâne de verificat. Pe dosarul iranian, amânarea reuniunii de la Istanbul suspendă singurul demers colectiv european-regional programat pentru început de săptămână.",
+  "vector": "Escaladare menținută, controlată, fără salt cinetic nou. Pe axa Iran–SUA, conflictul atinge pragul de șase luni cu un război de narațiuni pe controlul Hormuzului (revendicare IRGC vs. relatări americane de pierdere a controlului) și cu prima listă publică de condiții iraniene care leagă redeschiderea strâmtorii de Liban, Gaza, Siria și retragerea israeliană — o extindere a mizei negocierii. Pe axa Israel–Liban, loviturile IDF continuă cvasi-zilnic, cu asediul crestei Ali Taher menținut. Pe plan intern israelian, fragmentarea blocului de dreapta se confirmă (Ben Gvir respinge unificarea). Duminică lucrătoare în Israel: TASE și piața valutară se redeschid.",
   "delta": [
-    "Gaza: de la lovituri asupra unor comandanți în spații deschise la o lovitură în perimetrul spitalului Al-Aqsa Martyrs, cu avertisment formal transmis autorităților medicale cu două zile înainte.",
-    "Cisiordania: la Qusra, forțele israeliene au îndepărtat coloniștii baricadați și au confiscat vehicule ca probe, cu anchetă deschisă — spre deosebire de 28 august, când coloniștii circulau liber în zona militară închisă.",
-    "Iran: reuniunea ministerială de la Istanbul, prevăzută pentru 30 august, a fost amânată fără dată nouă (filieră DPA).",
-    "Politică internă: refuzul Puterii Evreiești de a se prezenta la întrevederile de duminică mută negocierea de unificare pe axa Sionismul Religios–Zehut, cu ofertă de loc secund pentru Feiglin.",
-    "Liban: lovitură de dronă raportată la Nabatieh al-Fawqa, fără confirmare a armatei israeliene și fără sursă izolabilă — de verificat."
+    "Ben Gvir respinge categoric (în ~18 minute) apelul lui Netanyahu la o listă comună cu Smotrich — fragmentarea dreptei se confirmă, nu se atenuează.",
+    "IRGC ridică miza retorică pe Hormuz („control complet și decisiv”), contrazisă de relatări americane (Axios) că Iranul a pierdut controlul — divergența de narațiune se accentuează la pragul de șase luni de conflict.",
+    "Rezaei publică o listă de condiții pentru redeschiderea Hormuzului, legând-o explicit de Liban, Gaza, Siria și retragerea israeliană — o nouă condiționare a dosarului maritim.",
+    "Reuniunea ministerială de la Istanbul pe dosarul iranian (30 aug) confirmată ca amânată, fără dată nouă.",
+    "Norvegia: succesiunea la tron fixată — regele Haakon VIII depune jurământul în fața Parlamentului marți, 1 septembrie."
   ],
   "calendar": [
-    {
-      "date": "30 aug",
-      "event": "Duminică, zi lucrătoare în Israel: întrevederile convocate de premier pe unificarea blocului de dreapta (Puterea Evreiască a refuzat public participarea); redeschiderea bursei de la Tel Aviv și a pieței valutare."
-    },
-    {
-      "date": "30 aug — ANULAT",
-      "event": "Reuniunea ministerială de la Istanbul pe dosarul iranian a fost amânată fără dată nouă (DPA)."
-    },
-    {
-      "date": "~1 sep",
-      "event": "Posibila deschidere a punctului Erez ca punct suplimentar de intrare a mărfurilor lângă Kerem Shalom; necesită aprobare, blocată politic la 27 august."
-    },
-    {
-      "date": "~1 sep",
-      "event": "Intrarea în vigoare a legii neerlandeze de interzicere a comerțului cu produsele din colonii."
-    },
-    {
-      "date": "început sep",
-      "event": "Rundă de negocieri Israel–Liban la Roma; fără dată anunțată."
-    },
-    {
-      "date": "sep",
-      "event": "Sărbătorile evreiești de toamnă — perioadă de alertă operațională ridicată, cu dispozitiv suplimentar în Cisiordania."
-    },
-    {
-      "date": "27 oct",
-      "event": "Alegeri legislative în Israel (Knesset 26)."
-    },
-    {
-      "date": "31 dec 2026",
-      "event": "Expirarea mandatului UNIFIL (Rezoluția 2790/2025)."
-    }
+    { "date": "30 aug", "event": "Zi lucrătoare în Israel: redeschiderea TASE și a pieței valutare (prima cotație după închiderea Brent ~88 USD, 28 aug)." },
+    { "date": "30 aug", "event": "Ierusalim: întrevederile convocate de Netanyahu cu Ben Gvir și Smotrich pe unificarea dreptei (Puterea Evreiască a refuzat public participarea)." },
+    { "date": "1 sep", "event": "Norvegia: regele Haakon VIII depune jurământul în fața Parlamentului (Storting)." },
+    { "date": "1–2 sep", "event": "Reuniune informală a miniștrilor de externe ai UE (Gymnich), Wicklow, Irlanda — Orientul Mijlociu și dosarul sancțiunilor față de Israel pe agendă." },
+    { "date": "~1 sep", "event": "Posibila deschidere a punctului Erez ca punct suplimentar de intrare a mărfurilor lângă Kerem Shalom; necesită aprobare, blocată politic la 27 august." },
+    { "date": "~1 sep", "event": "Intrarea în vigoare a legii neerlandeze de interzicere a comerțului cu produsele din colonii." },
+    { "date": "început sep", "event": "Rundă de negocieri Israel–Liban la Roma; fără dată anunțată." },
+    { "date": "sep", "event": "Sărbătorile evreiești de toamnă — perioadă de alertă operațională ridicată, cu dispozitiv suplimentar în Cisiordania." },
+    { "date": "27 oct", "event": "Alegeri legislative în Israel (Knesset 26)." },
+    { "date": "31 dec 2026", "event": "Expirarea mandatului UNIFIL (Rezoluția 2790/2025); începerea retragerii ordonate în 2027." }
   ],
-  "demnitari": "Nicio schimbare nouă de demnitar confirmată în statele monitorizate în intervalul acestui scan. Rămâne consemnat decesul regelui Harald V al Norvegiei (28 august, Oslo, 89 de ani), cu succesiune automată — Haakon VIII; programul funerar nu a fost încă anunțat public.",
-  "sourceCount": 9
+  "demnitari": "Norvegia: regele Harald V a decedat (28 august, Oslo, 89 de ani); succesiune automată — regele Haakon VIII, care depune jurământul în fața Parlamentului marți, 1 septembrie. Data funeraliilor nu a fost încă anunțată; doliu național până la funeralii. Nicio altă schimbare de demnitar confirmată în statele monitorizate în intervalul acestui scan.",
+  "sourceCount": 16
 };
 /* BRIEFING_DATA_END */
 render(DATA);
@@ -419,6 +389,7 @@ const GEO_EVENTS = [
   ,{ "date": "2026-07-19", "actor": "Iran", "place": "Garnizoana Al-Tanf, Siria", "lat": 33.49, "lon": 38.61, "desc": "IRGC revendică un „atac-surpriză” pe centrul de comandă al operațiunilor speciale SUA din regiunea Al-Tanf — prima extindere revendicată a ripostelor pe teritoriul sirian; neconfirmat independent.", "status": "revendicat, neconfirmat", "cats": ["militar"], "src": [{ "name": "Times of Israel (liveblog 19 iul)", "url": "https://www.timesofisrael.com/liveblog-july-19-2026/" }] }
   ,{ "date": "2026-07-23", "time": "dimineața devreme", "actor": "disputat", "place": "Marea Roșie (petroliere saudite Encelia/Layla)", "lat": 20.00, "lon": 39.00, "desc": "Houthii revendică atacuri cu rachete și drone asupra a două petroliere saudite pentru încălcarea blocadei lor navale; SPA confirmă lovirea navei Encelia, incendiu la proră — primul atac de la anunțarea blocadei houthi pe Arabia Saudită.", "status": "confirmat (o navă lovită)", "cats": ["maritim","energie"], "src": [{ "name": "US News / AP (23 iul)", "url": "https://www.usnews.com/news/world/articles/2026-07-23/houthis-say-they-attacked-2-saudi-oil-tankers-in-the-red-sea-as-us-carries-out-12th-night-of-strikes" }, { "name": "CNBC (23 iul)", "url": "https://www.cnbc.com/2026/07/23/iran-war-us-trump-houthis-red-sea-oil.html" }] }
   ,{ "date": "2026-08-05", "actor": "disputat", "place": "Marea Roșie (petrolier saudit Wafa, lângă Yanbu)", "lat": 24.09, "lon": 38.06, "desc": "Houthii revendică un atac cu rachete balistice asupra petrolierului saudit „Wafa” în nordul Mării Roșii — a 8-a/a 9-a navă saudită vizată de la blocada din 22 iul; houthii anunță că vor viza și nordul Mării Roșii.", "status": "revendicat", "cats": ["maritim","energie"], "src": [{ "name": "The National (5 aug)", "url": "https://www.thenationalnews.com/business/energy/2026/08/05/brent-oil-back-above-80-after-houthi-attack-on-saudi-tanker/" }, { "name": "Bloomberg (5 aug)", "url": "https://www.bloomberg.com/news/articles/2026-08-05/yemen-s-houthis-say-they-ll-target-tankers-in-northern-red-sea" }] }
+  ,{ "date": "2026-08-29", "actor": "disputat", "place": "Zona Nabatieh / Ali Taher, sud Liban", "lat": 33.38, "lon": 35.48, "desc": "Val de lovituri IDF asupra infrastructurii Hezbollah în zona Nabatieh, ca răspuns la două drone explozive lansate spre forțele IDF de la creasta Ali Taher; presa libaneză raportează o femeie ucisă la Arab Salim.", "status": "confirmat", "cats": ["militar"], "src": [{ "name": "JNS", "url": "https://www.jns.org/news/israel-news/idf-launches-strikes-on-hezbollah-targets-in-southern-lebanon" }, { "name": "Ynetnews", "url": "https://www.ynetnews.com/article/hjmftq6pfl" }] }
 ];
 /* GEO_EVENTS_END */
 </script>
@@ -449,6 +420,7 @@ const INDICATORS = [
   { "date": "2026-07-17", "brent": 85.95, "usdils": null, "src": "Trading Economics" },
   { "date": "2026-07-18", "brent": 85.92, "usdils": null, "src": "Al Jazeera/Reuters (Brent sept., 08:00 GMT)" },
   { "date": "2026-08-18", "brent": 90.97, "usdils": null, "src": "Fortune / Trading Economics (18 aug)" }
+  ,{ "date": "2026-08-30", "brent": 88.29, "usdils": 2.9634, "src": "Trading Economics (Brent, închidere 28 aug); Investing.com (USD/ILS, 30 aug)" }
 ];
 /* INDICATORS_END */
 </script>

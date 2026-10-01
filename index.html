@@ -219,69 +219,81 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-09-30T07:40:00+03:00",
-  "runType": "Briefing matinal (miercuri) — Chol HaMoed Sukkot · rulare NORMALĂ (memorie proaspătă, ~20h)",
-  "nextRun": "2026-10-01T07:30:00+03:00",
+  "generatedAt": "2026-10-01T07:40:00+03:00",
+  "runType": "Briefing matinal (joi) — ultima zi Chol HaMoed Sukkot · rulare NORMALĂ (memorie proaspătă, ~24h)",
+  "nextRun": "2026-10-02T07:30:00+03:00",
   "streaks": [
     {
       "label": "zile fără lovitură iraniană pe teritoriul israelian",
-      "value": 20,
-      "asOf": "30 sep"
+      "value": 21,
+      "asOf": "1 oct"
     },
     {
-      "label": "zile de la ultima gesticulație cinetică Hezbollah pe nord (dronă 26 sep, fără pagube), fără a doua lansare",
-      "value": 4,
-      "asOf": "30 sep"
+      "label": "zile de la ultima gesticulație cinetică Hezbollah pe nord (dronă 26 sep), fără a doua lansare",
+      "value": 5,
+      "asOf": "1 oct"
     },
     {
       "label": "zile fără întrerupere a fluxului prin strâmtoarea Hormuz",
       "value": 0,
-      "asOf": "30 sep — flux neîntrerupt, prima de risc în scădere"
+      "asOf": "1 oct — flux neîntrerupt"
     }
   ],
-  "nivel2": [],
+  "nivel2": [
+    {
+      "title": "Tentativă de deturnare pe un zbor flydubai Dubai–Tel Aviv cu pasageri israelieni; copilotul l-a înjunghiat pe comandant, pasagerii au imobilizat atacatorul",
+      "date": "30 sep",
+      "body": "Pe un zbor flydubai pe ruta Dubai–Tel Aviv, cu pasageri israelieni la bord, copilotul l-a înjunghiat pe comandant în ceea ce autoritățile israeliene descriu drept o aparentă încercare de a prăbuși avionul. Comandantul rănit (pilot indian, Smit Machchhar) a reușit să deblocheze ușa cabinei de pilotaj, iar pasageri israelieni împreună cu piloți aflați în afara serviciului l-au imobilizat pe atacator; aeronava, cu circa 174 de persoane la bord, a aterizat de urgență la Tabuk, în Arabia Saudită. Comandantul a fost raportat stabil. Flydubai a suspendat temporar toate operațiunile spre și dinspre Israel. Ministerul israelian de externe a calificat incidentul drept un atac terorist împotriva normalizării (Acordurile Abraham); premierul Netanyahu a declarat că este „prea devreme” de spus dacă Iranul a fost implicat, iar președintele Trump l-a descris pe atacator drept „poate un terorist sau un nebun”.",
+      "sources": [
+        {
+          "name": "CNN",
+          "url": "https://www.cnn.com/2026/09/30/world/live-news/dubai-israel-plane-flydubai-intl"
+        },
+        {
+          "name": "NBC News",
+          "url": "https://www.nbcnews.com/world/middle-east/flight-dubai-tel-aviv-diverted-emergency-alert-rcna600628"
+        },
+        {
+          "name": "CBC",
+          "url": "https://www.cbc.ca/news/world/flydubai-flight-diverted-saudi-arabia-9.7363681"
+        },
+        {
+          "name": "Times of Israel",
+          "url": "https://www.timesofisrael.com/liveblog-september-30-2026/"
+        }
+      ]
+    }
+  ],
   "sections": [
     {
-      "id": "iran-sua",
-      "title": "Iran–SUA — negocieri și Hormuz",
+      "id": "aviatie-abraham",
+      "title": "Aviație civilă — Acordurile Abraham",
       "items": [
         {
-          "title": "Impas prelungit: fereastra pentru un răspuns scris al SUA a expirat neatins; termenul unui acord, mutat după alegerile de la jumătatea mandatului",
+          "title": "Flydubai suspendă toate rutele spre Israel; El Al și Arkia pregătesc revenirea pe Dubai; miniștrii de externe israelian și emiratian discută cooperarea",
           "date": "30 sep",
-          "body": "Fereastra de 72 de ore pentru un răspuns oficial scris al SUA la foaia de parcurs iraniană privind Hormuz (de la 26 septembrie) a expirat fără rezultat. Ministrul de externe Abbas Araghchi a părăsit New York-ul marți, declarând că Teheranul „așteaptă răspunsul oficial al SUA prin mediatori” (Qatar). Președintele Trump a respins termenii iranieni și a calificat drept „hoax” relatările privind o eventuală relaxare de sancțiuni și deblocarea unor fonduri; Washingtonul insistă pe o abordare care să acopere simultan toate dosarele, inclusiv cel nuclear, nu pe secvențierea propusă de Teheran. Trump a indicat că se așteaptă la un acord abia după alegerile americane de la jumătatea mandatului (3 noiembrie).",
+          "body": "În urma tentativei de deturnare, compania flydubai a anunțat suspendarea temporară a tuturor zborurilor spre și dinspre Israel, pe durata anchetei. Compania israeliană El Al a anunțat reluarea curselor spre Dubai în noiembrie, iar Arkia pregătește două curse zilnice, sub rezerva aprobărilor de securitate. Ministrul israelian de externe Gideon Sa'ar și omologul emiratian Abdullah bin Zayed Al Nahyan au discutat consolidarea relațiilor bilaterale și „combaterea elementelor extremiste”.",
           "sources": [
             {
-              "name": "Al Jazeera",
-              "url": "https://www.aljazeera.com/news/2026/9/29/us-iran-talks-in-new-york-whats-the-latest"
-            },
-            {
-              "name": "FDD (Overnight Brief)",
-              "url": "https://www.fdd.org/overnight-brief/september-29-2026/"
-            },
-            {
-              "name": "Euronews (arabă)",
-              "url": "https://arabic.euronews.com/2026/09/29/rubio-threatens-tehran-araghchi-discusses-negotiating-ideas-with-mediators"
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-september-30-2026/"
             }
           ]
         }
       ]
     },
     {
-      "id": "economie",
-      "title": "Piețe și energie",
+      "id": "iran-sua",
+      "title": "Iran–SUA — negocieri și Hormuz",
       "items": [
         {
-          "title": "Brent coboară sub 105 dolari, pe relaxarea ofertei saudite și eliberarea de rezerve americane",
-          "date": "29 sep",
-          "body": "Prețul petrolului a scăzut semnificativ: Brent pentru livrare în noiembrie a coborât la circa 102,59 dolari/baril (−2,6%), contractul mai activ pentru decembrie la circa 96,16 dolari (−1,7%), iar WTI la circa 89,38 dolari (−3,5%). Scăderea rupe în jos pragul de 105 dolari monitorizat anterior. Cauzele: Arabia Saudită a restaurat aproximativ jumătate din capacitatea conductei East-West (care ocolește strâmtoarea Hormuz) după avariile provocate de atacuri cu drone, la care se adaugă eliberarea de către SUA a până la circa 40 de milioane de barili din rezerva strategică și tranzitul acoperit de petrol prin Hormuz. Relaxarea ofertei domină deocamdată prima de risc geopolitic. USD/ILS: ultima cotație datată confirmată se situa în intervalul 3,02–3,04 (22–25 septembrie); pentru 29–30 septembrie nu a putut fi izolată o cotație datată în această rulare — rămâne de reconfirmat.",
+          "title": "La închiderea Adunării Generale a ONU, SUA cer plecarea delegației iraniene; Trump reiterează alternativa acord–acțiune militară",
+          "date": "1 oct",
+          "body": "La încheierea Dezbaterii Generale a Adunării Generale a ONU, secretarul de stat Marco Rubio a dispus plecarea din Statele Unite a delegației conduse de ministrul de externe Abbas Araghchi. Președintele Trump a declarat că „a venit momentul” fie pentru un acord cu Iranul, fie pentru acțiune militară. Nu a fost anunțată o rundă directă de negocieri și nu s-a produs o acțiune cinetică nouă; termenul unui eventual acord rămâne plasat după alegerile americane de la jumătatea mandatului (3 noiembrie). Impasul privind foaia de parcurs iraniană pe Hormuz se menține.",
           "sources": [
             {
-              "name": "Rigzone",
-              "url": "https://www.rigzone.com/news/wire/oil_slides_on_saudi_supply_relief-29-sep-2026-184732-article/"
-            },
-            {
-              "name": "CNBC",
-              "url": "https://www.cnbc.com/2026/09/29/oil-prices-today-brent-wti-hormuz.html"
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-october-01-2026"
             }
           ]
         }
@@ -289,33 +301,12 @@ const DATA = {
     },
     {
       "id": "gaza-cisiordania",
-      "title": "Gaza–Cisiordania",
+      "title": "Gaza–Cisiordania–Ierusalim",
       "items": [
         {
-          "title": "IDF intensifică asasinatele în Gaza: un comandant al brigăzii de nord Qassam ucis, un comandant al Jihadului Islamic rănit critic",
-          "date": "29 sep",
-          "body": "Forțele israeliene au intensificat marți operațiunile de eliminare în Fâșia Gaza. Ezz al-Din al-Baik (48 de ani), comandant al brigăzii de nord a Brigăzilor Qassam (aripa militară Hamas), a fost ucis într-o lovitură asupra unui apartament din cartierul al-Naser, în nord-vestul orașului Gaza. Separat, Masab al-Balbiesi, comandant al Saraya al-Quds (aripa militară a Jihadului Islamic Palestinian), a fost rănit critic într-o lovitură la tabăra Jabalia, în nordul Fâșiei. Operațiunile au loc sub un armistițiu erodat (planul american în vigoare din octombrie 2025). Bilanțurile agregate din surse palestiniene rămân neconfirmate oficial de IDF.",
-          "sources": [
-            {
-              "name": "Asharq Al-Awsat (arabă, sursă locală)",
-              "url": "https://aawsat.com/%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A/%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A/5324145"
-            },
-            {
-              "name": "FDD (Overnight Brief)",
-              "url": "https://www.fdd.org/overnight-brief/september-29-2026/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "sua-israel-golf",
-      "title": "SUA–Israel–Golf",
-      "items": [
-        {
-          "title": "Ecouri post-Abu Dhabi: un oficial saudit dezminte o relatare israeliană privind o întâlnire, Iranul avertizează Emiratele",
+          "title": "Șapte morți, între care un jurnalist, în lovituri israeliene în Gaza; violențe ale coloniștilor în Cisiordania și o agresiune lângă Poarta Damascului",
           "date": "30 sep",
-          "body": "La câteva zile după vizita lui Netanyahu la Abu Dhabi, confirmată oficial de EAU, un oficial saudit a dezmințit o relatare a presei israeliene privind o întâlnire a premierului israelian cu reprezentanți sauditi. În paralel, Iranul a avertizat Emiratele Arabe Unite pe tema primirii lui Netanyahu. Pe plan multilateral, în cursa pentru funcția de Secretar General al ONU, Rebeca Grynspan (Costa Rica) își menține avansul.",
+          "body": "Lovituri israeliene în Fâșia Gaza au provocat șapte morți, între care un jurnalist; armata israeliană a declarat că a vizat un operativ Hamas care planifica atacuri. În Cisiordania, un palestinian cu cetățenie americană, în vârstă de circa 90 de ani, a fost pulverizat cu spray iritant de coloniști în timpul unui raid asupra unui sat. La Ierusalim, un rezident palestinian de 66 de ani a declarat că a fost agresat de o gloată lângă Poarta Damascului, fără intervenția poliției.",
           "sources": [
             {
               "name": "Times of Israel",
@@ -330,13 +321,30 @@ const DATA = {
       "title": "Israel–Liban–Hezbollah",
       "items": [
         {
-          "title": "Fără a doua lansare Hezbollah: canalul diplomatic Salam–Rubio rămâne activ, direcție de dezescaladare",
-          "date": "30 sep",
-          "body": "Nu a fost confirmată o a doua lansare a Hezbollah cu pagube sau victime după drona din 26 septembrie, iar palierul cinetic pe frontul de nord rămâne coborât. Canalul diplomatic deschis prin întâlnirea premierului libanez Nawaf Salam cu secretarul de stat Marco Rubio (28 septembrie) — cu accent pe retragerea IDF, dezarmarea Hezbollah și un calendar de implementare — rămâne firul principal, pe fondul consolidării unilaterale israeliene pe Linia Galbenă.",
+          "title": "Fără o a doua lansare Hezbollah; canalul diplomatic Salam–Rubio rămâne firul principal",
+          "date": "1 oct",
+          "body": "Nu a fost confirmată o a doua lansare a Hezbollah cu pagube sau victime după drona din 26 septembrie, iar palierul cinetic pe frontul de nord rămâne coborât. Canalul diplomatic deschis prin întâlnirea premierului libanez Nawaf Salam cu secretarul de stat Marco Rubio — cu accent pe retragerea forțelor israeliene, dezarmarea Hezbollah și un calendar de implementare — rămâne direcția dominantă, pe fondul consolidării unilaterale israeliene pe Linia Galbenă.",
           "sources": [
             {
-              "name": "FDD (Overnight Brief)",
-              "url": "https://www.fdd.org/overnight-brief/september-29-2026/"
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-september-30-2026/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional-europa",
+      "title": "Regional și Europa",
+      "items": [
+        {
+          "title": "Marea Britanie invocă posibilă implicare iraniană la o bază folosită de SUA; Trump califică drept „victorie” retragerea coaliției din Irak; explozie pe o conductă de gaz în Siria",
+          "date": "30 sep",
+          "body": "Premierul britanic Andy Burnham a invocat „indicii puternice” privind o posibilă implicare iraniană într-o activitate suspectă la baza RAF Fairford, folosită de forțele americane. Separat, președintele Trump a descris drept „victorie” retragerea forțelor coaliției din Irak. În Siria, trei facilități energetice au ieșit din funcțiune după o explozie pe o conductă de gaz la centrala Tishreen, soldată cu doi răniți. Pe plan european, președintele francez Emmanuel Macron a condamnat drept „extrem de grave și inacceptabile” unele afirmații atribuite liderului Adunării Naționale, Jordan Bardella.",
+          "sources": [
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-september-30-2026/"
             }
           ]
         }
@@ -347,27 +355,48 @@ const DATA = {
       "title": "Politică internă Israel",
       "items": [
         {
-          "title": "Netanyahu informează opoziția despre „posibile atacuri”; Lapid temperează, Bennett critică evaziunea de la recrutare",
-          "date": "30 sep",
-          "body": "Premierul Netanyahu a informat liderii opoziției, între care Yair Lapid, în legătură cu „posibile atacuri” și pericole de securitate. Lapid a declarat public că „nu este nevoie de panică”, iar Naftali Bennett a criticat „evaziunea masivă de la recrutare”. Episodul alimentează disputa internă privind instrumentalizarea temelor de securitate în perspectiva alegerilor din 27 octombrie.",
+          "title": "Sondaj Canal 13: blocul condus de Netanyahu revine în avans; incidentul aviatic devine temă de campanie",
+          "date": "1 oct",
+          "body": "Un sondaj al Canalului 13 indică revenirea în avans a blocului de dreapta condus de Netanyahu, cu 54 de mandate față de 52 ale opoziției, ambele sub pragul de 61 necesar pentru majoritate. Tentativa de deturnare a devenit rapid temă de campanie: aliații guvernamentali o invocă drept confirmare a avertismentelor de securitate, iar opoziția o compară cu eșecurile din 7 octombrie. Alegerile legislative sunt programate pentru 27 octombrie.",
           "sources": [
             {
               "name": "Times of Israel",
-              "url": "https://www.timesofisrael.com/liveblog-september-30-2026/"
+              "url": "https://www.timesofisrael.com/liveblog-october-01-2026"
+            },
+            {
+              "name": "i24NEWS (ebraică)",
+              "url": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-26c56d10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "economie",
+      "title": "Piețe și energie",
+      "items": [
+        {
+          "title": "Brent în jurul a 100 de dolari, în ușoară relaxare; prima de risc geopolitic rămâne temperată",
+          "date": "29 sep",
+          "body": "Prețul petrolului Brent se situa în jurul a 100,19 dolari/baril (−2,49% în zi), în continuarea relaxării din zilele precedente, pe fondul restaurării parțiale a ofertei saudite și al eliberării de rezerve americane; fluxul prin strâmtoarea Hormuz rămâne neîntrerupt. Față de acum un an, Brent este cu circa 49% mai mare. Pentru cursul USD/ILS, ultima cotație datată confirmată se situa în intervalul 3,02–3,04 (22–25 septembrie); pentru 30 septembrie–1 octombrie nu a putut fi izolată o cotație datată în această rulare și rămâne de reconfirmat.",
+          "sources": [
+            {
+              "name": "Fortune",
+              "url": "https://fortune.com/article/price-of-oil-09-29-2026/"
             }
           ]
         }
       ]
     }
   ],
-  "vector": "Vectorul general înclină spre dezescaladare pe două paliere. Energetic, relaxarea ofertei (repornirea parțială a conductei saudite East-West, eliberarea de rezerve americane, tranzit acoperit prin Hormuz) a împins Brent sub 105 dolari și a redus prima de risc geopolitic. Pe frontul de nord, absența unei a doua lansări Hezbollah și canalul Salam–Rubio mențin direcția de dezescaladare. În schimb, axa Iran–SUA rămâne blocată: fereastra pentru un răspuns scris al SUA a expirat neatins, iar termenul unui acord a fost mutat după 3 noiembrie. Gaza rămâne sub un armistițiu erodat, cu lovituri de eliminare care continuă.",
+  "vector": "Vectorul general rămâne mixt. Un palier nou de risc a apărut pe dimensiunea aviație civilă / normalizare, prin tentativa de deturnare a unui zbor Dubai–Tel Aviv și suspendarea rutelor flydubai spre Israel. Pe axa Iran–SUA, impasul se menține, cu o notă de escaladare retorică (plecarea delegației iraniene cerută la închiderea AG ONU, ultimatumul reiterat de Trump), dar fără acțiune cinetică nouă și cu termenul unui acord plasat după 3 noiembrie. Energetic, Brent s-a stabilizat în jurul a 100 de dolari pe relaxarea ofertei. Pe frontul de nord, absența unei a doua lansări Hezbollah și canalul Salam–Rubio mențin direcția de dezescaladare. Gaza rămâne sub un armistițiu erodat, cu lovituri de eliminare care continuă.",
   "delta": [
-    "Energie: Brent a coborât sub pragul de 105 dolari → ~102,59 (noiembrie, −2,6%), pe relaxarea ofertei saudite și eliberarea de rezerve americane; fluxul prin Hormuz rămâne neîntrerupt.",
-    "Iran–SUA: fereastra de 72h pentru un răspuns scris al SUA a expirat neatins; Araghchi a părăsit New York-ul; termenul unui acord a fost mutat explicit după 3 noiembrie.",
-    "Gaza: identitatea comandantului Hamas ucis la 29 septembrie a fost confirmată — Ezz al-Din al-Baik, comandant al brigăzii de nord Qassam; un comandant al Jihadului Islamic (al-Balbiesi) a fost rănit critic.",
-    "SUA–Israel–Golf: un oficial saudit a dezmințit relatarea unei întâlniri Netanyahu–reprezentanți sauditi; Iranul a avertizat Emiratele pe tema vizitei.",
-    "Politică internă: Netanyahu a informat opoziția despre „posibile atacuri”; Lapid a temperat („fără panică”).",
-    "Liban: fără a doua lansare Hezbollah — pragul de escaladare pe nord rămâne neatins."
+    "Aviație/normalizare: tentativă de deturnare pe un zbor flydubai Dubai–Tel Aviv (30 sep); Flydubai a suspendat toate rutele spre Israel; El Al și Arkia pregătesc revenirea pe Dubai.",
+    "Iran–SUA: la închiderea AG ONU, SUA au cerut plecarea delegației iraniene; Trump a reiterat alternativa acord–acțiune militară; impasul se menține (termen post-3 noiembrie).",
+    "Energie: Brent s-a stabilizat în jurul a 100 de dolari (−2,49% la 29 sep), în ușoară relaxare față de ~102 (30 sep); fluxul prin Hormuz rămâne neîntrerupt.",
+    "Europa: Marea Britanie a invocat posibilă implicare iraniană la o bază folosită de SUA (RAF Fairford).",
+    "Politică internă: blocul condus de Netanyahu a revenit în avans într-un sondaj Canal 13 (54 vs 52).",
+    "Liban: fără a doua lansare Hezbollah — pragul de escaladare pe nord rămâne neatins (~ziua 5)."
   ],
   "calendar": [
     {
@@ -389,6 +418,10 @@ const DATA = {
     {
       "date": "27 oct",
       "event": "Alegeri legislative în Israel (Knesset 26)"
+    },
+    {
+      "date": "3 nov",
+      "event": "Alegeri de la jumătatea mandatului în SUA (reper pentru termenul dosarului iranian)"
     },
     {
       "date": "31 dec",

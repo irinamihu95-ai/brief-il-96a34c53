@@ -219,68 +219,141 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-10-06T10:55:00+03:00",
-  "runType": "Briefing matinal (marți) — rulare normală; declanșare întârziată (10:54 vs 07:30 programat). Niciun trigger de Nivel 2 în ultimele 12 ore.",
-  "nextRun": "2026-10-07T07:30:00+03:00",
+  "generatedAt": "2026-10-10T12:14:00+03:00",
+  "runType": "Briefing matinal (sâmbătă) — rulare normală cu prudență sporită (memorie ~97h, peste pragul de 36h; rulările 7–9 oct lipsesc din memorie). Niciun trigger nou de Nivel 2 în ultimele 12 ore.",
+  "nextRun": "2026-10-11T07:30:00+03:00",
   "streaks": [
-    { "label": "zile fără lovitură iraniană pe teritoriul israelian", "value": 26, "asOf": "6 oct" },
-    { "label": "zile de la drona Hezbollah (26 sep), fără a doua lansare cu pagube", "value": 10, "asOf": "6 oct" },
-    { "label": "zi fără întrerupere a fluxului prin strâmtoarea Hormuz (export recuperat la ~98% din nivelul pre-război, JPMorgan)", "value": 0, "asOf": "6 oct — flux continuu" }
+    {
+      "label": "zile fără lovitură iraniană directă pe teritoriul israelian",
+      "value": 30,
+      "asOf": "10 oct"
+    },
+    {
+      "label": "zile de la drona Hezbollah (26 sep), fără o a doua lansare cu pagube",
+      "value": 14,
+      "asOf": "10 oct"
+    },
+    {
+      "label": "zi fără întrerupere a fluxului prin strâmtoarea Hormuz",
+      "value": 0,
+      "asOf": "10 oct — flux continuu"
+    }
   ],
   "nivel2": [],
   "sections": [
     {
-      "id": "iran-sua",
-      "title": "Iran–SUA / Israel–Iran",
-      "items": [
-        {
-          "title": "Impas diplomatic dur și retorică de război; SUA strâng presiunea financiară și navală",
-          "date": "5–6 oct",
-          "body": "Impasul dintre Washington și Teheran se adâncește. Președintele iranian Masoud Pezeshkian a declarat că negocierile cu SUA sunt „lipsite de sens”, invocând trei atacuri americane după runde de discuții; ministrul de externe Araghchi a reiterat că „nu există soluție militară și nicio soluție bazată pe noi sancțiuni”. Un purtător de cuvânt al Gărzii Revoluționare a afirmat că Iranul „trebuie să crească raza rachetelor”. SUA au avertizat băncile străine că tranzacțiile cu instituții iraniene sancționate pot atrage sancțiuni „fără preaviz”, iar CENTCOM a raportat, în cadrul operațiunii de blocadă, redirecționarea a circa 130 de nave și distrugerea a 13 (cifre CENTCOM, o singură sursă). La Camp David (3 octombrie), oficiali de rang înalt ai administrației Trump (vicepreședintele Vance, secretarii Rubio și Hegseth, trimisul Witkoff, directorul CIA Ratcliffe, generalul Caine) au discutat războiul cu Iranul și conflictul saudit-houthi.",
-          "sources": [
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-5-2026/" },
-            { "name": "Jerusalem Post", "url": "https://www.jpost.com/middle-east/iran-news/2026-10-05/live-updates-910598" },
-            { "name": "CBS News", "url": "https://www.cbsnews.com/live-updates/trump-iran-war-us-midterm-elections-troops-deployment/" }
-          ]
-        },
-        {
-          "title": "Consolidare militară americană în regiune; grupări navale în marș spre Orientul Mijlociu",
-          "date": "2–5 oct",
-          "body": "Dispozitivul militar american în regiune continuă să se întărească. Grupul aeronaval USS Theodore Roosevelt și grupul amfibiu USS Makin Island sunt în marș spre Orientul Mijlociu, cu un adaos potențial de circa 9.000 de militari până la finalul lunii octombrie. Relatări din presa israeliană, citate de presa egipteană, indicau deja aproximativ 3.000 de militari americani prezenți în Israel (apărare aeriană, logistică), fără confirmare oficială americană. Secretarul apărării Hegseth a calificat blocada americană a strâmtorii Hormuz drept „de fier”, susținând că fluxurile au revenit „aproape la nivelurile de dinainte de război”.",
-          "sources": [
-            { "name": "CBS News", "url": "https://www.cbsnews.com/live-updates/trump-iran-war-us-midterm-elections-troops-deployment/" },
-            { "name": "The Washington Times", "url": "https://www.washingtontimes.com/news/2026/oct/4/iranian-leaders-focus-diplomatic-talks-us-adds-military-muscle/" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "europa-nato",
-      "title": "Europa / NATO — amenințare iraniană pe sol aliat",
-      "items": [
-        {
-          "title": "Complot iranian cu drone vizând baza RAF Fairford; SUA retrag bombardierele B-1; arestări în Marea Britanie",
-          "date": "5–6 oct",
-          "body": "Statele Unite au evacuat de urgență 12 bombardiere strategice B-1 de la baza RAF Fairford (Gloucestershire, vestul Angliei), în urma unei amenințări iraniene „specifice”. Potrivit relatărilor (New York Times, preluat de N12), serviciile americane, britanice, germane și israeliene au evaluat un plan iranian complex de a lovi cu drone, de a avaria aeronavele B-1 și de a ucide militari americani — o schemă inspirată aparent din operațiunea ucraineană „Spider Web” (iunie 2025) împotriva bazelor aeriene ruse. Unele aeronave au decolat în timp ce avioanele de realimentare încă se pregăteau. În zilele premergătoare, poliția britanică a arestat cinci bărbați în vehicule suspecte lângă bază, iar un cetățean britanic-iranian de 25 de ani a fost reținut la Londra sub acuzații de terorism.",
-          "sources": [
-            { "name": "N12 (mako)", "url": "https://mako.co.il/news-world/2026_q4/Article-f6753bf262f01a1026.htm" },
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-5-2026/" }
-          ]
-        }
-      ]
-    },
-    {
       "id": "marea-rosie",
-      "title": "Marea Roșie — securitate maritimă (Pactul de la Mecca)",
+      "title": "Marea Roșie — securitate maritimă",
       "items": [
         {
-          "title": "Pactul de la Mecca invocat: Turcia și Pakistan vor desfășura rapid forțe în Arabia Saudită pe fondul atacurilor houthi",
-          "date": "5–6 oct",
-          "body": "Reuniți la Riad, oficiali din Turcia, Pakistan și Arabia Saudită au convenit activarea Acordului comun de apărare de la Mecca (semnat la 7 august 2026) ca răspuns la escaladarea atacurilor houthi asupra Arabiei Saudite. Printr-o declarație comună, Turcia și Pakistan s-au angajat să „desfășoare rapid” forțe și capabilități militare (inclusiv apărare aeriană) în Arabia Saudită. Oficiali pakistanezi au indicat o prezență de 30.000–40.000 de militari pentru apărarea frontierelor saudite (o singură sursă, declarație pakistaneză). Delegațiile au fost conduse de miniștrii de externe Fidan (Turcia) și Dar (Pakistan), cu participarea miniștrilor apărării și a șefilor de stat major. Explozii puternice au fost raportate în nordul Riadului, lângă aeroportul King Khalid. Iranul a avertizat că orice „nouă intervenție” în dosarul Yemenului ar complica situația.",
+          "title": "Escaladare saudi–houthi: coaliția lovește 136 de ținte în Yemen; atac houthi letal pe aeroportul Riad",
+          "date": "8–10 oct",
+          "body": "Coaliția condusă de Arabia Saudită a anunțat distrugerea a 136 de ținte militare în zone controlate de houthi și sprijin aerian permanent pentru forțele guvernamentale yemenite (Reuters, 10 octombrie, ora 00:14; fără bilanț de victime comunicat). Anunțul vine în cadrul ofensivei yemenite de recucerire a teritoriilor, lansată de la 5 octombrie. În paralel, autoritățile saudite au raportat trei morți într-un atac houthi asupra aeroportului din Riad, soldat și cu avarierea unei grădinițe și a unui complex de clinici.",
           "sources": [
-            { "name": "Jerusalem Post", "url": "https://jpost.com/middle-east/article-910660" },
-            { "name": "ANI News", "url": "https://www.aninews.in/news/world/middle-east/mecca-pact-invoked-amid-houthi-attacks-t252rkiye-pakistan-agree-to-swiftly-deploy-forces-military-capabilities-in-saudi-arabia20261006011820" },
-            { "name": "Al-Monitor", "url": "https://www.al-monitor.com/originals/2026/10/turkey-pakistan-deploy-forces-saudi-arabia-amid-houthi-attacks" }
+            {
+              "name": "Reuters (via Times of Israel)",
+              "url": "https://www.timesofisrael.com/liveblog-october-10-2026/"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/10/9/saudi-arabia-reopens-riyadh-airport-after-houthi-attack-kills-three"
+            },
+            {
+              "name": "France 24",
+              "url": "https://www.france24.com/en/middle-east/20261005-yemen-military-announces-broad-range-of-strikes-against-houthis-in-bid-to-retake-lost-territory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multilateral",
+      "title": "Multilateral — Premiul Nobel pentru Pace",
+      "items": [
+        {
+          "title": "Premiul Nobel pentru Pace 2026 acordat lui Navi Pillay",
+          "date": "9 oct",
+          "body": "Premiul Nobel pentru Pace pe 2026 a fost acordat fostei Înalte Comisare ONU pentru drepturile omului, Navi Pillay, care a prezidat Comisia internațională independentă de anchetă a ONU privind Teritoriile Palestiniene Ocupate și Israel — comisie care a concluzionat, în septembrie 2025, că Israelul comite genocid în Gaza. Decizia a fost anunțată la 9 octombrie. Președintele american Donald Trump a calificat alegerea drept „o pată de neșters” pentru Norvegia.",
+          "sources": [
+            {
+              "name": "UN News",
+              "url": "https://news.un.org/en/story/2026/10/1168558"
+            },
+            {
+              "name": "CNN",
+              "url": "https://www.cnn.com/2026/10/09/world/live-news/nobel-peace-prize-2026-winner-intl"
+            },
+            {
+              "name": "NobelPrize.org",
+              "url": "https://www.nobelprize.org/prizes/peace/2026/summary/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "israel-liban",
+      "title": "Israel–Liban–Siria",
+      "items": [
+        {
+          "title": "IDF revine la lovituri punctuale pe filieră iraniană la granița Liban–Siria",
+          "date": "9–10 oct",
+          "body": "După circa zece zile de acalmie pe frontul de nord, armata israeliană a lovit în zona Hermel (Hawsh al-Sayyed Ali, la granița Liban–Siria), rănind șase persoane (cinci sirieni, un libanez), potrivit Ministerului libanez al Sănătății și agenției NNA. IDF a descris ținta drept un „operativ sirian” care acționa „sub direcția regimului terorist iranian”, Yusef Ali Al-Hassan, și a anunțat o a doua lovitură pe aceeași filieră la 10 octombrie. Separat, un căpitan israelian de 21 de ani a fost ucis în sudul Libanului la 8 octombrie.",
+          "sources": [
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-oct-9-2026/"
+            },
+            {
+              "name": "Haaretz",
+              "url": "https://www.haaretz.co.il/news/politics/2026-10-09/ty-article/000001a1-21d8-d10a-a5b1-a1dcc1ac0000"
+            },
+            {
+              "name": "Jerusalem Post",
+              "url": "https://www.jpost.com/middle-east/2026-10-08/live-updates-910986"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iran-sua",
+      "title": "Iran–SUA",
+      "items": [
+        {
+          "title": "Impas menținut; Trump exclude un atac înainte de alegerile de la jumătatea mandatului",
+          "date": "8–9 oct",
+          "body": "Președintele american a declarat că Washingtonul poartă „discuții productive” cu Iranul și că nu va ataca înainte de alegerile de la jumătatea mandatului din 3 noiembrie, adăugând că războiul „se va încheia curând, într-un fel sau altul”. În paralel, SUA au impus noi sancțiuni asupra „flotei-fantomă” iraniene. Nu a fost raportată nicio activitate cinetică directă nouă între Israel și Iran în fereastra de raportare.",
+          "sources": [
+            {
+              "name": "Reuters (via Jerusalem Post)",
+              "url": "https://www.jpost.com/middle-east/2026-10-08/live-updates-910986"
+            },
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-oct-9-2026/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flydubai",
+      "title": "Aviație — ancheta flydubai",
+      "items": [
+        {
+          "title": "Emiratele confirmă că al copilotul planifica un atac asupra aeroportului Ben Gurion",
+          "date": "9–10 oct",
+          "body": "Emiratele Arabe Unite au confirmat că al copilotul omanez al cursei flydubai plănuia un atac sinucigaș „în stil 9/11” asupra aeroportului Ben Gurion, afirmând totodată că acesta „îndeplinea cerințele de securitate” pentru angajare. Potrivit anchetei emirateze și unui interviu cu unul dintre pasageri, nu a fost stabilită o legătură cu restul echipajului. Aeroportul Ben Gurion funcționează normal.",
+          "sources": [
+            {
+              "name": "Reuters (via Times of Israel)",
+              "url": "https://www.timesofisrael.com/liveblog-oct-9-2026/"
+            },
+            {
+              "name": "Times of Israel (10 oct)",
+              "url": "https://www.timesofisrael.com/liveblog-october-10-2026/"
+            }
           ]
         }
       ]
@@ -290,109 +363,90 @@ const DATA = {
       "title": "Gaza–Cisiordania",
       "items": [
         {
-          "title": "Armistițiu nominal, dar poros: lovituri israeliene continuă în Gaza; violențe ale coloniștilor în Cisiordania",
-          "date": "3–5 oct",
-          "body": "Statutul din Gaza se clarifică drept un armistițiu nominal (acordul din octombrie 2025), rămas însă poros, cu lovituri și încălcări continue. La 3 octombrie, un atac aerian israelian asupra unui apartament din orașul Gaza a ucis cel puțin cinci persoane (Al Jazeera). În Cisiordania (5 octombrie), armata israeliană a anunțat un atac cu autovehicul respins — un atacator ucis, doi răniți — iar coloniști au incendiat vehicule și au atacat o comunitate beduină lângă Ierusalim și în zona Samu, la sud de Hebron. Bilanțurile zilnice din Gaza rămân divergente între surse și, acolo unde nu există confirmare oficială, se tratează ca neconfirmate.",
+          "title": "Armistițiu la circa un an; violențe la recolta de măsline în Cisiordania",
+          "date": "9–10 oct",
+          "body": "Armistițiul din Gaza a ajuns la circa un an; „Linia Galbenă” de demarcație rămâne operativă, iar armata israeliană a anunțat că a ucis o persoană care a traversat-o în nordul Fâșiei (9 octombrie). În Cisiordania, cel puțin nouă persoane au fost rănite în timpul recoltei de măsline în zona Ramallah (Deir Abu Mashal, Burqa, Kafr Ni'ma), în incidente cu coloniști și forțe israeliene; un fotojurnalist al agenției Anadolu a fost rănit. Un adolescent colonist de 15 ani a fost arestat pentru un atac calificat „naționalist” lângă Yabrud (9 octombrie).",
           "sources": [
-            { "name": "Al Jazeera", "url": "https://www.aljazeera.com/news/2026/10/3/israeli-air-attack-on-gaza-city-apartment-kills-at-least-five" },
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-5-2026/" }
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/sections/the-picture-show/2026/10/10/nx-s1-5991619/gaza-ceasefire-israel-life"
+            },
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-october-10-2026/"
+            }
           ]
         }
       ]
     },
     {
-      "id": "flydubai",
-      "title": "Aviație / Acordurile Abraham — ancheta flydubai",
+      "id": "europa-nato",
+      "title": "Europa / NATO",
       "items": [
         {
-          "title": "Atribuire divergentă a atacului flydubai; noi măsuri de securitate a zborurilor; demisii cerute",
-          "date": "5 oct",
-          "body": "Divergență de atribuire în cazul atacului copilotului omanez de pe cursa flydubai: președintele Trump a afirmat că el crede personal că Iranul este responsabil, contrazicând evaluarea israeliană și americană a unui incident izolat („lone-wolf”). Israelul nu consideră că ceilalți membri ai echipajului ar fi fost implicați. Ministerul Transporturilor israelian a emis o directivă prin care companiile trebuie să împiedice piloți și echipaje din state ostile să opereze zboruri spre Israel; o anchetă a relevat că multe curse Arkia și Israir folosesc aeronave și echipaje închiriate de la companii străine, exceptate de la protocoalele de securitate israeliene. Pe plan politic, Avigdor Liberman a cerut demisia șefului Shin Bet, iar Gadi Eisenkot a cerut mai întâi demisia ministrului Transporturilor, Miri Regev.",
+          "title": "Arestări la baza RAF Molesworth; bombardierele SUA retrase de la RAF Fairford au revenit în SUA",
+          "date": "9 oct",
+          "body": "Doi cetățeni letoni rezidenți în Marea Britanie au fost arestați în perimetrul bazei RAF Molesworth, care găzduiește personal de informații american și NATO, apoi eliberați pe cauțiune. Poliția antiteroristă a precizat că stabilirea mobilului este linia principală de anchetă și că nu există niciun indiciu de legătură cu alerta anterioară de la baza RAF Fairford; toate bombardierele americane dislocate la Fairford au revenit în Statele Unite în weekendul precedent.",
           "sources": [
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-5-2026/" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "israel-liban",
-      "title": "Israel–Liban–Hezbollah",
-      "items": [
-        {
-          "title": "Dezescaladare menținută pe frontul de nord",
-          "date": "5–6 oct",
-          "body": "Palierul cinetic pe frontul de nord rămâne coborât: nicio a doua lansare a Hezbollah cu pagube sau victime după drona din 26 septembrie (a zecea zi). Armata israeliană continuă operațiuni punctuale în zona de securitate din sudul Libanului, în timp ce o evaluare citată de presa israeliană nu exclude o „încălzire” a sectorului. Canalul diplomatic dintre premierul libanez Nawaf Salam și secretarul de stat Marco Rubio rămâne direcția dominantă.",
-          "sources": [
-            { "name": "JNS", "url": "https://www.jns.org/news/israel-news/idf-strikes-hezbollah-cell-near-southern-lebanon-security-zone" },
-            { "name": "Al Jazeera", "url": "https://www.aljazeera.com/news/2026/9/25/israeli-shelling-continues-as-lebanons-pm-demands-withdrawal-in-un-speech" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "comemorare-7-oct",
-      "title": "Comemorare — a treia aniversare a 7 octombrie",
-      "items": [
-        {
-          "title": "Punct culminant mâine (7 octombrie): reculegere națională, proteste și ceremonia familiilor",
-          "date": "6–7 oct",
-          "body": "Comemorarea a trei ani de la atacul din 7 octombrie 2023 are punctul culminant miercuri, 7 octombrie: un moment național de reculegere la ora 06:29 (ora atacului), proteste și o ceremonie centrală a familiilor seara, la parcul Ganei Yehoshua din Tel Aviv, găzduită de fostul ostatic Eli Sharabi. Eveniment pre-anunțat, cu afluență mare în spațiile publice.",
-          "sources": [
-            { "name": "Ynetnews", "url": "https://www.ynetnews.com/article/hjwiq58qfe" },
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-5-2026/" }
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-oct-9-2026/"
+            }
           ]
         }
       ]
     },
     {
       "id": "politica-interna",
-      "title": "Politică internă — campanie electorală (27 octombrie)",
+      "title": "Politică internă — campanie (27 oct)",
       "items": [
         {
-          "title": "Impas în sondaje; campanie între blocuri; manifest extremist descoperit",
-          "date": "5 oct",
-          "body": "Impasul electoral se menține: blocul pro-Netanyahu este creditat cu circa 49 de mandate, sub pragul majorității, cu deadlock politic continuu; partidul lui Ofer Winter este sub pragul electoral (1,5%). Lista Arabă Comună a lansat o campanie în limba ebraică la Tel Aviv, vizând voturi evreiești. Ancheta flydubai a devenit temă de campanie. Separat, un manifest confiscat de la un cadru universitar (Bar-Ilan) ar fi detaliat un plan al unui grup de atacatori de a lovi simultan comunități arabe, într-un scenariu de tip 7 octombrie; un podcaster de dreapta a admis că a respins planul, dar nu a alertat poliția.",
+          "title": "Anchete pe cronologia 7 octombrie și pe documente oficiale; declarații de campanie",
+          "date": "8–9 oct",
+          "body": "Poliția ar dispune de probe suficiente pentru inculparea șefului de cabinet al premierului, Tzachi Braverman, într-un dosar de alterare a unor documente, deși surse apreciază o inculpare drept improbabilă. Fostul secretar militar Avi Gil a acuzat o tentativă de alterare a cronologiei oficiale a zilei de 7 octombrie, iar opoziția a cerut o anchetă penală. În campanie, Gadi Eisenkot a declarat că își va supune guvernul aprobării Knessetului chiar și fără 61 de mandate. Alegerile legislative au loc la 27 octombrie.",
           "sources": [
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-5-2026/" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "economic",
-      "title": "Economic / Energie",
-      "items": [
-        {
-          "title": "Brent sub 100 dolari; fluxurile de export revin spre nivelul pre-război; shekelul stabil",
-          "date": "6 oct",
-          "body": "Brentul cotează la circa 99,91 dolari/baril (6 octombrie, −0,40% în ziua respectivă; +52,7% an/an), în scădere, pe măsură ce exporturile de țiței din regiune au revenit spre nivelurile de dinainte de război (JPMorgan estimează expedierile la circa 98% din volumele pre-război); pragul de risc de 105 dolari rămâne infirmat. G7 au convenit eliberarea a 100 de milioane de barili de țiței și motorină pe parcursul a patru luni. Cursul USD/ILS este de 3,0551 (6 octombrie), cu o ușoară slăbire a shekelului în ultima lună (−1,37%), dar o apreciere an/an (+6,77%).",
-          "sources": [
-            { "name": "Trading Economics (Brent)", "url": "https://tradingeconomics.com/commodity/brent-crude-oil" },
-            { "name": "Trading Economics (USD/ILS)", "url": "https://tradingeconomics.com/israel/currency" },
-            { "name": "CBS News", "url": "https://www.cbsnews.com/live-updates/trump-iran-war-us-midterm-elections-troops-deployment/" }
+            {
+              "name": "Jerusalem Post",
+              "url": "https://www.jpost.com/middle-east/2026-10-08/live-updates-910986"
+            },
+            {
+              "name": "ynet",
+              "url": "https://www.ynet.co.il/news/elections2026/article/yokra14920134"
+            }
           ]
         }
       ]
     }
   ],
-  "vector": "Vectorul general rămâne basculat spre risc pe axa Iran–SUA, dar escaladarea este deocamdată de pregătire și presiune, nu cinetică: impas diplomatic dur, retorică de război, consolidare navală americană și o blocadă a Hormuzului menținută în discurs, în timp ce fluxurile de export revin spre nivelul pre-război. Noutatea zilei este mutarea amenințării iraniene pe sol aliat (complotul dejucat la baza RAF Fairford, cu arestări în Marea Britanie) și activarea Pactului de la Mecca pe flancul saudit-houthi. Pe frontul de nord, dezescaladarea se menține (a zecea zi fără a doua lansare Hezbollah). Energetic, Brent sub pragul de 105 dolari. Țara intră în ziua comemorării a trei ani de la 7 octombrie.",
+  "vector": "Vectorul regional rămâne basculat spre risc, dar diferențiat pe axe: escaladare deschisă pe teatrul saudito-houthi (Marea Roșie), revenire la lovituri punctuale israeliene pe filiera iraniană în Liban/Siria și un militar israelian ucis în sud, dar impas menținut și necinetic pe axa Iran–SUA, unde președintele american exclude un atac înainte de 3 noiembrie. Pe plan multilateral, presiune reputațională sporită asupra Israelului după acordarea Premiului Nobel pentru Pace fostei raportoare ONU Navi Pillay.",
   "delta": [
-    "Europa/NATO: amenințarea iraniană se mută pe sol aliat — complot cu drone dejucat la baza RAF Fairford, 12 bombardiere B-1 evacuate, cinci arestați lângă bază și un cetățean britanic-iranian reținut la Londra. Semnalul de targetare asimetrică în Europa trece de la ipoteză la fapt documentat.",
-    "Marea Roșie: Pactul de la Mecca trece de la „reuniune de confirmat” la activare — reuniune la Riad și declarație comună a Turciei și Pakistanului de desfășurare rapidă de forțe în Arabia Saudită.",
-    "Iran–SUA: înăsprire retorică bilaterală (Pezeshkian: negocieri „lipsite de sens”; Araghchi: „nicio soluție militară”; Garda Revoluționară: creșterea razei rachetelor) și presiune financiară americană pe băncile străine.",
-    "Gaza: discrepanța „armistițiu vs. război” se închide spre armistițiu nominal, dar poros, cu lovituri continue (cel puțin cinci morți, lovitură aeriană, 3 octombrie).",
-    "Energie: Brent reconfirmat la circa 99,91 dolari (6 octombrie), cu fluxuri de export revenite la circa 98% din nivelul pre-război; USD/ILS reconfirmat la 3,0551 după redeschiderea bursei.",
-    "Comemorare: ziua culminantă a aniversării a trei ani de la 7 octombrie este mâine (7 octombrie)."
+    "Marea Roșie: escaladare — coaliția condusă de Arabia Saudită anunță distrugerea a 136 de ținte militare în Yemen; atac houthi pe aeroportul Riad soldat cu trei morți.",
+    "Multilateral: Premiul Nobel pentru Pace 2026 a fost acordat fostei Înalte Comisare ONU Navi Pillay (9 octombrie).",
+    "Israel–Liban: după circa zece zile de acalmie, armata israeliană a revenit la lovituri punctuale pe filiera iraniană la granița Liban–Siria (șase răniți, zona Hermel); un militar israelian a fost ucis în sudul Libanului (8 octombrie).",
+    "Iran–SUA: Trump afirmă „discuții productive” cu Iranul și exclude un atac înainte de alegerile din 3 noiembrie; noi sancțiuni americane pe flota-fantomă iraniană.",
+    "Aviație: Emiratele confirmă că al copilotul cursei flydubai planifica un atac asupra aeroportului Ben Gurion; nu s-a stabilit o legătură cu restul echipajului.",
+    "Gaza: armistițiul a ajuns la circa un an; „Linia Galbenă” rămâne operativă, cu lovituri punctuale."
   ],
   "calendar": [
-    { "date": "7 oct", "event": "A treia aniversare a atacului din 7 octombrie 2023: reculegere națională la 06:29, proteste și ceremonia centrală a familiilor la parcul Ganei Yehoshua (Tel Aviv)" },
-    { "date": "octombrie (în curs)", "event": "Operaționalizarea Pactului de la Mecca și desfășurarea forțelor turce și pakistaneze în Arabia Saudită" },
-    { "date": "27 oct", "event": "Alegeri legislative în Israel (Knesset 26)" },
-    { "date": "3 nov", "event": "Alegeri de la jumătatea mandatului în SUA (reper pentru termenul dosarului iranian)" },
-    { "date": "31 dec", "event": "Expirarea mandatului UNIFIL (Rez. 2790/2025); retragere din ianuarie 2027" }
+    {
+      "date": "11 oct",
+      "event": "Redeschiderea pieței valutare israeliene (duminică)"
+    },
+    {
+      "date": "27 oct",
+      "event": "Alegeri legislative în Israel (Knesset 26)"
+    },
+    {
+      "date": "3 nov",
+      "event": "Alegeri de la jumătatea mandatului în SUA (reper pentru termenul dosarului iranian)"
+    },
+    {
+      "date": "31 dec",
+      "event": "Expirarea mandatului UNIFIL (Rez. 2790/2025); retragere din ianuarie 2027"
+    }
   ],
   "demnitari": "Nicio schimbare de demnitar confirmată în statele monitorizate în ultimele 24 de ore.",
-  "sourceCount": 11
+  "sourceCount": 13
 };
 /* BRIEFING_DATA_END */
 render(DATA);

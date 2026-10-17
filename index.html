@@ -219,40 +219,120 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-10-16T14:48:00+03:00",
-  "runType": "Briefing automat (vineri) — A DOUA declanșare din aceeași zi (rularea de dimineață a publicat la ~11:48 IL; aceasta la ~14:48 IL). Rulare normală: memorie proaspătă (~3h), fără avertisment de vechime. Niciun trigger nou de Nivel 2 în ultimele 12 ore. Conținut reîmprospătat cu evoluțiile de la mijlocul zilei.",
-  "nextRun": "2026-10-17T07:30:00+03:00",
+  "generatedAt": "2026-10-17T11:20:00+03:00",
+  "runType": "Briefing automat (sâmbătă) — rulare normală. Memorie proaspătă (ultima actualizare 16 oct ~11:48 UTC). Niciun trigger nou de Nivel 2 în ultimele 12 ore.",
+  "nextRun": "2026-10-18T07:30:00+03:00",
   "streaks": [
     {
       "label": "zile fără lovitură iraniană directă pe teritoriul israelian",
-      "value": 36,
-      "asOf": "16 oct"
+      "value": 37,
+      "asOf": "17 oct"
     },
     {
       "label": "zile de la drona Hezbollah (26 sep), fără o a doua lansare cu pagube",
-      "value": 20,
-      "asOf": "16 oct"
+      "value": 21,
+      "asOf": "17 oct"
     },
     {
       "label": "zi fără întrerupere a fluxului prin strâmtoarea Hormuz",
       "value": 0,
-      "asOf": "16 oct — flux continuu"
+      "asOf": "17 oct — flux continuu, dar sub presiune"
     }
   ],
   "nivel2": [],
   "sections": [
     {
-      "id": "iran-sua",
-      "title": "Iran–SUA — impas necinetic, retorică în creștere",
+      "id": "yemen-marearosie-hormuz",
+      "title": "Yemen–Marea Roșie–Hormuz",
       "items": [
         {
-          "title": "Trump cântărește bomba MOAB, exclude arma nucleară; Iranul își întărește apărarea siturilor nucleare și avertizează",
-          "date": "15–16 oct",
-          "body": "Tensiunile Iran–SUA au revenit la registrul „tobe de război”, fără schimb cinetic. Președintele Trump a reiterat (Newsmax) că SUA nu vor folosi arme nucleare contra Iranului, dar ar putea recurge la bomba convențională MOAB (GBU-43/B) asupra infrastructurii energetice și a siturilor nucleare iraniene dacă luptele reîncep, excluzând trupe terestre. Iranul afirmă că își consolidează apărarea siturilor nucleare și avertizează că ar putea invada state vecine dacă războiul se reia. Termenul declarat pentru orice decizie rămâne ulterior datei de 3 noiembrie.",
+          "title": "Rachete houthi asupra aeroportului din Aden; coaliția saudită interceptează o rachetă spre portul Yanbu",
+          "date": "17 oct",
+          "body": "Rachete au lovit aeroportul din Aden, în timp ce coaliția condusă de Arabia Saudită anunță interceptarea unei rachete balistice îndreptate spre portul Yanbu și distrugerea a două rachete de croazieră peste Marea Roșie și a trei drone în sudul Arabiei Saudite și în regiunea Riad. Este o continuare directă a ofensivei houthi deschise la 5–7 octombrie.",
           "sources": [
             {
-              "name": "Times of Israel (16 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-16-2026/"
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/houthis-attack-aden-airport-with-missiles-and-drones-amid-yemen-government-counteroffensive/"
+            },
+            {
+              "name": "Jerusalem Post (live 16–17 oct)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-16/live-updates-911900"
+            }
+          ]
+        },
+        {
+          "title": "Presiune iraniană continuă pe navigația din Hormuz; CGRI revendică un petrolier lovit de mină",
+          "date": "16–17 oct",
+          "body": "Ministrul indian al transportului naval afirmă că cei 15 cetățeni indieni de la bordul unei nave atacate în Hormuz sunt în siguranță, iar Gardienii Revoluției afirmă (17 oct, via Reuters) că un petrolier a explodat după ce a lovit o mină în strâmtoare. La 12 octombrie, două tancuri cu echipaje indiene fuseseră lovite lângă Hormuz/Oman, cu răniți. Atribuirea și cifrele episodului din 17 oct rămân neconfirmate independent.",
+          "sources": [
+            {
+              "name": "Jerusalem Post (live)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-16/live-updates-911900"
+            },
+            {
+              "name": "Business Today (12 oct)",
+              "url": "https://www.businesstoday.in/india/story/two-tankers-carrying-indian-seafarers-hit-in-strait-of-hormuz-oman-mea-condemns-strikes-560896-2026-10-12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sua-golf",
+      "title": "SUA–Golf–normalizare",
+      "items": [
+        {
+          "title": "Trump: Arabia Saudită ar putea accepta ajutor israelian împotriva houthilor; Acordurile Avraam ar putea fi relansate",
+          "date": "16 oct",
+          "body": "Președintele Trump afirmă că Israelul „a fost foarte util” Arabiei Saudite în confruntarea cu houthii și că Acordurile Avraam ar putea căpăta un nou impuls cu includerea Riadului. Este o declarație, nu un angajament saudit. Presa arabă relatează că Israelul încearcă să revină în „dosarul Yemen” prin mediere americană.",
+          "sources": [
+            {
+              "name": "Jerusalem Post (live)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-16/live-updates-911900"
+            },
+            {
+              "name": "Akhbar el-Yom",
+              "url": "https://m.akhbarelyom.com/news/NewDetails/4891602/1/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "europa-iran",
+      "title": "Europa–Iran / reputațional",
+      "items": [
+        {
+          "title": "Italia deschide o anchetă penală vizând miniștri israelieni (inclusiv Ben-Gvir) pentru tratamentul activiștilor flotilei spre Gaza",
+          "date": "16 oct",
+          "body": "Procurori italieni au deschis o investigație privind tratamentul activiștilor reținuți din flotila spre Gaza, nominalizând inclusiv ministrul securității naționale Itamar Ben-Gvir. Ministrul italian de externe Antonio Tajani a criticat declarații ale lui Ben-Gvir pe fondul anchetei. Este prima anchetă penală a unui stat membru UE care nominalizează miniștri israelieni în exercițiu.",
+          "sources": [
+            {
+              "name": "Wanted in Rome",
+              "url": "https://www.wantedinrome.com/news/italy-opens-criminal-probe-into-ben-gvir-over-treatment-of-gaza-flotilla-activist.html"
+            },
+            {
+              "name": "Post and Courier",
+              "url": "https://www.postandcourier.com/nation-world/italian-prosecutors-launch-probe-into-israel-security-minister/article_c1d2dbde-fd47-4c06-ba4f-98f630459a3c.html"
+            },
+            {
+              "name": "Anadolu (Tajani)",
+              "url": "https://www.aa.com.tr/en/europe/italys-foreign-minister-tajani-blasts-ben-gvir-remarks-amid-probe-over-flotilla-detainees/3961087"
+            }
+          ]
+        },
+        {
+          "title": "Vectorul asimetric iranian în Europa: condamnare în Norvegia, poziție fermă a Germaniei",
+          "date": "16 oct",
+          "body": "Un adolescent norvegian a fost condamnat la 20 de ani pentru un complot de asasinat în Marea Britanie legat de o grupare asociată Iranului. În paralel, ministrul german de externe a declarat că Germania „nu va tolera activitățile ostile ale Iranului”. Se adaugă declarației celor 29 de state (12 oct) privind atacurile hibride iraniene.",
+          "sources": [
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/latest/"
+            },
+            {
+              "name": "Jerusalem Post (live)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-16/live-updates-911900"
             }
           ]
         }
@@ -263,46 +343,24 @@ const DATA = {
       "title": "Gaza–Cisiordania",
       "items": [
         {
-          "title": "Val de violențe ale coloniștilor la recolta de măsline (zona Ramallah); un fotojurnalist Washington Post, agresat",
-          "date": "16 oct",
-          "body": "Presa palestiniană relatează atacuri ale coloniștilor asupra culegătorilor de măsline în zona Ramallah; mai multe persoane rănite, printre care un fotojurnalist al Washington Post, surprins în imagini fiind lovit. Lideri ai coloniștilor susțin, în replică, că „sute de teroriști și anarhiști” ar fi atacat israelieni într-o „provocare planificată”.",
+          "title": "IDF a lichidat doi atacatori Hamas din 7 octombrie în lovituri separate în Gaza",
+          "date": "17 oct",
+          "body": "Armata israeliană anunță uciderea, în lovituri distincte, a doi teroriști Hamas care participaseră la atacul din 7 octombrie 2023, în condițiile menținerii armistițiului. Este o continuare a operațiunilor punctuale IDF.",
           "sources": [
             {
-              "name": "Times of Israel (16 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-16-2026/"
+              "name": "Jerusalem Post (live)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-16/live-updates-911900"
             }
           ]
         },
         {
-          "title": "IDF și Shin Bet au percheziționat două asociații caritabile din Cisiordania considerate paravane pentru grupări teroriste; arestarea unui presupus traficant de arme la Jenin",
-          "date": "15–16 oct",
-          "body": "Forțele israeliene au vizat două organizații caritabile din Cisiordania descrise drept fronturi ale unor grupări teroriste, iar comandouri IDF au arestat într-un raid la Jenin un presupus traficant de armament. În paralel, au fost raportate incendieri de vehicule palestiniene de către coloniști.",
+          "title": "Val continuat de violențe ale coloniștilor la recolta de măsline; retorică radicală",
+          "date": "16–17 oct",
+          "body": "Un rabin de linie dură a declarat că evreii „pot culege măslinele palestinienilor pentru a demonstra proprietatea asupra pământului”, pe fondul atacurilor coloniștilor în zona Ramallah semnalate anterior.",
           "sources": [
             {
-              "name": "Times of Israel (16 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-16-2026/"
-            }
-          ]
-        },
-        {
-          "title": "Mărfurile comerciale au încetat să intre în Fâșia Gaza pe fondul taxelor impuse de Hamas comercianților",
-          "date": "16 oct",
-          "body": "Potrivit Israelului, comercianții din Gaza sunt nemulțumiți de taxele impuse de Hamas, iar intrarea mărfurilor comerciale s-a oprit. Un lider al sindicatului transportatorilor recunoaște că Hamas solicită circa 10.000 de shekeli per camion, sumă pe care Hamas o numește „inițiativă comunitară voluntară”.",
-          "sources": [
-            {
-              "name": "Times of Israel (16 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-16-2026/"
-            }
-          ]
-        },
-        {
-          "title": "Israelul ar fi blocat o firmă americană să înceapă construcția unei baze în Gaza pentru forța internațională",
-          "date": "15–16 oct",
-          "body": "Potrivit relatărilor, Israelul nu ar fi autorizat o companie americană să demareze lucrările la o bază destinată forței internaționale planificate pentru Gaza — un semnal de întârziere a mecanismului de stabilizare post-armistițiu (armistițiul la ~1 an, „Linia Galbenă” operativă).",
-          "sources": [
-            {
-              "name": "Times of Israel (15 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-15-2026/"
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/latest/"
             }
           ]
         }
@@ -310,79 +368,41 @@ const DATA = {
     },
     {
       "id": "israel-liban",
-      "title": "Israel–Liban–Hezbollah — dezescaladare fragilă",
+      "title": "Israel–Liban",
       "items": [
         {
-          "title": "Hezbollah afirmă că a confiscat un camion cu explozibili, dar neagă planuri de asasinat",
+          "title": "IDF a lansat interceptoare către o „țintă falsă” în sudul Libanului; dosarul reconstrucției sudului rămâne tensionat",
           "date": "16 oct",
-          "body": "Hezbollah a declarat că a confiscat un camion încărcat cu explozibili, dezmințind însă existența unor planuri de asasinat. Nu au fost raportate lansări atribuite Hezbollah ori lovituri IDF noi în sudul Libanului în ultimele 24 de ore — dezescaladarea fragilă se menține.",
+          "body": "Apărarea aeriană israeliană a lansat interceptoare către un obiect aerian suspect în sudul Libanului, clasificat ulterior drept țintă falsă, fără lansare atribuită Hezbollahului — dezescaladare fragilă menținută. Pe plan diplomatic, deși se vehiculează un angajament qatarian pentru reconstrucția sudului, presa libaneză relatează ezitarea Doha, iar SUA ar presa Qatarul să excludă reconstrucția sudului din pachetul de ajutor.",
           "sources": [
             {
-              "name": "Times of Israel (16 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-16-2026/"
+              "name": "Jerusalem Post (live)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-16/live-updates-911900"
+            },
+            {
+              "name": "L'Orient Today",
+              "url": "https://today.lorientlejour.com/article/1493406/20-years-after-shukran-qatar-doha-hesitates-to-invest-in-south-lebanon.html"
+            },
+            {
+              "name": "Naharnet",
+              "url": "https://mobile.naharnet.com/stories/en/318014"
             }
           ]
         }
       ]
     },
     {
-      "id": "marea-rosie",
-      "title": "Marea Roșie / Yemen — escaladare pe mai multe teatre, flux neîntrerupt",
+      "id": "iran-sua",
+      "title": "Iran–SUA (impas necinetic)",
       "items": [
         {
-          "title": "Consiliul de Securitate al ONU condamnă atacurile houthi asupra Arabiei Saudite; rachete houthi lovesc palatul prezidențial din Aden",
-          "date": "15–16 oct",
-          "body": "Consiliul de Securitate al ONU a condamnat, într-o declarație de presă, atacurile houthi „escaladatoare” asupra Arabiei Saudite (inclusiv aeroportul din Riad) și amenințările la adresa navigației, reafirmând dreptul Regatului la autoapărare. Separat, rachete houthi au lovit palatul prezidențial din Aden (Yemen), soldate cu cel puțin 4 morți. Marina iraniană a semnalat un tanker „în neregulă” în flăcări în Golful Oman. Fluxul energetic prin Hormuz rămâne neîntrerupt.",
+          "title": "Comandantul CENTCOM: proxy-urile iraniene trimit bani înapoi către CGRI pe fondul crizei de lichidități",
+          "date": "17 oct",
+          "body": "Cel mai înalt comandant american din Orientul Mijlociu afirmă că grupările-proxy iraniene transferă fonduri înapoi către Gardienii Revoluției din cauza crizei de numerar — o inversare a fluxului obișnuit. Impasul necinetic se menține, cu termen declarat ulterior datei de 3 noiembrie.",
           "sources": [
             {
-              "name": "Arab News",
-              "url": "https://www.arabnews.com/saudi-arabia/un-security-council-backs-saudi-right-to-self-defense-after-deadly-houthi-strikes-on-riyadh-airport-3006598"
-            },
-            {
-              "name": "Xinhua",
-              "url": "https://english.news.cn/20261016/8828c9cee5e04dfb8058f24ebce4cee4/c.html"
-            },
-            {
-              "name": "Times of Israel (16 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-16-2026/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "diplomatie",
-      "title": "Diplomație — presiune multilaterală pe dosarul coloniilor",
-      "items": [
-        {
-          "title": "China cere Israelului oprirea și inversarea extinderii coloniilor (Wang Yi–Herzog)",
-          "date": "15–16 oct",
-          "body": "Ministrul chinez de externe Wang Yi i-a transmis președintelui Herzog, la o întâlnire în Azerbaidjan, că Israelul ar trebui să oprească și să inverseze extinderea coloniilor din Cisiordania — un vector suplimentar de presiune internațională pe acest dosar.",
-          "sources": [
-            {
-              "name": "Times of Israel (16 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-16-2026/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "politica-interna",
-      "title": "Politică internă Israel — campanie tot mai tensionată spre 27 octombrie",
-      "items": [
-        {
-          "title": "Acrimonie în campanie: Liberman atacă Eisenkot, Netanyahu dă în judecată un fost consilier, exclude Ben Gvir de la Apărare/Poliție",
-          "date": "14–16 oct",
-          "body": "Campania pentru 27 octombrie s-a radicalizat: Avigdor Liberman l-a atacat pe aliatul Gadi Eisenkot pentru un presupus plan de a forma guvern cu Netanyahu; Likud anunță că Netanyahu îl va da în judecată pe fostul consilier Yoav Horowitz (apropiat de Eisenkot) pentru afirmația că „trebuie presupus că e agent qatarian”; Netanyahu a declarat că Itamar Ben Gvir nu va putea fi ministru al Apărării sau al Securității Interne după alegeri, nemulțumind Otzma Yehudit. Un sondaj Channel 13 (14 oct) indică blocul Netanyahu la 51 de mandate și opoziția la 50, cu Yashar (Eisenkot) cel mai mare partid (20). Votul a început în misiunile diplomatice (circa 4.800 de alegători, 101 secții).",
-          "sources": [
-            {
-              "name": "Times of Israel (16 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-16-2026/"
-            },
-            {
-              "name": "Jerusalem Post",
-              "url": "https://www.jpost.com/israel-news/article-911909"
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/latest/"
             }
           ]
         }
@@ -390,75 +410,101 @@ const DATA = {
     },
     {
       "id": "economic",
-      "title": "Mișcări economice / financiare",
+      "title": "Economic / financiar",
       "items": [
         {
-          "title": "Brent coboară spre ~105 USD pe așteptarea relaxării sancțiunilor SUA pe „flota din umbră”; bursa de la Tel Aviv în scădere pe incertitudinea electorală",
+          "title": "Petrol — salt spre 110 USD pe temeri de ofertă în Orientul Mijlociu",
           "date": "16 oct",
-          "body": "Brent se tranzacționa în jur de 105,3–105,9 USD/baril la 16 octombrie, în scădere față de ~106,7 USD (15 oct), pe fondul așteptării că SUA ar putea relaxa sancțiunile asupra „flotei din umbră” și al unei reduceri a stocurilor americane; WTI ~97 USD. Analiștii leagă scăderea acțiunilor de la Tel Aviv de pariurile investitorilor pe un blocaj electoral. Pentru shekel nu a existat un fixing nou izolabil datat 16 octombrie (ultima referință ~3,09–3,10 USD/ILS, mijlocul lui octombrie).",
+          "body": "La închiderea de vineri, Brent a urcat spre 108–110 USD (spot ~108,51 USD dimineața; contractul decembrie a decontat la 109,86 USD, +3,72% pe zi, +4,91% pe săptămână, atingând pentru scurt timp 110 USD — maxim din mai), iar WTI (noiembrie) a decontat la 101,41 USD, +3,51% pe zi și +10,41% pe săptămână. Factori: temeri de ofertă în OM (fluxuri reduse prin Hormuz, interceptarea rachetei spre Yanbu), lovituri ucrainene pe rafinăria Reazan și o scădere a stocurilor SUA de 8,6 mil. barili. Sâmbătă/Shabbat: TASE, Banca Israelului și piața valutară închise; ultima referință USD/ILS 3,0978 (14 oct).",
           "sources": [
             {
-              "name": "5paisa (Brent 16 oct)",
-              "url": "https://www.5paisa.com/blog/crude-oil-price-today-brent-at-10545-wti-at-9739-in-live-trade-on-16-october-2026"
+              "name": "Fortune",
+              "url": "https://fortune.com/article/price-of-oil-10-16-2026/"
             },
             {
-              "name": "report.az",
-              "url": "https://report.az/en/energy/brent-crude-falls-to-105-3-per-barrel"
-            },
+              "name": "EnergyNow",
+              "url": "https://energynow.com/2026/10/oil-surges-as-middle-east-supply-fears-push-brent-near-110-and-wti-above-100-both-post-strong-weekly-gains/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "militar",
+      "title": "Mișcări militare strategice",
+      "items": [
+        {
+          "title": "Lovituri IDF punctuale; interceptări multiple ale coaliției saudite",
+          "date": "16–17 oct",
+          "body": "IDF: lovituri punctuale în Gaza (doi atacatori din 7 oct) și interceptoare către o țintă falsă în sudul Libanului. Coaliția condusă de Arabia Saudită: interceptări multiple (rachetă spre Yanbu, două rachete de croazieră peste Marea Roșie, trei drone). Contingentul român UNIFIL: fără contingent RO; mandatul UNIFIL expiră la 31 decembrie.",
+          "sources": [
             {
-              "name": "Vantage Markets",
-              "url": "https://www.vantagemarkets.com/market-news/oil-prices-today-brent-wti-shadow-fleet-sanctions-october-16-2026/"
-            },
+              "name": "Jerusalem Post (live)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-16/live-updates-911900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "politica-interna",
+      "title": "Politică internă Israel",
+      "items": [
+        {
+          "title": "Votul în misiunile diplomatice încheiat, prezență în creștere; campanie acidă",
+          "date": "16 oct",
+          "body": "Votul în misiunile diplomatice israeliene din străinătate s-a încheiat, cu o prezență cu circa 17 puncte procentuale mai mare decât în 2022. Netanyahu l-a atacat public pe Obama. Campania pentru alegerile din 27 octombrie rămâne acidă (sondaj Ch13 anterior: bloc Netanyahu 51 / opoziție 50).",
+          "sources": [
             {
-              "name": "Times of Israel (16 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-16-2026/"
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/latest/"
             }
           ]
         }
       ]
     }
   ],
-  "vector": "Iran–SUA: impas necinetic menținut, cu retorică americană în creștere (Trump cântărește MOAB) și linie dură iraniană; orice decizie — ulterior datei de 3 noiembrie. Marea Roșie / Yemen: escaladare pe mai multe teatre (Riad, Aden), dusă pe plan multilateral prin condamnarea CSONU, dar fără întreruperea fluxului prin Hormuz. Israel–Liban: dezescaladare fragilă menținută. Pe plan intern, campania pentru 27 octombrie devine tot mai acidă, cu un sondaj la limită (51/50).",
+  "vector": "Escaladare pe teatrul Yemen–Marea Roșie–Hormuz, cu transmisie clară pe piața petrolieră (Brent ~110 USD, maxim din mai); impas necinetic menținut Iran–SUA; dezescaladare fragilă menținută în sudul Libanului; presiune diplomatică și judiciară europeană în creștere asupra Israelului.",
   "delta": [
-    "Intern: campanie tot mai acidă — Liberman îl atacă pe Eisenkot (presupus plan de guvernare cu Netanyahu), Netanyahu dă în judecată un fost consilier (Horowitz, „agent qatarian”) și exclude Ben Gvir de la Apărare/Securitate internă după 27 oct.",
-    "Liban: Hezbollah afirmă că a confiscat un camion cu explozibili și neagă planuri de asasinat.",
-    "Gaza: mărfurile comerciale au încetat să intre în Fâșie pe fondul taxelor Hamas (~10.000 ILS/camion).",
-    "Marea Roșie / Yemen: rachete houthi au lovit palatul prezidențial din Aden (≥4 morți); marina iraniană semnalează un tanker „în neregulă” în flăcări în Golful Oman.",
-    "Economic: Brent a coborât spre ~105,3–105,9 USD (de la ~106,7 pe 15 oct) pe așteptarea relaxării sancțiunilor SUA pe „flota din umbră”.",
-    "Cisiordania: val de violențe ale coloniștilor la recolta de măsline (zona Ramallah) + un fotojurnalist Washington Post agresat."
+    "Energetic: Brent a inversat direcția — de la ~105,3 USD în scădere (prânz 16 oct) la ~109,86 USD la decontarea de vineri (vârf 110, maxim din mai).",
+    "Reputațional nou: Italia a deschis o anchetă penală vizând miniștri israelieni (inclusiv Ben-Gvir) pe tratamentul activiștilor flotilei; Tajani critică Ben-Gvir.",
+    "SUA–Golf: Trump leagă explicit acceptul saudit de ajutor israelian anti-houthi de relansarea Acordurilor Avraam.",
+    "Europa–Iran: condamnare în Norvegia (20 ani, complot UK legat de Iran) + poziție germană fermă.",
+    "Intern IL: votul în diaspora s-a încheiat, prezență +17 puncte procentuale față de 2022.",
+    "Date financiare: BCE nu publică o cotație de referință ILS din 21 septembrie; EUR/ILS rămâne fără cotație izolabilă nouă."
   ],
   "calendar": [
     {
       "date": "19 oct",
-      "event": "Închiderea licitațiilor E1 (Israel Land Authority); dosarul nu se examinează înainte de 19 noiembrie"
+      "event": "Închiderea licitațiilor E1 (Israel Land Authority); dosarul nu se examinează înainte de 19 nov."
     },
     {
-      "date": "11–22 oct",
-      "event": "Mărturia fostului procuror general Mandelblit în procesul Netanyahu"
-    },
-    {
-      "date": "oct.",
-      "event": "CSONU: briefing Yemen; consultări Liban + aranjamente post-UNIFIL; dezbatere trimestrială Orientul Mijlociu"
+      "date": "22 oct",
+      "event": "Încheierea mărturiei Mandelblit în procesul Netanyahu."
     },
     {
       "date": "27 oct",
-      "event": "Alegeri legislative în Israel (Knesset 26)"
+      "event": "Alegeri Knesset 26."
+    },
+    {
+      "date": "oct",
+      "event": "CSONU: Yemen (Grundberg), Liban Rez.1559/post-UNIFIL (DiCarlo), dezbatere trimestrială chestiunea palestiniană."
     },
     {
       "date": "3 nov",
-      "event": "Alegeri de la jumătatea mandatului în SUA"
+      "event": "Midterms SUA (reper pentru termenul declarat pe dosarul Iran)."
     },
     {
       "date": "10 nov",
-      "event": "Învestirea noului Knesset"
+      "event": "Învestirea Knessetului."
     },
     {
       "date": "31 dec",
-      "event": "Expirarea mandatului UNIFIL; retragere din ianuarie 2027"
+      "event": "Expirarea mandatului UNIFIL; drawdown din ianuarie 2027."
     }
   ],
-  "demnitari": "Nicio schimbare de demnitar confirmată în statele monitorizate în ultimele 24 de ore.",
-  "sourceCount": 7
+  "demnitari": "Nicio schimbare confirmată de demnitar principal în statele monitorizate în ultimele 24 de ore.",
+  "sourceCount": 19
 };
 /* BRIEFING_DATA_END */
 render(DATA);

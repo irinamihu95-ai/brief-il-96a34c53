@@ -219,91 +219,157 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-10-18T09:52:00+03:00",
-  "runType": "Briefing automat (duminică) — rulare normală. Memorie proaspătă (ultima actualizare 17 oct ~08:20 UTC). Niciun trigger nou de Nivel 2 în ultimele 12 ore.",
-  "nextRun": "2026-10-19T07:30:00+03:00",
+  "generatedAt": "2026-10-22T07:45:00+03:00",
+  "runType": "Briefing automat (joi) — rulare normală cu prudență sporită (memorie veche ~96h; rulările 19–21 oct lipsesc). Niciun trigger nou confirmat de Nivel 2 în ultimele 12 ore.",
+  "nextRun": "2026-10-23T07:30:00+03:00",
   "streaks": [
     {
       "label": "zile fără lovitură iraniană directă pe teritoriul israelian",
-      "value": 38,
-      "asOf": "18 oct"
+      "value": 42,
+      "asOf": "22 oct"
     },
     {
       "label": "zile de la drona Hezbollah (26 sep), fără o a doua lansare cu pagube",
-      "value": 22,
-      "asOf": "18 oct"
+      "value": 26,
+      "asOf": "22 oct"
     },
     {
       "label": "zi fără întrerupere a fluxului prin strâmtoarea Hormuz",
       "value": 0,
-      "asOf": "18 oct — flux continuu, sub presiune"
+      "asOf": "22 oct — flux continuu, peste nivelul prebelic, sub presiune"
     }
   ],
   "nivel2": [],
   "sections": [
     {
-      "id": "cisiordania-colonisti",
-      "title": "Cisiordania — violența coloniștilor",
+      "id": "marea-rosie",
+      "title": "Marea Roșie — Arabia Saudită–houthi",
       "items": [
         {
-          "title": "Delegație diplomatică europeană atacată de coloniști lângă Taybeh",
-          "date": "17 oct",
-          "body": "Sâmbătă, lângă satul Taybeh (nord-est de Ramallah), coloniști mascați au atacat o delegație de diplomați europeni; postul public Kan a indicat reprezentanți ai Franței, Belgiei și Poloniei. Primarul francez Bernard Baudoux a declarat că a fost lovit cu bare de fier; Belgia a anunțat avarierea unui vehicul belgian, iar Polonia s-a declarat profund indignată. Armata israeliană a condamnat actul grav de violență, precizând că vizita nu fusese coordonată cu IDF și că la fața locului nu se aflau soldați. Cabinetul premierului a transmis că orice violență împotriva diplomaților este inacceptabilă, cerând probe concludente și notând că delegația a intrat într-o zonă sensibilă, cu istoric de confruntări.",
+          "title": "Atac asupra aeroportului King Fahd (Dammam): un mort, opt răniți",
+          "date": "22 oct",
+          "body": "În noaptea de 21 spre 22 octombrie, un atac a lovit aeroportul internațional King Fahd din Dammam (Provincia de Est a Arabiei Saudite), soldat cu un mort și opt răniți, potrivit Autorității saudite a aviației civile; pagubele materiale sunt în evaluare. Coaliția condusă de Arabia Saudită a anunțat interceptarea a patru drone în Provincia de Est. Atacul marchează extinderea ofensivei houthi către inima petrolieră a regatului.",
           "sources": [
             {
-              "name": "CBS News",
-              "url": "https://www.cbsnews.com/news/european-diplomats-attacked-west-bank/"
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/10/22/one-killed-eight-injured-in-attack-on-saudi-arabias-king-fahd-airport-2"
             },
             {
-              "name": "Times of Israel (liveblog 18 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-18-2026"
+              "name": "The Hill",
+              "url": "https://thehill.com/policy/international/6164397-houthi-attacked-king-fahd-airport/"
+            },
+            {
+              "name": "Jerusalem Post (live 22 oct)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-21/live-updates-912356"
             }
           ]
         },
         {
-          "title": "Fotojurnalista Washington Post, Heidi Levine, agresată de coloniști lângă Abu Falah",
-          "date": "16 oct",
-          "body": "Vineri, în timpul ciocnirilor din zona recoltării măslinelor lângă Abu Falah, fotojurnalista Washington Post Heidi Levine a fost lovită și rănită (coastă fracturată și tăieturi, potrivit familiei); agresorii mascați i-au confiscat aparatele foto. Ambasadorul SUA Mike Huckabee și mai mulți congresmeni democrați (Raskin, Kim, Khanna, Duckworth) au cerut tragerea la răspundere a vinovaților; redacția Washington Post a condamnat atacul, subliniind că jurnalista purta însemne vizibile de presă. Cabinetul premierului a invocat fapte neclare.",
+          "title": "Două victime la câmpul petrolier Shaybah (Aramco), fără impact operațional",
+          "date": "21 oct",
+          "body": "Doi muncitori (un cetățean filipinez și unul nepalez) au murit din cauza resturilor unei drone interceptate care au căzut pe câmpul petrolier Shaybah al Aramco, în Provincia de Est. Ministerul energiei a precizat că nu a existat impact operațional asupra producției.",
           "sources": [
             {
-              "name": "Jerusalem Post",
-              "url": "https://www.jpost.com/israel-news/article-911961"
+              "name": "The National",
+              "url": "https://www.thenationalnews.com/news/mena/2026/10/21/saudi-aramco-shaybah-houthi-strike/"
             },
             {
-              "name": "Al-Monitor",
-              "url": "https://al-monitor.com/originals/2026/10/washington-post-journalist-hospitalized-after-israeli-settler-attack-west-bank"
+              "name": "Jerusalem Post (live)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-21/live-updates-912356"
+            }
+          ]
+        },
+        {
+          "title": "SUA dispun plecarea personalului neesențial din Arabia Saudită; UK trimite avioane Typhoon",
+          "date": "21 oct",
+          "body": "SUA au emis un ordin de plecare pentru personalul guvernamental neesențial din Arabia Saudită, pe fondul atacurilor houthi. Separat, Marea Britanie a anunțat trimiterea de avioane Typhoon ale RAF pentru apărarea orașelor și infrastructurii saudite. Yemen intern: un atac houthi asupra unei tabere de instrucție guvernamentale în provincia Shabwa ar fi provocat circa 73 de morți.",
+          "sources": [
+            {
+              "name": "Gulf News",
+              "url": "https://gulfnews.com/world/mena/middle-east-war-saudi-airport-attack-kills-one-as-as-us-orders-embassy-departures-1.500719174"
+            },
+            {
+              "name": "FDD Overnight Brief (via WaPo/Reuters)",
+              "url": "https://fdd.org/overnight-brief/october-21-2026"
             }
           ]
         }
       ]
     },
     {
-      "id": "yemen-golf",
-      "title": "Yemen–Marea Roșie–Golf",
+      "id": "iran-sua",
+      "title": "Iran–SUA–Golf (Hormuz)",
       "items": [
         {
-          "title": "Elicopter al coaliției saudite prăbușit lângă Najran; coaliția interceptează două rachete houthi",
-          "date": "18 oct",
-          "body": "Coaliția condusă de Arabia Saudită a anunțat prăbușirea unui elicopter de recunoaștere AH-6i lângă Najran, din cauza unei defecțiuni tehnice, soldată cu moartea celor doi membri ai echipajului, respingând revendicarea houthi privind doborârea aparatului. În paralel, coaliția a interceptat două rachete balistice lansate de houthi spre teritoriul saudit. Schimburile continuă ofensiva începută la 5 octombrie.",
+          "title": "Raport neconfirmat privind o lovitură americană la Sirik (Iran)",
+          "date": "22 oct",
+          "body": "Media israeliană (Canalul 12), preluată de Newsquawk și Jerusalem Post, a relatat explozii în orașul-port iranian Sirik (Hormozgan) și susține că forțe americane ar fi lovit un lansator antinavă care viza nave în strâmtoarea Hormuz. Informația provine dintr-o singură filieră, iar realitatea și atribuirea rămân neconfirmate oficial.",
           "sources": [
             {
-              "name": "Times of Israel (liveblog 18 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-18-2026"
+              "name": "Newsquawk",
+              "url": "https://www.newsquawk.com/headlines/explosions-were-reportedly-heard-in-irans-port-city-of-sirik-with-claims-that-us-forces-struck-an-anti-ship-missile-launcher-targeting-vessels-in-the-strait-of-hormuz-israels-channel-12-reports"
             },
             {
-              "name": "Jerusalem Post (live 18 oct)",
-              "url": "http://www.jpost.com/middle-east/iran-news/2026-10-18/live-updates-911999"
+              "name": "Jerusalem Post (live 22 oct)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-21/live-updates-912356"
             }
           ]
         },
         {
-          "title": "Remorcher lovit de două proiectile lângă Khor Fakkan (UKMTO)",
-          "date": "18 oct",
-          "body": "UKMTO a raportat un remorcher lovit de două proiectile în largul portului Khor Fakkan (coasta estică a Emiratelor Arabe Unite, la Golful Oman). Detaliile sunt limitate, iar atribuirea rămâne neconfirmată. Incidentul este distinct de episodul anterior de la Khor Fakkan din primăvara lui 2026.",
+          "title": "Exercițiu aerian israelian „până la granița Iranului”",
+          "date": "21 oct",
+          "body": "Zeci de avioane de vânătoare și de realimentare ale forțelor aeriene israeliene au efectuat un zbor de antrenament până în apropierea graniței iraniene. Potrivit unor surse citate de Axios, misiunea a avut caracter de descurajare și nu a fost neobișnuită; oficiali americani au indicat că Israelul știa că apărarea aeriană iraniană va detecta aparatele.",
           "sources": [
             {
-              "name": "Jerusalem Post (live 18 oct, Reuters/UKMTO)",
-              "url": "http://www.jpost.com/middle-east/iran-news/2026-10-18/live-updates-911999"
+              "name": "Jerusalem Post (live, via Axios)",
+              "url": "https://www.jpost.com/middle-east/iran-news/2026-10-21/live-updates-912356"
+            }
+          ]
+        },
+        {
+          "title": "Impas necinetic: Teheranul condiționează negocierile; presa relatează un plan israelian blocat de Washington",
+          "date": "21 oct",
+          "body": "Impasul necinetic dintre Washington și Teheran se menține. Secretarul iranian al Consiliului de Securitate, Mohsen Rezaei, a transmis că Iranul nu va scoate material nuclear din țară și nu va negocia până la îndeplinirea cerințelor sale. Financial Times a relatat că premierul Netanyahu ar fi planificat o lovitură asupra Iranului în jurul datei de 10 octombrie, însă administrația americană s-ar fi opus reluării ostilităților înaintea alegerilor de la jumătatea mandatului (3 noiembrie); lovitura nu a fost executată.",
+          "sources": [
+            {
+              "name": "Times of Israel (liveblog 21 oct)",
+              "url": "https://www.timesofisrael.com/liveblog-october-21-2026/"
+            },
+            {
+              "name": "FDD Overnight Brief",
+              "url": "https://fdd.org/overnight-brief/october-21-2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gaza-cisiordania",
+      "title": "Gaza–Cisiordania",
+      "items": [
+        {
+          "title": "Lovituri israeliene în Gaza: șapte palestinieni uciși, în pofida armistițiului",
+          "date": "21 oct",
+          "body": "Șapte palestinieni au fost uciși în lovituri israeliene în Fâșia Gaza, în condițiile armistițiului aflat la aproximativ un an de la intrarea în vigoare. Armata israeliană a anunțat separat lichidarea ultimului membru Hamas implicat în răpirea lui Shani Louk la 7 octombrie 2023.",
+          "sources": [
+            {
+              "name": "Democracy Now",
+              "url": "https://www.democracynow.org/2026/10/21/headlines/israeli_strikes_in_gaza_kill_seven_palestinians"
+            },
+            {
+              "name": "Malay Mail",
+              "url": "https://www.malaymail.com/news/world/2026/10/21/seven-palestinians-killed-in-israeli-strikes-across-gaza-despite-ceasefire/239964"
+            }
+          ]
+        },
+        {
+          "title": "Cisiordania: incident la recolta de măsline; expulzări de activiști",
+          "date": "21 oct",
+          "body": "Israelul a anunțat expulzarea a patru activiști și eliberarea a peste 70 de persoane reținute în timpul recoltei de măsline din Cisiordania; între cei reținuți s-a aflat și un candidat la Congresul american. În paralel, armata caută suspecți după incendierea unui mormânt în Cisiordania.",
+          "sources": [
+            {
+              "name": "Times of Israel (liveblog 21 oct)",
+              "url": "https://www.timesofisrael.com/liveblog-october-21-2026/"
             }
           ]
         }
@@ -314,30 +380,17 @@ const DATA = {
       "title": "Israel–Liban",
       "items": [
         {
-          "title": "Delegația militară libaneză va cere la Washington oprirea atacurilor israeliene",
-          "date": "18 oct",
-          "body": "Potrivit relatărilor, delegația militară libaneză intenționează să ceară, în cadrul discuțiilor cu partea americană, încetarea atacurilor israeliene în Liban. Negocierile se poartă pe fondul apropierii expirării mandatului UNIFIL (31 decembrie).",
+          "title": "Delegații israeliană și libaneză s-au întâlnit la sediul CENTCOM (Tampa)",
+          "date": "20 oct",
+          "body": "Potrivit unor relatări, delegații israeliene și libaneze s-au întâlnit la cartierul general al CENTCOM din Tampa, Florida — semnal al activării unui canal de dialog mediat de SUA. Armata israeliană a continuat operațiuni în sate din sudul Libanului, în zona de securitate, adoptând o postură defensivă pentru sezonul de iarnă. Un judecător libanez a dispus audierea a doi oficiali Hezbollah în legătură cu un transport de explozibili confiscat.",
           "sources": [
             {
-              "name": "Jerusalem Post (live 18 oct)",
-              "url": "http://www.jpost.com/middle-east/iran-news/2026-10-18/live-updates-911999"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "iran-sua",
-      "title": "Iran–SUA",
-      "items": [
-        {
-          "title": "Impas necinetic menținut; Lapid avertizează asupra unei posibile lovituri israeliene pe Iran înaintea alegerilor",
-          "date": "17 oct",
-          "body": "Impasul necinetic dintre Washington și Teheran se menține, fără negocieri nucleare și cu termenul de referință situat după alegerile americane de la jumătatea mandatului (3 noiembrie). Liderul opoziției, Yair Lapid, a afirmat că nu are încredere că premierul Netanyahu nu va declanșa o lovitură asupra Iranului care ar putea perturba alegerile din Israel.",
-          "sources": [
+              "name": "FDD Overnight Brief (via Jerusalem Post)",
+              "url": "https://fdd.org/overnight-brief/october-21-2026"
+            },
             {
-              "name": "Times of Israel (liveblog 17 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-17-2026/"
+              "name": "FDD's Long War Journal",
+              "url": "https://www.longwarjournal.org/archives/2026/10/idf-shifts-southern-lebanon-forces-toward-forward-defense-posture-as-troops-prepare-for-winter.php"
             }
           ]
         }
@@ -345,16 +398,48 @@ const DATA = {
     },
     {
       "id": "europa",
-      "title": "Europa",
+      "title": "Europa — vector asimetric și antisemitism",
       "items": [
         {
-          "title": "Grupul The List ar fi vizat locuințe ale directorilor unor firme de apărare din Marea Britanie",
-          "date": "18 oct",
-          "body": "Potrivit The Times, un grup autointitulat The List a vandalizat locuințe și vehicule ale unor directori din industria de apărare britanică, inclusiv persoane legate de Elbit Systems; poliția antiteroristă ar fi implicată. Grupul susține că a vizat cel puțin șase cadre de conducere. Informația provine dintr-o singură sursă și rămâne de confirmat.",
+          "title": "Marea Britanie re-arestează doi suspecți în dosarul RAF Fairford",
+          "date": "20 oct",
+          "body": "Poliția britanică a re-arestat doi bărbați suspectați că ar fi sprijinit serviciile de informații iraniene în legătură cu activitatea suspectă de la baza RAF Fairford (folosită de bombardiere americane), semnalată luna trecută.",
           "sources": [
             {
-              "name": "Times of Israel (liveblog 18 oct, via The Times)",
-              "url": "https://www.timesofisrael.com/liveblog-october-18-2026"
+              "name": "FDD Overnight Brief (via WaPo/Reuters)",
+              "url": "https://fdd.org/overnight-brief/october-21-2026"
+            }
+          ]
+        },
+        {
+          "title": "Raport guvernamental britanic: antisemitism în școli",
+          "date": "21 oct",
+          "body": "Un studiu comandat de guvernul britanic constată că trei din cinci elevi evrei din școlile din Anglia au experimentat antisemitism; raportul cuprinde 27 de recomandări.",
+          "sources": [
+            {
+              "name": "Times of Israel (liveblog 21 oct)",
+              "url": "https://www.timesofisrael.com/liveblog-october-21-2026/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "economic",
+      "title": "Economic — energie și valute",
+      "items": [
+        {
+          "title": "Brent în jurul a 110–111 USD; șekelul la ~3,09/dolar",
+          "date": "21–22 oct",
+          "body": "Barilul Brent cota 110,74 USD la 21 octombrie (dimineață, ora de Est), în scădere cu 1,86% față de ziua precedentă, dar cu circa 5,85% peste nivelul de acum o lună — sub pragul critic de 115 USD. Cursul dolar/șekel era 3,0900 la 22 octombrie (variație zilnică +0,12%; șekel mai puternic cu ~5,96% an/an). Wall Street Journal notează că exporturile de petrol din Golf au depășit nivelul de dinaintea conflictului, cu transporturi protejate de SUA prin Hormuz. Cotația euro/șekel rămâne de verificat (BCE nu publică o valoare ILS de la 21 septembrie).",
+          "sources": [
+            {
+              "name": "Fortune (preț petrol 21 oct)",
+              "url": "https://fortune.com/article/price-of-oil-10-21-2026/"
+            },
+            {
+              "name": "Trading Economics (USD/ILS)",
+              "url": "https://tradingeconomics.com/israel/currency"
             }
           ]
         }
@@ -362,39 +447,40 @@ const DATA = {
     },
     {
       "id": "intern-israel",
-      "title": "Politică internă Israel",
+      "title": "Politică internă Israel (alegeri 27 oct)",
       "items": [
         {
-          "title": "Deputatul Kroizer (Otzma Yehudit) urmează să fie audiat pentru presupusa agresare a unui ofițer",
-          "date": "18 oct",
-          "body": "Deputatul Yitzhak Kroizer (Otzma Yehudit) urmează să fie audiat de unitatea Lahav 433 în legătură cu presupusa agresare a unui ofițer de poliție în timpul unei revolte din 1 octombrie, la Mitzpe Jericho. Kroizer susține că poliția l-a agresat și intenționează să depună plângere. Episodul are loc pe fondul campaniei pentru alegerile din 27 octombrie.",
+          "title": "Retragerea Kahol Lavan și fricțiune IDF–premier în campanie",
+          "date": "19–21 oct",
+          "body": "Cu cinci zile înaintea alegerilor pentru Knesset (27 octombrie), partidul Kahol Lavan (Gantz) s-a retras din cursă, iar buletinele sale urmează să fie scoase din secții. Armata a cerut anularea discursului premierului la o ceremonie de absolvire a cadeților, invocând caracterul electoral, și a sesizat Comisia Centrală de Alegeri. Gadi Eisenkot și Avigdor Liberman au lansat un apel comun la mobilizarea alegătorilor opoziției. Votul militarilor a început la aproximativ 850 de secții (inclusiv în Gaza, sudul Libanului și Siria). Sondajele indică blocul de opoziție în jurul a 58 de mandate și blocul premierului în jurul a 49, niciunul cu majoritate.",
           "sources": [
             {
-              "name": "Times of Israel (liveblog 18 oct)",
-              "url": "https://www.timesofisrael.com/liveblog-october-18-2026"
+              "name": "Times of Israel (liveblog 21 oct)",
+              "url": "https://www.timesofisrael.com/liveblog-october-21-2026/"
+            },
+            {
+              "name": "Al Jazeera (alegerile 2026)",
+              "url": "https://www.aljazeera.com/news/2026/10/20/israels-elections-2026-explained-in-maps-and-charts"
             }
           ]
         }
       ]
     }
   ],
-  "vector": "Pe axa Cisiordania–reputațional, vectorul este de ESCALADARE: două incidente de violență a coloniștilor în zile consecutive (fotojurnalistă americană, delegație diplomatică europeană) au mutat dosarul de pe plan local pe plan diplomatic, cu reacții din partea SUA și a unor state membre UE. Pe axele Yemen–Marea Roșie–Golf și Israel–Liban, situația rămâne de TENSIUNE SUSȚINUTĂ fără escaladare cinetică nouă față de teatrul israelian. Pe axa Iran–SUA, impas necinetic menținut.",
+  "vector": "Pe axa Marea Roșie / Arabia Saudită–houthi, vectorul este de ESCALADARE, cu extindere geografică spre Provincia de Est a Arabiei Saudite (aeroportul King Fahd, câmpul Shaybah) și un semnal de retragere diplomatică americană din regat. Pe axa Iran–SUA, impas necinetic, dar cu semnale pre-cinetice (un raport neconfirmat privind o lovitură americană la Sirik, un exercițiu aerian israelian la granița Iranului); pragul unei prime lovituri confirmate pe sol iranian rămâne neatins. Pe axa Israel–Liban, dezescaladare fragilă, cu activarea unui canal diplomatic mediat de SUA. În Gaza, armistițiu poros, cu lovituri punctuale.",
   "delta": [
-    "NOU: delegație diplomatică europeană (Franța/Belgia/Polonia) atacată de coloniști lângă Taybeh (17 oct) — reacții din partea Belgiei și Poloniei.",
-    "NOU: fotojurnalista Washington Post agresată lângă Abu Falah (16 oct) — reacții oficiale și parlamentare din SUA.",
-    "NOU: elicopter al coaliției saudite prăbușit lângă Najran (2 morți); două rachete houthi interceptate (18 oct).",
-    "NOU: remorcher lovit de proiectile lângă Khor Fakkan, raportat de UKMTO (18 oct), atribuire neconfirmată.",
-    "Israel–Liban: delegația militară libaneză merge la Washington pentru a cere oprirea atacurilor israeliene.",
-    "Energie: piețe închise în weekend; ultima decontare Brent (vineri 16 oct) se menține ca referință (~110 USD)."
+    "NOU: atac asupra aeroportului King Fahd din Dammam (1 mort, 8 răniți) și victime la câmpul Shaybah — extindere a ofensivei houthi în Provincia de Est (22 oct).",
+    "NOU: SUA dispun plecarea personalului neesențial din Arabia Saudită; Marea Britanie trimite avioane Typhoon pentru apărarea regatului.",
+    "NOU: raport neconfirmat (o sursă) privind o lovitură americană la Sirik (Iran); exercițiu aerian israelian până la granița Iranului.",
+    "NOU: presa (Financial Times) relatează un plan israelian de lovitură pe Iran (~10 oct), oprit de Washington înaintea alegerilor americane.",
+    "Intern: retragerea Kahol Lavan din cursa electorală (19 oct); fricțiune instituțională IDF–premier pe tema discursului la absolvirea cadeților.",
+    "Israel–Liban: întâlnire a delegațiilor la sediul CENTCOM (Tampa) — canal de dialog mediat de SUA.",
+    "Energie/valute: Brent 110,74 USD (21 oct), sub pragul 115; USD/ILS 3,0900 (22 oct)."
   ],
   "calendar": [
     {
-      "date": "19 oct",
-      "event": "Închiderea licitațiilor E1 (Israel Land Authority); dosarul nu se examinează înainte de 19 nov. CSONU: briefing pe Haiti."
-    },
-    {
-      "date": "11–22 oct",
-      "event": "Mărturia fostului procuror general Mandelblit în procesul Netanyahu."
+      "date": "22–27 oct",
+      "event": "Votul anticipat al militarilor în desfășurare; mărturia Mandelblit în procesul Netanyahu se încheie (11–22 oct)."
     },
     {
       "date": "27 oct",
@@ -409,12 +495,16 @@ const DATA = {
       "event": "Învestirea noului Knesset."
     },
     {
+      "date": "amânat",
+      "event": "Summitul UE–CCG de la Riad, amânat (15 oct) din cauza atacurilor houthi; dată nouă de anunțat."
+    },
+    {
       "date": "31 dec",
       "event": "Expirarea mandatului UNIFIL (Rez. 2790/2025); drawdown din ianuarie 2027."
     }
   ],
   "demnitari": "Nicio schimbare de demnitar confirmată în statele monitorizate în ultimele 24 de ore.",
-  "sourceCount": 8
+  "sourceCount": 14
 };
 /* BRIEFING_DATA_END */
 render(DATA);

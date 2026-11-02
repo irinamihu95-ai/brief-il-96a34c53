@@ -219,43 +219,56 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-10-27T09:50:00+02:00",
-  "runType": "Briefing automat (marți, dimineață) — ziua alegerilor pentru Knesset-ul al 26-lea. Niciun trigger de Nivel 2 în ultimele 12 ore.",
-  "nextRun": "2026-10-28T07:30:00+02:00",
+  "generatedAt": "2026-11-02T02:18:00+02:00",
+  "runType": "Briefing automat (luni dimineață). Niciun trigger de Nivel 2 în ultimele 12 ore. Dominanta: impas de coaliție după alegerile pentru Knesset-ul al 26-lea (rezultat certificat 29 oct). Avertisment: memoria dintre rulări era veche de circa 6 zile.",
+  "nextRun": "2026-11-03T07:30:00+02:00",
   "streaks": [
-    { "label": "zile fără lovitură iraniană directă pe teritoriul israelian", "value": 47, "asOf": "27 oct" },
-    { "label": "zile de la drona Hezbollah (26 sep), fără o a doua lansare cu pagube", "value": 31, "asOf": "27 oct" },
-    { "label": "zi fără întrerupere a fluxului prin strâmtoarea Hormuz", "value": 0, "asOf": "27 oct — flux continuu, sub presiune" }
+    {
+      "label": "zile fără lovitură iraniană directă pe teritoriul israelian",
+      "value": 53,
+      "asOf": "2 nov"
+    },
+    {
+      "label": "zile de la drona Hezbollah (26 sep), fără o a doua lansare cu pagube",
+      "value": 37,
+      "asOf": "2 nov"
+    },
+    {
+      "label": "zi fără întrerupere a fluxului prin strâmtoarea Hormuz",
+      "value": 0,
+      "asOf": "2 nov — flux continuu, sub presiune"
+    }
   ],
   "nivel2": [],
   "sections": [
     {
-      "id": "alegeri",
-      "title": "Alegeri Knesset — ziua votului",
+      "id": "coalitie",
+      "title": "Israel — rezultat electoral și blocaj de coaliție",
       "items": [
         {
-          "title": "Secțiile de vot s-au deschis pentru alegerile Knesset-ului al 26-lea",
-          "date": "27 oct",
-          "body": "Secțiile de vot s-au deschis la ora 07:00 pentru circa 7,3 milioane de alegători, urmând să se închidă la ora 22:00. Comitetul Electoral Central a anunțat la ora 08:00 că peste 95% dintre secții au raportat deschiderea. Liderii de partid și-au exprimat votul: președintele Herzog la Ierusalim („Nimeni nu poate avea voie să corupă sau să submineze” scrutinul), Aryeh Deri (Shas) la Har Nof, Itamar Ben Gvir la Kiryat Arba, Yair Golan la Rosh Ha'ayin. Familiile celor căzuți la 7 octombrie au ținut un moment de reculegere în Piața Ostaticilor, cerând partide angajate pentru o comisie de stat de anchetă.",
+          "title": "Rezultate finale certificate: niciun bloc nu atinge 61 de mandate",
+          "date": "vot 27 oct, rezultate certificate 29 oct",
+          "body": "Comitetul Electoral Central a publicat joi (29 oct) rezultatele finale ale alegerilor pentru Knesset-ul al 26-lea: blocul condus de Netanyahu — 53 de mandate (Likud 27, Iudaismul Unit al Torei 7, Otzma Yehudit 7, Shas 6, Sionismul Religios 6); blocul evreiesc de opoziție — 48 (Yashar, al lui Gadi Eisenkot, 21; B'Yachad 12; Democrații 8; Yisrael Beytenu, al lui Avigdor Liberman, 7); partidele arabe — 19 (Lista Comună 11, Ra'am 8). Niciun bloc nu atinge pragul de 61 necesar pentru o majoritate. Netanyahu a invocat „interferențe electorale”; Comitetul Electoral Central a constatat că nu există nicio bază pentru acuzații de fraudă.",
           "sources": [
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-27-2026/" }
+            {
+              "name": "ABC News",
+              "url": "https://abcnews.com/International/israel-election-partial-results-deadlock-netanyahu-alleges-fraud/story?id=137665276"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/11/1/israel-election-when-will-government-be-formed-who-will-lead-it"
+            }
           ]
         },
         {
-          "title": "Sondajele finale indică un rezultat strâns, fără majoritate pentru niciun bloc",
-          "date": "27 oct",
-          "body": "Media sondajelor finale (22 oct) dădea blocului condus de Netanyahu circa 54 de mandate, iar opoziției conduse de Gadi Eisenkot circa 50 — niciunul atingând pragul de 61. Likud este creditat cu circa 23 de mandate, partidul Yashar al lui Eisenkot cu circa 21. Sondajele din ultimele zile dinaintea votului dădeau blocului Eisenkot un ușor avans (52 față de 50), în timp ce sondajele Channel 14 și i24 (considerate outlieri) dădeau coaliției Netanyahu 61. Partidele arabe sunt creditate cu circa 14 mandate; prezența electoratului arab ar putea fi ridicată.",
+          "title": "Președintele Herzog nu a desemnat încă un candidat; presiune pentru un guvern de uniune",
+          "date": "1 nov",
+          "body": "La 1 noiembrie, președintele Isaac Herzog nu desemnase încă pe nimeni pentru formarea guvernului și îndemna la „soluții creative”, împingând spre un guvern de uniune națională pentru a evita un nou tur de scrutin. Potrivit procedurii, noul Knesset se învestește la 10 noiembrie, iar desemnarea de către președinte este așteptată în jurul datei de 11 noiembrie; candidatul desemnat are 28 de zile, cu o posibilă prelungire de 14 zile. Netanyahu rămâne premier interimar pe durata procesului.",
           "sources": [
-            { "name": "Jewish Insider", "url": "https://jewishinsider.com/2026/10/final-israeli-polls-stalemate-tuesdays-election/" },
-            { "name": "i24NEWS", "url": "https://www.i24news.tv/en/news/israel-election-s-2026/artc-poll-gadi-eisenkot-overtakes-likud-benjamin-netanyahu-s-bloc-without-a-majority" }
-          ]
-        },
-        {
-          "title": "Incidente în ziua votului; alertă de securitate sporită",
-          "date": "27 oct",
-          "body": "Poliția investighează incendierea peste noapte a unui panou electoral al partidului Yashar (Eisenkot) la intrarea în Dimona. Separat, IDF a anunțat arestarea unui cetățean egiptean care traversase gardul de frontieră în zona Nitzana în cursul nopții; armata privește incidentul „cu gravitate” și se menține în alertă sporită în ziua alegerilor.",
-          "sources": [
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-27-2026/" }
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/11/1/israel-election-when-will-government-be-formed-who-will-lead-it"
+            }
           ]
         }
       ]
@@ -265,55 +278,39 @@ const DATA = {
       "title": "Iran–SUA",
       "items": [
         {
-          "title": "Diplomația de la Teheran continuă; impasul necinetic se menține",
-          "date": "27 oct (reuniune 26 oct)",
-          "body": "Reuniunea de luni de la Teheran, între reprezentanți ai Arabiei Saudite, Turciei și Pakistanului și oficiali iranieni, s-a încheiat cu angajamentul de a continua dialogul, potrivit media de stat iraniene. Ambasadorul iranian la Islamabad declarase (24 oct) că Iranul rămâne deschis negocierilor sub acordul interimar intermediat de Pakistan în iunie și că Teheranul va studia Acordul de la Mecca, acuzând Washingtonul că menține blocada portuară. Nu au existat acțiuni cinetice directe; termenul declarat rămâne după alegerile de la jumătatea mandatului din SUA (3 nov).",
+          "title": "Fereastra post-midterms se deschide la 3 noiembrie; impasul necinetic se menține",
+          "date": "context 8 oct / 28 oct; reper 3 nov",
+          "body": "Președintele Trump a declarat (8 oct) că SUA nu vor relua loviturile asupra Iranului înaintea alegerilor de la jumătatea mandatului din 3 noiembrie. Relatări (28 oct) indică faptul că mediatori arabi presează Teheranul pentru concesii nucleare pe fondul profilării unor eventuale lovituri după alegeri. Nu au existat acțiuni cinetice directe; data de 3 noiembrie marchează expirarea restricției auto-impuse de administrația americană.",
           "sources": [
-            { "name": "La Nación", "url": "https://www.lanacion.com.ar/usa/iran-remains-open-to-talks-with-us-under-pakistan-brokered-deal-envoy-says-nid24102026/" }
+            {
+              "name": "ITV News",
+              "url": "https://www.itv.com/news/2026-10-08/trump-says-us-will-not-resume-military-strikes-on-iran-before-the-midterm-elections"
+            },
+            {
+              "name": "Axios",
+              "url": "https://axios.com/2026/10/28/iran-war-arab-mediators-war-post-midterms"
+            }
           ]
         }
       ]
     },
     {
       "id": "marea-rosie",
-      "title": "Marea Roșie – internaționalizare",
+      "title": "Marea Roșie — internaționalizare",
       "items": [
         {
-          "title": "Atacurile houthi asupra Arabiei Saudite continuă; implicare egipteană",
+          "title": "Houthii califică desfășurarea egipteană în Arabia Saudită drept „declarație de război”",
           "date": "27 oct",
-          "body": "Coaliția condusă de Arabia Saudită a anunțat că a distrus luni (26 oct) trei drone îndreptate spre Riyadh și regiuni din sud. Pe fondul internaționalizării conflictului, Egiptul a avansat angajarea de partea Riadului: după autorizarea parlamentară de la 26 octombrie, o relatare (o singură sursă, 18 oct) indică aterizarea a două avioane de transport C-130H egiptene la baza King Fahd din Taif — prima desfășurare militară egipteană relatată de la începutul conflictului regional, de confirmat prin surse suplimentare.",
+          "body": "După autorizarea parlamentară egipteană (26 oct) și relatările despre angajarea Cairo de partea Riadului, mișcarea houthi a calificat desfășurarea de trupe egiptene în Arabia Saudită drept „declarație de război”. Poziția oficială egipteană: Cairo „apără teritoriul saudit” și exclude o ofensivă asupra Yemenului. Angajarea efectivă în operațiuni a forțelor egiptene rămâne de confirmat prin surse suplimentare.",
           "sources": [
-            { "name": "financefeeds", "url": "https://financefeeds.com/brent-crude-oil-price-114-68-tuesday-fomc-day-one-after-monday-round-trip-tehran-talks-bull-120-bear-108/" },
-            { "name": "Kurdistan24", "url": "https://www.kurdistan24.net/en/story/946890" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "cisiordania-gaza",
-      "title": "Cisiordania – Gaza",
-      "items": [
-        {
-          "title": "Operațiunea IDF la Hebron continuă; escaladare a violenței coloniștilor la recolta de măsline",
-          "date": "27 oct (context 26 oct)",
-          "body": "Operațiunea extinsă a IDF la Hebron, declanșată după atacul armat de la Judea Junction (23 oct), continuă, cu circa 3.000 de palestinieni strămutați, în pofida rezervelor exprimate de șeful Statului Major. În paralel, organizații de monitorizare au consemnat o escaladare a violenței coloniștilor la recolta de măsline din Cisiordania pe parcursul lunii octombrie. În ziua alegerilor este în vigoare o închidere generală a Cisiordaniei pentru palestinieni.",
-          "sources": [
-            { "name": "The New Arab", "url": "https://www.newarab.com/news/west-bank-saw-unprecedented-israeli-settler-terror-october" },
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-26-2026/" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "israel-liban",
-      "title": "Israel–Liban",
-      "items": [
-        {
-          "title": "Dezescaladare fragilă prin canalul CENTCOM, pe fondul relatărilor despre reînarmarea Hezbollah",
-          "date": "27 oct (context 26 oct)",
-          "body": "Axa rămâne într-o dezescaladare fragilă, menținută prin canalul diplomatic găzduit de CENTCOM, fără o nouă lansare atribuită Hezbollah. În paralel, relatări (Reuters, surse de securitate libaneze) indică reînarmarea organizației, cu fonduri din Iran orientate spre drone și explozibili.",
-          "sources": [
-            { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-26-2026/" }
+            {
+              "name": "Israel Hayom",
+              "url": "https://www.israelhayom.com/2026/10/27/houthis-call-egypts-troop-deployment-to-saudi-arabia-declaration-of-war/"
+            },
+            {
+              "name": "Khaleej Times",
+              "url": "https://www.khaleejtimes.com/world/gulf/egypt-ready-give-saudi-arabia-support-houthi-attacks"
+            }
           ]
         }
       ]
@@ -323,41 +320,96 @@ const DATA = {
       "title": "Economic – energie",
       "items": [
         {
-          "title": "Brent în jur de 114–115 USD; reuniune a Rezervei Federale (FOMC)",
-          "date": "27 oct",
-          "body": "Petrolul Brent se tranzacționa marți dimineața în jur de 114,68 USD/baril (o singură sursă), în a doua scădere consecutivă pe fondul optimismului legat de diplomația de la Teheran, după o decontare de circa 115,81 USD luni (cu un vârf intraday peste 117 USD). WTI se afla în jur de 100,83 USD. Reuniunea pe două zile a Rezervei Federale a SUA începe marți (27 oct), cu decizia așteptată miercuri (28 oct); piețele prețuiesc o probabilitate redusă de majorare a dobânzii în această săptămână.",
+          "title": "Petrolul Brent în jur de 118 USD/baril",
+          "date": "30 oct",
+          "body": "Petrolul Brent se tranzacționa la 118,07 USD/baril (30 octombrie, dimineața, ora de pe coasta de est a SUA), în creștere cu 2,31% față de ziua precedentă, cu circa 18,7% pe lună și cu circa 82,5% pe an (o singură sursă pentru cotația spot). Nivelul se menține peste pragul de 115 USD pe mai multe sesiuni consecutive, susținut de prima de risc regională și de presiunea asupra rutelor energetice.",
           "sources": [
-            { "name": "financefeeds", "url": "https://financefeeds.com/brent-crude-oil-price-114-68-tuesday-fomc-day-one-after-monday-round-trip-tehran-talks-bull-120-bear-108/" }
+            {
+              "name": "Fortune",
+              "url": "https://fortune.com/article/price-of-oil-10-30-2026/"
+            }
           ]
         },
         {
-          "title": "Cursul dolar/șekel în jur de 3,07",
-          "date": "27 oct",
-          "body": "Cursul USD/ILS se situa în jur de 3,0709 (27 octombrie, o singură sursă), în scădere cu circa 0,3% față de ziua precedentă și cu aproximativ 5,7% pe an — un șekel relativ puternic. Cotația euro/șekel rămâne de verificat printr-o sursă alternativă, întrucât seria publică de referință este întreruptă. Indicele TA-35 nu a putut fi captat.",
+          "title": "Reacția piețelor israeliene la rezultatele electorale",
+          "date": "28 oct",
+          "body": "Pe fondul rezultatelor electorale, indicele TA-35 a scăzut cu circa 1,4–1,7%, iar TA-125 cu circa 1,8–2,1%. Cursul dolar/șekel a urcat la aproximativ 3,09 (de la circa 3,02 în ziua votului, peste cursul de referință de 3,07), iar euro/șekel se tranzacționa în jur de 3,42–3,44. Un analist al Prico Group estima că o majoritate finală clară a blocului Netanyahu ar putea împinge dolarul spre 3,20 șekeli.",
           "sources": [
-            { "name": "Trading Economics", "url": "https://tradingeconomics.com/israel/currency" }
+            {
+              "name": "i24NEWS",
+              "url": "https://www.i24news.tv/en/news/israel-election-s-2026/artc-tel-aviv-stocks-fall-up-to-3-5-shekel-weakens-against-the-dollar-as-election-results-come-in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "israel-liban",
+      "title": "Israel–Liban",
+      "items": [
+        {
+          "title": "Dezescaladare fragilă prin canalul CENTCOM; relatări despre reînarmarea Hezbollah",
+          "date": "context 26 oct",
+          "body": "Axa rămâne într-o dezescaladare fragilă, menținută prin canalul diplomatic găzduit de CENTCOM, fără o nouă lansare atribuită Hezbollah. În paralel, relatări bazate pe surse de securitate libaneze indică reînarmarea organizației, cu fonduri din Iran orientate spre drone și explozibili. Fără eveniment armat nou izolabil în fereastra 1–2 noiembrie.",
+          "sources": [
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-october-26-2026/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gaza-cisiordania",
+      "title": "Gaza – Cisiordania",
+      "items": [
+        {
+          "title": "Operațiunea IDF la Hebron continuă; armistițiul din Gaza la circa un an",
+          "date": "context 26–27 oct",
+          "body": "Operațiunea extinsă a IDF la Hebron, declanșată după atacul armat de la Judea Junction (23 oct), continuă. În Gaza, armistițiul se menține la circa un an, cu „Linia Galbenă” operativă. Fără eveniment armat nou izolabil în fereastra 1–2 noiembrie.",
+          "sources": [
+            {
+              "name": "Times of Israel",
+              "url": "https://www.timesofisrael.com/liveblog-october-26-2026/"
+            }
           ]
         }
       ]
     }
   ],
-  "vector": "Vectorul zilei este dominat intern de ziua alegerilor pentru Knesset, desfășurată fără incident major de securitate la ora raportului. Pe axa Iran–SUA, dezescaladare diplomatică marginală: reuniunea de la Teheran s-a încheiat cu angajamentul de a continua dialogul, fără acțiune cinetică. Conflictul saudi–houthi rămâne în escaladare cronică, cu internaționalizare crescândă (implicare egipteană). În Cisiordania, operațiunea de la Hebron continuă. Energetic, Brent s-a menținut peste pragul de 115 USD pe mai multe sesiuni (vârf intraday peste 117 USD), apoi a cedat ușor pe optimismul diplomatic; fluxul prin Hormuz rămâne neîntrerupt, dar sub presiune.",
+  "vector": "Vectorul zilei este dominat de incertitudinea politică internă din Israel: rezultatul electoral certificat (bloc Netanyahu 53, opoziție evreiască 48, partide arabe 19) nu dă majoritate niciunui bloc, iar formarea guvernului rămâne deschisă. Pe axa Iran–SUA, dezescaladare marginală până la 3 noiembrie, când se deschide fereastra de după alegerile de la jumătatea mandatului din SUA. Energetic, Brent s-a menținut peste pragul de 115 USD pe mai multe sesiuni, atingând 118,07 USD (30 oct). Conflictul saudi–houthi rămâne în escaladare cronică, cu internaționalizare crescândă prin implicarea egipteană.",
   "delta": [
-    "Alegerile au început efectiv: tranziție de la ajunul votului la ziua scrutinului pentru Knesset-ul al 26-lea.",
-    "Energie: Brent a depășit pragul de 115 USD pe mai multe sesiuni (decontare ~115,81 USD luni, vârf intraday peste 117 USD), consolidând nivelul atins tranzitoriu săptămâna trecută, înainte de o corecție ușoară pe diplomația de la Teheran.",
-    "Iran–SUA: reuniunea de la Teheran s-a încheiat cu angajamentul de a continua dialogul (concretizarea reuniunii consemnate anterior ca fiind în curs).",
-    "Economic: reuniunea Rezervei Federale (FOMC) din 27–28 octombrie intră în fereastră.",
-    "Marea Roșie: o relatare (o singură sursă) indică o desfășurare militară egipteană efectivă, nuanțând dimensiunea de internaționalizare.",
-    "USD/ILS în jur de 3,07 (27 oct), în ușoară apreciere a șekelului față de cotația anterioară."
+    "Alegerile s-au consumat: de la ziua votului la rezultat certificat (29 oct) și impas de coaliție — niciun bloc la 61 (53 vs 48, partide arabe 19).",
+    "Procesul de coaliție este deschis: președintele Herzog nu a desemnat încă un candidat; învestirea Knessetului la 10 nov, desemnarea în jurul datei de 11 nov.",
+    "Energie: Brent de la circa 114,68 USD (27 oct) la 118,07 USD (30 oct) — pragul de 115 USD, consolidat.",
+    "Curs valutar: USD/ILS de la circa 3,07 (27 oct) la circa 3,09 (28 oct), pe incertitudinea electorală.",
+    "Iran–SUA: reperul de 3 noiembrie (alegeri de jumătate de mandat în SUA) a devenit imediat — fereastra de după alegeri se deschide.",
+    "Marea Roșie: Egiptul trece de la autorizare la relatări de desfășurare, iar houthii califică mișcarea drept „declarație de război”."
   ],
   "calendar": [
-    { "date": "27 oct", "event": "Alegeri pentru Knesset-ul al 26-lea (închiderea urnelor la 22:00); începe reuniunea pe două zile a Rezervei Federale a SUA (FOMC)." },
-    { "date": "28 oct", "event": "Decizia de politică monetară a Rezervei Federale a SUA." },
-    { "date": "3 nov", "event": "Alegeri de la jumătatea mandatului în SUA (midterms) — reper pentru dosarul iranian." },
-    { "date": "10 nov", "event": "Învestirea noului Knesset." },
-    { "date": "31 dec", "event": "Expirarea mandatului UNIFIL (Rez. 2790/2025); drawdown din ianuarie 2027." }
+    {
+      "date": "3 nov",
+      "event": "Alegeri de la jumătatea mandatului în SUA (midterms); expiră restricția privind loviturile asupra Iranului."
+    },
+    {
+      "date": "~4 nov",
+      "event": "Prezentarea rezultatelor electorale certificate către președintele Herzog."
+    },
+    {
+      "date": "10 nov",
+      "event": "Învestirea Knessetului al 26-lea."
+    },
+    {
+      "date": "~11 nov",
+      "event": "Termen pentru desemnarea de către președinte a candidatului la formarea guvernului (28 de zile + posibilă prelungire de 14 zile)."
+    },
+    {
+      "date": "31 dec",
+      "event": "Expirarea mandatului UNIFIL (Rez. 2790/2025); drawdown din ianuarie 2027."
+    }
   ],
-  "demnitari": "Nicio schimbare de demnitar confirmată în statele monitorizate în ultimele 24 de ore. (Rezultatul alegerilor din Israel poate antrena o schimbare de premier — de urmărit după închiderea urnelor.)",
+  "demnitari": "Nicio schimbare de demnitar confirmată în statele monitorizate în ultimele 24 de ore. Netanyahu rămâne premier interimar; o eventuală schimbare depinde de deznodământul formării coaliției (de urmărit după desemnarea președintelui, în jurul datei de 11 nov).",
   "sourceCount": 9
 };
 /* BRIEFING_DATA_END */

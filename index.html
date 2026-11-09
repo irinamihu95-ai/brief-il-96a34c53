@@ -219,88 +219,124 @@ function render(d){
 
 /* BRIEFING_DATA_START — rulările automate înlocuiesc blocul dintre marcaje */
 const DATA = {
-  "generatedAt": "2026-11-07T12:40:00+02:00",
-  "runType": "Briefing automat de sâmbătă. Niciun trigger de Nivel 2 în ultimele 12 ore. Dominanta: pivot diplomatic Iran–SUA după alegerile de la jumătatea mandatului din SUA (3 nov) și prăbușirea prețului petrolului. Avertisment: memoria dintre rulări era veche de circa 5 zile (peste pragul de 36h) — prudență sporită.",
-  "nextRun": "2026-11-08T07:30:00+02:00",
+  "generatedAt": "2026-11-09T17:17:00+02:00",
+  "runType": "Briefing automat de luni. Niciun trigger de Nivel 2 în ultimele 12 ore. Dominanta: președintele Herzog a desemnat pe Gadi Eisenkot să formeze guvernul, cu Knesset-ul învestit mâine (10 nov); pe plan extern, pivotul de dezescaladare Iran–SUA este nuanțat de înăsprirea verbală a secretarului de stat Rubio, iar petrolul Brent coboară spre 93 USD. Avertisment: memoria dintre rulări era veche de circa 52 de ore (peste pragul de 36h) — prudență sporită la elementele de variație.",
+  "nextRun": "2026-11-10T07:30:00+02:00",
   "streaks": [
     {
       "label": "zile fără lovitură iraniană directă pe teritoriul israelian",
-      "value": 58,
-      "asOf": "7 nov"
+      "value": 60,
+      "asOf": "9 nov"
     },
     {
       "label": "zile de la drona Hezbollah (26 sep), fără o a doua lansare cu pagube",
-      "value": 42,
-      "asOf": "7 nov"
+      "value": 44,
+      "asOf": "9 nov"
     },
     {
       "label": "zi fără întrerupere a fluxului prin strâmtoarea Hormuz",
       "value": 0,
-      "asOf": "7 nov — flux continuu; presiune în scădere pe fondul diplomației"
+      "asOf": "9 nov — flux continuu; presiune în scădere pe fondul diplomației"
     }
   ],
   "nivel2": [],
   "sections": [
     {
-      "id": "iran-sua-energie",
-      "title": "Iran–SUA și energie — pivot diplomatic după midterms",
+      "id": "coalitie",
+      "title": "Israel — Eisenkot, desemnat să formeze guvernul",
       "items": [
         {
-          "title": "Petrolul Brent sub 98 USD — cea mai mare scădere săptămânală din 2020",
-          "date": "închidere 6 nov; context 2–4 nov",
-          "body": "Petrolul Brent a coborât sub 98 USD/baril la închiderea de vineri (6 noiembrie), în scădere cu peste 13% pe parcursul săptămânii — cea mai amplă scădere săptămânală de la debutul pandemiei (martie 2020), potrivit datelor de piață. Traiectoria descendentă a fost continuă: de la circa 118 USD (30 oct) la circa 104 USD (2 nov, −8%) și circa 101,7 USD (4 nov). Factorii invocați de surse: speranțele unui deznodământ diplomatic al conflictului SUA–Iran, contactele de dezescaladare dintre președintele Trump și emirul Qatarului și relatările potrivit cărora Teheranul analizează propunerile mediatorilor privind programul său nuclear. Atacurile asupra navelor în apropierea strâmtorii Hormuz continuă, însă prima de risc s-a comprimat.",
+          "title": "Herzog a încredințat mandatul lui Gadi Eisenkot; consultările de coaliție au început",
+          "date": "desemnare ~7 nov; proces activ 9 nov",
+          "body": "Președintele Isaac Herzog a decis, la finalul rundei de consultări cu fracțiunile Knesset-ului al 26-lea, să încredințeze mandatul de formare a guvernului liderului partidului Yashar, Gadi Eisenkot. Decizia închide incertitudinea privind desemnarea (anterior, la 5 noiembrie, niciun candidat nu fusese ales). La 9 noiembrie, Eisenkot a demarat procesul de construire a coaliției, dispunând de un termen inițial de 28 de zile, cu o posibilă prelungire de 14 zile; un eșec ar putea conduce la noi alegeri. Eisenkot a declarat că „toți vom fi nevoiți la compromisuri” și a chemat la unitate, invitând Likud-ul să sprijine guvernul său. Repartiția mandatelor rămâne: blocul Netanyahu 53, opoziția condusă de Eisenkot 48, partidele arabe (Lista Comună + Ra'am) 19; niciun bloc nu atinge singur 61. Prezența la vot a fost de 77,7%.",
           "sources": [
             {
-              "name": "Trading Economics",
-              "url": "https://tradingeconomics.com/commodity/brent-crude-oil/news/599094"
+              "name": "Israel Hayom (în ebraică)",
+              "url": "https://www.israelhayom.co.il/news/politics/article/21799473"
             },
             {
-              "name": "Energy Connects (Bloomberg)",
-              "url": "https://www.energyconnects.com/news/gas-lng/2026/november/trump-plays-down-prospect-of-iran-strikes-after-midterm-rout/"
+              "name": "Ynet (în ebraică)",
+              "url": "https://www.ynet.co.il/news/article/byagzwrtfg"
             },
             {
-              "name": "Trading Economics",
-              "url": "https://tradingeconomics.com/commodity/brent-crude-oil/news/597331"
+              "name": "Președinția Statului Israel (X)",
+              "url": "https://x.com/IsraelPresident/status/2119157031324020997"
+            },
+            {
+              "name": "The Jerusalem Post (live)",
+              "url": "https://www.jpost.com/israel-election-2026/2026-11-09/live-updates-914287"
             }
           ]
         },
         {
-          "title": "După midterms, administrația SUA temperează perspectiva unor lovituri asupra Iranului",
-          "date": "4 nov; context 3 nov",
-          "body": "La alegerile de la jumătatea mandatului din 3 noiembrie, Partidul Democrat a preluat controlul Congresului într-o victorie de amploare. Ulterior, președintele Trump a temperat perspectiva unor lovituri asupra Iranului: „Suntem pregătiți, suntem în poziție de tragere dacă trebuie să acționăm, dar s-ar putea să nu existe niciun motiv pentru asta.” Potrivit relatărilor (Bloomberg), atât Trump, cât și vicepreședintele Vance au adoptat un ton mai conciliant. Președintele iranian Pezeshkian a declarat că liderul suprem Mojtaba Khamenei a acordat guvernului o autoritate sporită pentru negocieri de pace, iar președintele parlamentului, Ghalibaf, a afirmat că rezultatul american reprezintă un vot „NU războiului”. Teheranul condiționează redeschiderea completă a strâmtorii Hormuz de ridicarea blocadei navale americane, de relaxarea sancțiunilor și de deblocarea fondurilor înghețate.",
+          "title": "Mișcări interne: Deri se retrage din Knesset, Netanyahu îl numește pe Ofir Katz la conducerea Likud",
+          "date": "9 nov",
+          "body": "Liderul Shas, Aryeh Deri, s-a retras de pe lista partidului și nu va ocupa un loc în Knesset-ul al 26-lea, la câteva zile după ce rabinii îi respinseseră demisia; Shas semnalează că ar putea lua în calcul un guvern Eisenkot, însă așteaptă o mișcare prealabilă a Iudaismului Unit al Torei. Benjamin Netanyahu l-a numit pe Ofir Katz președinte al Likud pentru noua legislatură. Procuroarea generală Gali Baharav-Miara a declarat că nu există dovezi că o eventuală interferență externă ar fi putut schimba rezultatul scrutinului, Mossadul transmițând Shin Bet constatări privind o suspectă ingerință străină în alegeri.",
           "sources": [
             {
-              "name": "Energy Connects (Bloomberg)",
-              "url": "https://www.energyconnects.com/news/gas-lng/2026/november/trump-plays-down-prospect-of-iran-strikes-after-midterm-rout/"
+              "name": "The Jerusalem Post (live)",
+              "url": "https://www.jpost.com/israel-election-2026/2026-11-09/live-updates-914287"
             },
             {
-              "name": "Trading Economics",
-              "url": "https://tradingeconomics.com/commodity/brent-crude-oil/news/597331"
+              "name": "The Times of Israel (live)",
+              "url": "https://www.timesofisrael.com/liveblog-november-9-2026/"
             }
           ]
         }
       ]
     },
     {
-      "id": "coalitie",
-      "title": "Israel — consultările pentru formarea guvernului",
+      "id": "iran-sua-energie",
+      "title": "Iran–SUA și energie — mediere qatariană vs. înăsprire americană",
       "items": [
         {
-          "title": "Consultările președintelui Herzog înclină spre Eisenkot; Ra'am îl susține formal",
-          "date": "consultări 4–5 nov; proiecție 1 nov",
-          "body": "Președintele Isaac Herzog a desfășurat consultările cu fracțiunile nou-alese (4–5 noiembrie), fără a desemna încă un candidat la 5 noiembrie. Rezultatele oficiale ale alegerilor pentru Knesset-ul al 26-lea au fost prezentate președintelui la 4 noiembrie. O proiecție a recomandărilor (1 nov) indica un avantaj pentru Gadi Eisenkot — circa 60 de mandate (Yashar 21, B'Yachad 12, Lista Comună 11, Ra'am 8, Democrații 8), până la 67 dacă i se alătură Avigdor Liberman — față de circa 46 pentru Netanyahu (Likud 27, Otzma Yehudit 7, Shas 6, Sionismul Religios 6), cu Iudaismul Unit al Torei (7) și Yisrael Beytenu (7) neangajate. Partidul arab Ra'am și-a anunțat formal susținerea pentru Eisenkot. Herzog îndeamnă la compromis și „creativitate”, promovând un guvern de uniune, variantă contestată de Eisenkot și de Yair Golan. Termenul legal pentru desemnare este 11 noiembrie; Knesset-ul se învestește la 10 noiembrie.",
+          "title": "Rubio califică cererile iraniene drept „inacceptabile”, pe fondul propunerii qatariene de deblocare",
+          "date": "declarații 8 nov; propunere 5–7 nov",
+          "body": "Secretarul de stat american Marco Rubio a declarat (8 noiembrie, Florida, înaintea reuniunii miniștrilor de externe ai G7 de la Paris) că cererile Iranului sunt „inacceptabile” și, în unele cazuri, „scandaloase și ridicole”, adăugând: „Nu aș spune că suntem în pragul unei străpungeri.” Declarația temperează așteptările create de pivotul de dezescaladare de după alegerile americane de la jumătatea mandatului. În paralel, Qatarul a înaintat o propunere de compromis: inspectori care să viziteze siturile nucleare iraniene bombardate, în schimbul ridicării blocadei navale americane; surse indică faptul că Teheranul examinează „propuneri practice” privind programul nuclear. Locuitorii insulei iraniene Qeshm au relatat din nou explozii (media de stat iraniană); cauza rămâne neconfirmată oficial, iar Rubio nu a confirmat lovituri noi, afirmând dreptul SUA de a-și apăra forțele și navigația.",
           "sources": [
             {
-              "name": "Ynetnews",
-              "url": "https://www.ynetnews.com/article/sk8eaw4pge"
+              "name": "The Times of Israel (live)",
+              "url": "https://www.timesofisrael.com/liveblog-november-9-2026/"
             },
             {
-              "name": "Al-Monitor",
-              "url": "https://www.al-monitor.com/originals/2026/11/israel-president-opens-talks-rivals-struggle-form-government"
+              "name": "Haaretz (în ebraică)",
+              "url": "https://www.haaretz.co.il/news/world/middle-east/2026-11-07/ty-article/.premium/000001a1-b632-defa-a7f7-be7f5d200000"
             },
             {
-              "name": "JNS",
-              "url": "https://www.jns.org/news/israel-news/herzog-resumes-talks-on-who-will-form-next-israeli-govt"
+              "name": "Maariv (în ebraică)",
+              "url": "https://www.maariv.co.il/news/world/article-1385833"
+            }
+          ]
+        },
+        {
+          "title": "Petrolul Brent coboară spre 93 USD — minim de la 31 august",
+          "date": "9 nov (preț intraday)",
+          "body": "Petrolul Brent se tranzacționa în jurul a 93,4 USD/baril la 9 noiembrie (ora 14:05 GMT), în scădere cu circa 5% față de închiderea anterioară (circa 98 USD), potrivit datelor de piață — cel mai scăzut nivel de la 31 august. WTI cota în jurul a 86,7 USD. Traiectoria continuă prăbușirea săptămânii precedente (de la circa 118 USD pe 30 oct la sub 98 USD pe 6 nov), pe fondul speranțelor unei soluții diplomatice la conflictul SUA–Iran. Pragul de alertă de 115 USD rămâne infirmat.",
+          "sources": [
+            {
+              "name": "Trading Economics",
+              "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+            },
+            {
+              "name": "JournalArta (date de piață)",
+              "url": "https://journalarta.com/en/2026/11/09/oil-price-today-brent-falls-4-96-to-93-44-on-iran-peace-hopes-as-gold-climbs/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sua-israel",
+      "title": "SUA–Israel — dimensiune reputațională",
+      "items": [
+        {
+          "title": "Trump leagă rezultatul midterms de „antipatia față de Israel” și de război",
+          "date": "declarații 8 nov",
+          "body": "Într-un interviu la emisiunea 60 Minutes, președintele Donald Trump a afirmat că republicanii au avut rezultate slabe la alegerile de la jumătatea mandatului parțial din cauza unei „antipatii puternice — incredibil — față de Israel”, adăugând că electoratul „nu a agreat războiul” și că „benzina s-a scumpit”; el a validat afirmația vicepreședintelui Vance potrivit căreia războiul cu Iranul și legăturile cu Israelul au costat republicanii. Despre desemnarea lui Eisenkot, Trump a apreciat că acesta și Netanyahu sunt „foarte asemănători ca politică” și că ambii l-ar sprijini, descriind competiția drept „între el și Bibi Netanyahu”.",
+          "sources": [
+            {
+              "name": "The Times of Israel (live)",
+              "url": "https://www.timesofisrael.com/liveblog-november-9-2026/"
             }
           ]
         }
@@ -308,16 +344,20 @@ const DATA = {
     },
     {
       "id": "marea-rosie",
-      "title": "Marea Roșie — escaladare cronică",
+      "title": "Marea Roșie — houthii instituie un regim de permise",
       "items": [
         {
-          "title": "Amenințarea houthi la adresa navigației saudite se menține, între escaladare militară și pariul negocierilor",
-          "date": "context recent",
-          "body": "Presa panarabă descrie deschiderea unui nou front în Marea Roșie, între escaladarea militară și mizarea pe negocieri. Dinamica rămâne legată de dosarul iranian: o eventuală dezescaladare pe axa SUA–Iran s-ar răsfrânge asupra presiunii pe rutele maritime. Angajarea efectivă a forțelor egiptene de partea Riadului rămâne de confirmat prin surse suplimentare.",
+          "title": "Houthii organizează tranzitul Mării Roșii prin permise electronice; tensiune cu Egiptul",
+          "date": "7–9 nov",
+          "body": "Presa egipteană relatează că mișcarea houthi a instituit un sistem de permise electronice pentru tranzitul navelor prin Marea Roșie, cu potențiale efecte asupra Egiptului și a traficului prin Canalul Suez; analiștii discută modul în care mecanismul ar putea afecta Cairo. Guvernul yemenit recunoscut internațional a avertizat (9 noiembrie) că „ingerința Iranului în afacerile noastre subminează securitatea regiunii”. Pe acest fond, relatările privind pregătirea unei operațiuni saudite pentru „spargerea blocadei” din Marea Roșie se mențin. Angajarea efectivă a forțelor egiptene de partea Riadului rămâne de confirmat prin surse suplimentare.",
           "sources": [
             {
-              "name": "Al-Quds al-Arabi (în arabă)",
-              "url": "https://www.alquds.co.uk/?p=4968725"
+              "name": "Masrawy (în arabă)",
+              "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/11/7/3074862"
+            },
+            {
+              "name": "Youm7 (în arabă)",
+              "url": "https://www.youm7.com/story/2026/11/9/7611252"
             }
           ]
         }
@@ -328,13 +368,13 @@ const DATA = {
       "title": "Gaza – Cisiordania",
       "items": [
         {
-          "title": "Armistițiul din Gaza se menține; operațiunile IDF în Cisiordania continuă",
-          "date": "context",
-          "body": "Armistițiul din Gaza se menține la peste un an, cu „Linia Galbenă” operativă și incidente punctuale. Operațiunile IDF în Cisiordania continuă în prelungirea valului declanșat după atacul armat de la Judea Junction (23 oct). Fără eveniment armat nou izolabil și confirmat în fereastra strictă de 24 de ore (sâmbătă, flux instituțional minim).",
+          "title": "Cisiordania: IDF a deschis focul asupra unui suspect la Zababdeh",
+          "date": "8 nov",
+          "body": "Forțele IDF au deschis focul, în seara de 8 noiembrie, asupra unui suspect care ar fi ținut un cocktail Molotov, lângă Zababdeh (sud de Jenin, nordul Cisiordaniei), anunțând că l-au lovit, fără militari răniți. Agenția palestiniană WAFA a afirmat că persoana împușcată în piept era un adolescent palestinian de 13 ani, transportat la spital. Armistițiul din Gaza se menține la peste un an, cu „Linia Galbenă” operativă; operațiunile IDF în Cisiordania continuă în prelungirea valului de după atacul de la Judea Junction (23 oct).",
           "sources": [
             {
-              "name": "Times of Israel",
-              "url": "https://www.timesofisrael.com/liveblog-october-26-2026/"
+              "name": "The Times of Israel (live)",
+              "url": "https://www.timesofisrael.com/liveblog-november-9-2026/"
             }
           ]
         }
@@ -345,26 +385,27 @@ const DATA = {
       "title": "Israel–Liban",
       "items": [
         {
-          "title": "Dezescaladare fragilă prin canalul CENTCOM; relatări despre reînarmarea Hezbollah",
-          "date": "context",
-          "body": "Axa rămâne într-o dezescaladare fragilă, menținută prin canalul diplomatic găzduit de CENTCOM (Tampa), în paralel cu relatări privind reînarmarea Hezbollah pe filieră iraniană. Fără o nouă lansare atribuită Hezbollah și fără eveniment armat nou izolabil și confirmat în fereastra strictă de 24 de ore.",
+          "title": "Dezescaladare fragilă; fără lovitură nouă izolabilă în 24h",
+          "date": "context (ultima lovitură 4 nov)",
+          "body": "Axa rămâne într-o dezescaladare fragilă, menținută prin canalul diplomatic găzduit de CENTCOM (Tampa). Ultima lovitură israeliană izolabilă datează din 4 noiembrie (dronă la Qabrikha, 1 mort/1 rănit — primul deces din septembrie, potrivit AFP). Fără o lovitură nouă confirmată și fără lansare atribuită Hezbollah în fereastra strictă de 24 de ore.",
           "sources": [
             {
-              "name": "Times of Israel",
-              "url": "https://www.timesofisrael.com/liveblog-october-26-2026/"
+              "name": "Arab News (AFP)",
+              "url": "https://www.arabnews.pk/middle-east/lebanon-says-israeli-strike-kills-one-in-south-3006101"
             }
           ]
         }
       ]
     }
   ],
-  "vector": "Vectorul zilei este dominat de un pivot de dezescaladare pe axa Iran–SUA, cu efect direct asupra energiei: după victoria democrată de la midterms (3 nov), administrația americană temperează perspectiva loviturilor, Teheranul deschide calea negocierilor, iar petrolul Brent se prăbușește sub 98 USD (cea mai mare scădere săptămânală din 2020). În Israel, impasul de coaliție continuă — consultările președintelui Herzog înclină spre Gadi Eisenkot (susținut formal de Ra'am), decizia privind desemnarea fiind așteptată până la 11 noiembrie. Marea Roșie rămâne în escaladare cronică, dar legată de dinamica iraniană; Gaza și Libanul se mențin în armistițiu/dezescaladare fragilă.",
+  "vector": "Vectorul zilei rămâne de dezescaladare pe axa Iran–SUA, dar cu o nuanță de înăsprire: secretarul de stat Rubio califică cererile iraniene drept „inacceptabile” și neagă o străpungere iminentă (8 nov), chiar dacă Qatarul mediază o formulă de compromis (inspecții nucleare contra ridicării blocadei). Efectul pe energie se adâncește — Brent coboară spre 93 USD, minim de la 31 august. În Israel, impasul de coaliție se clarifică: președintele Herzog l-a desemnat pe Gadi Eisenkot să formeze guvernul, Knesset-ul al 26-lea fiind învestit la 10 noiembrie. Marea Roșie intră într-o fază de instituționalizare a controlului houthi (permise electronice de tranzit), cu tensiune în creștere față de Egipt. Gaza și Libanul se mențin în armistițiu/dezescaladare fragilă.",
   "delta": [
-    "Iran–SUA, răsturnare de perspectivă: după victoria democrată la midterms (3 nov), administrația SUA temperează loviturile (anterior se anticipa deschiderea ferestrei post-midterms); Teheranul deschide calea negocierilor.",
-    "Energie: Brent de la circa 118 USD (30 oct) la sub 98 USD (închidere 6 nov) — pragul de 115 USD, infirmat; cea mai mare scădere săptămânală din 2020.",
-    "Coaliție: proces avansat — rezultate prezentate oficial lui Herzog (4 nov), consultări (4–5 nov); recomandările înclină spre Eisenkot (60, până la 67 cu Liberman), cu Ra'am susținându-l formal.",
-    "Calendar: reperele de 3 nov (midterms) și circa 4 nov (prezentarea rezultatelor) consumate; în fereastră rămân 10 nov (învestire) și 11 nov (termen desemnare).",
-    "Fereastra strictă de 24h (sâmbătă) este săracă în evenimente cinetice noi izolabile; dominanta intră prin reactivare și context, cu datare explicită."
+    "Coaliție: președintele Herzog l-a DESEMNAT efectiv pe Gadi Eisenkot (~7 nov) — se închide incertitudinea privind desemnarea; la 9 nov Eisenkot a demarat consultările, iar Aryeh Deri (Shas) s-a retras din Knesset.",
+    "Energie: Brent de la circa 98 USD (închidere 6 nov) la circa 93,4 USD (9 nov) — minim de la 31 august.",
+    "Valutar: USD/ILS a urcat de la circa 3,09 (sfârșit octombrie) spre circa 3,17 (maxim de peste jumătate de an) — șekel în slăbire (o singură sursă, de reconfirmat prin fixingul Băncii Israelului).",
+    "Iran–SUA, nuanță de înăsprire: Rubio (8 nov) califică cererile iraniene „inacceptabile/ridicole” și neagă o străpungere iminentă — contrabalansează pivotul dovish de după midterms.",
+    "Marea Roșie: houthii instituie un regim de permise electronice pentru tranzitul navelor — instituționalizare a controlului asupra rutei.",
+    "SUA: președintele Trump atribuie public rezultatul slab de la midterms, parțial, „antipatiei față de Israel”, războiului cu Iranul și scumpirii benzinei."
   ],
   "calendar": [
     {
@@ -372,16 +413,16 @@ const DATA = {
       "event": "Învestirea Knesset-ului al 26-lea."
     },
     {
-      "date": "~11 nov",
-      "event": "Termen pentru desemnarea de către președinte a candidatului la formarea guvernului (28 de zile + posibilă prelungire de 14 zile)."
+      "date": "~5 dec",
+      "event": "Termenul inițial de 28 de zile al lui Eisenkot pentru formarea guvernului (de la desemnarea din ~7 nov); posibilă prelungire de 14 zile (~19 dec)."
     },
     {
       "date": "31 dec",
       "event": "Expirarea mandatului UNIFIL (Rez. 2790/2025); drawdown din ianuarie 2027."
     }
   ],
-  "demnitari": "Nicio schimbare de demnitar confirmată în statele monitorizate în ultimele 24 de ore. Netanyahu rămâne premier interimar; o eventuală schimbare depinde de deznodământul formării coaliției (de urmărit după desemnarea președintelui, în jurul datei de 11 nov).",
-  "sourceCount": 8
+  "demnitari": "Israel: schimbare în curs — Gadi Eisenkot a fost desemnat să formeze guvernul (~7 nov); Benjamin Netanyahu rămâne premier interimar, iar o schimbare efectivă depinde de reușita formării coaliției (termen inițial ~5 dec). SUA: potrivit unor declarații ale președintelui Trump (60 Minutes), Susie Wiles ar fi fost înlocuită la conducerea cabinetului Casei Albe de Stephen Miller — de confirmat prin comunicat oficial.",
+  "sourceCount": 12
 };
 /* BRIEFING_DATA_END */
 render(DATA);
